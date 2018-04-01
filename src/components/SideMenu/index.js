@@ -6,7 +6,9 @@ import { fetchArtistRequest } from '../../actions/artist'
 
 const SideMenu = ({
 	token,
-	fetchAlbumRequest
+	artistIds,
+	fetchAlbumRequest,
+	fetchArtistRequest
 }) => {
 
 	const handleClick = (name)  => {
@@ -36,7 +38,7 @@ const SideMenu = ({
 			},
 			{
 				name: 'Artists',
-				action: fetchArtists,
+				action: fetchArtistRequest,
 				getArtists: true
 			}
 		]
@@ -66,7 +68,8 @@ const SideMenu = ({
 }
 
 export default connect(state => ({
-	token : state.tokenReducer.token
+	token : state.tokenReducer.token ? state.tokenReducer.token : '',
+	artistIds : state.artistsReducer.artistIds
 }),{
 	fetchAlbumRequest
 })(SideMenu)
