@@ -1,48 +1,54 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { fetchAlbumRequest } from '../../actions/album'
 
 
-const SideMenu = () => {
+const SideMenu = ({
+	token,
+	fetchAlbumRequest
+}) => {
 
 	const handleClick = (name)  => {
 		// updateHeaderTitle(name)
 		// updateViewType(name)
 	}
 
-	const handleBrowseClick = ()  => {
-		// updateHeaderTitle('Browse')
-		// updateViewType('Featured')
-		// fetchFeatured(token)
-    }
+	// const handleBrowseClick = ()  => {
+	// 	// updateHeaderTitle('Browse')
+	// 	// updateViewType('Featured')
+	// 	// fetchFeatured(token)
+    // }
     
     const renderSideMenu = () => {
 		const menu = [
-			{
-				name: 'Recently Played',
-				// action: fetchRecentlyPlayed
-			},
-			{
-				name: 'Songs',
-				// action: fetchSongs
-			},
+			// {
+			// 	name: 'Recently Played',
+			// 	// action: fetchRecentlyPlayed
+			// },
+			// {
+			// 	name: 'Songs',
+			// 	// action: fetchSongs
+			// },
 			{
 				name: 'Albums',
-				// action: fetchAlbums
+				action: fetchAlbumRequest
 			},
-			{
-				name: 'Artists',
-				// action: fetchArtists,
-				getArtists: true
-			}
+			// {
+			// 	name: 'Artists',
+			// 	// action: fetchArtists,
+			// 	getArtists: true
+			// }
 		]
 
 		return menu.map(item => {
 			return (
 				<li key={ item.name }
 					onClick={() => {
-						// item.getArtists ? item.action(token, artistIds) : item.action(token)
+						item.action(token)
+						//item.getArtists ? item.action(token, artistIds) : item.action(token)
 						handleClick(item.name) }
 					}>
-					{ item.name }
+					{ item.name } eiei
 				</li>
 			)
 		})
@@ -58,4 +64,8 @@ const SideMenu = () => {
     )
 }
 
-export default SideMenu
+export default connect(state => ({
+	token : state.tokenReducer.token
+}),{
+	fetchAlbumRequest
+})(SideMenu)

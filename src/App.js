@@ -11,7 +11,7 @@ class App extends Component {
   componentDidMount() {
     let parsed = queryString.parse(window.location.search)
     if(!parsed.access_token){
-      window.location.href = 'https://accounts.spotify.com/en/authorize?response_type=code&client_id=8574538fd9964f1bb64221a6baef55e5&scope=user-read-private%20user-read-email&redirect_uri=http:%2F%2Flocalhost:8888%2Fcallback'
+      window.location.href = 'http://localhost:8888/login'
     }
     else {
       this.props.setToken(parsed.access_token)
@@ -48,6 +48,8 @@ class App extends Component {
 }
 
 
-export default connect(state => ({
-  token : state.token
-}),{setToken})(App)
+export default connect(
+  state => ({
+    token : state.token
+}),
+{setToken})(App)
