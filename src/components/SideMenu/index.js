@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchAlbumRequest } from '../../actions/album'
+import { fetchArtistRequest } from '../../actions/artist'
 
 
 const SideMenu = ({
@@ -33,11 +34,11 @@ const SideMenu = ({
 				name: 'Albums',
 				action: fetchAlbumRequest
 			},
-			// {
-			// 	name: 'Artists',
-			// 	// action: fetchArtists,
-			// 	getArtists: true
-			// }
+			{
+				name: 'Artists',
+				action: fetchArtists,
+				getArtists: true
+			}
 		]
 
 		return menu.map(item => {
@@ -45,7 +46,7 @@ const SideMenu = ({
 				<li key={ item.name }
 					onClick={() => {
 						item.action(token)
-						//item.getArtists ? item.action(token, artistIds) : item.action(token)
+						item.getArtists ? item.action(token, artistIds) : item.action(token)
 						handleClick(item.name) }
 					}>
 					{ item.name } eiei
