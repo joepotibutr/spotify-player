@@ -69,7 +69,8 @@ const SideMenu = ({
 
 export default connect(state => ({
 	token : state.tokenReducer.token ? state.tokenReducer.token : '',
-	artistIds : state.artistsReducer.artistIds
+	artistIds : state.artistReducer.artistIds
 }),{
-	fetchAlbumRequest
+	fetchAlbumRequest,
+	fetchArtistRequest
 })(SideMenu)

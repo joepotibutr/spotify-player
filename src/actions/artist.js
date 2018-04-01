@@ -1,7 +1,7 @@
 import * as types from '../actionTypes'
 import axios from 'axios'
 
-export const fetchArtistRequest = accessToken => {
+export const fetchArtistRequest = (accessToken,artistIds) => {
     return { type : types.FETCH_ARTIST_REQUEST , accessToken }
 }
 
