@@ -7,7 +7,8 @@ import { fetchArtistSaga } from './artistsSaga'
 // import { fetchPlaylistsSaga } from './playlistsSaga'
 import { 
     fetchSongsSaga,
-    searchSongsSaga
+    searchSongsSaga,
+    fetchRecentlyPlayedSaga
 } from './songsSaga'
 
 
@@ -20,6 +21,7 @@ function *rootSaga() {
     yield takeLatest(types.FETCH_ALBUM_REQUEST,fetchAlbumSaga)
     yield takeLatest(types.FETCH_ARTIST_REQUEST,fetchArtistSaga)
     yield takeLatest(types.SEARCH_SONGS_REQUEST,searchSongsSaga)
+    yield takeLatest(types.FETCH_RECENTLY_PLAYED_REQUEST,fetchRecentlyPlayedSaga)
 }
 
 

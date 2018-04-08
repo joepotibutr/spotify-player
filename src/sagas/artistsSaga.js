@@ -1,5 +1,5 @@
 import { put , call } from 'redux-saga/effects'
-import { fetchArtistSuccess , fetchArtistFailure , setArtistIds } from '../actions/artist'
+import { fetchArtistSuccess , fetchArtistFailure } from '../actions/artist'
 import api from '../api'
 
 export function * fetchArtistSaga(action) {

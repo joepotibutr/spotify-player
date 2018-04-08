@@ -3,7 +3,10 @@ import {
     fetchSongsSuccess,
     fetchSongsFailure,
     searchSongsSuccess,
-    searchSongsFailure } from '../actions/song'
+    searchSongsFailure,
+    fetchRecentlyPlayedSuccess,
+    fetchRecentlyPlayedFailure
+ } from '../actions/song'
 import uniqBy from 'lodash/uniqBy' 
 import api from '../api'
 import { setArtistIds } from '../actions/artist';
@@ -14,7 +17,7 @@ export function * fetchSongsSaga(action) {
         if(res.statusText === "Unauthorized") {
             window.location.href = './';
         }
-        let artistIds = uniqBy(res, (item) => 
+        const artistIds = uniqBy(res, (item) => 
             item.track.artists[0].name).map(item => 
                 item.track.artists[0].id).join(',')
         
@@ -39,5 +42,19 @@ export function * searchSongsSaga(action) {
         yield put(searchSongsSuccess(res))
     } catch(err) {
         yield put(searchSongsFailure(err))
+    }
+}
+
+export function * fetchRecentlyPlayedSaga(action) {
+    const { accessToken } = action
+    try {
+        const res = yield call(api.songs.fetchRecentlySongs,accessToken)
+        if(res.statusText === "Unauthorized") {
+            window.location.href = './';
+        }
+        const recentlyPlayedSongs = uniqBy(res,item => item.track.id)
+        yield put(fetchRecentlyPlayedSuccess(recentlyPlayedSongs))
+    } catch(err) {
+        yield put(fetchRecentlyPlayedFailure(err))
     }
 }
