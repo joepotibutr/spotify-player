@@ -11,6 +11,10 @@ export function * fetchAlbumSaga(action) {
         console.log(res)
         yield put(fetchAlbumSuccess(res))
     } catch(err) {
+        const { response } = err
+        if(response.statusText === "Unauthorized") {
+            window.location.href = './'
+        }
         yield put(fetchAlbumFailure(err))
     }
 } 

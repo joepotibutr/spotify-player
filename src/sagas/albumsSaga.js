@@ -8,6 +8,10 @@ export function * fetchAlbumSaga(action) {
         const res = yield call(api.albums,action.accessToken)
         yield put(fetchAlbumSuccess(res))
     } catch(err) {
+        const { response } = err
+        if(response.statusText === "Unauthorized") {
+            window.location.href = './'
+        }
         yield put(fetchAlbumFailure(err))
     }
 } 

@@ -14,9 +14,6 @@ import { setArtistIds } from '../actions/artist';
 export function * fetchSongsSaga(action) {
     try {
         const res = yield call(api.songs.fetchSongs,action.accessToken)
-        if(res.statusText === "Unauthorized") {
-            window.location.href = './';
-        }
         const artistIds = uniqBy(res, (item) => 
             item.track.artists[0].name).map(item => 
                 item.track.artists[0].id).join(',')
@@ -27,6 +24,10 @@ export function * fetchSongsSaga(action) {
         yield put(setArtistIds(artistIds))
         yield put(fetchSongsSuccess(res))
     } catch(err) {
+        const { response } = err
+        if(response.statusText === "Unauthorized") {
+            window.location.href = './'
+        }
         yield put(fetchSongsFailure(err))
     }
 }

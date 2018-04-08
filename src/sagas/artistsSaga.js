@@ -8,6 +8,10 @@ export function * fetchArtistSaga(action) {
         const res = yield call(api.artists,accessToken,artistIds)
         yield put(fetchArtistSuccess(res))
     } catch(err) {
+        const { response } = err
+        if(response.statusText === "Unauthorized") {
+            window.location.href = './'
+        }
         yield put(fetchArtistFailure(err))
     }
 } 

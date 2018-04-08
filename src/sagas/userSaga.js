@@ -14,6 +14,10 @@ export function * fetchUserSaga(action) {
         console.log(res)
         yield put(fetchUserSuccess(res))
     } catch(err) {
+        const { response } = err
+        if(response.statusText === "Unauthorized") {
+            window.location.href = './'
+        }
         yield put(fetchUserFailure(err))
     }
 } 
