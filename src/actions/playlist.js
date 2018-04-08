@@ -1,14 +1,28 @@
 import * as types from '../actionTypes'
 import axios from 'axios'
 
-export const fetchArtistRequest = accessToken => {
-    return { type : types.FETCH_ARTIST_REQUEST , accessToken }
-}
 
-export const fetchArtistSuccess = artists => {
-    return { type : types.FETCH_ARTIST_SUCCESS , artists }
+export const fetchPlaylistMenuRequest = accessToken => {
+    return { type : types.FETCH_PLAYLIST_MENU_REQUEST , accessToken }
+}  
+export const fetchPlaylistMenuSuccess = playlists => {
+    return { type : types.FETCH_PLAYLIST_MENU_SUCCESS , playlists }
+}  
+export const fetchPlaylistMenuFailure = () => {
+    return { type : types.FETCH_PLAYLIST_MENU_FAILURE }
+}  
+export const addPlaylistItem = playlist => {
+    return { type : types.ADD_PLAYLIST_ITEM , playlist }
 }  
 
-export const fetchArtistFailure = () => {
-    return { type : types.FETCH_ARTIST_FAILURE }
+
+export const fetchPlaylistSongsRequest = accessToken => {
+    return { type : types.FETCH_PLAYLIST_SONGS_REQUEST , accessToken }
 }  
+export const fetchPlaylistSongsFailure = () => {
+    return { type : types.FETCH_PLAYLIST_SONGS_FAILURE }
+}  
+export const fetchPlaylistSongsSuccess = songs => {
+    return { type : types.FETCH_PLAYLIST_SONGS_SUCCESS , songs }
+}  
+

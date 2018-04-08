@@ -1,8 +1,5 @@
-import { put , call } from 'redux-saga/effects'
+import { put } from 'redux-saga/effects'
 import { fetchAlbumSuccess , fetchAlbumFailure } from '../actions/album'
-import api from '../api'
-
-
 import axios from 'axios'
 
 export function * fetchAlbumSaga(action) {

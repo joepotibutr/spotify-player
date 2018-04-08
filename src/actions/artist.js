@@ -12,3 +12,7 @@ export const fetchArtistSuccess = artists => {
 export const fetchArtistFailure = () => {
     return { type : types.FETCH_ARTIST_FAILURE }
 }  
+
+export const setArtistIds = artistIds => {
+    return { type: types.SET_ARTIST_IDS, artistIds }
+}

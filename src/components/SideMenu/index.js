@@ -2,13 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchAlbumRequest } from '../../actions/album'
 import { fetchArtistRequest } from '../../actions/artist'
-
+import { fetchRecentlyPlayedRequest } from '../../actions/song'
+import { fetchSongsRequest } from '../../actions/song'
 
 const SideMenu = ({
 	token,
 	artistIds,
 	fetchAlbumRequest,
-	fetchArtistRequest
+	fetchArtistRequest,
+	fetchRecentlyPlayedRequest,
+	fetchSongsRequest
 }) => {
 
 	const handleClick = (name)  => {
@@ -24,14 +27,14 @@ const SideMenu = ({
     
     const renderSideMenu = () => {
 		const menu = [
-			// {
-			// 	name: 'Recently Played',
-			// 	// action: fetchRecentlyPlayed
-			// },
-			// {
-			// 	name: 'Songs',
-			// 	// action: fetchSongs
-			// },
+			{
+				name: 'Recently Played',
+				action: fetchRecentlyPlayedRequest
+			},
+			{
+				name: 'Songs',
+				action: fetchSongsRequest
+			},
 			{
 				name: 'Albums',
 				action: fetchAlbumRequest
@@ -47,11 +50,10 @@ const SideMenu = ({
 			return (
 				<li key={ item.name }
 					onClick={() => {
-						item.action(token)
 						item.getArtists ? item.action(token, artistIds) : item.action(token)
 						handleClick(item.name) }
 					}>
-					{ item.name } eiei
+					<h1>{ item.name } </h1>
 				</li>
 			)
 		})
@@ -72,5 +74,7 @@ export default connect(state => ({
 	artistIds : state.artistReducer.artistIds
 }),{
 	fetchAlbumRequest,
-	fetchArtistRequest
+	fetchArtistRequest,
+	fetchSongsRequest,
+	fetchRecentlyPlayedRequest
 })(SideMenu)
