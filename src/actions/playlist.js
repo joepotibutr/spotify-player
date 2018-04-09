@@ -1,7 +1,7 @@
 import * as types from '../actionTypes'
 
 
-export const fetchPlaylistMenuRequest = accessToken => {
+export const fetchPlaylistMenuRequest = (accessToken,userId) => {
     return { type : types.FETCH_PLAYLIST_MENU_REQUEST , accessToken }
 }  
 export const fetchPlaylistMenuSuccess = playlists => {
@@ -15,7 +15,7 @@ export const addPlaylistItem = playlist => {
 }  
 
 
-export const fetchPlaylistSongsRequest = accessToken => {
+export const fetchPlaylistSongsRequest = (accessToken,userId,playlistId) => {
     return { type : types.FETCH_PLAYLIST_SONGS_REQUEST , accessToken }
 }  
 export const fetchPlaylistSongsFailure = () => {

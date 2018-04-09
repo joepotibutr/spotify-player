@@ -2,7 +2,8 @@ import * as types from '../actionTypes'
 
 export const browseReducer = (state = {}, action) => {
     switch (action.type) {
-    case types.FETCH_CATEGORIES_SUCCESS:
+    case types.FETCH_CATEGORIES_REQUEST : return { ...state }
+    case types.FETCH_CATEGORIES_SUCCESS :
       return {
         ...state,
         view: action.categories.items,
@@ -14,21 +15,21 @@ export const browseReducer = (state = {}, action) => {
         ...state,
         fetchCategoriesFailure: true
       }
-  
-    case types.FETCH_NEW_RELEASES_SUCCESS:
+    case types.FETCH_NEW_RELEASES_REQUEST : return { ...state }
+    case types.FETCH_NEW_RELEASES_SUCCESS :
       return {
         ...state,
         view: action.newReleases.items,
         fetchNewReleasesFailure: false
       }
   
-    case types.FETCH_NEW_RELEASES_FAILURE:
+    case types.FETCH_NEW_RELEASES_FAILURE :
       return {
         ...state,
         fetchNewReleasesError: true
       }
-  
-    case types.FETCH_FEATURED_SUCCESS:
+    case types.FETCH_FEATURED_REQUEST : return {...state}
+    case types.FETCH_FEATURED_SUCCESS :
       return {
         ...state,
         view: action.featured.items,

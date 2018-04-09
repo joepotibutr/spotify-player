@@ -3,7 +3,7 @@ import * as types from '../actionTypes'
 export const userReducer = (state = {}, action) => {
 
     switch (action.type) {
-  
+    case types.FETCH_USER_REQUEST : return { ...state }
     case types.FETCH_USER_SUCCESS:
       return {
         ...state,
@@ -16,7 +16,7 @@ export const userReducer = (state = {}, action) => {
         ...state,
         fetchUserFailure: true
       }
-  
+    case types.ADD_SONG_TO_LIBRARY_REQUEST : return { ...state }
     case types.ADD_SONG_TO_LIBRARY_SUCCESS:
       return {
         ...state,

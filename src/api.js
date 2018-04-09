@@ -53,5 +53,32 @@ export default {
             })
             return data.playlists
         }
+    },
+    playlist : {
+        fetchPlaylistMenu : async (accessToken,userId) => {
+            const { data } = await axios.get(`https://api.spotify.com/v1/users/${userId}/playlists`,{
+                headers : { 'Authorization': 'Bearer ' + accessToken }
+            })
+            return data.items
+        },
+        fetchPlaylistSongs : async (accessToken,userId,playlistId) => {
+            const { data } = await axios.get(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,{
+                headers : { 'Authorization': 'Bearer ' + accessToken }
+            })
+            return data.items
+        }
+    },
+    user : {
+        fetchUser : async (accessToken,userId) => {
+            const { data } = await axios.get(`https://api.spotify.com/v1/users/${userId}/playlists`,{
+                headers : { 'Authorization': 'Bearer ' + accessToken }
+            })
+            return data
+        },
+        addSongToLibrary : async (accessToken,id) => {
+            const { data } = await axios.put(`https://api.spotify.com/v1/me/tracks?ids=${id}`,{
+                headers : { 'Authorization': 'Bearer ' + accessToken }
+            })
+        }
     }
 }

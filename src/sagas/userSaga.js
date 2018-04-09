@@ -1,23 +1,35 @@
-import { put } from 'redux-saga/effects'
-import { fetchUserSuccess , fetchUserFailure } from '../actions/user'
-
-
-import axios from 'axios'
+import { put , call } from 'redux-saga/effects'
+import { fetchUserSuccess , fetchUserFailure , addSongToLibrarySuccess , addSongToLibraryFailure } from '../actions/user'
+import api from '../api'
 
 export function * fetchUserSaga(action) {
     try {
-        const res = yield axios.get('https://api.spotify.com/v1/me/Songs',{ 
-            headers : {
-                'Authorization': 'Bearer ' + action.accessToken
-            }}
-        )
-        console.log(res)
-        yield put(fetchUserSuccess(res))
+        const { accessToken , userId } = action
+        const res = yield call(api.user.fetchUser,accessToken,userId)
+        if(res.ok){
+            yield put(fetchUserSuccess(res))   
+        }
     } catch(err) {
         const { response } = err
         if(response.statusText === "Unauthorized") {
             window.location.href = './'
         }
         yield put(fetchUserFailure(err))
+    }
+} 
+
+export function * addSongToLibrarySaga(action) {
+    try {
+        const { accessToken , id } = action
+        const res = yield call(api.user.addSongToLibrary,accessToken,id)
+        if(res.ok){
+            yield put(addSongToLibrarySuccess(res))   
+        }
+    } catch(err) {
+        const { response } = err
+        if(response.statusText === "Unauthorized") {
+            window.location.href = './'
+        }
+        yield put(addSongToLibraryFailure(err))
     }
 } 

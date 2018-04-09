@@ -1,20 +1,39 @@
-import { put } from 'redux-saga/effects'
-import { fetchAlbumSuccess , fetchAlbumFailure } from '../actions/album'
+import { put , call } from 'redux-saga/effects'
+import { 
+    fetchPlaylistMenuSuccess,
+    fetchPlaylistMenuFailure,
+    fetchPlaylistSongsSuccess,
+    fetchPlaylistSongsFailure
+} from '../actions/playlist'
+import api from '../api'
+import uniqBy from 'lodash/uniqBy'
 
-export function * fetchAlbumSaga(action) {
+
+export function * fetchPlaylistMenuSaga(action) {
     try {
-        const res = yield axios.get('https://api.spotify.com/v1/me/albums',{ 
-            headers : {
-                'Authorization': 'Bearer ' + action.accessToken
-            }}
-        )
-        console.log(res)
-        yield put(fetchAlbumSuccess(res))
+        const { accessToken , userId } = action
+        const res = yield call(api.playlist.fetchPlaylistMenu,accessToken,userId)
+        yield put(fetchPlaylistMenuSuccess(res))
     } catch(err) {
         const { response } = err
         if(response.statusText === "Unauthorized") {
             window.location.href = './'
         }
-        yield put(fetchAlbumFailure(err))
+        yield put(fetchPlaylistMenuFailure(err))
+    }
+} 
+
+export function * fetchPlaylistSongsSaga(action) {
+    try {
+        const { accessToken , userId , playlistId } = action
+        const res = yield call(api.playlist.fetchPlaylistSongs,accessToken,userId,playlistId)
+        const removeDuplicated = uniqBy(res,item => item.track.id)
+        yield put(fetchPlaylistSongsSuccess(removeDuplicated))
+    } catch(err) {
+        const { response } = err
+        if(response.statusText === "Unauthorized") {
+            window.location.href = './'
+        }
+        yield put(fetchPlaylistSongsFailure(err))
     }
 } 
