@@ -4,12 +4,11 @@ import api from '../api'
 
 export function * fetchUserSaga(action) {
     try {
-        const { accessToken , userId } = action
-        const res = yield call(api.user.fetchUser,accessToken,userId)
-        if(res.ok){
-            yield put(fetchUserSuccess(res))   
-        }
+        const { accessToken } = action
+        const res = yield call(api.user.fetchUser,accessToken)
+        yield put(fetchUserSuccess(res))   
     } catch(err) {
+
         const { response } = err
         if(response.statusText === "Unauthorized") {
             window.location.href = './'

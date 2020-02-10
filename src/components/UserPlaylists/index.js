@@ -8,9 +8,11 @@ import { connect } from 'react-redux'
 class UserPlaylists extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.userId !== "" && nextProps.token !== "") {
-          this.props.fetchPlaylistsMenu(nextProps.userId, nextProps.token);
+          // this.props.fetchPlaylistsMenu(nextProps.userId, nextProps.token);
         }
       }
+
+    
     renderPlaylists() {
         return this.props.playlistMenu.map(playlist => {
           const getPlaylistSongs = () => {
@@ -24,7 +26,6 @@ class UserPlaylists extends Component {
         })
     }
     render() {
-        console.log(this.props)
         return (
             <div>
                 <h3>Playlists</h3>
@@ -33,11 +34,13 @@ class UserPlaylists extends Component {
     }
 }
 
-export default connect(state => ({
-    userId: state.userReducer.user ? state.userReducer.user.id : '',
-    token: state.tokenReducer.token ? state.tokenReducer.token : '',
-    playlistMenu: state.playlistReducer.playlistMenu ? state.playlistReducer.playlistMenu : ''
-}), dispatch => 
+export default connect(state => {
+    return {
+        userId: state.userReducer.user ? state.userReducer.user.id : '',
+        token: state.tokenReducer.token ? state.tokenReducer.token : '',
+        playlistMenu: state.playlistReducer.playlistMenu ? state.playlistReducer.playlistMenu : ''
+    }
+} , dispatch => 
     bindActionCreators({
         fetchPlaylistsMenu,
        // fetchPlaylistSongs
