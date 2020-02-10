@@ -69,8 +69,8 @@ export default {
         }
     },
     user : {
-        fetchUser : async (accessToken,userId) => {
-            const { data } = await axios.get(`https://api.spotify.com/v1/users/${userId}/playlists`,{
+        fetchUser : async (accessToken) => {
+            const { data } = await axios.get(`https://api.spotify.com/v1/me`,{
                 headers : { 'Authorization': 'Bearer ' + accessToken }
             })
             return data
