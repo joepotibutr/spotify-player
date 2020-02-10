@@ -8,9 +8,7 @@ export function * fetchUserSaga(action) {
         const res = yield call(api.user.fetchUser,accessToken)
         yield put(fetchUserSuccess(res))   
     } catch(err) {
-
-        const { response } = err
-        if(response.statusText === "Unauthorized") {
+        if(err) {
             window.location.href = './'
         }
         yield put(fetchUserFailure(err))
