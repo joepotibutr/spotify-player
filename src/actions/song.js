@@ -24,8 +24,8 @@ export const searchSongsFailure = () => {
 }
 
 
-export const fetchRecentlyPlayedRequest = () => {
-  return { type: types.FETCH_RECENTLY_PLAYED_REQUEST }
+export const fetchRecentlyPlayedRequest = (accessToken) => {
+  return { type: types.FETCH_RECENTLY_PLAYED_REQUEST, accessToken }
 }
 export const fetchRecentlyPlayedSuccess = songs => {
   return { type: types.FETCH_RECENTLY_PLAYED_SUCCESS , songs }
