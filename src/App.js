@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import queryString from 'query-string'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { setToken } from './actions/token'
+import { fetchUserRequest } from './actions/user'
 import SideMenu from './components/SideMenu'
 import UserPlaylists from './components/UserPlaylists'
 import Artwork from './components/Artwork'
@@ -20,7 +22,7 @@ class App extends Component {
 
   componentWillReceiveProps(nextProps){
     if(nextProps.token){
-      console.log('fetch new user')
+      this.props.fetchUserRequest(nextProps.token)
     }
   }
 
@@ -50,6 +52,9 @@ class App extends Component {
 
 export default connect(
   state => ({
-    token : state.token
+    token : state.tokenReducer.token,
 }),
-{setToken})(App)
+dispatch => bindActionCreators({
+  setToken,
+  fetchUserRequest
+},dispatch))(App)
