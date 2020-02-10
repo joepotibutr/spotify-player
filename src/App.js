@@ -8,6 +8,7 @@ import SideMenu from './components/SideMenu'
 import UserPlaylists from './components/UserPlaylists'
 import Artwork from './components/Artwork'
 import Header from './components/Header'
+import MainView from './components/MainView'
 
 class App extends Component {
   componentDidMount() {
@@ -40,6 +41,7 @@ class App extends Component {
             <div>
               {/* <MainHeader />
               <MainView /> */}
+              <MainView />
             </div>
           </div>
           <div>foot</div>
