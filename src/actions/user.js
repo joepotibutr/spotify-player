@@ -1,7 +1,7 @@
 import * as types from '../actionTypes'
 
-export const fetchUserRequest = (accessToken,userId) => {
-    return { type: types.FETCH_USER_REQUEST }
+export const fetchUserRequest = (accessToken) => {
+    return { type: types.FETCH_USER_REQUEST, accessToken }
 }
   
 
@@ -12,7 +12,6 @@ export const fetchUserSuccess = user => {
 export const fetchUserFailure = () => {
     return { type: types.FETCH_USER_FAILURE }
 }
-
 
 
 export const addSongToLibraryRequest = (accessToken,id) => {
