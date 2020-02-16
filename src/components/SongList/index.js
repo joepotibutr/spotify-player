@@ -1,10 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from "redux"
+import { fetchSongsRequest } from '../../actions/song'
 
 
 class SongList extends React.Component {
+    componentWillReceiveProps(nextProps) {
+        if (
+          nextProps.token !== "" &&
+          nextProps.viewType === "Songs"
+        ) {
+          this.props.fetchSongsRequest(nextProps.token);
+        }
+      }
+    
 
     renderSongs = () => {
+        console.log('rendersong fired !!')
         return this.props.songs.map((song, i) => (
                 <li>
                     <div>
@@ -21,7 +33,6 @@ class SongList extends React.Component {
         ))
     }
     render() {
-    console.log('song list',this.props)
         return (
             <div>
                 <h2>song list</h2>
@@ -35,6 +46,6 @@ class SongList extends React.Component {
 
 export default connect(state => ({
     token: (state.tokenReducer && state.tokenReducer.token) || '',
-    songs: (state.songsReducer && state.songsReducer.songs) || '',
-    viewType: state.uiReducer.viewType,
-}),{})(SongList)
+    songs: (state.songReducer && state.songReducer.songs) || '',
+    viewType: state.uiReducer.title,
+}),dispatch => bindActionCreators({ fetchSongsRequest }, dispatch))(SongList)
