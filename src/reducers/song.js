@@ -29,7 +29,7 @@ const defaultState = {
         songs: action.songs,
         fetchSongsFailure: false,
         fetchSongsRequest: false,
-        viewType: 'songs'
+        viewType: 'Songs'
       }
   
     case types.FETCH_SONGS_FAILURE:

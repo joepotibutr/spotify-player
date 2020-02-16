@@ -8,7 +8,10 @@ class SongList extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (
           nextProps.token !== "" &&
+          !nextProps.fetchSongsError &&
+          nextProps.fetchSongsPending &&
           nextProps.viewType === "Songs"
+          
         ) {
           this.props.fetchSongsRequest(nextProps.token);
         }
@@ -16,9 +19,8 @@ class SongList extends React.Component {
     
 
     renderSongs = () => {
-        console.log('rendersong fired !!')
         return this.props.songs.map((song, i) => (
-                <li>
+                <li key={i}>
                     <div>
                         <p>{song.track.name}</p>
                     </div>
@@ -47,5 +49,7 @@ class SongList extends React.Component {
 export default connect(state => ({
     token: (state.tokenReducer && state.tokenReducer.token) || '',
     songs: (state.songReducer && state.songReducer.songs) || '',
+    fetchSongsError: state.songReducer.fetchSongsFailure,
+    fetchSongsPending: state.songReducer.fetchSongsRequest,
     viewType: state.uiReducer.title,
 }),dispatch => bindActionCreators({ fetchSongsRequest }, dispatch))(SongList)
