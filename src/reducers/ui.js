@@ -1,7 +1,8 @@
 import * as types from '../actionTypes'
+import { viewType } from '../constants'
 
 const defaultState = {
-    title: 'Songs'
+    title: viewType.RECENTLY_PLAYED
   }
   
   export const uiReducer = (state = defaultState, action) => {
