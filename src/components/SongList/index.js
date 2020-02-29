@@ -20,7 +20,9 @@ class SongList extends React.Component {
     
 
     renderSongs = () => {
-        return this.props.songs.map((song, i) => (
+        return this.props.songs.map((song, i) => {
+            const playedAt = new Date(song.played_at)
+            return (
                 <li key={i}>
                     <div>
                         <p>{song.track.name}</p>
@@ -32,8 +34,10 @@ class SongList extends React.Component {
                     <div>
                         <p>{song.track.album.name}</p>
                     </div>
+                    <div><p>{playedAt.getFullYear()} - {playedAt.getMonth() + 1} - {playedAt.getDate()}</p></div>
                 </li>
-        ))
+        )
+        })
     }
     render() {
         return (
