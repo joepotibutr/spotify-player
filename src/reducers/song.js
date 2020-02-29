@@ -1,11 +1,12 @@
 import * as types from '../actionTypes'
+import { viewType } from '../constants'
 
 const defaultState = {
     fetchSongsRequest: true,
     songPlaying: false,
     timeElapsed: 0,
     songId: 0,
-    viewType:'songs',
+    viewType: viewType.RECENTLY_PLAYED,
     songPaused: true
   }
   
@@ -29,7 +30,7 @@ const defaultState = {
         songs: action.songs,
         fetchSongsFailure: false,
         fetchSongsRequest: false,
-        viewType: 'Songs'
+        viewType: viewType.SONGS
       }
   
     case types.FETCH_SONGS_FAILURE:
@@ -51,7 +52,7 @@ const defaultState = {
         songs: action.songs,
         searchSongsFailure: false,
         searchSongsRequest: false,
-        viewType: 'search'
+        viewType: viewType.SEARCH
       }
   
     case types.SEARCH_SONGS_FAILURE:
@@ -71,7 +72,7 @@ const defaultState = {
       return {
         ...state,
         songs: action.songs,
-        viewType: 'Recently Played',
+        viewType: viewType.RECENTLY_PLAYED,
         fetchSongsFailure: false,
         fetchSongsRequest: false
       }
@@ -93,7 +94,7 @@ const defaultState = {
       return {
         ...state,
         songs: action.songs,
-        viewType: 'playlist',
+        viewType: viewType.PLAYLIST,
         fetchPlaylistSongsFailure: false,
         fetchPlaylistSongsRequest: false
       }
@@ -115,7 +116,7 @@ const defaultState = {
       return {
         ...state,
         songs: action.songs,
-        viewType: 'Artist',
+        viewType: viewType.ARTIST,
         fetchArtistSongsFailure: false,
         fetchArtistSongsRequest: false
       }

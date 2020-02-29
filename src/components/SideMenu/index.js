@@ -6,6 +6,7 @@ import { fetchRecentlyPlayedRequest } from '../../actions/song'
 import { fetchSongsRequest } from '../../actions/song'
 import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from 'redux'
+import { viewType } from '../../constants'
 
 const SideMenu = ({
 	token,
@@ -31,19 +32,19 @@ const SideMenu = ({
     const renderSideMenu = () => {
 		const menu = [
 			{
-				name: 'Recently Played',
+				name: viewType.RECENTLY_PLAYED,
 				action: fetchRecentlyPlayedRequest
 			},
 			{
-				name: 'Songs',
+				name:viewType.SONGS,
 				action: fetchSongsRequest
 			},
 			{
-				name: 'Albums',
+				name: viewType.ALBUMS,
 				action: fetchAlbumRequest
 			},
 			{
-				name: 'Artists',
+				name: viewType.ARTISTS,
 				action: fetchArtistRequest,
 				getArtists: true
 			}

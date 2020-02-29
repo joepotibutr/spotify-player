@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from "redux"
-import { fetchSongsRequest } from '../../actions/song'
+import { fetchRecentlyPlayedRequest } from '../../actions/song'
+import { viewType } from '../../constants'
 
 
 class SongList extends React.Component {
@@ -10,10 +11,10 @@ class SongList extends React.Component {
           nextProps.token !== "" &&
           !nextProps.fetchSongsError &&
           nextProps.fetchSongsPending &&
-          nextProps.viewType === "Songs"
+          nextProps.viewType === viewType.RECENTLY_PLAYED
           
         ) {
-          this.props.fetchSongsRequest(nextProps.token);
+          this.props.fetchRecentlyPlayedRequest(nextProps.token);
         }
       }
     
@@ -38,7 +39,7 @@ class SongList extends React.Component {
         return (
             <div>
                 <h2>song list</h2>
-                {this.props.songs && this.renderSongs()}
+                <ul>{this.props.songs && this.renderSongs()}</ul>
             </div>
         )
     }
@@ -50,6 +51,6 @@ export default connect(state => ({
     token: (state.tokenReducer && state.tokenReducer.token) || '',
     songs: (state.songReducer && state.songReducer.songs) || '',
     fetchSongsError: state.songReducer.fetchSongsFailure,
-    fetchSongsPending: state.songReducer.fetchSongsRequest,
+    fetchSongsPending: state.songReducer.fetchRecentlyPlayedRequest,
     viewType: state.uiReducer.title,
-}),dispatch => bindActionCreators({ fetchSongsRequest }, dispatch))(SongList)
+}),dispatch => bindActionCreators({ fetchRecentlyPlayedRequest }, dispatch))(SongList)
