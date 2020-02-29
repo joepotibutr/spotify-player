@@ -30,7 +30,10 @@ class App extends Component {
   render(){
     return (
       <div>
-        <div>
+        <div style={{
+            display: 'flex',
+            
+          }}>
           <div>
             <SideMenu />
             <UserPlaylists />
@@ -39,8 +42,6 @@ class App extends Component {
           <div>
             <Header />
             <div>
-              {/* <MainHeader />
-              <MainView /> */}
               <MainView />
             </div>
           </div>
