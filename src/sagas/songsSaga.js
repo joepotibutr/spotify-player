@@ -18,8 +18,6 @@ export function * fetchSongsSaga(action) {
             item.track.artists[0].name).map(item => 
                 item.track.artists[0].id).join(',')
         
-        yield console.log(uniqBy(res,(item) => 
-        item.track.artists[0].name))
 
         yield put(setArtistIds(artistIds))
         yield put(fetchSongsSuccess(res))
@@ -54,6 +52,13 @@ export function * fetchRecentlyPlayedSaga(action) {
             window.location.href = './';
         }
         const recentlyPlayedSongs = uniqBy(res,item => item.track.id)
+
+        const artistIds = uniqBy(res, (item) => 
+        item.track.artists[0].name).map(item => 
+            item.track.artists[0].id).join(',')
+    
+
+    yield put(setArtistIds(artistIds))
         yield put(fetchRecentlyPlayedSuccess(recentlyPlayedSongs))
     } catch(err) {
         yield put(fetchRecentlyPlayedFailure(err))
