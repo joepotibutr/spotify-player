@@ -1,7 +1,7 @@
 import * as types from '../actionTypes'
 
 export const fetchArtistRequest = (accessToken,artistIds) => {
-    return { type : types.FETCH_ARTIST_REQUEST , accessToken }
+    return { type : types.FETCH_ARTIST_REQUEST , accessToken, artistIds }
 }
 
 export const fetchArtistSuccess = artists => {
