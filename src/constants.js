@@ -1,8 +1,8 @@
 export const viewType = {
-    ALBUMS: 'ALBUMS',
-    SONGS: 'SONGS',
-    RECENTLY_PLAYED: 'RECENTLY_PLAYED',
-    SEARCH: 'SEARCH',
-    PLAYLISTS: 'PLAYLISTS',
-    ARTISTS: 'ARTISTS'
+    ALBUMS: 'Albums',
+    SONGS: 'Songs',
+    RECENTLY_PLAYED: 'Recently Played',
+    SEARCH: 'Search',
+    PLAYLISTS: 'Playlists',
+    ARTISTS: 'Artists'
 }

@@ -6,11 +6,11 @@ import { viewType } from '../../constants'
 
 
 class SongList extends React.Component {
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {)
         if (
           nextProps.token !== "" &&
           !nextProps.fetchSongsError &&
-          nextProps.fetchSongsPending &&
+          nextProps.fetchSongsRequest &&
           nextProps.viewType === viewType.RECENTLY_PLAYED
           
         ) {
@@ -51,6 +51,6 @@ export default connect(state => ({
     token: (state.tokenReducer && state.tokenReducer.token) || '',
     songs: (state.songReducer && state.songReducer.songs) || '',
     fetchSongsError: state.songReducer.fetchSongsFailure,
-    fetchSongsPending: state.songReducer.fetchRecentlyPlayedRequest,
+    fetchSongsRequest: state.songReducer.fetchSongsRequest,
     viewType: state.uiReducer.title,
 }),dispatch => bindActionCreators({ fetchRecentlyPlayedRequest }, dispatch))(SongList)
