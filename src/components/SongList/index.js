@@ -6,7 +6,7 @@ import { viewType } from '../../constants'
 
 
 class SongList extends React.Component {
-    componentWillReceiveProps(nextProps) {)
+    componentWillReceiveProps(nextProps) {
         if (
           nextProps.token !== "" &&
           !nextProps.fetchSongsError &&
