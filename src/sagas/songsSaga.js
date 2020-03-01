@@ -9,7 +9,7 @@ import {
  } from '../actions/song'
 import uniqBy from 'lodash/uniqBy' 
 import api from '../api'
-import { setArtistIds } from '../actions/artist';
+import { setArtistIds, setRecentlyPlayedArtists } from '../actions/artist';
 
 export function * fetchSongsSaga(action) {
     try {
@@ -18,7 +18,7 @@ export function * fetchSongsSaga(action) {
             item.track.artists[0].name).map(item => 
                 item.track.artists[0].id).join(',')
         
-
+                
         yield put(setArtistIds(artistIds))
         yield put(fetchSongsSuccess(res))
     } catch(err) {
@@ -56,9 +56,8 @@ export function * fetchRecentlyPlayedSaga(action) {
         const artistIds = uniqBy(res, (item) => 
         item.track.artists[0].name).map(item => 
             item.track.artists[0].id).join(',')
-    
-
-    yield put(setArtistIds(artistIds))
+            
+        yield put(setRecentlyPlayedArtists(artistIds))
         yield put(fetchRecentlyPlayedSuccess(recentlyPlayedSongs))
     } catch(err) {
         yield put(fetchRecentlyPlayedFailure(err))

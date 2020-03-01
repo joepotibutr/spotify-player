@@ -1,7 +1,8 @@
 import * as types from '../actionTypes'
 
 const defaultState = {
-    artistIds: ''
+    artistIds: '',
+    recentlyPlayedArtistIds: ''
   }
   
   export const artistsReducer = (state = defaultState, action) => {
@@ -12,6 +13,12 @@ const defaultState = {
       return {
         ...state,
         artistIds: action.artistIds
+      }
+    
+      case types.SET_RECENTLY_PLAYED_ARTISTS:
+      return {
+        ...state,
+        recentlyPlayedArtistIds: action.artistIds
       }
   
     case types.FETCH_ARTIST_REQUEST:
