@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 
 class UserPlaylists extends Component {
     componentWillReceiveProps(nextProps) {
-        if (nextProps.userId !== "" && nextProps.token !== "") {
+        if (nextProps.userId !== "" && nextProps.token !== "" && !nextProps.playlistMenu.length) {
           this.props.fetchPlaylistMenuRequest(nextProps.token, nextProps.userId);
         }
       }
