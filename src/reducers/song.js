@@ -3,6 +3,7 @@ import { viewType } from '../constants'
 
 const defaultState = {
     fetchSongsRequest: true,
+    fetchRecentlySongsRequest: true,
     songPlaying: false,
     timeElapsed: 0,
     songId: 0,
@@ -71,17 +72,17 @@ const defaultState = {
     case types.FETCH_RECENTLY_PLAYED_SUCCESS:
       return {
         ...state,
-        songs: action.songs,
+        recentlySongs: action.songs,
         viewType: viewType.RECENTLY_PLAYED,
-        fetchSongsFailure: false,
-        fetchSongsRequest: false
+        fetchRecentlySongs: false,
+        fetchRecentlySongsRequest: false
       }
   
     case types.FETCH_RECENTLY_PLAYED_FAILURE:
       return {
         ...state,
-        fetchSongsFailure: true,
-        fetchSongsRequest: false
+        fetchRecentlySongsFailure: true,
+        fetchRecentlySongsRequest: false
       }
   
     case types.FETCH_PLAYLIST_SONGS_REQUEST:
