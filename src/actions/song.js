@@ -1,7 +1,7 @@
 import * as types from '../actionTypes'
 
 
-export const fetchSongsRequest = accessToken => {
+export const fetchSongs = accessToken => {
   return { type: types.FETCH_SONGS_REQUEST , accessToken }
 }
 export const fetchSongsSuccess = songs => {
@@ -13,7 +13,7 @@ export const fetchSongsFailure = () => {
 
 
 
-export const searchSongsRequest = (accessToken,searchTerm) => {
+export const searchSongs = (accessToken,searchTerm) => {
     return { type: types.SEARCH_SONGS_REQUEST }
 }
 export const searchSongsSuccess = songs => {
@@ -23,8 +23,7 @@ export const searchSongsFailure = () => {
     return { type: types.SEARCH_SONGS_FAILURE }
 }
 
-
-export const fetchRecentlyPlayedRequest = (accessToken) => {
+export const fetchRecentlyPlayedSongs = (accessToken) => {
   return { type: types.FETCH_RECENTLY_PLAYED_REQUEST, accessToken }
 }
 export const fetchRecentlyPlayedSuccess = songs => {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchAlbumRequest } from '../../actions/album'
-import { fetchArtistRequest } from '../../actions/artist'
-import { fetchRecentlyPlayedRequest } from '../../actions/song'
-import { fetchSongsRequest } from '../../actions/song'
+import { fetchAlbum } from '../../actions/album'
+import { fetchArtist } from '../../actions/artist'
+import { fetchRecentlyPlayedSongs } from '../../actions/song'
+import { fetchSongs } from '../../actions/song'
 import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from 'redux'
 import { viewType } from '../../constants'
@@ -11,10 +11,10 @@ import { viewType } from '../../constants'
 const SideMenu = ({
 	token,
 	artistIds,
-	fetchAlbumRequest,
-	fetchArtistRequest,
-	fetchRecentlyPlayedRequest,
-	fetchSongsRequest,
+	fetchAlbum,
+	fetchArtist,
+	fetchRecentlyPlayedSongs,
+	fetchSongs,
 	updateHeaderTitle
 }) => {
 
@@ -33,19 +33,19 @@ const SideMenu = ({
 		const menu = [
 			{
 				name: viewType.RECENTLY_PLAYED,
-				action: fetchRecentlyPlayedRequest
+				action: fetchRecentlyPlayedSongs
 			},
 			{
 				name:viewType.SONGS,
-				action: fetchSongsRequest
+				action: fetchSongs
 			},
 			{
 				name: viewType.ALBUMS,
-				action: fetchAlbumRequest
+				action: fetchAlbum
 			},
 			{
 				name: viewType.ARTISTS,
-				action: fetchArtistRequest,
+				action: fetchArtist,
 				getArtists: true
 			}
 		]
@@ -79,8 +79,8 @@ export default connect(state => ({
 	title: state.uiReducer.title
 }), dispatch => bindActionCreators({
 	updateHeaderTitle,
-	fetchAlbumRequest,
-	fetchArtistRequest,
-	fetchSongsRequest,
-	fetchRecentlyPlayedRequest
+	fetchAlbum,
+	fetchArtist,
+	fetchSongs,
+	fetchRecentlyPlayedSongs
 }, dispatch))(SideMenu)
