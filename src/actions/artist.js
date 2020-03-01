@@ -15,3 +15,7 @@ export const fetchArtistFailure = () => {
 export const setArtistIds = artistIds => {
     return { type: types.SET_ARTIST_IDS, artistIds }
 }
+
+export const setRecentlyPlayedArtists = artistIds => {
+    return { type: types.SET_RECENTLY_PLAYED_ARTISTS, artistIds }
+}
