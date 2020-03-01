@@ -39,8 +39,31 @@ const defaultState = {
       return {
         ...state,
         fetchArtistsFailure: true,
-        fetchArtistsPending: false
+        fetchArtistsRequest: false
       }
+
+
+
+      case types.FETCH_RECENTLY_ARTIST_REQUEST:
+        return {
+          ...state,
+          fetchArtistsRequest: true
+        }
+    
+      case types.FETCH_RECENTLY_ARTIST_SUCCESS:
+        return {
+          ...state,
+          artistList: action.artists,
+          fetchRecentlyArtistsFailure: false,
+          fetchRecentlyArtistsRequest: false
+        }
+    
+      case types.FETCH_RECENTLY_ARTIST_FAILURE:
+        return {
+          ...state,
+          fetchRecentlyArtistsFailure: true,
+          fetchRecentlyArtistsRequest: false
+        }
   
     default:
       return state
