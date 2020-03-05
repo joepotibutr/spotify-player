@@ -40,7 +40,9 @@ const defaultState = {
         fetchSongsFailure: true,
         fetchSongsRequest: false
       }
-  
+
+ // search
+
     case types.SEARCH_SONGS_REQUEST:
       return {
         ...state,
@@ -62,11 +64,14 @@ const defaultState = {
         searchSongsFailure: true,
         searchSongsRequest: false
       }
+
+      // recently played songs
   
     case types.FETCH_RECENTLY_PLAYED_REQUEST:
       return {
         ...state,
-        fetchSongsRequest: true
+        fetchRecentlySongsRequest: true,
+
       }
   
     case types.FETCH_RECENTLY_PLAYED_SUCCESS:
@@ -74,7 +79,7 @@ const defaultState = {
         ...state,
         recentlySongs: action.songs,
         viewType: viewType.RECENTLY_PLAYED,
-        fetchRecentlySongs: false,
+        fetchRecentlySongsFailure: false,
         fetchRecentlySongsRequest: false
       }
   
