@@ -13,7 +13,6 @@ class ArtistList extends React.Component {
             nextProps.viewType === viewType.RECENTLY_PLAYED
         ) {
             if (
-                !nextProps.fetchSongsError &&
                 nextProps.fetchSongs &&
                 !nextProps.songs.length
               ) {
@@ -21,20 +20,23 @@ class ArtistList extends React.Component {
               }
       
               if (
-                  !nextProps.fetchRecentlySongsError &&
-                  nextProps.fetchRecentlySongs &&
+                  nextProps.fetchRecentlyPlayedSongs &&
                   !nextProps.recentlySongs.length
                 ) {
                     await this.props.fetchRecentlyPlayedSongs(nextProps.token)
                 }
-
                 if(
                     nextProps.recentlySongs.length && 
-                    nextProps.songs.length 
+                    nextProps.songs.length &&
+                    !nextProps.fetchRecentlySongsFailure &&
+                    !nextProps.fetchSongsFailure &&
+                    !nextProps.fetchRecentlySongsRequest &&
+                    !nextProps.fetchSongsRequest &&
+                    nextProps.fetchArtistsRequest &&
+                    nextProps.fetchRecentlyArtistsRequest
                 ) {
-                    console.log(nextProps)
-                    // await this.props.fetchRecentlyArtistt(nextProps.token,nextProps.recentlyPlayedArtistIds)
-                    // await this.props.fetchArtistt(nextProps.token,nextProps.artistIds)
+                    await this.props.fetchRecentlyArtist(nextProps.token,nextProps.recentlyPlayedArtistIds)
+                    await this.props.fetchArtist(nextProps.token,nextProps.artistIds)
                 }
         }
       }
@@ -89,6 +91,9 @@ class ArtistList extends React.Component {
 export default connect(state => ({
     token: (state.tokenReducer && state.tokenReducer.token) || '',
 
+    fetchRecentlyArtistsRequest: state.artistReducer.fetchRecentlyArtistsRequest,
+    fetchArtistsRequest: state.artistReducer.fetchArtistsRequest,
+
     artistIds: (state.artistReducer && state.artistReducer.artistIds) || '',
     recentlyPlayedArtistIds: (state.artistReducer && state.artistReducer.recentlyPlayedArtistIds) || '',
 
@@ -97,10 +102,10 @@ export default connect(state => ({
     recentlySongs: (state.songReducer && state.songReducer.recentlySongs) || '',
     songs: (state.songReducer && state.songReducer.songs) || '',
 
-    fetchSongsError: state.songReducer.fetchSongsFailure,
+    fetchSongsFailure: state.songReducer.fetchSongsFailure,
     fetchSongsRequest: state.songReducer.fetchSongsRequest,
     
-    fetchRecentlySongsError: state.songReducer.fetchRecentlySongsFailure,
+    fetchRecentlySongsFailure: state.songReducer.fetchRecentlySongsFailure,
     fetchRecentlySongsRequest: state.songReducer.fetchRecentlySongsRequest,
     viewType: state.uiReducer.title,
 }),dispatch => bindActionCreators({ fetchRecentlyPlayedSongs, fetchArtist, fetchSongs, fetchRecentlyArtist }, dispatch))(ArtistList)
