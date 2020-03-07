@@ -8,6 +8,8 @@ import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from 'redux'
 import { viewType } from '../../constants'
 
+const logo = require('../../images/spotify_logo.png')
+
 const SideMenu = ({
 	token,
 	artistIds,
@@ -57,19 +59,22 @@ const SideMenu = ({
 						item.getArtists ? item.action(token, artistIds) : item.action(token)
 						handleClick(item.name) }
 					}>
-					<h1>{ item.name } </h1>
+					<span>{ item.name } </span>
 				</li>
 			)
 		})
 	}
 
     return (
-        <ul style={{ background: 'ivory'}}>
-            <li>Browse</li>
-            <li>Radio</li>
-            <h3>Your Library</h3>  
-            {renderSideMenu()}          
-        </ul>
+		<div style={{ background: 'black', padding: '24px' }}>
+			<div><img style={{ filter:'invert(1)', width: '132px', height: '40px' }} src={logo}/></div>
+			 <ul style={{ color: 'white'}}>
+				<li>Home</li>
+				<li>Search</li>
+				<h3>Collection</h3>  
+				{/* {renderSideMenu()}           */}
+        	</ul>
+		</div>
     )
 }
 
