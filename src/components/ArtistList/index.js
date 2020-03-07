@@ -35,7 +35,7 @@ class ArtistList extends React.Component {
                     nextProps.fetchArtistsRequest &&
                     nextProps.fetchRecentlyArtistsRequest
                 ) {
-                    await this.props.fetchRecentlyArtist(nextProps.token,nextProps.recentlyPlayedArtistIds)
+                    // await this.props.fetchRecentlyArtist(nextProps.token,nextProps.recentlyPlayedArtistIds)
                     await this.props.fetchArtist(nextProps.token,nextProps.artistIds)
                 }
         }
@@ -76,11 +76,11 @@ class ArtistList extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ background: 'hotpink'}}>
                 <h2>Recently Played</h2>
                 {/* <ul>{this.props.songs && this.renderSongs()}</ul> */}
                 <h2>Recommend Artist</h2>
-                {/* <ul>{this.props.songs && this.renderSongs2()}</ul> */}
+                <ul>{this.props.songs && this.renderSongs2()}</ul>
             </div>
         )
     }

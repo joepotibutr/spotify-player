@@ -15,7 +15,6 @@ class UserPlaylists extends Component {
     
     renderPlaylists() {
         return this.props.playlistMenu.map(playlist => {
-          console.log(playlist)
           const getPlaylistSongs = () => {
             this.props.fetchPlaylistSongs(
               playlist.owner.id,
@@ -29,7 +28,7 @@ class UserPlaylists extends Component {
     render() {
       const { playlistMenu } = this.props
         return (
-            <div>
+            <div style={{ background: 'lightblue'}}>
                 <h3>Playlists</h3>
                 {playlistMenu.length && <ul>{playlistMenu.map(playlist => (
                   <li key={playlist.uri}>{playlist.name}</li>

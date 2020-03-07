@@ -64,7 +64,7 @@ const SideMenu = ({
 	}
 
     return (
-        <ul>
+        <ul style={{ background: 'ivory'}}>
             <li>Browse</li>
             <li>Radio</li>
             <h3>Your Library</h3>  
