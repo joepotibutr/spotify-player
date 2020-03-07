@@ -5,6 +5,14 @@ import { fetchRecentlyPlayedSongs, fetchSongs } from '../../actions/song'
 import { fetchArtist, fetchRecentlyArtist } from '../../actions/artist'
 import { viewType } from '../../constants'
 
+import styled from 'styled-components'
+
+const TrackItem = styled.li`
+    img {
+        border-radius:50%;
+    }
+`
+
 
 class ArtistList extends React.Component {
     async componentWillReceiveProps(nextProps) {
@@ -43,9 +51,8 @@ class ArtistList extends React.Component {
     
 
     renderSongs = () => {
-        return this.props.artistList && this.props.artistList.artists.map((artist, i) => {
-            return (
-                <li key={i}>
+        return this.props.artistList && this.props.artistList.artists.map((artist, i) => i < 5 ? 
+                <TrackItem key={i}>
                     <div><img  src={artist.images[2].url}/></div>
                     <div>
                         <h3>{artist.name}</h3>
@@ -53,9 +60,8 @@ class ArtistList extends React.Component {
                     <div>
                         <p>{artist.type}</p>
                     </div>
-                </li>
-        )
-        })
+                </TrackItem>
+         : null)
     }
 
     renderSongs2 = () => {
@@ -76,11 +82,14 @@ class ArtistList extends React.Component {
 
     render() {
         return (
-            <div style={{ background: 'black'}}>
+            <div>
                 <h2>Recently Played</h2>
-                {/* <ul>{this.props.songs && this.renderSongs()}</ul> */}
+                <ul style={{
+                    display: 'grid',
+                    gridGap: '16px',
+                    gridTemplateColumns: 'repeat(auto-fill,minmax(164px,1fr))'
+                }}>{this.props.songs && this.renderSongs()}</ul>
                 <h2>Recommend Artist</h2>
-                <ul>{this.props.songs && this.renderSongs2()}</ul>
             </div>
         )
     }
