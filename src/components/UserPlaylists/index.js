@@ -28,7 +28,7 @@ class UserPlaylists extends Component {
     render() {
       const { playlistMenu } = this.props
         return (
-            <div style={{ background: 'lightblue'}}>
+            <div style={{ background: 'black'}}>
                 <label>PLAYLISTS</label>
                 <ul>
                   <li>Create Playlist</li>

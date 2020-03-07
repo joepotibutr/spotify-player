@@ -76,7 +76,7 @@ class ArtistList extends React.Component {
 
     render() {
         return (
-            <div style={{ background: 'hotpink'}}>
+            <div style={{ background: 'black'}}>
                 <h2>Recently Played</h2>
                 {/* <ul>{this.props.songs && this.renderSongs()}</ul> */}
                 <h2>Recommend Artist</h2>
