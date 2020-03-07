@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export default createGlobalStyle`
 ul {
     list-style-type: none;
+    padding: 0;
 }
 body {
     font-size: 14px;
