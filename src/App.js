@@ -32,17 +32,17 @@ class App extends Component {
     return (
       <React.Fragment>
         <GlobalStyled />
-         <div>
+         <div  style={{ background: 'black'}}>
           <div style={{
             display: 'flex',
             
             }}>
-            <div style={{ padding: '24px', background: 'black'}}>
+            <div style={{ padding: '24px'}}>
               <SideMenu />
               <UserPlaylists />
               <Artwork />
             </div>
-            <div>
+            <div style={{ width: '100%',  }}>
               <Header />
               <div>
                 <MainView />
