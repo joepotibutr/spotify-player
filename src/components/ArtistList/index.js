@@ -8,8 +8,14 @@ import { viewType } from '../../constants'
 import styled from 'styled-components'
 
 const TrackItem = styled.li`
+    background: #282828;
+    border-radius: 8px;
+    padding: 20px 20px 16px;
     img {
+        width: 147px;
+        height: 147px;
         border-radius:50%;
+        box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2)
     }
 `
 
@@ -53,12 +59,24 @@ class ArtistList extends React.Component {
     renderSongs = () => {
         return this.props.artistList && this.props.artistList.artists.map((artist, i) => i < 5 ? 
                 <TrackItem key={i}>
-                    <div><img  src={artist.images[2].url}/></div>
-                    <div>
-                        <h3>{artist.name}</h3>
+                    <div style={{
+                        marginBottom: '16px'
+                    }}>
+                        <img  src={artist.images[2].url}/>
                     </div>
                     <div>
-                        <p>{artist.type}</p>
+                        <div>
+                            <h4 style={{
+                                fontSize: '14px',
+                                lineHeight: '20px',
+                                fontWeight: 700,
+                                letterSpacing: '.24px',
+                                color: '#fff'
+                            }}>{artist.name}</h4>
+                        </div>
+                        <div>
+                            <p>{artist.type}</p>
+                        </div>
                     </div>
                 </TrackItem>
          : null)

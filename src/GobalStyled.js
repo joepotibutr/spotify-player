@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
+ul {
+    list-style-type: none;
+}
 body {
     font-size: 14px;
     line-height: 20px;
