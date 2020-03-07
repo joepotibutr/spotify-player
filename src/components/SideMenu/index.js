@@ -66,12 +66,12 @@ const SideMenu = ({
 	}
 
     return (
-		<div style={{ background: 'black', padding: '24px' }}>
+		<div style={{ background: 'black' }}>
 			<div><img style={{ filter:'invert(1)', width: '132px', height: '40px' }} src={logo}/></div>
 			 <ul style={{ color: 'white'}}>
 				<li>Home</li>
 				<li>Search</li>
-				<h3>Collection</h3>  
+				<li>Your Library</li>  
 				{/* {renderSideMenu()}           */}
         	</ul>
 		</div>

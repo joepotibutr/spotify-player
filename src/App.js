@@ -34,7 +34,7 @@ class App extends Component {
             display: 'flex',
             
           }}>
-          <div>
+          <div style={{ padding: '24px', background: 'black'}}>
             <SideMenu />
             <UserPlaylists />
             <Artwork />

@@ -29,7 +29,12 @@ class UserPlaylists extends Component {
       const { playlistMenu } = this.props
         return (
             <div style={{ background: 'lightblue'}}>
-                <h3>Playlists</h3>
+                <label>PLAYLISTS</label>
+                <ul>
+                  <li>Create Playlist</li>
+                  <li>Liked Songs</li>
+                </ul>
+                <hr />
                 {playlistMenu.length && <ul>{playlistMenu.map(playlist => (
                   <li key={playlist.uri}>{playlist.name}</li>
                 ))}</ul>}
