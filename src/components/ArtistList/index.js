@@ -12,8 +12,8 @@ const TrackItem = styled.li`
     border-radius: 8px;
     padding: 20px 20px 16px;
     img {
-        width: 147px;
-        height: 147px;
+        width: 100%;
+        height: auto;
         border-radius:50%;
         box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2)
     }

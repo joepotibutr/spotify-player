@@ -4,7 +4,9 @@ import ArtistList from "../ArtistList";
 
 const MainView = ({ headerTitle }) => {
   return (
+    <div style={{ padding: '0 32px' }}>
         <ArtistList />
+    </div>
   )
 }
 

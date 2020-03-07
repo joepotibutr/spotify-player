@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <GlobalStyled />
-         <div  style={{ background: 'rgba(0,0,0,.8)'}}>
+         <div  style={{ background: '#121212'}}>
           <div style={{
             minHeight: '100%',
             width: '100%',
@@ -45,11 +45,13 @@ class App extends Component {
             `"nav-bar         main-view"
             "now-playing-bar now-playing-bar"`
             }}>
-            <div style={{ gridArea: 'nav-bar', padding: '24px', width: '230px'}}>
-              <SideMenu />
-              <UserPlaylists />
-              <Artwork />
-            </div>
+            <section style={{ gridArea: 'nav-bar', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
+              <div style={{padding: '24px'}}>
+                <SideMenu />
+                <UserPlaylists />
+                <Artwork />
+              </div>
+            </section>
             <div style={{ width: '100%',gridArea: 'main-view', }}>
                 <MainView />
             </div>
