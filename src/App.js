@@ -32,21 +32,26 @@ class App extends Component {
     return (
       <React.Fragment>
         <GlobalStyled />
-         <div  style={{ background: 'black'}}>
+         <div  style={{ background: 'rgba(0,0,0,.8)'}}>
           <div style={{
-            display: 'flex',
-            
+            minHeight: '100%',
+            width: '100%',
+            height: '100%',
+            position: 'relative',
+            display: 'grid',
+            gridTemplateRows: '1fr auto',
+            gridTemplateColumns: 'auto 1fr',
+            gridTemplateAreas:
+            `"nav-bar         main-view"
+            "now-playing-bar now-playing-bar"`
             }}>
-            <div style={{ padding: '24px'}}>
+            <div style={{ gridArea: 'nav-bar', padding: '24px', width: '230px'}}>
               <SideMenu />
               <UserPlaylists />
               <Artwork />
             </div>
-            <div style={{ width: '100%',  }}>
-              <Header />
-              <div>
+            <div style={{ width: '100%',gridArea: 'main-view', }}>
                 <MainView />
-              </div>
             </div>
             <div>foot</div>
           </div>
