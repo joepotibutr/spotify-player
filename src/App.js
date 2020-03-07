@@ -9,6 +9,7 @@ import UserPlaylists from './components/UserPlaylists'
 import Artwork from './components/Artwork'
 import Header from './components/Header'
 import MainView from './components/MainView'
+import GlobalStyled from './GobalStyled'
 
 class App extends Component {
   componentDidMount() {
@@ -29,25 +30,28 @@ class App extends Component {
 
   render(){
     return (
-      <div>
-        <div style={{
+      <React.Fragment>
+        <GlobalStyled />
+         <div>
+          <div style={{
             display: 'flex',
             
-          }}>
-          <div style={{ padding: '24px', background: 'black'}}>
-            <SideMenu />
-            <UserPlaylists />
-            <Artwork />
-          </div>
-          <div>
-            <Header />
-            <div>
-              <MainView />
+            }}>
+            <div style={{ padding: '24px', background: 'black'}}>
+              <SideMenu />
+              <UserPlaylists />
+              <Artwork />
             </div>
+            <div>
+              <Header />
+              <div>
+                <MainView />
+              </div>
+            </div>
+            <div>foot</div>
           </div>
-          <div>foot</div>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }
