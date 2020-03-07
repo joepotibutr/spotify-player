@@ -75,7 +75,7 @@ class ArtistList extends React.Component {
                             }}>{artist.name}</h4>
                         </div>
                         <div>
-                            <p>{artist.type}</p>
+                            <span>{artist.type.charAt(0).toUpperCase() + artist.type.slice(1)}</span>
                         </div>
                     </div>
                 </TrackItem>
@@ -101,7 +101,7 @@ class ArtistList extends React.Component {
     render() {
         return (
             <div>
-                <h2>Recently Played</h2>
+                <h1 style={{ color: '#fff'}}>Recently played</h1>
                 <ul style={{
                     display: 'grid',
                     gridGap: '16px',
