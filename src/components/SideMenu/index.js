@@ -8,7 +8,7 @@ import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from 'redux'
 import { viewType } from '../../constants'
 
-const logo = require('../../images/spotify_logo.png')
+const logo = require('../../images/Spotify_Logo_RGB_White.png')
 
 const SideMenu = ({
 	token,
