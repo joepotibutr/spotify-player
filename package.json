@@ -1,5 +1,5 @@
 {
-  "name": "spotify",
+  "name": "react_redux_spotify_api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
