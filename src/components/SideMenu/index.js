@@ -67,7 +67,7 @@ const SideMenu = ({
 
     return (
 		<div>
-			<div><img style={{ filter:'invert(1)', width: '132px', height: '40px' }} src={logo}/></div>
+			<div><img style={{ width: '132px', height: '40px' }} src={logo}/></div>
 			 <ul style={{ color: 'white', fontWeight: 'bold'}}>
 				<li>Home</li>
 				<li>Search</li>
