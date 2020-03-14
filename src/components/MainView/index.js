@@ -5,6 +5,10 @@ import ArtistList from "../ArtistList";
 const MainView = ({ headerTitle }) => {
   return (
     <div style={{ padding: '0 32px' }}>
+        <div style={{ position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%'}}>
+          <span>{`<`}</span>
+          <span>{`>`}</span>
+        </div>
         <ArtistList />
     </div>
   )
