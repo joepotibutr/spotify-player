@@ -42,10 +42,10 @@ class App extends Component {
             gridTemplateRows: '1fr auto',
             gridTemplateColumns: 'auto 1fr',
             gridTemplateAreas:
-            `"nav-bar         main-view"
-            "now-playing-bar now-playing-bar"`
+            `"nav         main-view"
+            "now-playing now-playing"`
             }}>
-            <section style={{ gridArea: 'nav-bar', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
+            <section style={{ gridArea: 'nav', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
               <div style={{padding: '24px'}}>
                 <SideMenu />
                 <UserPlaylists />
