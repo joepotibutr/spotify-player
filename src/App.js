@@ -34,9 +34,9 @@ class App extends Component {
         <GlobalStyled />
          <div  style={{ background: '#121212'}}>
           <div style={{
-            minHeight: '100%',
+            minHeight: '100vh',
             width: '100%',
-            height: '100%',
+            height: '100vh',
             position: 'relative',
             display: 'grid',
             gridTemplateRows: '1fr auto',
@@ -52,10 +52,10 @@ class App extends Component {
                 <Artwork />
               </div>
             </section>
-            <div style={{ width: '100%',gridArea: 'main-view', }}>
+            <section style={{ width: '100%',gridArea: 'main-view', }}>
                 <MainView />
-            </div>
-            <div>foot</div>
+            </section>
+            <section style={{ gridArea: 'now-playing', position: 'fixed', bottom: 0,width: '100%',height: '60px',background: 'rgb(18, 18, 18)'}}>foot</section>
           </div>
         </div>
       </React.Fragment>
