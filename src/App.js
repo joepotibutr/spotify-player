@@ -45,7 +45,7 @@ class App extends Component {
             `"nav         main-view"
             "now-playing now-playing"`
             }}>
-            <section style={{ gridArea: 'nav', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
+            <section style={{ height: '500px', gridArea: 'nav', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
               <div style={{padding: '24px'}}>
                 <SideMenu />
                 <UserPlaylists />
@@ -55,7 +55,7 @@ class App extends Component {
             <section style={{ width: '100%',gridArea: 'main-view', }}>
                 <MainView />
             </section>
-            <section style={{ gridArea: 'now-playing', position: 'fixed', bottom: 0,width: '100%',height: '60px',background: 'rgb(18, 18, 18)'}}>foot</section>
+            <section style={{ gridArea: 'now-playing',width: '100%',height: '60px',background: 'rgb(18, 18, 18)'}}>foot</section>
           </div>
         </div>
       </React.Fragment>
