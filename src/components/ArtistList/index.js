@@ -100,7 +100,7 @@ class ArtistList extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ height: '900px',paddingTop: '60px'}}>
                 <h1 style={{ color: '#fff'}}>Recently played</h1>
                 <ul style={{
                     display: 'grid',
