@@ -74,6 +74,12 @@ const SideMenu = ({
 				<li>Your Library</li>  
 				{/* {renderSideMenu()}           */}
         	</ul>
+			<label>PLAYLISTS</label>
+                <ul style={{ fontWeight: 'bold' }}>
+                  <li>Create Playlist</li>
+                  <li>Liked Songs</li>
+                </ul>
+                <hr />
 		</div>
     )
 }
