@@ -4,6 +4,12 @@ import { fetchPlaylistMenuRequest,
    // fetchPlaylistSongs
  } from '../../actions/playlist';
 import { connect } from 'react-redux'
+import styled from 'styled-components'
+
+const PlaylistItem = styled.li`
+  background:transparent;
+
+`
 
 class UserPlaylists extends Component {
     componentWillReceiveProps(nextProps) {
@@ -29,10 +35,11 @@ class UserPlaylists extends Component {
       const { playlistMenu } = this.props
         return (
             <div>
-
-                {playlistMenu.length && <ul>{playlistMenu.map(playlist => (
-                  <li key={playlist.uri}>{playlist.name}</li>
-                ))}</ul>}
+                {playlistMenu.length && 
+                  <ul style={{ overflowY: 'auto', height: 'calc(100vh - 383px)' }}>{playlistMenu.map(playlist => (
+                      <PlaylistItem className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
+                    ))}
+                  </ul>}
             </div>
         )
     }
