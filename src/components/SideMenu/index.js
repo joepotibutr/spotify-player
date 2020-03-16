@@ -68,18 +68,22 @@ const SideMenu = ({
     return (
 		<div>
 			<div><img style={{ width: '132px', height: '40px' }} src={logo}/></div>
-			 <ul style={{ color: 'white', fontWeight: 'bold'}}>
-				<li>Home</li>
-				<li>Search</li>
-				<li>Your Library</li>  
-				{/* {renderSideMenu()}           */}
-        	</ul>
-			<label>PLAYLISTS</label>
+			<div style={{ height: '500px'}}>
+				<div>	
+					<ul style={{ color: 'white', fontWeight: 'bold'}}>
+						<li>Home</li>
+						<li>Search</li>
+						<li>Your Library</li>  
+						{/* {renderSideMenu()}           */}
+					</ul>
+				</div>
+			<div><label>PLAYLISTS</label>
                 <ul style={{ fontWeight: 'bold' }}>
                   <li>Create Playlist</li>
                   <li>Liked Songs</li>
                 </ul>
                 <hr />
+			</div></div>
 		</div>
     )
 }
