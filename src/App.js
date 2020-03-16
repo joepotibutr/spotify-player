@@ -45,7 +45,7 @@ class App extends Component {
             `"nav         main-view"
             "now-playing now-playing"`
             }}>
-            <section style={{ height: '500px', gridArea: 'nav', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
+            <section style={{ gridArea: 'nav', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
               <div style={{padding: '24px'}}>
                 <SideMenu />
                 <UserPlaylists />
