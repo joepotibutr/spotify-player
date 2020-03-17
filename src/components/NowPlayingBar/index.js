@@ -10,9 +10,25 @@ class NowPlayingBar extends React.Component {
             <footer style={{ height: '90px' }}>
                 <div style={{ padding: '0 16px', display: 'flex'}}>
                     <div style={{ width: '30%'}}>
-                        {lastSongPlayed ? 
-                            <img src={lastSongPlayed.album.images[2].url} /> : null
-                        }
+                        {lastSongPlayed ?
+                            <div style={{ display: 'flex', flexDirection: 'row'}}>
+                                <div><img src={lastSongPlayed.album.images[2].url} /></div>
+                                <div>
+                                    <span>
+                                        <a>
+                                            {lastSongPlayed.name}
+                                        </a>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>
+                                        <a>
+                                            {lastSongPlayed.artists[0].name}
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        : null}
                     </div>
                     <div  style={{ width: '40%'}}>
                             center
