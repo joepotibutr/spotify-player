@@ -8,6 +8,7 @@ import SideMenu from './components/SideMenu'
 import UserPlaylists from './components/UserPlaylists'
 import Artwork from './components/Artwork'
 import Header from './components/Header'
+import NowPlayingBar from './components/NowPlayingBar'
 import MainView from './components/MainView'
 import GlobalStyled from './GobalStyled'
 
@@ -55,7 +56,9 @@ class App extends Component {
             <section style={{ width: '100%',gridArea: 'main-view', }}>
                 <MainView />
             </section>
-            <section style={{ gridArea: 'now-playing',width: '100%',height: '60px',background: 'rgb(18, 18, 18)'}}>foot</section>
+            <section style={{ gridArea: 'now-playing',width: '100%',background: 'rgb(18, 18, 18)'}}>
+              <NowPlayingBar />
+            </section>
           </div>
         </div>
       </React.Fragment>
