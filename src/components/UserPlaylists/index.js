@@ -36,7 +36,7 @@ class UserPlaylists extends Component {
         return (
             <div>
                 {playlistMenu.length && 
-                  <ul style={{ overflowY: 'auto', height: 'calc(100vh - 383px)' }}>{playlistMenu.map(playlist => (
+                  <ul style={{ overflowY: 'auto', height: 'calc(100vh - 409px)' }}>{playlistMenu.map(playlist => (
                       <PlaylistItem className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
                     ))}
                   </ul>}

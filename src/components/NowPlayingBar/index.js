@@ -2,9 +2,9 @@ import React from 'react'
 
 const NowPlayingBar = () => {
     return (
-        <div>
+        <footer style={{ height: '90px' }}>
             Now PlayingBar
-        </div>
+        </footer>
     )
 }
 
