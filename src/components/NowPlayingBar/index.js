@@ -8,10 +8,10 @@ class NowPlayingBar extends React.Component {
 
         return (
             <footer style={{ height: '90px' }}>
-                <div style={{ padding: '0 16px', display: 'flex'}}>
-                    <div style={{ width: '30%'}}>
+                <div style={{ padding: '0 16px', display: 'flex', height: '100%'}}>
+                    <div style={{ width: '30%', minWidth: '180px'}}>
                         {lastSongPlayed ?
-                            <div style={{ display: 'flex', flexDirection: 'row'}}>
+                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
                                 <div><img src={lastSongPlayed.album.images[2].url} /></div>
                                 <div>
                                     <span>
