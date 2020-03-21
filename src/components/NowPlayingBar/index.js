@@ -2,6 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 
+import LikeIcon from '@material-ui/icons/Favorite';
+// import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+
+// import SkipNextIcon from '@material-ui/icons/SkipNext';
+// import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+
+// import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
+
+// import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+// import DevicesIcon from '@material-ui/icons/Devices';
+// import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+
+
 class NowPlayingBar extends React.Component {
     render() {
         const lastSongPlayed = this.props.recentlySongs.length && this.props.recentlySongs[0].track
@@ -33,7 +46,7 @@ class NowPlayingBar extends React.Component {
                         : null}
                         </div>
                         <div style={{ display: 'flex'}}>
-                            <div><span>heart icon</span></div>
+                            <div><span><LikeIcon /></span></div>
                             <div><span><PictureInPictureAltIcon /></span></div>
                         </div>
                     </div>
