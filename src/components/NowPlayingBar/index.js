@@ -16,6 +16,9 @@ import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 import DevicesIcon from '@material-ui/icons/Devices';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp'
 
+// import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+// import AddIcon from '@material-ui/icons/Add';
+
 const ShuffleIcon = require('../../images/change.svg')
 const RepeatIcon = require('../../images/repeat.svg')
 
