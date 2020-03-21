@@ -34,7 +34,7 @@ class NowPlayingBar extends React.Component {
                         </div>
                         <div style={{ display: 'flex'}}>
                             <div><span>heart icon</span></div>
-                            <div><span><img src={PictureInPictureAltIcon} /></span></div>
+                            <div><span><PictureInPictureAltIcon /></span></div>
                         </div>
                     </div>
                     <div  style={{ width: '40%'}}>
