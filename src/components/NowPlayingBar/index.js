@@ -5,14 +5,19 @@ import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 import LikeIcon from '@material-ui/icons/Favorite';
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
-// import SkipNextIcon from '@material-ui/icons/SkipNext';
-// import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 
-// import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 
-// import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-// import DevicesIcon from '@material-ui/icons/Devices';
-// import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+// import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+
+import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
+import DevicesIcon from '@material-ui/icons/Devices';
+import VolumeUpIcon from '@material-ui/icons/VolumeUp'
+
+const ShuffleIcon = require('../../images/change.svg')
+const RepeatIcon = require('../../images/repeat.svg')
 
 
 class NowPlayingBar extends React.Component {
@@ -52,11 +57,11 @@ class NowPlayingBar extends React.Component {
                     </div>
                     <div  style={{ width: '40%'}}>
                         <div>
-                            <span>shuffle</span>
-                            <span>previous</span>
-                            <span>play</span>
-                            <span>next</span>
-                            <span>repeat</span>
+                            <span><img src={ShuffleIcon} style={{ width: '30px'}} /></span>
+                            <span><SkipPreviousIcon /></span>
+                            <span><PlayArrowIcon /></span>
+                            <span><SkipNextIcon /></span>
+                            <span><img src={RepeatIcon} style={{ width: '30px'}} /></span>
                         </div>
 
                         <div>
@@ -66,11 +71,11 @@ class NowPlayingBar extends React.Component {
                         </div>
                     </div>
                     <div  style={{ width: '30%'}}>
-                            <div>playlist icon</div>
-                            <div>device icon</div>
+                            <div><span><PlaylistPlayIcon /></span></div>
+                            <div><span><DevicesIcon/></span></div>
                             <div>
-                                <div>speakre icon</div>
-                                <div>volume</div>
+                                <div><span><VolumeUpIcon /></span></div>
+                                <div><span  style={{ width: '39px', height: '2px', background: 'gray'}}/></div>
                             </div>
                     </div>
                 </div>
