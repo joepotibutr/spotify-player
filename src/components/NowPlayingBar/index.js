@@ -29,26 +29,36 @@ class NowPlayingBar extends React.Component {
         console.log(this.props.recentlySongs.length && this.props.recentlySongs)
 
         return (
-            <footer style={{ height: '89px' }}>
+            <footer style={{ height: '89px',backgroundColor: '#282828' }}>
                 <div style={{ padding: '0 16px', display: 'flex', height: '100%'}}>
-                    <div style={{ width: '30%', minWidth: '180px'}}>
-                        <div>
+                    <div style={{ width: '30%', minWidth: '180px', display: 'flex'}}>
+                        <div style={{ width: '65%'}}>
                         {lastSongPlayed ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
                                 <div><img src={lastSongPlayed.album.images[2].url} /></div>
-                                <div>
-                                    <span>
-                                        <a>
-                                            {lastSongPlayed.name}
-                                        </a>
-                                    </span>
-                                </div>
-                                <div>
-                                    <span>
-                                        <a>
-                                            {lastSongPlayed.artists[0].name}
-                                        </a>
-                                    </span>
+                                <div style={{ width: '20%'}}>
+                                    <div style={{
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis'
+                                    }}>
+                                        <span>
+                                            <a>
+                                                {lastSongPlayed.name}
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div  style={{
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis'
+                                    }}>
+                                        <span>
+                                            <a>
+                                                {lastSongPlayed.artists[0].name}
+                                            </a>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         : null}
@@ -67,7 +77,7 @@ class NowPlayingBar extends React.Component {
                             <span><img src={RepeatIcon} style={{ width: '30px'}} /></span>
                         </div>
 
-                        <div>
+                        <div style={{ display: 'flex'}}>
                             <div>time played</div>
                             <div>line</div>
                             <div>duration time left</div>
