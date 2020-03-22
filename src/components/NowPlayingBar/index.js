@@ -35,7 +35,11 @@ class NowPlayingBar extends React.Component {
                         <div style={{ width: '65%'}}>
                         {lastSongPlayed ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
-                                <div><img src={lastSongPlayed.album.images[2].url} /></div>
+                                <div style={{
+                                    width:' 56px',
+                                    height:' 56px',
+                                    boxShadow: '0 0 10px rgba(0,0,0,.3)'
+                                }}><img style={{ width: '100%', height: '100%'}} src={lastSongPlayed.album.images[2].url} /></div>
                                 <div style={{ width: '20%'}}>
                                     <div style={{
                                         whiteSpace: 'nowrap',
