@@ -36,11 +36,11 @@ class NowPlayingBar extends React.Component {
                         {lastSongPlayed ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
                                 <div style={{
-                                    width:' 56px',
-                                    height:' 56px',
+                                    minWidth:' 56px',
+                                    minHeight:' 56px',
                                     boxShadow: '0 0 10px rgba(0,0,0,.3)'
                                 }}><img style={{ width: '100%', height: '100%'}} src={lastSongPlayed.album.images[2].url} /></div>
-                                <div style={{ width: '80%'}}>
+                                <div style={{ width: '80%', margin:'0 14px'}}>
                                     <div style={{
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
@@ -71,9 +71,9 @@ class NowPlayingBar extends React.Component {
                             </div>
                         : null}
                         </div>
-                        <div style={{ display: 'flex'}}>
-                            <div><span><LikeIcon /></span></div>
-                            <div><span><PictureInPictureAltIcon /></span></div>
+                        <div style={{ display: 'flex', alignItems: 'center'}}>
+                            <div><span><LikeIcon style={{ width: '15px '}} /></span></div>
+                            <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
                         </div>
                     </div>
                     <div  style={{ width: '40%'}}>
