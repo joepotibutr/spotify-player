@@ -77,7 +77,7 @@ class NowPlayingBar extends React.Component {
                         </div>
                     </div>
                     <div  style={{ width: '40%'}}>
-                        <div>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems:'center'}}>
                             <span><img src={ShuffleIcon} style={{ width: '30px'}} /></span>
                             <span><SkipPreviousIcon /></span>
                             <span><PlayArrowIcon /></span>
@@ -86,7 +86,7 @@ class NowPlayingBar extends React.Component {
                         </div>
 
                         <div style={{ display: 'flex'}}>
-                            <div>time played</div>
+                            <div>00:00</div>
                             <div style={{
                                 height: '12px',
                                 position: 'relative',
@@ -100,7 +100,7 @@ class NowPlayingBar extends React.Component {
                                     width: '100%',
                                 }}></div>
                             </div>
-                            <div>duration time left</div>
+                            <div>00:00</div>
                         </div>
                     </div>
                     <div  style={{ width: '30%'}}>
