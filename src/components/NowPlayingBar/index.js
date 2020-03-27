@@ -106,9 +106,22 @@ class NowPlayingBar extends React.Component {
                     <div  style={{ width: '30%'}}>
                             <div><span><PlaylistPlayIcon /></span></div>
                             <div><span><DevicesIcon/></span></div>
-                            <div>
+                            <div style={{ display: 'flex'}}>
                                 <div><span><VolumeUpIcon /></span></div>
-                                <div><span  style={{ width: '39px', height: '2px', background: 'gray'}}/></div>
+                                
+                                <div style={{
+                                height: '12px',
+                                position: 'relative',
+                                width: '100%',
+                            }}>
+                                <div style={{
+                                    backgroundColor: '#404040',
+                                    borderRadius: '2px',
+                                    display: 'flex',
+                                    height: '4px',
+                                    width: '100%',
+                                }}></div></div>
+
                             </div>
                     </div>
                 </div>
