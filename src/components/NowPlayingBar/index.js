@@ -76,7 +76,13 @@ class NowPlayingBar extends React.Component {
                             <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
                         </div>
                     </div>
-                    <div  style={{ width: '40%'}}>
+                    <div  style={{ 
+                        width: '40%',
+                        flexDirection: 'column',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems:'center'}}>
                             <span><img src={ShuffleIcon} style={{ width: '30px'}} /></span>
                             <span><SkipPreviousIcon /></span>
@@ -85,11 +91,10 @@ class NowPlayingBar extends React.Component {
                             <span><img src={RepeatIcon} style={{ width: '30px'}} /></span>
                         </div>
 
-                        <div style={{ display: 'flex'}}>
+                        <div style={{ display: 'flex',width: '100%'}}>
                             <div>00:00</div>
                             <div style={{
                                 height: '12px',
-                                position: 'relative',
                                 width: '100%',
                             }}>
                                 <div style={{
