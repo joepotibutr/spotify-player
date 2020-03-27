@@ -84,18 +84,24 @@ class NowPlayingBar extends React.Component {
                         alignItems: 'center'
                     }}>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-                            <span><img src={ShuffleIcon} style={{ width: '30px'}} /></span>
+                            <span><img src={ShuffleIcon} style={{ width: '1em', }} /></span>
                             <span><SkipPreviousIcon /></span>
                             <span><PlayArrowIcon /></span>
                             <span><SkipNextIcon /></span>
-                            <span><img src={RepeatIcon} style={{ width: '30px'}} /></span>
+                            <span><img src={RepeatIcon} style={{ width: '1em'}} /></span>
                         </div>
 
-                        <div style={{ display: 'flex',width: '100%'}}>
+                        <div style={{ display: 'flex',width: '100%',
+                     justifyContent: 'center',
+                     alignItems: 'center',
+                    }}>
                             <div>00:00</div>
                             <div style={{
                                 height: '12px',
                                 width: '100%',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
                             }}>
                                 <div style={{
                                     backgroundColor: '#404040',
