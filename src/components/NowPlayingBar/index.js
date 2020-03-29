@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
+import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 
 import LikeIcon from '@material-ui/icons/Favorite';
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
@@ -44,14 +44,18 @@ class NowPlayingBar extends React.Component {
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
                                         textOverflow: 'ellipsis',
-                                        fontWeight: 'bold',
                                         margin:'0 14px'
                                     }}>
                                     <div style={{
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
                                         textOverflow: 'ellipsis',
-                                        fontWeight: 'bold'
+                                        fontWeight: '400',
+                                        fontSize: '14px',
+                                        lineHeight: '20px',
+                                        letterSpacing: '.015em',
+                                        color: '#fff',
+                                        textAlign: 'left',
                                     }}>
                                         <span>
                                             <a>
@@ -66,7 +70,7 @@ class NowPlayingBar extends React.Component {
                                         fontSize: '12px',
                                         lineHeight: '16px',
                                         letterSpacing: '.015em',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
                                     }}>
                                         <span>
                                             <a>
@@ -91,7 +95,7 @@ class NowPlayingBar extends React.Component {
                             height: '32px'
                         }}>
                             <div><span><LikeIcon style={{ width: '15px '}} /></span></div>
-                            {/* <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div> */}
+                            <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
                         </div>
                     </div>
                     <div  style={{ 
@@ -113,8 +117,15 @@ class NowPlayingBar extends React.Component {
                         <div style={{ display: 'flex',width: '100%',
                      justifyContent: 'center',
                      alignItems: 'center',
+                     fontFamily:  `'Varela Round', sans-serif `,
                     }}>
-                            <div>00:00</div>
+                            <div style={{
+                                fontSize: '11px',
+                                lineHeight: '16px',
+                                letterSpacing: '.015em',
+                                minWidth: '40px',
+                                textAlign: 'center',
+                            }}>2:49</div>
                             <div style={{
                                 height: '12px',
                                 width: '100%',
@@ -130,7 +141,13 @@ class NowPlayingBar extends React.Component {
                                     width: '100%',
                                 }}></div>
                             </div>
-                            <div>00:00</div>
+                            <div style={{
+                                fontSize: '11px',
+                                lineHeight: '16px',
+                                letterSpacing: '.015em',
+                                minWidth: '40px',
+                                textAlign: 'center',
+                            }}>0:34</div>
                         </div>
                     </div>
                     <div  style={{ width: '30%'}}>
