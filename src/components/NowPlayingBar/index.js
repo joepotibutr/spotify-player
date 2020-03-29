@@ -30,8 +30,8 @@ class NowPlayingBar extends React.Component {
 
         return (
             <footer style={{ height: '89px',backgroundColor: '#282828' }}>
-                <div style={{ padding: '0 16px', display: 'flex', height: '100%'}}>
-                    <div style={{ width: '30%', minWidth: '180px', display: 'flex', alignItems:'center',justifyContent: 'space-between'}}>
+                <div style={{ padding: '0 16px', display: 'flex', height: '100%', alignItems:'center'}}>
+                    <div style={{ width: '30%', minWidth: '180px', display: 'flex', alignItems:'center'}}>
                         <div style={{ overflow: 'hidden' }}>
                         {lastSongPlayed ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
@@ -150,25 +150,35 @@ class NowPlayingBar extends React.Component {
                             }}>0:34</div>
                         </div>
                     </div>
-                    <div  style={{ width: '30%'}}>
-                            <div><span><PlaylistPlayIcon /></span></div>
-                            <div><span><DevicesIcon/></span></div>
-                            <div style={{ display: 'flex'}}>
-                                <div><span><VolumeUpIcon /></span></div>
-                                
-                                <div style={{
-                                height: '12px',
-                                position: 'relative',
-                                width: '100%',
-                            }}>
-                                <div style={{
-                                    backgroundColor: '#404040',
-                                    borderRadius: '2px',
-                                    display: 'flex',
-                                    height: '4px',
+                    <div  style={{ 
+                        width: '30%',
+                        minWidth: '180px', 
+                        }}>
+                            <div style={{ 
+                                width: '180px',
+                                display: 'flex', 
+                                justifyContent: 'flex-end',
+                                flexDirection: 'row',
+                                alignItems: 'center'
+                                 }}>
+                                <div><span><PlaylistPlayIcon /></span></div>
+                                <div><span><DevicesIcon/></span></div>
+                                <div style={{ display: 'flex'}}>
+                                    <div><span><VolumeUpIcon /></span></div>
+                                    
+                                    <div style={{
+                                    height: '12px',
+                                    position: 'relative',
                                     width: '100%',
-                                }}></div></div>
-
+                                }}>
+                                    <div style={{
+                                        backgroundColor: '#404040',
+                                        borderRadius: '2px',
+                                        display: 'flex',
+                                        height: '4px',
+                                        width: '100%',
+                                    }}></div></div>
+                                </div>
                             </div>
                     </div>
                 </div>
