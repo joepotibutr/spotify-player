@@ -29,7 +29,7 @@ class NowPlayingBar extends React.Component {
         console.log(this.props.recentlySongs.length && this.props.recentlySongs)
 
         return (
-            <footer style={{ height: '89px',backgroundColor: '#282828' }}>
+            <footer style={{ height: '86px',backgroundColor: '#282828' }}>
                 <div style={{ padding: '0 16px', display: 'flex', height: '100%', alignItems:'center'}}>
                     <div style={{ width: '30%', minWidth: '180px', display: 'flex', alignItems:'center'}}>
                         <div style={{ overflow: 'hidden' }}>
@@ -39,7 +39,7 @@ class NowPlayingBar extends React.Component {
                                     minWidth:' 56px',
                                     minHeight:' 56px',
                                     boxShadow: '0 0 10px rgba(0,0,0,.3)'
-                                }}><img style={{ width: '100%', height: '100%'}} src={lastSongPlayed.album.images[2].url} /></div>
+                                }}><img style={{ width: '56px', height: '56px'}} src={lastSongPlayed.album.images[2].url} /></div>
                                 <div style={{ 
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
@@ -183,11 +183,14 @@ class NowPlayingBar extends React.Component {
                                 <div style={{ 
                                     width: '32px', height: '32px',display: 'flex',
                                     justifyContent: 'center',
-                                    alignItems: 'center', }}><span><PlaylistPlayIcon /></span></div>
+                                    alignItems: 'center', }}><PlaylistPlayIcon /></div>
                                 <div style={{ 
                                     width: '32px', height: '32px',display: 'flex',
                                     justifyContent: 'center',
-                                    alignItems: 'center', }}><span><DevicesIcon/></span></div>
+                                    alignItems: 'center', }}><DevicesIcon  style={{
+                                        width: '18px',
+                                        height: '18px'
+                                    }}/></div>
                                 <div style={{ 
                                     display: 'flex', width: '136px',display: 'flex',
                                     justifyContent: 'center',
@@ -195,12 +198,17 @@ class NowPlayingBar extends React.Component {
                                     <div style={{ 
                                     width: '32px', height: '32px',display: 'flex',
                                     justifyContent: 'center',
-                                    alignItems: 'center', }}><span><VolumeUpIcon /></span></div>
+                                    alignItems: 'center', }}><VolumeUpIcon  style={{
+                                        width: '18px',
+                                        height: '18px'
+                                    }} /></div>
                                     
                                     <div style={{
                                     height: '12px',
                                     position: 'relative',
                                     width: '100%',
+                                    display: 'flex',
+                                    alignItems: 'center',
                                 }}>
                                     <div style={{
                                         backgroundColor: '#404040',
