@@ -32,7 +32,7 @@ class NowPlayingBar extends React.Component {
             <footer style={{ height: '89px',backgroundColor: '#282828' }}>
                 <div style={{ padding: '0 16px', display: 'flex', height: '100%'}}>
                     <div style={{ width: '30%', minWidth: '180px', display: 'flex', alignItems:'center',justifyContent: 'space-between'}}>
-                        <div>
+                        <div style={{ overflow: 'hidden' }}>
                         {lastSongPlayed ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
                                 <div style={{
@@ -40,7 +40,13 @@ class NowPlayingBar extends React.Component {
                                     minHeight:' 56px',
                                     boxShadow: '0 0 10px rgba(0,0,0,.3)'
                                 }}><img style={{ width: '100%', height: '100%'}} src={lastSongPlayed.album.images[2].url} /></div>
-                                <div style={{ width: '80%', margin:'0 14px'}}>
+                                <div style={{ 
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        fontWeight: 'bold',
+                                        margin:'0 14px'
+                                    }}>
                                     <div style={{
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
@@ -64,7 +70,12 @@ class NowPlayingBar extends React.Component {
                                     }}>
                                         <span>
                                             <a>
-                                                {lastSongPlayed.artists[0].name}
+                                                {lastSongPlayed.artists.length > 1 ? 
+                                                lastSongPlayed.artists.map((artist, idx) => lastSongPlayed.artists.length - 1 === idx ? (
+                                                    `${artist.name} `
+                                                ) : `${artist.name}, `)
+                                                :
+                                                lastSongPlayed.artists[0].name}
                                             </a>
                                         </span>
                                     </div>
