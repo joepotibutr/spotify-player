@@ -106,12 +106,32 @@ class NowPlayingBar extends React.Component {
                         alignItems: 'center',
                         maxWidth: '722px'
                     }}>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-                            <span><img src={ShuffleIcon} style={{ width: '1em', }} /></span>
-                            <span><SkipPreviousIcon /></span>
-                            <span><PlayArrowIcon /></span>
-                            <span><SkipNextIcon /></span>
-                            <span><img src={RepeatIcon} style={{ width: '1em'}} /></span>
+                        <div style={{ 
+                            marginBottom: '12px',
+                            width: '224px',
+                            justifyContent: 'space-between',
+                            flexDlow: 'row nowrap',
+                            display: 'flex', justifyContent: 'center', alignItems:'center'}}>
+                            <div style={{ 
+                                    width: '32px', height: '32px',display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center', }}><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></div>
+                            <div style={{ 
+                                    width: '32px', height: '32px',display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center', }}><span><SkipPreviousIcon /></span></div>
+                            <div style={{ 
+                                    width: '32px', height: '32px',display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center', }}><span><PlayArrowIcon /></span></div>
+                            <div style={{ 
+                                    width: '32px', height: '32px',display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center', }}><span><SkipNextIcon /></span></div>
+                            <div style={{ 
+                                    width: '32px', height: '32px',display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center', }}><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></div>
                         </div>
 
                         <div style={{ display: 'flex',width: '100%',
