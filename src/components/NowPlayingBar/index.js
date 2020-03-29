@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
+// import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 
 import LikeIcon from '@material-ui/icons/Favorite';
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
@@ -31,8 +31,8 @@ class NowPlayingBar extends React.Component {
         return (
             <footer style={{ height: '89px',backgroundColor: '#282828' }}>
                 <div style={{ padding: '0 16px', display: 'flex', height: '100%'}}>
-                    <div style={{ width: '30%', minWidth: '180px', display: 'flex'}}>
-                        <div style={{ width: '65%'}}>
+                    <div style={{ width: '30%', minWidth: '180px', display: 'flex', alignItems:'center',justifyContent: 'space-between'}}>
+                        <div>
                         {lastSongPlayed ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
                                 <div style={{
@@ -44,7 +44,8 @@ class NowPlayingBar extends React.Component {
                                     <div style={{
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
-                                        textOverflow: 'ellipsis'
+                                        textOverflow: 'ellipsis',
+                                        fontWeight: 'bold'
                                     }}>
                                         <span>
                                             <a>
@@ -71,9 +72,15 @@ class NowPlayingBar extends React.Component {
                             </div>
                         : null}
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center'}}>
+                        <div style={{ 
+                            display: 'flex', 
+                            alignItems: 'center',
+                            justifyContent:'center',
+                            width: '32px',
+                            height: '32px'
+                        }}>
                             <div><span><LikeIcon style={{ width: '15px '}} /></span></div>
-                            <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
+                            {/* <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div> */}
                         </div>
                     </div>
                     <div  style={{ 
@@ -81,7 +88,8 @@ class NowPlayingBar extends React.Component {
                         flexDirection: 'column',
                         display: 'flex',
                         justifyContent: 'center',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        maxWidth: '722px'
                     }}>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems:'center'}}>
                             <span><img src={ShuffleIcon} style={{ width: '1em', }} /></span>
