@@ -153,31 +153,43 @@ class NowPlayingBar extends React.Component {
                     <div  style={{ 
                         width: '30%',
                         minWidth: '180px', 
+                        display: 'flex', 
+                        justifyContent: 'flex-end',
+                        flexDirection: 'row',
+                        alignItems: 'center'
                         }}>
-                            <div style={{ 
-                                width: '180px',
-                                display: 'flex', 
-                                justifyContent: 'flex-end',
-                                flexDirection: 'row',
-                                alignItems: 'center'
-                                 }}>
-                                <div><span><PlaylistPlayIcon /></span></div>
-                                <div><span><DevicesIcon/></span></div>
-                                <div style={{ display: 'flex'}}>
-                                    <div><span><VolumeUpIcon /></span></div>
-                                    
-                                    <div style={{
-                                    height: '12px',
-                                    position: 'relative',
-                                    width: '100%',
-                                }}>
-                                    <div style={{
-                                        backgroundColor: '#404040',
-                                        borderRadius: '2px',
-                                        display: 'flex',
-                                        height: '4px',
+                            <div style={{ width: '180px'}}>
+                                <div>
+                                    <div style={{ 
+                                        width: '32px', height: '32px',display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center', }}><span><PlaylistPlayIcon /></span></div>
+                                    <div style={{ 
+                                        width: '32px', height: '32px',display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center', }}><span><DevicesIcon/></span></div>
+                                    <div style={{ 
+                                        display: 'flex', width: '136px',display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',}}>
+                                        <div style={{ 
+                                        width: '32px', height: '32px',display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center', }}><span><VolumeUpIcon /></span></div>
+                                        
+                                        <div style={{
+                                        height: '12px',
+                                        position: 'relative',
                                         width: '100%',
-                                    }}></div></div>
+                                    }}>
+                                        <div style={{
+                                            backgroundColor: '#404040',
+                                            borderRadius: '2px',
+                                            display: 'flex',
+                                            height: '4px',
+                                            width: '100%',
+                                        }}></div></div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
