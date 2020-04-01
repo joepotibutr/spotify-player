@@ -1,6 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 
+
+const PlaylistTrack = styled.li`
+    height: 4.56em;
+    &:hover {
+        background-color: hsla(0,0%,100%,.1);
+    }
+
+`
+
+const TrackDetailText = styled.span`
+
+
+`
 class PlaylistView extends React.Component {
 
     render() {
@@ -8,7 +22,7 @@ class PlaylistView extends React.Component {
             playlist.name === this.props.headerTitle)
             console.log('currentPlaylist',currentPlaylist)
         return (
-            <div style={{ background: 'white',display: 'flex'}}>
+            <div style={{ display: 'flex'}}>
                 <div style={{ width:'50%'}}>
                     <div style={{ position:'fixed'}}>
                         <div style={{
@@ -28,9 +42,9 @@ class PlaylistView extends React.Component {
                 </div>
                 <div style={{ width:'50%'}}>
                     {this.props.songs ? 
-                    <ul>{this.props.songs.map(song => (
-                        <li key={song.track.id}>
-                            <div> <h4> {song.track.name} </h4></div>
+                    <ol>{this.props.songs.map(song => (
+                        <PlaylistTrack key={song.track.id}>
+                            <div> <h4><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
                             <div>
                                 {song.track.artists.length > 1 ?
                                 <div>
@@ -46,8 +60,8 @@ class PlaylistView extends React.Component {
                         <div>
                             <span>{song.track.album.name}</span>
                         </div>
-                        </li>
-                    ))}</ul> : 
+                        </PlaylistTrack>
+                    ))}</ol> : 
                     null}
                 </div>
             </div>
