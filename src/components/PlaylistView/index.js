@@ -23,7 +23,11 @@ class PlaylistView extends React.Component {
                     <div><h1>{this.props.headerTitle}</h1></div>
                 </div>
                 <div>
-                    <ul></ul>
+                    {this.props.songs ? 
+                    <ul>{this.props.songs.map(song => (
+                        <li key={song.track.id}>{song.track.name}</li>
+                    ))}</ul> : 
+                    null}
                 </div>
             </div>
         )
