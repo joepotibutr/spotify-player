@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux'
 import ArtistList from "../ArtistList";
+import PlaylistView from '../PlaylistView'
 import { viewType } from '../../constants'
 
 const MainView = ({ headerTitle }) => {
@@ -22,7 +23,7 @@ const MainView = ({ headerTitle }) => {
             <span>{`>`}</span>
           </div>
           <div>
-            <h1>{headerTitle}</h1>
+          <PlaylistView />
           </div>
       </div>
       )
