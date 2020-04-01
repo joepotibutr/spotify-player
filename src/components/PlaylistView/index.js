@@ -21,6 +21,7 @@ class PlaylistView extends React.Component {
                     src={currentPlaylist.images[0].url}/>
                     </div>
                     <div><h1>{this.props.headerTitle}</h1></div>
+                    <div><p>{currentPlaylist.owner.display_name}</p></div>
                 </div>
                 <div>
                     {this.props.songs ? 
