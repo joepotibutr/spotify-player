@@ -22,7 +22,7 @@ const MainView = ({ headerTitle }) => {
             <span>{`<`}</span>
             <span>{`>`}</span>
           </div>
-          <div>
+          <div style={{ height: '900px',paddingTop: '60px'}}>
           <PlaylistView />
           </div>
       </div>

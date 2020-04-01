@@ -11,6 +11,6 @@ const PlaylistView = ({ headerTitle }) => {
 
 export default connect(state => ({
     headerTitle: state.uiReducer.title,
-    songs: state.songsReducer.songs ? state.songsReducer.songs : '',
+    songs: state.songReducer.songs ? state.songReducer.songs : '',
     playlists: state.playlistReducer.playlists,
 }))(PlaylistView)
