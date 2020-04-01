@@ -43,7 +43,7 @@ class UserPlaylists extends Component {
                           playlist.id,
                           this.props.token
                         )
-                        this.props.updateHeaderTitle(playlist.name);
+                        // this.props.updateHeaderTitle(playlist.name);
                       }} className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
                     ))}
                   </ul>}
