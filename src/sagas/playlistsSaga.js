@@ -25,8 +25,8 @@ export function * fetchPlaylistMenuSaga(action) {
 
 export function * fetchPlaylistSongsSaga(action) {
     try {
-        const { accessToken , userId , playlistId } = action
-        const res = yield call(api.playlist.fetchPlaylistSongs,accessToken,userId,playlistId)
+        const { userId,playlistId,accessToken } = action
+        const res = yield call(api.playlist.fetchPlaylistSongs,userId,playlistId,accessToken)
         const removeDuplicated = uniqBy(res,item => item.track.id)
         yield put(fetchPlaylistSongsSuccess(removeDuplicated))
     } catch(err) {

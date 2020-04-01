@@ -61,7 +61,7 @@ export default {
             })
             return data.items
         },
-        fetchPlaylistSongs : async (accessToken,userId,playlistId) => {
+        fetchPlaylistSongs : async (userId,playlistId,accessToken) => {
             const { data } = await axios.get(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,{
                 headers : { 'Authorization': 'Bearer ' + accessToken }
             })

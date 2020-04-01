@@ -16,8 +16,8 @@ export const addPlaylistItem = playlist => {
 
 
 
-export const fetchPlaylistSongsRequest = (accessToken,userId,playlistId) => {
-    return { type : types.FETCH_PLAYLIST_SONGS_REQUEST , accessToken, userId, playlistId }
+export const fetchPlaylistSongsRequest = (userId,playlistId,accessToken) => {
+    return { type : types.FETCH_PLAYLIST_SONGS_REQUEST ,userId, playlistId, accessToken}
 }  
 export const fetchPlaylistSongsFailure = () => {
     return { type : types.FETCH_PLAYLIST_SONGS_FAILURE }
