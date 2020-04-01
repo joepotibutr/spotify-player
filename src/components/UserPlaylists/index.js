@@ -24,7 +24,7 @@ class UserPlaylists extends Component {
       const { playlistMenu } = this.props
         return (
             <div>
-                {playlistMenu.length && 
+                {playlistMenu.length ? 
                   <ul style={{ overflowY: 'auto', height: 'calc(100vh - 409px)' }}>{playlistMenu.map(playlist => (
                       <PlaylistItem onClick={() => {
                         this.props.fetchPlaylistSongsRequest(
@@ -35,7 +35,7 @@ class UserPlaylists extends Component {
                         this.props.updateHeaderTitle(playlist.name);
                       }} className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
                     ))}
-                  </ul>}
+                  </ul> : null}
             </div>
         )
     }
