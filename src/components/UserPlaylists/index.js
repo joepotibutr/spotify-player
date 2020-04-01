@@ -3,6 +3,7 @@ import { bindActionCreators } from "redux";
 import { fetchPlaylistMenuRequest, 
   fetchPlaylistSongsRequest
  } from '../../actions/playlist';
+ import { updateHeaderTitle } from '../../actions/ui'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
@@ -19,18 +20,6 @@ class UserPlaylists extends Component {
       }
 
     
-    renderPlaylists() {
-        return this.props.playlistMenu.map(playlist => {
-          const getPlaylistSongs = () => {
-            this.props.fetchPlaylistSongs(
-              playlist.owner.id,
-              playlist.id,
-              this.props.token
-            )
-            this.props.updateHeaderTitle(playlist.name);
-          }
-        })
-    }
     render() {
       const { playlistMenu } = this.props
         return (
@@ -43,7 +32,7 @@ class UserPlaylists extends Component {
                           playlist.id,
                           this.props.token
                         )
-                        // this.props.updateHeaderTitle(playlist.name);
+                        this.props.updateHeaderTitle(playlist.name);
                       }} className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
                     ))}
                   </ul>}
@@ -61,6 +50,7 @@ export default connect(state => {
 } , dispatch => 
     bindActionCreators({
       fetchPlaylistMenuRequest,
-       fetchPlaylistSongsRequest
+       fetchPlaylistSongsRequest,
+       updateHeaderTitle
     }, dispatch)
 )(UserPlaylists)
