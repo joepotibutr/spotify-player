@@ -8,7 +8,7 @@ class PlaylistView extends React.Component {
             playlist.name === this.props.headerTitle)
             console.log('currentPlaylist',currentPlaylist)
         return (
-            <div style={{ background: 'white'}}>
+            <div style={{ background: 'white',display: 'flex'}}>
                 <div>
                     <div style={{
                         minWidth: '180px',
@@ -25,7 +25,18 @@ class PlaylistView extends React.Component {
                 <div>
                     {this.props.songs ? 
                     <ul>{this.props.songs.map(song => (
-                        <li key={song.track.id}>{song.track.name}</li>
+                        <li key={song.track.id}>
+                            <div> <h4> {song.track.name} </h4></div>
+                            <div>{song.track.artists.length > 1 ?
+                                <div>
+                                    {song.track.artists.map(artist => 
+                                    <span key={artist.id}>{artist.name}</span>)}
+                            </div> : 
+                            <div>
+                                <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>)}
+                            </div>
+                        }</div>
+                        </li>
                     ))}</ul> : 
                     null}
                 </div>
