@@ -33,9 +33,12 @@ class PlaylistView extends React.Component {
                                     <span key={artist.id}>{artist.name}</span>)}
                             </div> : 
                             <div>
-                                <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>)}
+                                <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
                             </div>
                         }</div>
+                        <div>
+                            <span>{song.track.album.name}</span>
+                        </div>
                         </li>
                     ))}</ul> : 
                     null}
