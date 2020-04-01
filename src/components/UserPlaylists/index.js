@@ -1,7 +1,7 @@
 import React , { Component } from 'react'
 import { bindActionCreators } from "redux";
 import { fetchPlaylistMenuRequest, 
-   // fetchPlaylistSongs
+  fetchPlaylistSongsRequest
  } from '../../actions/playlist';
 import { connect } from 'react-redux'
 import styled from 'styled-components'
@@ -37,7 +37,14 @@ class UserPlaylists extends Component {
             <div>
                 {playlistMenu.length && 
                   <ul style={{ overflowY: 'auto', height: 'calc(100vh - 409px)' }}>{playlistMenu.map(playlist => (
-                      <PlaylistItem className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
+                      <PlaylistItem onClick={() => {
+                        this.props.fetchPlaylistSongsRequest(
+                          playlist.owner.id,
+                          playlist.id,
+                          this.props.token
+                        )
+                        this.props.updateHeaderTitle(playlist.name);
+                      }} className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
                     ))}
                   </ul>}
             </div>
@@ -54,6 +61,6 @@ export default connect(state => {
 } , dispatch => 
     bindActionCreators({
       fetchPlaylistMenuRequest,
-       // fetchPlaylistSongs
+       fetchPlaylistSongsRequest
     }, dispatch)
 )(UserPlaylists)
