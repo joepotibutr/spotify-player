@@ -23,7 +23,7 @@ class PlaylistView extends React.Component {
             console.log('currentPlaylist',currentPlaylist)
         return (
             <div style={{ display: 'flex'}}>
-                <div style={{ width:'50%'}}>
+                <div style={{ width:'30%'}}>
                     <div style={{ position:'fixed'}}>
                         <div style={{
                             minWidth: '180px',
@@ -40,26 +40,28 @@ class PlaylistView extends React.Component {
                         <div><p>{this.props.songs.length} SONGS</p></div>
                     </div>
                 </div>
-                <div style={{ width:'50%'}}>
+                <div style={{ width:'70%'}}>
                     {this.props.songs ? 
                     <ol>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id}>
-                            <div> <h4><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
-                            <div>
-                                {song.track.artists.length > 1 ?
+                            <div> <h4 style={{ margin: 0 }}><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
+                                <div style={{ display: 'flex' }}>
+                                    <div>
+                                        {song.track.artists.length > 1 ?
+                                        <div>
+                                            <span>{song.track.artists.map((artist, idx) => song.track.artists.length - 1 === idx ? (
+                                                            `${artist.name} `
+                                                        ) : `${artist.name}, `)}
+                                            </span>
+                                    </div> : 
+                                    <div>
+                                        <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
+                                    </div>
+                                }</div>
                                 <div>
-                                    <span>{song.track.artists.map((artist, idx) => song.track.artists.length - 1 === idx ? (
-                                                    `${artist.name} `
-                                                ) : `${artist.name}, `)}
-                                    </span>
-                            </div> : 
-                            <div>
-                                <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
+                                    <span>{song.track.album.name}</span>
+                                </div>
                             </div>
-                        }</div>
-                        <div>
-                            <span>{song.track.album.name}</span>
-                        </div>
                         </PlaylistTrack>
                     ))}</ol> : 
                     null}
