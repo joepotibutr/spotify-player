@@ -137,7 +137,7 @@ const SideMenu = ({
 								alignItems: 'center'
 							}}><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
 						</div>
-						<div style={{ marginLeft: '15px' }}>Liked Songs</div>
+						<div onClick={} style={{ marginLeft: '15px' }}>Liked Songs</div>
 					</li>
                 </ul>
                 <hr />

@@ -22,9 +22,10 @@ const TrackDetailText = styled.span`
 class PlaylistView extends React.Component {
 
     render() {
-        const currentPlaylist = this.props.playlists && this.props.playlists.find(playlist => 
-            playlist.name === this.props.headerTitle)
-            console.log('currentPlaylist',currentPlaylist)
+        const { playlists, headerTitle } = this.props
+        const currentPlaylist = playlists && playlists.find(playlist => 
+            playlist.name === headerTitle)
+           
         return (
             <div style={{ display: 'flex',height: '900px',paddingTop: '60px'}}>
                 <div style={{ width:'30%'}}>
