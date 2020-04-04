@@ -10,6 +10,8 @@ import { viewType } from '../../constants'
 
 import {IconWrapper} from '../NowPlayingBar'
 
+import LikeIcon from '@material-ui/icons/Favorite';
+
 const logo = require('../../images/Spotify_Logo_RGB_White.png')
 const home = require('../../images/home.svg')
 const search = require('../../images/search.svg')
@@ -126,7 +128,14 @@ const SideMenu = ({
 					</li>
                   	<li style={{ display: 'flex', alignItems: 'center'}}>
 						<div>
-							<div style={{ width: '30px', height: '30px', background: 'green'}} />
+							<div style={{ 
+								width: '30px', 
+								height: '30px', 
+								background: 'green',
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center'
+							}}><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
 						</div>
 						<div style={{ marginLeft: '15px' }}>Liked Songs</div>
 					</li>
