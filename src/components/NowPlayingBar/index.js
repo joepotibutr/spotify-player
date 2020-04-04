@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { connect } from 'react-redux'
 import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 
@@ -21,6 +22,13 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp'
 
 const ShuffleIcon = require('../../images/change.svg')
 const RepeatIcon = require('../../images/repeat.svg')
+
+const IconWrapper = styled.div` 
+width: 32px; 
+height: 32px;
+display: flex;
+justify-content: center;
+align-items: center;`
 
 
 class NowPlayingBar extends React.Component {
@@ -112,26 +120,11 @@ class NowPlayingBar extends React.Component {
                             justifyContent: 'space-between',
                             flexDlow: 'row nowrap',
                             display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-                            <div style={{ 
-                                    width: '32px', height: '32px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center', }}><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></div>
-                            <div style={{ 
-                                    width: '32px', height: '32px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center', }}><span><SkipPreviousIcon /></span></div>
-                            <div style={{ 
-                                    width: '32px', height: '32px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center', }}><span><PlayArrowIcon /></span></div>
-                            <div style={{ 
-                                    width: '32px', height: '32px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center', }}><span><SkipNextIcon /></span></div>
-                            <div style={{ 
-                                    width: '32px', height: '32px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center', }}><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></div>
+                            <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
+                            <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
+                            <IconWrapper><span><PlayArrowIcon /></span></IconWrapper>
+                            <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
+                            <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                         </div>
 
                         <div style={{ display: 'flex',width: '100%',
