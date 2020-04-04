@@ -9,7 +9,7 @@ import styled from 'styled-components'
 const MainViewLayout = styled.div`
   padding: 0 32px;
   height: calc(100vh - 90px);
-  overflowY: scroll;
+  overflow-y: scroll;
 `
 
 class MainView extends React.Component {
