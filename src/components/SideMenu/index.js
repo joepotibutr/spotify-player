@@ -67,7 +67,7 @@ const SideMenu = ({
 
     return (
 		<div>
-			<div onClick={() => this.props.updateHeaderTitle(viewType.RECENTLY_PLAYED)}><img style={{ width: '132px', height: '40px' }} src={logo}/></div>
+			<div onClick={() => updateHeaderTitle(viewType.RECENTLY_PLAYED)}><img style={{ cursor:'pointer', width: '132px', height: '40px' }} src={logo}/></div>
 			<div>
 				<div>	
 					<ul style={{ color: 'white', fontWeight: 'bold'}}>
