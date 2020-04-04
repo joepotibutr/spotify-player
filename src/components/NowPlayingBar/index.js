@@ -173,28 +173,19 @@ class NowPlayingBar extends React.Component {
                         justifyContent: 'flex-end',
                         flexDirection: 'row',
                         alignItems: 'center'}}>
-                                <div style={{ 
-                                    width: '32px', height: '32px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center', }}><PlaylistPlayIcon /></div>
-                                <div style={{ 
-                                    width: '32px', height: '32px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center', }}><DevicesIcon  style={{
+                                <IconWrapper><PlaylistPlayIcon /></IconWrapper>
+                                <IconWrapper><DevicesIcon  style={{
                                         width: '18px',
                                         height: '18px'
-                                    }}/></div>
+                                    }}/></IconWrapper>
                                 <div style={{ 
                                     display: 'flex', width: '136px',display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',}}>
-                                    <div style={{ 
-                                    width: '32px', height: '32px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center', }}><VolumeUpIcon  style={{
+                                    <IconWrapper><VolumeUpIcon  style={{
                                         width: '18px',
                                         height: '18px'
-                                    }} /></div>
+                                    }} /></IconWrapper>
                                     
                                     <div style={{
                                     height: '12px',
