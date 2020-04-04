@@ -4,6 +4,14 @@ import ArtistList from "../ArtistList";
 import PlaylistView from '../PlaylistView'
 import { viewType } from '../../constants'
 
+import styled from 'styled-components'
+
+const MainViewLayout = styled.div`
+  padding: 0 32px;
+  height: calc(100vh - 90px);
+  overflowY: scroll;
+`
+
 class MainView extends React.Component {
 
   // componentWillReceiveProps(nextProps) {
@@ -23,13 +31,13 @@ class MainView extends React.Component {
 
  render() {
     return (
-      <div style={{ padding: '0 32px', height: 'calc(100vh - 90px)', overflowY: 'scroll' }}>
+      <MainViewLayout>
         <div style={{ position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '60px'}}>
           <span>{`<`}</span>
           <span>{`>`}</span>
         </div>
           {this.renderMainView()}
-      </div>
+      </MainViewLayout>
     )
  }
 }
