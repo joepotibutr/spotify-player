@@ -56,7 +56,7 @@ class ArtistList extends React.Component {
       }
     
 
-    renderSongs = () => {
+    renderArtists = () => {
         return this.props.artistList && this.props.artistList.artists.map((artist, i) => i < 5 ? 
                 <TrackItem key={i}>
                     <div style={{
@@ -82,21 +82,6 @@ class ArtistList extends React.Component {
          : null)
     }
 
-    renderSongs2 = () => {
-        return this.props.artistList && this.props.artistList.artists.map((artist, i) => {
-            return (
-                <li key={i}>
-                    <div><img  src={artist.images[2].url}/></div>
-                    <div>
-                        <h3>{artist.name}</h3>
-                    </div>
-                    <div>
-                        <p>{artist.type}</p>
-                    </div>
-                </li>
-        )
-        })
-    }
 
     render() {
         return (
@@ -106,7 +91,7 @@ class ArtistList extends React.Component {
                     display: 'grid',
                     gridGap: '16px',
                     gridTemplateColumns: 'repeat(auto-fill,minmax(164px,1fr))'
-                }}>{this.props.songs && this.renderSongs()}</ul>
+                }}>{this.props.songs && this.renderArtists()}</ul>
                 <h2>Recommend Artist</h2>
             </div>
         )
