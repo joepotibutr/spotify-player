@@ -27,8 +27,8 @@ class MainView extends React.Component {
         <div style={{ position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '60px'}}>
           <span>{`<`}</span>
           <span>{`>`}</span>
-          {this.renderMainView()}
         </div>
+          {this.renderMainView()}
       </div>
     )
  }

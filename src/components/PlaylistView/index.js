@@ -26,7 +26,7 @@ class PlaylistView extends React.Component {
             playlist.name === this.props.headerTitle)
             console.log('currentPlaylist',currentPlaylist)
         return (
-            <div style={{ display: 'flex'}}>
+            <div style={{ display: 'flex',height: '900px',paddingTop: '60px'}}>
                 <div style={{ width:'30%'}}>
                     <div style={{ position:'fixed'}}>
                         <div style={{
