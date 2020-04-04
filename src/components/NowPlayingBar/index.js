@@ -23,7 +23,7 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp'
 const ShuffleIcon = require('../../images/change.svg')
 const RepeatIcon = require('../../images/repeat.svg')
 
-const IconWrapper = styled.div` 
+export const IconWrapper = styled.div` 
 width: 32px; 
 height: 32px;
 display: flex;
