@@ -8,7 +8,12 @@ import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from 'redux'
 import { viewType } from '../../constants'
 
+import {IconWrapper} from '../NowPlayingBar'
+
 const logo = require('../../images/Spotify_Logo_RGB_White.png')
+const home = require('../../images/home.svg')
+const search = require('../../images/search.svg')
+const library = require('../../images/library.svg')
 
 const SideMenu = ({
 	token,
@@ -73,10 +78,42 @@ const SideMenu = ({
 			<div>
 				<div>	
 					<ul style={{ color: 'white', fontWeight: 'bold'}}>
-						<li>Home</li>
-						<li>Search</li>
-						<li>Your Library</li>  
-						{/* {renderSideMenu()}           */}
+						<li style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)' }}>
+							<div>
+								<IconWrapper>
+									<img style={{
+                                        width: '18px',
+										height: '18px',
+										filter: 'invert(1)'
+                                    }} src={home}/>
+								</IconWrapper>
+							</div>
+							<div>Home</div>
+						</li>
+						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)' }}>
+							<div>
+								<IconWrapper>
+									<img style={{
+                                        width: '18px',
+										height: '18px',
+										filter: 'invert(1)'
+                                    }} src={search}/>
+								</IconWrapper>
+							</div>
+							<div>Search</div>
+						</li>
+						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)' }}>
+							<div>
+								<IconWrapper>
+									<img style={{
+                                        width: '18px',
+										height: '18px',
+										filter: 'invert(1)'
+                                    }} src={library}/>
+								</IconWrapper>
+							</div>
+							<div>Your Library</div>
+						</li>  
 					</ul>
 				</div>
 			<div><label>PLAYLISTS</label>
