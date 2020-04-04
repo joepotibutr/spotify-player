@@ -118,17 +118,17 @@ const SideMenu = ({
 				</div>
 			<div><label>PLAYLISTS</label>
                 <ul style={{ fontWeight: 'bold' }}>
-                  	<li style={{ display: 'flex'}}>
+                  	<li style={{ display: 'flex', alignItems: 'center'}}>
 						<div>
-							<div style={{ width: '24px', height: '24px', background: 'red'}} />
+							<div style={{ width: '30px', height: '30px', background: 'red'}} />
 						</div>
-						<div>Create Playlist</div>
+						<div style={{ marginLeft: '10px' }}>Create Playlist</div>
 					</li>
-                  	<li style={{ display: 'flex'}}>
+                  	<li style={{ display: 'flex', alignItems: 'center'}}>
 						<div>
-							<div style={{ width: '24px', height: '24px', background: 'green'}} />
+							<div style={{ width: '30px', height: '30px', background: 'green'}} />
 						</div>
-						<div>Liked Songs</div>
+						<div style={{ marginLeft: '10px' }}>Liked Songs</div>
 					</li>
                 </ul>
                 <hr />
