@@ -137,7 +137,10 @@ const SideMenu = ({
 								alignItems: 'center'
 							}}><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
 						</div>
-						<div onClick={() => updateHeaderTitle(viewType.LIKED_SONGS)} style={{ marginLeft: '15px' }}>Liked Songs</div>
+						<div onClick={() => {
+							fetchSongs(token)
+							updateHeaderTitle(viewType.LIKED_SONGS)
+							}} style={{ marginLeft: '15px' }}>Liked Songs</div>
 					</li>
                 </ul>
                 <hr />
