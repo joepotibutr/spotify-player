@@ -35,6 +35,10 @@ class MainView extends React.Component {
         <div style={{ position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '60px'}}>
           <span>{`<`}</span>
           <span>{`>`}</span>
+          <button onClick={() => {
+            window.location.href = 'https://www.spotify.com/logout/'
+            // window.location.href = 'http://localhost:3000'
+            }}>Logout</button>
         </div>
           {this.renderMainView()}
       </MainViewLayout>
