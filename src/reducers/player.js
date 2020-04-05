@@ -21,7 +21,7 @@ const defaultState = {
       return {
         ...state,
         songPlaying: true,
-        songDetails: action.song,
+        currentlyPlaying: action.song,
         songId: action.song.id,
         timeElapsed: 0,
         songPaused: false
@@ -31,7 +31,7 @@ const defaultState = {
       return {
         ...state,
         songPlaying: false,
-        songDetails: null,
+        currentlyPlaying: null,
         timeElapsed: 0,
         songPaused: true
       }
