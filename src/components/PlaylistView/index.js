@@ -2,7 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { viewType } from '../../constants'
+import { play } from '../../actions/player'
 import LikeIcon from '@material-ui/icons/Favorite';
+import { bindActionCreators } from 'redux'
 
 
 const PlaylistTrack = styled.li`
@@ -40,7 +42,7 @@ const LikedSongsCoverArt = styled.div`
 class PlaylistView extends React.Component {
 
     render() {
-        const { playlists, headerTitle } = this.props
+        const { playlists, headerTitle, play } = this.props
         const isUserLikedSongs = headerTitle === viewType.LIKED_SONGS
         const currentPlaylist =  playlists && playlists.find(playlist => 
             playlist.name === headerTitle)
@@ -80,7 +82,7 @@ class PlaylistView extends React.Component {
                 <div style={{ width:'70%'}}>
                     {this.props.songs ? 
                     <ol>{this.props.songs.map(song => (
-                        <PlaylistTrack key={song.track.id}>
+                        <PlaylistTrack key={song.track.id} onClick={() => play(song)}>
                             <div style={{ display: 'flex'}}>
                                 <div style={{ width: '5%' }}>F</div>
                                 <div style={{ display: 'flex', flexDirection: 'column', width: '80%'}}>
@@ -119,4 +121,6 @@ export default connect(state => ({
     headerTitle: state.uiReducer.title,
     songs: state.songReducer.songs ? state.songReducer.songs : '',
     playlists: state.playlistReducer.playlists,
-}))(PlaylistView)
+}),dispatch => bindActionCreators({
+	play,
+}, dispatch))(PlaylistView)

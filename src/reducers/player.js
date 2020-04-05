@@ -39,12 +39,14 @@ const defaultState = {
     case types.PAUSE_SONG:
       return {
         ...state,
+        songPlaying: false,
         songPaused: true
       }
   
     case types.RESUME_SONG:
       return {
         ...state,
+        songPlaying: true,
         songPaused: false
       }
   
