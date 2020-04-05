@@ -2,6 +2,7 @@ import * as types from '../actionTypes'
 import { viewType } from '../constants'
 
 const defaultState = {
+    currentlyPlaying: null,
     songPlaying: false,
     timeElapsed: 0,
     songId: 0,

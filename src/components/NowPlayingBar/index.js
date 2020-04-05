@@ -222,6 +222,7 @@ class NowPlayingBar extends React.Component {
 export default connect(state => ({
     recentlySongs: (state.songReducer && state.songReducer.recentlySongs) || '',
     songPlaying: (state.songReducer && state.playerReducer.songPlaying) || '',
+    currentlyPlaying: (state.songReducer && state.playerReducer.currentlyPlaying) || '',
 }),dispatch => bindActionCreators({
 	play,pause,stop,resume
 }, dispatch))(NowPlayingBar)
