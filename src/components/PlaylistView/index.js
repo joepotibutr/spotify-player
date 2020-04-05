@@ -27,7 +27,6 @@ const LikedSongsCoverArt = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    width: 50%;
     &:after {
         content: "";
         display: block;
