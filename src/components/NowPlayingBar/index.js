@@ -41,8 +41,11 @@ class NowPlayingBar extends React.Component {
     //   }
 
     render() {
-        const lastSongPlayed = this.props.recentlySongs.length && this.props.recentlySongs[0].track
-        const { play,pause,resume,stop, songPlaying} = this.props
+        const { play,pause,resume,stop, songPlaying, currentlyPlaying,recentlySongs } = this.props
+
+        const lastSongPlayed = recentlySongs.length && recentlySongs[0]
+
+        const currentTrack = currentlyPlaying ? currentlyPlaying : lastSongPlayed
 
 
         return (
@@ -50,13 +53,13 @@ class NowPlayingBar extends React.Component {
                 <div style={{ padding: '0 16px', display: 'flex', height: '100%', alignItems:'center'}}>
                     <div style={{ width: '30%', minWidth: '180px', display: 'flex', alignItems:'center'}}>
                         <div style={{ overflow: 'hidden' }}>
-                        {lastSongPlayed ?
+                        {currentTrack ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
                                 <div style={{
                                     minWidth:' 56px',
                                     minHeight:' 56px',
                                     boxShadow: '0 0 10px rgba(0,0,0,.3)'
-                                }}><img style={{ width: '56px', height: '56px'}} src={lastSongPlayed.album.images[2].url} /></div>
+                                }}><img style={{ width: '56px', height: '56px'}} src={currentTrack.track.album.images[2].url} /></div>
                                 <div style={{ 
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
@@ -76,7 +79,7 @@ class NowPlayingBar extends React.Component {
                                     }}>
                                         <span>
                                             <a>
-                                                {lastSongPlayed.name}
+                                                {currentTrack.track.name}
                                             </a>
                                         </span>
                                     </div>
@@ -91,12 +94,12 @@ class NowPlayingBar extends React.Component {
                                     }}>
                                         <span>
                                             <a>
-                                                {lastSongPlayed.artists.length > 1 ? 
-                                                lastSongPlayed.artists.map((artist, idx) => lastSongPlayed.artists.length - 1 === idx ? (
+                                                {currentTrack.track.artists.length > 1 ? 
+                                                currentTrack.track.artists.map((artist, idx) => currentTrack.track.artists.length - 1 === idx ? (
                                                     `${artist.name} `
                                                 ) : `${artist.name}, `)
                                                 :
-                                                lastSongPlayed.artists[0].name}
+                                                currentTrack.track.artists[0].name}
                                             </a>
                                         </span>
                                     </div>
@@ -131,7 +134,7 @@ class NowPlayingBar extends React.Component {
                             display: 'flex', justifyContent: 'center', alignItems:'center'}}>
                             <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                             <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                            {songPlaying ? <button onClick={pause}>PAUSE</button> : <IconWrapper onClick={() => play(lastSongPlayed)}><span><PlayArrowIcon /></span></IconWrapper>}
+                            {songPlaying ? <button onClick={pause}>PAUSE</button> : <IconWrapper onClick={() => play(currentTrack)}><span><PlayArrowIcon /></span></IconWrapper>}
                             <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
                             <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                         </div>
