@@ -42,6 +42,7 @@ class NowPlayingBar extends React.Component {
 
     render() {
         const lastSongPlayed = this.props.recentlySongs.length && this.props.recentlySongs[0].track
+        const { play,pause,resume,stop, songPlaying} = this.props
 
 
         return (
@@ -130,16 +131,16 @@ class NowPlayingBar extends React.Component {
                             display: 'flex', justifyContent: 'center', alignItems:'center'}}>
                             <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                             <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                            <IconWrapper onClick={}><span><PlayArrowIcon /></span></IconWrapper>
+                            {songPlaying ? <button onClick={pause}>PAUSE</button> : <IconWrapper onClick={() => play(lastSongPlayed)}><span><PlayArrowIcon /></span></IconWrapper>}
                             <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
                             <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                         </div>
 
                         <div style={{ display: 'flex',width: '100%',
-                     justifyContent: 'center',
-                     alignItems: 'center',
-                     fontFamily:  `'Varela Round', sans-serif `,
-                    }}>
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            fontFamily:  `'Varela Round', sans-serif `,
+                        }}>
                             <div style={{
                                 fontSize: '11px',
                                 lineHeight: '16px',
@@ -220,6 +221,7 @@ class NowPlayingBar extends React.Component {
 
 export default connect(state => ({
     recentlySongs: (state.songReducer && state.songReducer.recentlySongs) || '',
+    songPlaying: (state.songReducer && state.playerReducer.songPlaying) || '',
 }),dispatch => bindActionCreators({
 	play,pause,stop,resume
 }, dispatch))(NowPlayingBar)
