@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import ArtistList from "../ArtistList";
 import PlaylistView from '../PlaylistView'
 import { viewType } from '../../constants'
+import axios from 'axios'
 
 import styled from 'styled-components'
 
@@ -14,11 +15,23 @@ const MainViewLayout = styled.div`
 
 class MainView extends React.Component {
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.headerTitle !== nextProps.headerTitle) {
-  //     window.scrollTo(0, 0)
+  // async componentWillReceiveProps(nextProps) {
+  //   // if (this.props.headerTitle !== nextProps.headerTitle) {
+  //   //   window.scrollTo(0, 0)
+  //   // }
+
+  //   if(nextProps.token) {
+  //     const {data} = await axios.get('https://api.spotify.com/v1/me/player/devices',{ 
+  //     headers : { 'Authorization': 'Bearer ' + nextProps.token }
+  //   })
+  //     const res = await axios.get('https://api.spotify.com/v1/recommendations/available-genre-seeds',{ 
+  //     headers : { 'Authorization': 'Bearer ' + nextProps.token }
+  // })
+  // console.log('device=',data,res)
   //   }
   // }
+
+
 
   renderMainView = () => {
     switch (this.props.headerTitle) {
@@ -48,5 +61,11 @@ class MainView extends React.Component {
 
 
 export default connect(state => ({
-    headerTitle: state.uiReducer.title
+    headerTitle: state.uiReducer.title,
+
+
+
+
+
+    token : state.tokenReducer.token ? state.tokenReducer.token : '',
 }))(MainView)
