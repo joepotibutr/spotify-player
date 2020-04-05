@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { play,stop,pause,resume } from '../../actions/player'
 import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 
 import LikeIcon from '@material-ui/icons/Favorite';
@@ -32,9 +34,15 @@ align-items: center;`
 
 
 class NowPlayingBar extends React.Component {
+
+    // constructor(props) {
+    //     super(props);
+    //     this.audioRef = React.createRef();
+    //   }
+
     render() {
         const lastSongPlayed = this.props.recentlySongs.length && this.props.recentlySongs[0].track
-        console.log(this.props.recentlySongs.length && this.props.recentlySongs)
+
 
         return (
             <footer style={{ height: '86px',backgroundColor: '#282828' }}>
@@ -122,7 +130,7 @@ class NowPlayingBar extends React.Component {
                             display: 'flex', justifyContent: 'center', alignItems:'center'}}>
                             <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                             <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                            <IconWrapper><span><PlayArrowIcon /></span></IconWrapper>
+                            <IconWrapper onClick={}><span><PlayArrowIcon /></span></IconWrapper>
                             <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
                             <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                         </div>
@@ -212,4 +220,6 @@ class NowPlayingBar extends React.Component {
 
 export default connect(state => ({
     recentlySongs: (state.songReducer && state.songReducer.recentlySongs) || '',
-}))(NowPlayingBar)
+}),dispatch => bindActionCreators({
+	play,pause,stop,resume
+}, dispatch))(NowPlayingBar)

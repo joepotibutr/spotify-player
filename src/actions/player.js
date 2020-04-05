@@ -1,19 +1,19 @@
 import * as types from '../actionTypes'
 
 
-export const playSong = song => {
+export const play = song => {
     return { type: types.PLAY_SONG , song }
   }
   
-  export const stopSong = () => {
+  export const stop = () => {
     return { type: types.STOP_SONG }
   }
   
-  export const pauseSong = () => {
+  export const pause = () => {
     return { type: types.PAUSE_SONG }
   }
   
-  export const resumeSong = () => {
+  export const resume = () => {
     return { type: types.RESUME_SONG }
   }
   
