@@ -8,6 +8,7 @@ import userReducer from './user'
 import uiReducer from './ui'
 import playlistReducer from './playlist'
 import soundReducer from './sound'
+import playerReducer from './player'
 
 
 export default combineReducers({
@@ -19,5 +20,6 @@ export default combineReducers({
     userReducer,
     uiReducer,
     playlistReducer,
-    soundReducer
+    soundReducer,
+    playerReducer
 })
