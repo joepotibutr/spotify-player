@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { viewType } from '../../constants'
+import LikeIcon from '@material-ui/icons/Favorite';
 
 
 const PlaylistTrack = styled.li`
@@ -19,11 +21,16 @@ const TrackDetailText = styled.span`
 
 
 `
+
+// 12 3 4 
+// 12 9 8
+
 class PlaylistView extends React.Component {
 
     render() {
         const { playlists, headerTitle } = this.props
-        const currentPlaylist = playlists && playlists.find(playlist => 
+        const isUserLikedSongs = headerTitle === viewType.LIKED_SONGS
+        const currentPlaylist =  playlists && playlists.find(playlist => 
             playlist.name === headerTitle)
            
         return (
@@ -31,17 +38,32 @@ class PlaylistView extends React.Component {
                 <div style={{ width:'30%'}}>
                     <div style={{ position:'fixed'}}>
                         <div style={{
-                            minWidth: '180px',
-                            minHeight: '180px'
+                            width: 'auto',
+                            minHeight: 'auto',
+                            boxShadow: '0 0 10px rgba(0,0,0,.3)'
                         }}>
+                            {isUserLikedSongs ? 
+                            <div style={{ 
+								width: '30px', 
+								height: '30px', 
+								background: 'green',
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center'
+							}}>
+                            <LikeIcon style={{ width: '18px', height: '18px'}}/></div> : 
                             <img style={{
-                            width: '180px',
-                            height: '180px'
-                        }} 
-                        src={currentPlaylist.images[0].url}/>
+                                width: '100%',
+                                height: '100%',
+                                backgroundSize: 'contain',
+                                backgroundPosition: '50%',
+                                backgroundColor: '#000',
+                                backgroundRepeat: 'no-repeat',
+                            }} 
+                            src={currentPlaylist.images[0].url}/>}
                         </div>
                         <div><h1>{this.props.headerTitle}</h1></div>
-                        <div><p>{currentPlaylist.owner.display_name}</p></div>
+                        <div><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
                         <div><p>{this.props.songs.length} SONGS</p></div>
                     </div>
                 </div>
