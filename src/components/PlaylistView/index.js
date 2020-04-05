@@ -22,6 +22,19 @@ const TrackDetailText = styled.span`
 
 `
 
+const LikedSongsCoverArt = styled.div`
+    background:green;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 50%;
+    &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+`
+
 // 12 3 4 
 // 12 9 8
 
@@ -36,31 +49,29 @@ class PlaylistView extends React.Component {
         return (
             <div style={{ display: 'flex',height: '900px',paddingTop: '60px'}}>
                 <div style={{ width:'30%'}}>
-                    <div style={{ position:'fixed'}}>
-                        <div style={{
-                            width: 'auto',
-                            minHeight: 'auto',
-                            boxShadow: '0 0 10px rgba(0,0,0,.3)'
-                        }}>
-                            {isUserLikedSongs ? 
-                            <div style={{ 
-								width: '30px', 
-								height: '30px', 
-								background: 'green',
-								display: 'flex',
-								justifyContent: 'center',
-								alignItems: 'center'
-							}}>
-                            <LikeIcon style={{ width: '18px', height: '18px'}}/></div> : 
-                            <img style={{
-                                width: '100%',
-                                height: '100%',
-                                backgroundSize: 'contain',
-                                backgroundPosition: '50%',
-                                backgroundColor: '#000',
-                                backgroundRepeat: 'no-repeat',
-                            }} 
-                            src={currentPlaylist.images[0].url}/>}
+                    <div>
+                        <div style={{  
+                                width: 'auto',
+                                minHeight: 'auto',
+                                boxShadow: '0 0 10px rgba(0,0,0,.3)' }}>
+                            <div style={{
+                                   width: '100%',
+                                   height: '100%'
+                                }}>
+                                {isUserLikedSongs ? 
+                                <LikedSongsCoverArt >
+                                <LikeIcon style={{ width: '18px', height: '18px'}}/>
+                                </LikedSongsCoverArt> : 
+                                <img style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    backgroundSize: 'contain',
+                                    backgroundPosition: '50%',
+                                    backgroundColor: '#000',
+                                    backgroundRepeat: 'no-repeat',
+                                }} 
+                                src={currentPlaylist.images[0].url}/>}
+                            </div>
                         </div>
                         <div><h1>{this.props.headerTitle}</h1></div>
                         <div><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
