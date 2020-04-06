@@ -28,6 +28,7 @@ const TrackItem = styled.li`
         background:red;
         display:none;
         border-radius:50%;
+        transform: translateX(90px);
     }
     &:hover {
         .play-btn {
