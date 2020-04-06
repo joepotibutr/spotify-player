@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from "redux"
 import { fetchRecentlyPlayedSongs, fetchSongs } from '../../actions/song'
 import { fetchArtist, fetchRecentlyArtist } from '../../actions/artist'
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { viewType } from '../../constants'
 
 import styled from 'styled-components'
 
 const TrackItem = styled.li`
+    cursor:pointer;
     background: #282828;
     border-radius: 8px;
     padding: 20px 20px 16px;
@@ -16,6 +18,21 @@ const TrackItem = styled.li`
         height: auto;
         border-radius:50%;
         box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2)
+    }
+    .play-btn {
+        position:absolute;
+        justify-content:center;
+        align-items:center;
+        width: 50px;
+        height: 50px;
+        background:red;
+        display:none;
+        border-radius:50%;
+    }
+    &:hover {
+        .play-btn {
+            display:flex;
+        }
     }
 `
 
@@ -65,6 +82,7 @@ class ArtistList extends React.Component {
                         <img  src={artist.images[2].url}/>
                     </div>
                     <div>
+                        <div className="play-btn"><PlayArrowIcon /></div>
                         <div>
                             <h4 style={{
                                 fontSize: '14px',
@@ -78,6 +96,7 @@ class ArtistList extends React.Component {
                             <span>{artist.type.charAt(0).toUpperCase() + artist.type.slice(1)}</span>
                         </div>
                     </div>
+                   
                 </TrackItem>
          : null)
     }
