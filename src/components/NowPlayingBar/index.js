@@ -12,7 +12,7 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 
 
-// import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
+import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
@@ -134,7 +134,7 @@ class NowPlayingBar extends React.Component {
                             display: 'flex', justifyContent: 'center', alignItems:'center'}}>
                             <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                             <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                            {songPlaying ? <button onClick={pause}>PAUSE</button> : <IconWrapper onClick={() => play(currentTrack)}><span><PlayArrowIcon /></span></IconWrapper>}
+                            {songPlaying ? <PauseCircleOutlineIcon onClick={pause}/> : <IconWrapper onClick={() => play(currentTrack)}><span><PlayArrowIcon /></span></IconWrapper>}
                             <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
                             <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                         </div>
