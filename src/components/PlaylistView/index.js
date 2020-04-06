@@ -24,6 +24,15 @@ const TrackDetailText = styled.span`
 
 `
 
+
+const PlaylistViewLayout = styled.div`
+    height: 900px;
+    padding-top:60px;
+    display:grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "left right";
+`
+
 const LikedSongsCoverArt = styled.div`
     background:green;
     display:flex;
@@ -48,8 +57,8 @@ class PlaylistView extends React.Component {
             playlist.name === headerTitle)
            
         return (
-            <div style={{ display: 'flex',height: '900px',paddingTop: '60px'}}>
-                <div style={{ width:'30%'}}>
+            <PlaylistViewLayout>
+                <div style={{ gridArea: 'left'}}>
                     <div>
                         <div style={{  
                                 width: 'auto',
@@ -79,7 +88,7 @@ class PlaylistView extends React.Component {
                         <div><p>{this.props.songs.length} SONGS</p></div>
                     </div>
                 </div>
-                <div style={{ width:'70%'}}>
+                <div  style={{ gridArea: 'right'}}>
                     {this.props.songs ? 
                     <ol>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id} onClick={() => play(song)}>
@@ -112,7 +121,7 @@ class PlaylistView extends React.Component {
                     ))}</ol> : 
                     null}
                 </div>
-            </div>
+            </PlaylistViewLayout>
         )
     }
 }
