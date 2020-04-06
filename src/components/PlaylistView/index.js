@@ -58,7 +58,7 @@ class PlaylistView extends React.Component {
            
         return (
             <PlaylistViewLayout>
-                <div style={{ gridArea: 'left'}}>
+                <div style={{ gridArea: 'left',position:'fixed',maxWidth: '20%'}}>
                     <div>
                         <div style={{  
                                 width: 'auto',
