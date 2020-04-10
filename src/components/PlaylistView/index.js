@@ -18,8 +18,19 @@ const PlaylistTrack = styled.li`
     justify-content: center;
     transition:.1s;
     cursor:default;
+
+    .play-icon {
+        display:none;
+    }
+
     &:hover {
         background-color: hsla(0,0%,100%,.1);
+        .musical-icon {
+            display:none;
+        }
+        .play-icon {
+            display:block;
+        }
     }
 
 `
@@ -29,18 +40,7 @@ const IconWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    .play-icon {
-        display:none;
-    }
 
-    &:hover {
-        .musical-icon {
-            display:none;
-        }
-        .play-icon {
-            display:block;
-        }
-    }
 
 
 `
