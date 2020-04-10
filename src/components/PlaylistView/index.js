@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { viewType } from '../../constants'
 import { play } from '../../actions/player'
 import LikeIcon from '@material-ui/icons/Favorite';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { bindActionCreators } from 'redux'
 
 
@@ -15,9 +16,32 @@ const PlaylistTrack = styled.li`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition:.1s;
+    cursor:default;
     &:hover {
         background-color: hsla(0,0%,100%,.1);
     }
+
+`
+
+const IconWrapper = styled.div`
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .play-icon {
+        display:none;
+    }
+
+    &:hover {
+        .musical-icon {
+            display:none;
+        }
+        .play-icon {
+            display:block;
+        }
+    }
+
 
 `
 
@@ -96,18 +120,19 @@ class PlaylistView extends React.Component {
                         <PlaylistTrack key={song.track.id} onClick={() => play(song)}>
                             <div style={{ display: 'flex'}}>
                                 <div style={{ width: '40px' }}>
-                                   <div style={{
-                                       height: '100%',
-                                       display: 'flex',
-                                       justifyContent: 'center',
-                                       alignItems: 'center',
-                                   }}>
-                                        <img style={{ 
+                                   <IconWrapper>
+                                        <img
+                                        className="musical-icon"
+                                        style={{ 
                                             filter: 'invert(1)',
                                             minWidth: '15px',
                                             minHeight: '15px'
                                             }} src={MusicalNoteIcon} />
-                                   </div>
+                                        <PlayArrowIcon className="play-icon" style={{ 
+                                            minWidth: '15px',
+                                            minHeight: '15px'
+                                            }}  />
+                                   </IconWrapper>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', width: '80%'}}>
                                     <div> <h4 style={{ margin: 0 }}><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
