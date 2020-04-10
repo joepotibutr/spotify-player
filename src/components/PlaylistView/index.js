@@ -7,6 +7,8 @@ import LikeIcon from '@material-ui/icons/Favorite';
 import { bindActionCreators } from 'redux'
 
 
+const MusicalNoteIcon = require('../../images/musical-note.svg')
+
 const PlaylistTrack = styled.li`
     height: 4.56em;
     list-style-type: none;
@@ -93,7 +95,11 @@ class PlaylistView extends React.Component {
                     <ol>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id} onClick={() => play(song)}>
                             <div style={{ display: 'flex'}}>
-                                <div style={{ width: '5%' }}>F</div>
+                                <div style={{ width: '5%' }}>
+                                   <div>
+                                        <img style={{ filter: invert(1)}} src={MusicalNoteIcon} />
+                                   </div>
+                                </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', width: '80%'}}>
                                     <div> <h4 style={{ margin: 0 }}><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
                                         <div style={{ display: 'flex' }}>
