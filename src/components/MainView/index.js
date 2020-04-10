@@ -45,7 +45,7 @@ class MainView extends React.Component {
  render() {
     return (
       <MainViewLayout>
-        <div style={{ position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '60px'}}>
+        <div style={{ zIndex:3, position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '60px'}}>
           <span>{`<`}</span>
           <span>{`>`}</span>
           <button onClick={() => {

@@ -95,9 +95,18 @@ class PlaylistView extends React.Component {
                     <ol>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id} onClick={() => play(song)}>
                             <div style={{ display: 'flex'}}>
-                                <div style={{ width: '5%' }}>
-                                   <div>
-                                        <img style={{ filter: invert(1)}} src={MusicalNoteIcon} />
+                                <div style={{ width: '40px' }}>
+                                   <div style={{
+                                       height: '100%',
+                                       display: 'flex',
+                                       justifyContent: 'center',
+                                       alignItems: 'center',
+                                   }}>
+                                        <img style={{ 
+                                            filter: 'invert(1)',
+                                            minWidth: '15px',
+                                            minHeight: '15px'
+                                            }} src={MusicalNoteIcon} />
                                    </div>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', width: '80%'}}>
