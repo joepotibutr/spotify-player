@@ -80,7 +80,7 @@ const SideMenu = ({
 			<div>
 				<div>	
 					<ul style={{ color: 'white', fontWeight: 'bold'}}>
-						<li style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)' }}>
+						<li style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)',marginBottom:'10px' }}>
 							<div>
 								<IconWrapper>
 									<img style={{
@@ -90,9 +90,9 @@ const SideMenu = ({
                                     }} src={home}/>
 								</IconWrapper>
 							</div>
-							<div>Home</div>
+							<div style={{ marginLeft: '10px'}}>Home</div>
 						</li>
-						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)' }}>
+						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)',marginBottom:'10px' }}>
 							<div>
 								<IconWrapper>
 									<img style={{
@@ -102,9 +102,9 @@ const SideMenu = ({
                                     }} src={search}/>
 								</IconWrapper>
 							</div>
-							<div>Search</div>
+							<div  style={{ marginLeft: '10px'}}>Search</div>
 						</li>
-						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)' }}>
+						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)',marginBottom:'10px' }}>
 							<div>
 								<IconWrapper>
 									<img style={{
@@ -114,11 +114,11 @@ const SideMenu = ({
                                     }} src={library}/>
 								</IconWrapper>
 							</div>
-							<div>Your Library</div>
+							<div  style={{ marginLeft: '10px'}}>Your Library</div>
 						</li>  
 					</ul>
 				</div>
-			<div><label>PLAYLISTS</label>
+			<div style={{ padding: '5px'}}><label>PLAYLISTS</label>
                 <ul style={{ fontWeight: 'bold' }}>
                   	<li style={{ display: 'flex', alignItems: 'center', marginBottom: '10px'}}>
 						<div>
