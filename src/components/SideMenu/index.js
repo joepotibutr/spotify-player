@@ -16,6 +16,8 @@ const logo = require('../../images/Spotify_Logo_RGB_White.png')
 const home = require('../../images/home.svg')
 const search = require('../../images/search.svg')
 const library = require('../../images/library.svg')
+const plus = require('../../images/plus.svg')
+
 
 const SideMenu = ({
 	token,
@@ -122,7 +124,16 @@ const SideMenu = ({
                 <ul style={{ fontWeight: 'bold' }}>
                   	<li style={{ display: 'flex', alignItems: 'center', marginBottom: '10px'}}>
 						<div>
-							<div style={{ width: '30px', height: '30px', background: 'red'}} />
+							<div style={{ 
+								width: '30px', 
+								height: '30px',
+								background: '#ffffff',
+								display:'flex',
+								justifyContent:'center',
+								alignItems:'center'
+								}} >
+								<span style={{ width: '15px', height: '15px' }}><img style={{ width: '15px', height: '15px' }} src={plus} /></span>
+							</div>
 						</div>
 						<div style={{ marginLeft: '15px' }}>Create Playlist</div>
 					</li>
