@@ -86,7 +86,7 @@ const SideMenu = ({
 									<img style={{
                                         width: '18px',
 										height: '18px',
-										filter: 'invert(1)'
+										filter: 'invert(0.5)'
                                     }} src={home}/>
 								</IconWrapper>
 							</div>
@@ -98,7 +98,7 @@ const SideMenu = ({
 									<img style={{
                                         width: '18px',
 										height: '18px',
-										filter: 'invert(1)'
+										filter: 'invert(0.5)'
                                     }} src={search}/>
 								</IconWrapper>
 							</div>
@@ -110,7 +110,7 @@ const SideMenu = ({
 									<img style={{
                                         width: '18px',
 										height: '18px',
-										filter: 'invert(1)'
+										filter: 'invert(0.5)'
                                     }} src={library}/>
 								</IconWrapper>
 							</div>
