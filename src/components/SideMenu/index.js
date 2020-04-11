@@ -122,7 +122,7 @@ const SideMenu = ({
 				</div>
 			<div style={{ padding: '5px'}}><label>PLAYLISTS</label>
                 <ul style={{ fontWeight: 'bold' }}>
-                  	<li style={{ display: 'flex', alignItems: 'center', marginBottom: '10px'}}>
+                  	<li style={{ display: 'flex', alignItems: 'center', marginBottom: '10px',opacity:0.5}}>
 						<div>
 							<div style={{ 
 								width: '30px', 
@@ -132,12 +132,14 @@ const SideMenu = ({
 								justifyContent:'center',
 								alignItems:'center'
 								}} >
-								<span style={{ width: '15px', height: '15px' }}><img style={{ width: '15px', height: '15px' }} src={plus} /></span>
+								<span style={{ width: '15px', height: '15px' }}>
+									<img style={{ width: '15px', height: '15px' }} src={plus} />
+								</span>
 							</div>
 						</div>
 						<div style={{ marginLeft: '15px' }}>Create Playlist</div>
 					</li>
-                  	<li style={{ display: 'flex', alignItems: 'center'}}>
+                  	<li style={{ display: 'flex', alignItems: 'center',opacity:0.5}}>
 						<div>
 							<div style={{ 
 								width: '30px', 
