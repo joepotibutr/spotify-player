@@ -10,6 +10,15 @@ import styled from 'styled-components'
 const PlaylistItem = styled.li`
     background:transparent;
     margin-bottom:10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    color: rgb(255, 255, 255,0.5);
+    text-align: left;
 
 `
 
