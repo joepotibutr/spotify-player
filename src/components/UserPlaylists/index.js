@@ -8,7 +8,8 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 const PlaylistItem = styled.li`
-  background:transparent;
+    background:transparent;
+    margin-bottom:10px;
 
 `
 
@@ -25,7 +26,7 @@ class UserPlaylists extends Component {
         return (
             <div>
                 {playlistMenu.length ? 
-                <ul style={{ overflowY: 'auto', height: 'calc(100vh - 475px)' }}>{playlistMenu.map(playlist => (
+                <ul style={{ overflowY: 'auto', height: 'calc(100vh - 511px)' }}>{playlistMenu.map(playlist => (
                       <PlaylistItem onClick={() => {
                         this.props.fetchPlaylistSongsRequest(
                           playlist.owner.id,
