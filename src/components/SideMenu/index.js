@@ -120,7 +120,7 @@ const SideMenu = ({
 						</li>  
 					</ul>
 				</div>
-			<div><label>PLAYLISTS</label>
+			<div style={{ marginRight: '24px'}}><label>PLAYLISTS</label>
                 <ul style={{ fontWeight: 'bold' }}>
                   	<li style={{ display: 'flex', alignItems: 'center', marginBottom: '10px',opacity:0.5}}>
 						<div>
