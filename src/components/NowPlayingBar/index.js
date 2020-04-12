@@ -24,7 +24,7 @@ export const IconWrapper = styled.div`
 width: 32px; 
 height: 32px;
 display: flex;
-justify-content: center;
+justify-content: start;
 align-items: center;
 `
 

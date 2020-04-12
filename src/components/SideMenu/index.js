@@ -92,7 +92,7 @@ const SideMenu = ({
                                     }} src={home}/>
 								</IconWrapper>
 							</div>
-							<div style={{ marginLeft: '10px'}}>Home</div>
+							<div style={{ marginLeft: '7px'}}>Home</div>
 						</li>
 						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)',marginBottom:'10px' }}>
 							<div>
@@ -104,7 +104,7 @@ const SideMenu = ({
                                     }} src={search}/>
 								</IconWrapper>
 							</div>
-							<div  style={{ marginLeft: '10px'}}>Search</div>
+							<div  style={{ marginLeft: '7px'}}>Search</div>
 						</li>
 						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)',marginBottom:'10px' }}>
 							<div>
@@ -116,11 +116,11 @@ const SideMenu = ({
                                     }} src={library}/>
 								</IconWrapper>
 							</div>
-							<div  style={{ marginLeft: '10px'}}>Your Library</div>
+							<div  style={{ marginLeft: '7px'}}>Your Library</div>
 						</li>  
 					</ul>
 				</div>
-			<div style={{ padding: '5px'}}><label>PLAYLISTS</label>
+			<div><label>PLAYLISTS</label>
                 <ul style={{ fontWeight: 'bold' }}>
                   	<li style={{ display: 'flex', alignItems: 'center', marginBottom: '10px',opacity:0.5}}>
 						<div>
