@@ -19,6 +19,17 @@ const search = require('../../images/search.svg')
 const library = require('../../images/library.svg')
 const plus = require('../../images/plus.svg')
 
+const PlaylistAction = styled.li`
+	display: flex;
+	align-items: center;
+	opacity:0.5;
+	cursor:pointer;
+	transition:.2s;
+
+	&:hover {
+		opacity:1;
+	}
+`
 
 const NavigationLinkItem = styled.li`
  display: flex;
@@ -110,9 +121,7 @@ const SideMenu = ({
 						<NavigationLinkItem>
 							<div>
 								<IconWrapper>
-									<img style={{
-                                       
-                                    }} src={home}/>
+									<img src={home}/>
 								</IconWrapper>
 							</div>
 							<div style={{ marginLeft: '7px'}}>Home</div>
@@ -120,11 +129,7 @@ const SideMenu = ({
 						<NavigationLinkItem>
 							<div>
 								<IconWrapper>
-									<img style={{
-                                        width: '18px',
-										height: '18px',
-										filter: 'invert(0.5)'
-                                    }} src={search}/>
+									<img src={search}/>
 								</IconWrapper>
 							</div>
 							<div  style={{ marginLeft: '7px'}}>Search</div>
@@ -132,11 +137,7 @@ const SideMenu = ({
 						<NavigationLinkItem >
 							<div>
 								<IconWrapper>
-									<img style={{
-                                        width: '18px',
-										height: '18px',
-										filter: 'invert(0.5)'
-                                    }} src={library}/>
+									<img src={library}/>
 								</IconWrapper>
 							</div>
 							<div  style={{ marginLeft: '7px'}}>Your Library</div>
@@ -145,7 +146,7 @@ const SideMenu = ({
 				</div>
 			<div style={{ marginRight: '24px'}}><label>PLAYLISTS</label>
                 <ul style={{ fontWeight: 'bold' }}>
-                  	<li style={{ display: 'flex', alignItems: 'center', marginBottom: '10px',opacity:0.5}}>
+                  	<PlaylistAction style={{ marginBottom: '10px'}}>
 						<div>
 							<div style={{ 
 								width: '30px', 
@@ -161,8 +162,8 @@ const SideMenu = ({
 							</div>
 						</div>
 						<div style={{ marginLeft: '15px' }}>Create Playlist</div>
-					</li>
-                  	<li style={{ display: 'flex', alignItems: 'center',opacity:0.5}}>
+					</PlaylistAction>
+                  	<PlaylistAction>
 						<div>
 							<div style={{ 
 								width: '30px', 
@@ -177,7 +178,7 @@ const SideMenu = ({
 							fetchSongs(token)
 							updateHeaderTitle(viewType.LIKED_SONGS)
 							}} style={{ marginLeft: '15px' }}>Liked Songs</div>
-					</li>
+					</PlaylistAction>
                 </ul>
                 <hr style={{
 					opacity: 0.1,
