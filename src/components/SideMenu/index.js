@@ -26,6 +26,21 @@ const NavigationLinkItem = styled.li`
  color: rgb(255,255,255,0.5);
  margin-bottom:10px; 
  cursor:pointer;
+ transition:.2s;
+
+ img {
+	width: 18px;
+	height: 18px;
+	filter: invert(0.5);
+	transition:.2s;
+}
+
+	&:hover {
+		color: rgb(255,255,255);
+		img {
+			filter:invert(1) !important;
+		}
+	}
 `
 
 
@@ -96,9 +111,7 @@ const SideMenu = ({
 							<div>
 								<IconWrapper>
 									<img style={{
-                                        width: '18px',
-										height: '18px',
-										filter: 'invert(0.5)'
+                                       
                                     }} src={home}/>
 								</IconWrapper>
 							</div>
