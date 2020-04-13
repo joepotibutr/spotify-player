@@ -7,6 +7,7 @@ import { fetchSongs } from '../../actions/song'
 import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from 'redux'
 import { viewType } from '../../constants'
+import styled from 'styled-components'
 
 import {IconWrapper} from '../NowPlayingBar'
 
@@ -17,6 +18,15 @@ const home = require('../../images/home.svg')
 const search = require('../../images/search.svg')
 const library = require('../../images/library.svg')
 const plus = require('../../images/plus.svg')
+
+
+const NavigationLinkItem = styled.li`
+ display: flex;
+ align-items: center;
+ color: rgb(255,255,255,0.5);
+ margin-bottom:10px; 
+ cursor:pointer;
+`
 
 
 const SideMenu = ({
@@ -82,7 +92,7 @@ const SideMenu = ({
 			<div>
 				<div>	
 					<ul style={{ color: 'white', fontWeight: 'bold'}}>
-						<li style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)',marginBottom:'10px' }}>
+						<NavigationLinkItem>
 							<div>
 								<IconWrapper>
 									<img style={{
@@ -93,8 +103,8 @@ const SideMenu = ({
 								</IconWrapper>
 							</div>
 							<div style={{ marginLeft: '7px'}}>Home</div>
-						</li>
-						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)',marginBottom:'10px' }}>
+						</NavigationLinkItem>
+						<NavigationLinkItem>
 							<div>
 								<IconWrapper>
 									<img style={{
@@ -105,8 +115,8 @@ const SideMenu = ({
 								</IconWrapper>
 							</div>
 							<div  style={{ marginLeft: '7px'}}>Search</div>
-						</li>
-						<li  style={{ display: 'flex', alignItems: 'center',color: 'rgb(255,255,255,0.5)',marginBottom:'10px' }}>
+						</NavigationLinkItem>
+						<NavigationLinkItem >
 							<div>
 								<IconWrapper>
 									<img style={{
@@ -117,7 +127,7 @@ const SideMenu = ({
 								</IconWrapper>
 							</div>
 							<div  style={{ marginLeft: '7px'}}>Your Library</div>
-						</li>  
+						</NavigationLinkItem>  
 					</ul>
 				</div>
 			<div style={{ marginRight: '24px'}}><label>PLAYLISTS</label>
