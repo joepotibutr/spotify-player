@@ -19,6 +19,11 @@ const PlaylistItem = styled.li`
     letter-spacing: 0.015em;
     color: rgb(255, 255, 255,0.5);
     text-align: left;
+    cursor:default;
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
 
 `
 
