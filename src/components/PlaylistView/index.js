@@ -19,8 +19,27 @@ const PlaylistTrack = styled.li`
     transition:.1s;
     cursor:default;
 
+    .track-item-play {
+        width:40px;
+    }
+
+    .track-item-options {
+        width:10%;
+    }
+
+    .track-item-duration {
+        width:5%;
+    }
+
+    .musical-icon {
+        min-width:15px;
+        min-height:15px;
+        filter:invert(1);
+    }
     .play-icon {
         display:none;
+        min-width:15px;
+        min-height:15px;
     }
 
     &:hover {
@@ -57,6 +76,12 @@ const PlaylistViewLayout = styled.div`
     display:grid;
     grid-template-columns: 30% 70%;
     grid-template-areas: "left right";
+
+    .grid-area-left {
+        grid-area: left;
+        position:fixed;
+        max-width: 20%;
+    }
 `
 
 const LikedSongsCoverArt = styled.div`
@@ -84,7 +109,7 @@ class PlaylistView extends React.Component {
            
         return (
             <PlaylistViewLayout>
-                <div style={{ gridArea: 'left',position:'fixed',maxWidth: '20%'}}>
+                <div className="grid-area-left">
                     <div>
                         <div style={{  
                                 width: 'auto',
@@ -96,7 +121,7 @@ class PlaylistView extends React.Component {
                                 }}>
                                 {isUserLikedSongs ? 
                                 <LikedSongsCoverArt >
-                                <LikeIcon style={{ width: '18px', height: '18px'}}/>
+                                    <LikeIcon style={{ width: '18px', height: '18px'}}/>
                                 </LikedSongsCoverArt> : 
                                 <img style={{
                                     width: '100%',
@@ -119,19 +144,12 @@ class PlaylistView extends React.Component {
                     <ol>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id} onClick={() => play(song)}>
                             <div style={{ display: 'flex'}}>
-                                <div style={{ width: '40px' }}>
+                                <div  className="track-item-play">
                                    <IconWrapper>
                                         <img
                                         className="musical-icon"
-                                        style={{ 
-                                            filter: 'invert(1)',
-                                            minWidth: '15px',
-                                            minHeight: '15px'
-                                            }} src={MusicalNoteIcon} />
-                                        <PlayArrowIcon className="play-icon" style={{ 
-                                            minWidth: '15px',
-                                            minHeight: '15px'
-                                            }}  />
+                                        src={MusicalNoteIcon} />
+                                        <PlayArrowIcon className="play-icon" />
                                    </IconWrapper>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', width: '80%'}}>
@@ -154,8 +172,8 @@ class PlaylistView extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div style={{ width: '10%' }}>...</div>
-                                <div style={{ width: '5%' }}>3.33</div>
+                                <div className="track-item-options" >...</div>
+                                <div className="track-item-duration">3.33</div>
                             </div>
                         </PlaylistTrack>
                     ))}</ol> : 
