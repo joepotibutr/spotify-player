@@ -9,7 +9,7 @@ import styled from 'styled-components'
 
 const PlaylistItem = styled.li`
     background:transparent;
-    margin-bottom:10px;
+    padding: 5px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
