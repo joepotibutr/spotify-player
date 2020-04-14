@@ -174,7 +174,7 @@ class PlaylistView extends React.Component {
                                 <div style={{ display: 'flex', flexDirection: 'column', width: '80%'}}>
                                     <div> <h4 style={{ margin: 0 }}><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
                                         <div style={{ display: 'flex' }}>
-                                            <div>
+                                            <div style={{ marginRight:'5px' }}>
                                             {song.track.artists.length > 1 ?
                                                 <LinkedText>
                                                     <span>{song.track.artists.map((artist, idx) => song.track.artists.length - 1 === idx ? (
@@ -186,9 +186,12 @@ class PlaylistView extends React.Component {
                                                 <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
                                             </LinkedText>}
                                         </div>
-                                        <LinkedText>
-                                            <span>{song.track.album.name}</span>
-                                        </LinkedText>
+                                        <div style={{ marginRight:'5px' }}>.</div>
+                                        <div>
+                                            <LinkedText>
+                                                <span>{song.track.album.name}</span>
+                                            </LinkedText>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="track-item-options" >...</div>
