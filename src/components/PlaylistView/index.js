@@ -10,6 +10,24 @@ import { bindActionCreators } from 'redux'
 
 const MusicalNoteIcon = require('../../images/musical-note.svg')
 
+const LinkedText = styled.span`
+
+    &:hover {
+        span {
+            text-decoration:underline;
+            color:white;
+        }
+    }
+    span {
+        font-size:12px;
+        color:gray;
+        font-weight:bold;
+        transition:.2s;
+        
+    }
+
+`
+
 const PlaylistTrack = styled.li`
     height: 4.56em;
     list-style-type: none;
@@ -25,6 +43,7 @@ const PlaylistTrack = styled.li`
 
     .track-item-options {
         width:10%;
+        cursor:pointer;
     }
 
     .track-item-duration {
@@ -65,7 +84,7 @@ const IconWrapper = styled.div`
 `
 
 const TrackDetailText = styled.span`
-
+    color:white;
 
 `
 
@@ -157,19 +176,19 @@ class PlaylistView extends React.Component {
                                         <div style={{ display: 'flex' }}>
                                             <div>
                                             {song.track.artists.length > 1 ?
-                                                <div>
+                                                <LinkedText>
                                                     <span>{song.track.artists.map((artist, idx) => song.track.artists.length - 1 === idx ? (
                                                                     `${artist.name} `
                                                                 ) : `${artist.name}, `)}
                                                     </span>
-                                                </div> : 
-                                            <div>
+                                                </LinkedText> : 
+                                            <LinkedText>
                                                 <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
-                                            </div>}
+                                            </LinkedText>}
                                         </div>
-                                        <div>
+                                        <LinkedText>
                                             <span>{song.track.album.name}</span>
-                                        </div>
+                                        </LinkedText>
                                     </div>
                                 </div>
                                 <div className="track-item-options" >...</div>
