@@ -12,6 +12,14 @@ const MusicalNoteIcon = require('../../images/musical-note.svg')
 
 const LinkedText = styled.span`
 
+white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.015em;
+    text-align: left;
+
     &:hover {
         span {
             text-decoration:underline;
@@ -53,7 +61,7 @@ const PlaylistTrack = styled.li`
     .musical-icon {
         min-width:15px;
         min-height:15px;
-        filter:invert(1);
+        filter:invert(0.5);
     }
     .play-icon {
         display:none;
