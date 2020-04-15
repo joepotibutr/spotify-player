@@ -180,12 +180,6 @@ const SideMenu = ({
 							}} style={{ marginLeft: '15px' }}>Liked Songs</div>
 					</PlaylistAction>
                 </ul>
-                <hr style={{
-					opacity: 0.1,
-					border: 'none',
-					height: '1px',
-					background: 'white',
-				}}/>
 			</div></div>
 		</div>
     )
