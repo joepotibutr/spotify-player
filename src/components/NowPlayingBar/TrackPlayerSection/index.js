@@ -35,6 +35,22 @@ const CurrentTrackActions = styled.span`
 
 
 class TrackPlayerSection extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            loading: false
+        }
+    }
+
+    onTrackAction = (action) => {
+      if(!this.state.loading) {
+        this.setState({ loading: true })
+        window.setTimeout(() => {
+            this.setState({ loading: false })
+            action()
+        }, 1000)
+      }
+    }
     
     render() {
         const { play,pause,resume,stop, songPlaying, currentlyPlaying,recentlySongs } = this.props
@@ -59,8 +75,8 @@ class TrackPlayerSection extends React.Component {
                     display: 'flex', alignItems:'center'}}>
                     <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                    {songPlaying ? <IconWrapper onClick={pause}><CurrentTrackActions><img src={PauseIcon} style={{ width: '1em', }} /></CurrentTrackActions></IconWrapper>
-                     : <IconWrapper onClick={() => play(currentTrack)}><CurrentTrackActions><PlayArrowIcon /></CurrentTrackActions></IconWrapper>}
+                    {songPlaying ? <IconWrapper onClick={this.onTrackAction(pause)}><CurrentTrackActions><img src={PauseIcon} style={{ width: '1em', }} /></CurrentTrackActions></IconWrapper>
+                     : <IconWrapper onClick={this.onTrackAction(play(currentTrack))}><CurrentTrackActions><PlayArrowIcon /></CurrentTrackActions></IconWrapper>}
                     <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
                     <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                 </div>
