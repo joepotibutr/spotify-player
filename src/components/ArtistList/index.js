@@ -9,6 +9,7 @@ import { viewType } from '../../constants'
 import styled from 'styled-components'
 
 const TrackItem = styled.li`
+    overflow:hidden;
     cursor:pointer;
     background: #282828;
     border-radius: 8px;

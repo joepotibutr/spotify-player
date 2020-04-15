@@ -16,8 +16,8 @@ const RepeatIcon = require('../../../images/repeat.svg')
 const PauseIcon = require('../../../images/pause.svg')
 
 export const IconWrapper = styled.div` 
-    width: 32px; 
-    height: 30px;
+    width: 34px; 
+    height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +31,11 @@ const CurrentTrackActions = styled.span`
     display: flex;
     justify-content: center;
     align-items: center;
+    
+
+    .pause-icon {
+        filter:invert(0.8);
+    }
 
     div {
         box-sizing: border-box;
@@ -106,14 +111,14 @@ class TrackPlayerSection extends React.Component {
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
                     {songPlaying ? <IconWrapper onClick={pause}>
                         <CurrentTrackActions>
-                            <img src={PauseIcon} style={{ width: '1em', }} />
+                            <img className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
                         </CurrentTrackActions>
                     </IconWrapper>
                      : 
                      <IconWrapper onClick={() => this.onPlay(currentTrack)}>
                         <CurrentTrackActions loading={this.state.loading}>
                             <div/><div/><div/>
-                             <PlayArrowIcon />
+                             <PlayArrowIcon className="play-icon" />
                         </CurrentTrackActions>
                     </IconWrapper>}
                     <IconWrapper><span><SkipNextIcon /></span></IconWrapper>

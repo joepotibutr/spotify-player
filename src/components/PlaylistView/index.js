@@ -37,6 +37,7 @@ white-space: nowrap;
 `
 
 const PlaylistTrack = styled.li`
+    overflow:hidden;
     height: 4.56em;
     list-style-type: none;
     display: flex;
