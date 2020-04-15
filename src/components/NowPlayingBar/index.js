@@ -22,7 +22,7 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp'
 
 export const IconWrapper = styled.div` 
 width: 32px; 
-height: 32px;
+height: 30px;
 display: flex;
 justify-content: start;
 align-items: center;
@@ -108,7 +108,7 @@ class NowPlayingBar extends React.Component {
                             alignItems: 'center',
                             justifyContent:'center',
                             width: '32px',
-                            height: '32px'
+                            height: '30px'
                         }}>
                             <div><span><LikeIcon style={{ width: '15px '}} /></span></div>
                             <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>

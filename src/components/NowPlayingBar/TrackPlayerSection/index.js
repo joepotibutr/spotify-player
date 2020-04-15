@@ -17,7 +17,7 @@ const PauseIcon = require('../../../images/pause.svg')
 
 export const IconWrapper = styled.div` 
     width: 32px; 
-    height: 32px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@ const CurrentTrackActions = styled.span`
     border: 1px solid;
     border-radius: 50%;
     width: 32px;
-    height: 32px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
