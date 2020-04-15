@@ -10,7 +10,17 @@ import { bindActionCreators } from 'redux'
 
 const MusicalNoteIcon = require('../../images/musical-note.svg')
 
-const LinkedText = styled.span`
+const Outer = styled.div`
+display:flex;
+overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.015em;
+    text-align: left;
+`
+
+const LinkedText = styled.div`
 
 white-space: nowrap;
     overflow: hidden;
@@ -169,7 +179,7 @@ class PlaylistView extends React.Component {
                 </div>
                 <div  style={{ gridArea: 'right'}}>
                     {this.props.songs ? 
-                    <ol>{this.props.songs.map(song => (
+                    <ol style={{ padding: 0 }}>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id} onClick={() => play(song)}>
                             <div style={{ display: 'flex'}}>
                                 <div  className="track-item-play">
@@ -182,8 +192,8 @@ class PlaylistView extends React.Component {
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', width: '80%'}}>
                                     <div> <h4 style={{ margin: 0 }}><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
-                                        <div style={{ display: 'flex' }}>
-                                            <div style={{ marginRight:'5px' }}>
+                                        <div style={{ display: 'flex'}}>
+                                            <Outer style={{ marginRight:'5px' }}>
                                             {song.track.artists.length > 1 ?
                                                 <LinkedText>
                                                     <span>{song.track.artists.map((artist, idx) => song.track.artists.length - 1 === idx ? (
@@ -194,13 +204,13 @@ class PlaylistView extends React.Component {
                                             <LinkedText>
                                                 <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
                                             </LinkedText>}
-                                        </div>
+                                        </Outer>
                                         <div style={{ marginRight:'5px' }}>.</div>
-                                        <div>
+                                        <Outer>
                                             <LinkedText>
                                                 <span>{song.track.album.name}</span>
                                             </LinkedText>
-                                        </div>
+                                        </Outer>
                                     </div>
                                 </div>
                                 <div className="track-item-options" >...</div>
