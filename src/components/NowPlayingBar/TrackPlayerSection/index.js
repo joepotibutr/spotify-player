@@ -13,14 +13,25 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 const ShuffleIcon = require('../../../images/change.svg')
 const RepeatIcon = require('../../../images/repeat.svg')
+const PauseIcon = require('../../../images/pause.svg')
 
 export const IconWrapper = styled.div` 
-width: 32px; 
-height: 32px;
-display: flex;
-justify-content: center;
-align-items: center;
+    width: 32px; 
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
+
+const CurrentTrackActions = styled.span` 
+    border: 1px solid;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+` 
 
 
 class TrackPlayerSection extends React.Component {
@@ -45,11 +56,11 @@ class TrackPlayerSection extends React.Component {
                     width: '224px',
                     justifyContent: 'space-between',
                     flexDlow: 'row nowrap',
-                    display: 'flex', justifyContent: 'center', alignItems:'center'}}>
+                    display: 'flex', alignItems:'center'}}>
                     <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                    {songPlaying ? <IconWrapper onClick={pause}><span><PauseCircleOutlineIcon /></span></IconWrapper>
-                     : <IconWrapper onClick={() => play(currentTrack)}><span><PlayArrowIcon /></span></IconWrapper>}
+                    {songPlaying ? <IconWrapper onClick={pause}><CurrentTrackActions><img src={PauseIcon} style={{ width: '1em', }} /></CurrentTrackActions></IconWrapper>
+                     : <IconWrapper onClick={() => play(currentTrack)}><CurrentTrackActions><PlayArrowIcon /></CurrentTrackActions></IconWrapper>}
                     <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
                     <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                 </div>
