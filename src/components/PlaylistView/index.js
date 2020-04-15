@@ -11,13 +11,21 @@ import { bindActionCreators } from 'redux'
 const MusicalNoteIcon = require('../../images/musical-note.svg')
 
 const Outer = styled.div`
-display:flex;
-overflow: hidden;
+    display:flex;
+    overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.015em;
-    text-align: left;
+    
+
+    
+    &:hover {
+        text-decoration:underline;
+        color:white;
+        cursor:pointer;
+    }
+    color:gray;
+    font-weight:bold;
+    transition:.2s;
+        
 `
 
 const LinkedText = styled.div`
@@ -30,19 +38,6 @@ white-space: nowrap;
     letter-spacing: 0.015em;
     text-align: left;
 
-    &:hover {
-        span {
-            text-decoration:underline;
-            color:white;
-        }
-    }
-    span {
-        font-size:12px;
-        color:gray;
-        font-weight:bold;
-        transition:.2s;
-        
-    }
 
 `
 
