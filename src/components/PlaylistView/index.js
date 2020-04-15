@@ -33,10 +33,12 @@ const LinkedText = styled.div`
 white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.015em;
     text-align: left;
+    span {
+        font-size: 12px;
+    }
 
 
 `
@@ -61,7 +63,9 @@ const PlaylistTrack = styled.li`
     }
 
     .track-item-duration {
-        width:5%;
+        font-size:12px;
+        font-family: "Varela Round", sans-serif;
+        width:7%;
     }
 
     .musical-icon {
@@ -185,7 +189,7 @@ class PlaylistView extends React.Component {
                                         <PlayArrowIcon className="play-icon" />
                                    </IconWrapper>
                                 </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', width: '80%'}}>
+                                <div style={{ display: 'flex', flexDirection: 'column', width: '75%'}}>
                                     <div> <h4 style={{ margin: 0 }}><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
                                         <div style={{ display: 'flex'}}>
                                             <Outer style={{ marginRight:'5px' }}>
