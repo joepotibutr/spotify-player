@@ -24,13 +24,42 @@ export const IconWrapper = styled.div`
 `
 
 const CurrentTrackActions = styled.span` 
-    border: 1px solid;
+    border: ${props => props.loading ? 'none' : '1px solid'};
     border-radius: 50%;
     width: 32px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    div {
+        box-sizing: border-box;
+        display: ${props => props.loading ? 'block' : 'none'};
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #fff transparent transparent transparent;
+    }
+    .loading div:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+    .loading div:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+    .loading div:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+    @keyframes loading {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 ` 
 
 
@@ -42,13 +71,13 @@ class TrackPlayerSection extends React.Component {
         }
     }
 
-    onTrackAction = (action, ...params) => {
+    onPlay = (currentTrack) => {
       if(!this.state.loading) {
         this.setState({ loading: true })
         window.setTimeout(() => {
             this.setState({ loading: false })
-            action(...params)
-        }, 1000)
+            this.props.play(currentTrack)
+        }, 2000)
       }
     }
     
@@ -75,8 +104,18 @@ class TrackPlayerSection extends React.Component {
                     display: 'flex', alignItems:'center'}}>
                     <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                    {songPlaying ? <IconWrapper onClick={() => this.onTrackAction(pause)}><CurrentTrackActions><img src={PauseIcon} style={{ width: '1em', }} /></CurrentTrackActions></IconWrapper>
-                     : <IconWrapper onClick={() => this.onTrackAction(play,currentTrack)}><CurrentTrackActions><PlayArrowIcon /></CurrentTrackActions></IconWrapper>}
+                    {songPlaying ? <IconWrapper onClick={pause}>
+                        <CurrentTrackActions>
+                            <img src={PauseIcon} style={{ width: '1em', }} />
+                        </CurrentTrackActions>
+                    </IconWrapper>
+                     : 
+                     <IconWrapper onClick={() => this.onPlay(currentTrack)}>
+                        <CurrentTrackActions loading={this.state.loading}>
+                            <div/><div/><div/>
+                             <PlayArrowIcon />
+                        </CurrentTrackActions>
+                    </IconWrapper>}
                     <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
                     <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                 </div>
