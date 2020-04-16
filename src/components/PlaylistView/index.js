@@ -91,6 +91,14 @@ const PlaylistTrack = styled.li`
 
 `
 
+const DotIcon = styled.span`
+    background: gray;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+
+`
+
 const IconWrapper = styled.div`
     height: 100%;
     display: flex;
@@ -190,7 +198,7 @@ class PlaylistView extends React.Component {
                                    </IconWrapper>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', width: '75%'}}>
-                                    <div> <h4 style={{ margin: 0 }}><TrackDetailText> {song.track.name} </TrackDetailText> </h4></div>
+                                    <LinkedText> <h4 style={{ margin: '0 0 5px 0',color: 'white' }}> {song.track.name} </h4></LinkedText>
                                         <div style={{ display: 'flex'}}>
                                             <Outer style={{ marginRight:'5px' }}>
                                             {song.track.artists.length > 1 ?
@@ -204,7 +212,7 @@ class PlaylistView extends React.Component {
                                                 <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
                                             </LinkedText>}
                                         </Outer>
-                                        <div style={{ marginRight:'5px' }}>.</div>
+                                        <div style={{ margin: '0 8px 0 5px',display: 'flex',alignItems: 'center' }}><DotIcon /></div>
                                         <Outer>
                                             <LinkedText>
                                                 <span>{song.track.album.name}</span>
@@ -212,7 +220,7 @@ class PlaylistView extends React.Component {
                                         </Outer>
                                     </div>
                                 </div>
-                                <div className="track-item-options" >...</div>
+                                <div className="track-item-options" ></div>
                                 <div className="track-item-duration">3.33</div>
                             </div>
                         </PlaylistTrack>
