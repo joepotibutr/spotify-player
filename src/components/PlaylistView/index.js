@@ -126,6 +126,18 @@ const PlaylistViewLayout = styled.div`
         grid-area: left;
         position:fixed;
         max-width: 20%;
+
+
+        .playlist-cover-art {
+            width: auto;
+            min-height: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,.3);
+        }
+
+        .playlist-owner,.playlist-title,.total-songs {
+            display:flex;
+            justify-content:center;
+        }
     }
 `
 
@@ -155,15 +167,11 @@ class PlaylistView extends React.Component {
         return (
             <PlaylistViewLayout>
                 <div className="grid-area-left">
-                    <div>
-                        <div style={{  
-                                width: 'auto',
-                                minHeight: 'auto',
-                                boxShadow: '0 0 10px rgba(0,0,0,.3)' }}>
-                            <div style={{
-                                   width: '100%',
-                                   height: '100%'
-                                }}>
+                        <div className="playlist-cover-art">
+                                <div style={{
+                                    width: '100%',
+                                    height: '100%'
+                                    }}>
                                 {isUserLikedSongs ? 
                                 <LikedSongsCoverArt >
                                     <LikeIcon style={{ width: '18px', height: '18px'}}/>
@@ -179,11 +187,10 @@ class PlaylistView extends React.Component {
                                 src={currentPlaylist.images[0].url}/>}
                             </div>
                         </div>
-                        <div><h1>{this.props.headerTitle}</h1></div>
-                        <div><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
-                        <div><p>{this.props.songs.length} SONGS</p></div>
+                        <div className="playlist-title"><h1>{this.props.headerTitle}</h1></div>
+                        <div className="playlist-owner"><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
+                        <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                     </div>
-                </div>
                 <div  style={{ gridArea: 'right'}}>
                     {this.props.songs ? 
                     <ol style={{ padding: 0 }}>{this.props.songs.map(song => (
