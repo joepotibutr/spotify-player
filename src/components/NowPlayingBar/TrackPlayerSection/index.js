@@ -21,6 +21,10 @@ export const IconWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .shuffle-icon, .repeat-icon {
+        filter:invert(0.5);
+    }
 `
 
 const CurrentTrackActions = styled.span` 
@@ -107,7 +111,7 @@ class TrackPlayerSection extends React.Component {
                     justifyContent: 'space-between',
                     flexDlow: 'row nowrap',
                     display: 'flex', alignItems:'center'}}>
-                    <IconWrapper><span><img src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
+                    <IconWrapper><span><img className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
                     {songPlaying ? <IconWrapper onClick={pause}>
                         <CurrentTrackActions>
@@ -122,7 +126,7 @@ class TrackPlayerSection extends React.Component {
                         </CurrentTrackActions>
                     </IconWrapper>}
                     <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
-                    <IconWrapper><span><img src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
+                    <IconWrapper><span><img className="repeat-icon" src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                 </div>
 
                 <div style={{ display: 'flex',width: '100%',
