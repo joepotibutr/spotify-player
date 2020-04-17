@@ -78,16 +78,20 @@ class TrackPlayerSection extends React.Component {
         this.state = {
             loading: false
         }
+
+        this.audio = new Audio()
     }
 
     onPlay = (currentTrack) => {
-      if(!this.state.loading) {
-        this.setState({ loading: true })
-        window.setTimeout(() => {
-            this.setState({ loading: false })
-            this.props.play(currentTrack)
-        }, 2000)
-      }
+        this.audio.src = currentTrack.track.preview_url
+        if(!this.state.loading) {
+            this.setState({ loading: true })
+            window.setTimeout(() => {
+                this.setState({ loading: false })
+                this.props.play(currentTrack)
+                this.audio.play()
+            }, 2000)
+        }
     }
     
     render() {
@@ -96,6 +100,9 @@ class TrackPlayerSection extends React.Component {
         const lastSongPlayed = recentlySongs.length && recentlySongs[0]
 
         const currentTrack = currentlyPlaying ? currentlyPlaying : lastSongPlayed
+
+        
+
         return (
             <div  style={{ 
                 width: '40%',
