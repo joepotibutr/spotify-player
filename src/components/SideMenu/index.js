@@ -24,7 +24,7 @@ const PlaylistAction = styled.li`
 	align-items: center;
 	opacity:0.5;
 	cursor:pointer;
-	transition:.2s;
+	transition:.3s;
 
 	&:hover {
 		opacity:1;
