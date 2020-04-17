@@ -7,8 +7,6 @@ import { play,stop,pause,resume } from '../../../actions/player'
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 
-
-import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 const ShuffleIcon = require('../../../images/change.svg')
@@ -78,8 +76,13 @@ class TrackPlayerSection extends React.Component {
         this.state = {
             loading: false
         }
-
         this.audio = new Audio()
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.currentlyPlaying && this.props.currentlyPlaying !== nextProps.currentlyPlaying) {
+            this.onPlay(nextProps.currentlyPlaying)
+        }
     }
 
     onPlay = (currentTrack) => {
@@ -153,7 +156,7 @@ class TrackPlayerSection extends React.Component {
                         letterSpacing: '.015em',
                         minWidth: '40px',
                         textAlign: 'center',
-                    }}>2:49</div>
+                    }}>{this.audio.currentTime}</div>
                     <div style={{
                         height: '12px',
                         width: '100%',
