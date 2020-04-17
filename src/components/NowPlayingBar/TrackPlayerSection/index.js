@@ -85,6 +85,7 @@ class TrackPlayerSection extends React.Component {
     onPlay = (currentTrack) => {
         this.audio.src = currentTrack.track.preview_url
         if(!this.state.loading) {
+            this.audio.pause()
             this.setState({ loading: true })
             window.setTimeout(() => {
                 this.setState({ loading: false })
@@ -92,6 +93,11 @@ class TrackPlayerSection extends React.Component {
                 this.audio.play()
             }, 2000)
         }
+    }
+
+    onPause = () => {
+        this.audio.pause()
+        this.props.pause()
     }
     
     render() {
@@ -120,7 +126,7 @@ class TrackPlayerSection extends React.Component {
                     display: 'flex', alignItems:'center'}}>
                     <IconWrapper><span><img className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                    {songPlaying ? <IconWrapper onClick={pause}>
+                    {songPlaying ? <IconWrapper onClick={this.onPause}>
                         <CurrentTrackActions>
                             <img className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
                         </CurrentTrackActions>
