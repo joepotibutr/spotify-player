@@ -217,7 +217,7 @@ class PlaylistView extends React.Component {
                             <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                         </div>
                     </div>
-                <div  style={{ gridArea: 'right'}}>
+                <div  style={{ gridArea: 'right', overflow:'hidden'}}>
                     {this.props.songs ? 
                     <ol style={{ padding: 0 }}>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id} onClick={() => play(song)}>
