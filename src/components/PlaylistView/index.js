@@ -134,6 +134,30 @@ const PlaylistViewLayout = styled.div`
             box-shadow: 0 0 10px rgba(0,0,0,.3);
         }
 
+        .playlist-detail {
+            text-align:center;
+        }
+
+        .playlist-title {
+            color:white;
+        }
+
+        .playlist-owner {
+            cursor:pointer;
+            color:rgba(255,255,255,.5);
+            &:hover {
+                text-decoration: underline;
+                color:rgba(255,255,255,.8);
+            }
+        }
+
+
+        .total-songs {
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
         .playlist-owner,.playlist-title,.total-songs {
             display:flex;
             justify-content:center;
@@ -187,9 +211,11 @@ class PlaylistView extends React.Component {
                                 src={currentPlaylist.images[0].url}/>}
                             </div>
                         </div>
-                        <div className="playlist-title"><h1>{this.props.headerTitle}</h1></div>
-                        <div className="playlist-owner"><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
-                        <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
+                        <div className="playlist-detail">
+                            <div className="playlist-title"><h1>{this.props.headerTitle}</h1></div>
+                            <div className="playlist-owner"><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
+                            <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
+                        </div>
                     </div>
                 <div  style={{ gridArea: 'right'}}>
                     {this.props.songs ? 
