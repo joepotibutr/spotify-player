@@ -115,7 +115,7 @@ class NowPlayingBar extends React.Component {
                         </div>
                     </div>
                     <TrackPlayerSection
-                        onPlay={this.props.onPlay} 
+                        onPlay={() => this.props.onPlay(currentTrack)} 
                         onPause={this.props.onPause} 
                         onResume={this.props.onResume} 
                     />
@@ -168,6 +168,5 @@ class NowPlayingBar extends React.Component {
 
 export default connect(state => ({
     recentlySongs: (state.songReducer && state.songReducer.recentlySongs) || '',
-    songPlaying: (state.songReducer && state.playerReducer.songPlaying) || '',
     currentlyPlaying: (state.songReducer && state.playerReducer.currentlyPlaying) || '',
 }))(NowPlayingBar)
