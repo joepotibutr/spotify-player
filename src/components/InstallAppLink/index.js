@@ -7,6 +7,10 @@ const InstallAppLinkLayout = styled.div`
     display:flex;
     padding-left:24px;
 
+    p {
+        margin: 15px 0;
+    }
+
     .install-button {
         display: flex;
         justify-content: center;
