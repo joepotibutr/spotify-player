@@ -10,9 +10,46 @@ import Artwork from './components/Artwork'
 import NowPlayingBar from './components/NowPlayingBar'
 import MainView from './components/MainView'
 import GlobalStyled from './GobalStyled'
+import styled from 'styled-components'
 import { play,stop,pause,resume } from './actions/player'
 
+const MainLayout = styled.div`
+  background: #121212;
+  .app-grid-layout {
+    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+    "nav         main-view"
+    "now-playing now-playing";
 
+
+    .nav {
+      grid-area: nav;
+      width: 230px;
+      background: rgb(0,0,0,0.8);
+
+      
+    }
+
+    .main-view {
+      width: 100%;
+      grid-area: main-view;
+    }
+    
+    .now-playing {
+      grid-area: now-playing;
+      width: 100%;
+      background: rgb(18, 18, 18);
+    } 
+
+  }
+
+ `
 class App extends Component {
 
     constructor(props) {
@@ -78,30 +115,23 @@ class App extends Component {
     return (
       <React.Fragment>
         <GlobalStyled />
-         <div  style={{ background: '#121212'}}>
-          <div style={{
-            minHeight: '100vh',
-            width: '100%',
-            height: '100vh',
-            position: 'relative',
-            display: 'grid',
-            gridTemplateRows: '1fr auto',
-            gridTemplateColumns: 'auto 1fr',
-            gridTemplateAreas:
-            `"nav         main-view"
-            "now-playing now-playing"`
-            }}>
-            <section style={{ gridArea: 'nav', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
-              <div style={{padding: '24px 0 0 24px'}}>
+         <MainLayout>
+          <div className="app-grid-layout">
+            <section className="nav">
+              <div>
                 <SideMenu />
-                <UserPlaylists onPlay={this.onPlay}/>
+              </div>
+              <div>
+                <UserPlaylists />
+              </div>
+              <div>
                 <Artwork />
               </div>
             </section>
-            <section style={{ width: '100%',gridArea: 'main-view', }}>
-                <MainView />
+            <section className="main-view">
+                <MainView onPlay={this.onPlay}/>
             </section>
-            <section style={{ gridArea: 'now-playing',width: '100%',background: 'rgb(18, 18, 18)'}}>
+            <section className="now-playing">
               <NowPlayingBar
                 loading={this.state.loading}
                 onPlay={this.onPlay} 
@@ -110,7 +140,7 @@ class App extends Component {
               />
             </section>
           </div>
-        </div>
+        </MainLayout>
       </React.Fragment>
     )
   }
