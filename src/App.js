@@ -101,7 +101,8 @@ class App extends Component {
                 <MainView />
             </section>
             <section style={{ gridArea: 'now-playing',width: '100%',background: 'rgb(18, 18, 18)'}}>
-              <NowPlayingBar 
+              <NowPlayingBar
+                loading={this.state.loading}
                 onPlay={this.onPlay} 
                 onPause={this.onPause} 
                 onResume={this.onResume} 

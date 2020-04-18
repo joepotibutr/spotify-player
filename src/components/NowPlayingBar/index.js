@@ -109,6 +109,7 @@ class NowPlayingBar extends React.Component {
                         onPlay={() => this.props.onPlay(currentTrack)} 
                         onPause={this.props.onPause} 
                         onResume={this.props.onResume} 
+                        loading={this.props.loading}
                     />
                     <div  style={{ 
                         width: '30%',
