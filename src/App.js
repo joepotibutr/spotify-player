@@ -6,7 +6,7 @@ import { setToken } from './actions/token'
 import { fetchUserRequest } from './actions/user'
 import SideMenu from './components/SideMenu'
 import UserPlaylists from './components/UserPlaylists'
-import Artwork from './components/Artwork'
+import InstallAppLink from './components/InstallAppLink'
 import NowPlayingBar from './components/NowPlayingBar'
 import MainView from './components/MainView'
 import GlobalStyled from './GobalStyled'
@@ -118,15 +118,9 @@ class App extends Component {
          <MainLayout>
           <div className="app-grid-layout">
             <section className="nav">
-              <div>
                 <SideMenu />
-              </div>
-              <div>
                 <UserPlaylists />
-              </div>
-              <div>
-                <Artwork />
-              </div>
+                <InstallAppLink />
             </section>
             <section className="main-view">
                 <MainView onPlay={this.onPlay}/>
