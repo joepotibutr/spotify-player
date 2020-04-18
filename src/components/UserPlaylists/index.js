@@ -7,6 +7,11 @@ import { fetchPlaylistMenuRequest,
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
+const UserPlaylistLayout = styled.div`
+  padding-left:24px;
+
+`
+
 const PlaylistItem = styled.li`
     background:transparent;
     padding: 5px 0;
@@ -38,7 +43,7 @@ class UserPlaylists extends Component {
     render() {
       const { playlistMenu } = this.props
         return (
-            <div>
+            <UserPlaylistLayout>
                 {playlistMenu.length ? 
                 <ul style={{ overflowY: 'auto', height: 'calc(100vh - 473px)' }}>{playlistMenu.map(playlist => (
                       <PlaylistItem onClick={() => {
@@ -51,7 +56,7 @@ class UserPlaylists extends Component {
                       }} className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
                     ))}
                   </ul> : null}
-            </div>
+            </UserPlaylistLayout>
         )
     }
 }

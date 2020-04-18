@@ -19,6 +19,11 @@ const search = require('../../images/search.svg')
 const library = require('../../images/library.svg')
 const plus = require('../../images/plus.svg')
 
+const SideMenuLayout = styled.div`
+	padding:24px;
+
+`
+
 const PlaylistAction = styled.li`
 	display: flex;
 	align-items: center;
@@ -111,7 +116,7 @@ const SideMenu = ({
 	}
 
     return (
-		<div>
+		<SideMenuLayout>
 			<div onClick={() => updateHeaderTitle(viewType.RECENTLY_PLAYED)}>
 				<img style={{ cursor:'pointer', width: '132px', height: '40px' }} src={logo}/>
 			</div>
@@ -181,7 +186,7 @@ const SideMenu = ({
 					</PlaylistAction>
                 </ul>
 			</div></div>
-		</div>
+		</SideMenuLayout>
     )
 }
 
