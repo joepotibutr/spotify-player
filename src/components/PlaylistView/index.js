@@ -1,184 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import styled from 'styled-components'
 import { viewType } from '../../constants'
 import { play } from '../../actions/player'
 import LikeIcon from '@material-ui/icons/Favorite';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { bindActionCreators } from 'redux'
+import { 
+    Outer, 
+    LinkedText, 
+    PlaylistTrack, 
+    DotIcon, 
+    IconWrapper, 
+    TrackDetailText, 
+    PlaylistViewLayout, 
+    LikedSongsCoverArt
+} from './style'
 
 
 const MusicalNoteIcon = require('../../images/musical-note.svg')
 
-const Outer = styled.div`
-    display:flex;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    
-
-    
-    &:hover {
-        text-decoration:underline;
-        color:white;
-        cursor:pointer;
-    }
-    color:gray;
-    font-weight:bold;
-    transition:.2s;
-        
-`
-
-const LinkedText = styled.div`
-
-white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 16px;
-    letter-spacing: 0.015em;
-    text-align: left;
-    span {
-        font-size: 12px;
-    }
-
-
-`
-
-const PlaylistTrack = styled.li`
-    overflow:hidden;
-    height: 4.56em;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition:.1s;
-    cursor:default;
-
-    .track-item-play {
-        width:40px;
-    }
-
-    .track-item-options {
-        width:10%;
-        cursor:pointer;
-    }
-
-    .track-item-duration {
-        font-size:12px;
-        font-family: "Varela Round", sans-serif;
-        width:7%;
-    }
-
-    .musical-icon {
-        min-width:15px;
-        min-height:15px;
-        filter:invert(0.5);
-    }
-    .play-icon {
-        display:none;
-        min-width:15px;
-        min-height:15px;
-    }
-
-    &:hover {
-        background-color: hsla(0,0%,100%,.1);
-        .musical-icon {
-            display:none;
-        }
-        .play-icon {
-            display:block;
-        }
-    }
-
-`
-
-const DotIcon = styled.span`
-    background: gray;
-    height: 4px;
-    width: 4px;
-    border-radius: 50%;
-
-`
-
-const IconWrapper = styled.div`
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-
-`
-
-const TrackDetailText = styled.span`
-    color:white;
-
-`
-
-
-const PlaylistViewLayout = styled.div`
-    height: 900px;
-    padding-top:60px;
-    display:grid;
-    grid-template-columns: 30% 70%;
-    grid-template-areas: "left right";
-
-    .grid-area-left {
-        grid-area: left;
-        position:fixed;
-        max-width: 20%;
-
-
-        .playlist-cover-art {
-            width: auto;
-            min-height: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,.3);
-        }
-
-        .playlist-detail {
-            text-align:center;
-        }
-
-        .playlist-title {
-            color:white;
-        }
-
-        .playlist-owner {
-            cursor:pointer;
-            color:rgba(255,255,255,.5);
-            &:hover {
-                text-decoration: underline;
-                color:rgba(255,255,255,.8);
-            }
-        }
-
-
-        .total-songs {
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-        }
-
-        .playlist-owner,.playlist-title,.total-songs {
-            display:flex;
-            justify-content:center;
-        }
-    }
-`
-
-const LikedSongsCoverArt = styled.div`
-    background:green;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    &:after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-    }
-`
-
-// 12 3 4 
-// 12 9 8
 
 class PlaylistView extends React.Component {
 
