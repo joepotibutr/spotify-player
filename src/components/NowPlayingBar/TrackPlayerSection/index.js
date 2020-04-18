@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -70,17 +68,7 @@ const CurrentTrackActions = styled.span`
 
 
 class TrackPlayerSection extends React.Component {
-
-    
     render() {
-        const { songPlaying, currentlyPlaying,recentlySongs } = this.props
-
-        const lastSongPlayed = recentlySongs.length && recentlySongs[0]
-
-        const currentTrack = currentlyPlaying ? currentlyPlaying : lastSongPlayed
-
-        
-
         return (
             <div  style={{ 
                 width: '40%',
@@ -98,13 +86,13 @@ class TrackPlayerSection extends React.Component {
                     display: 'flex', alignItems:'center'}}>
                     <IconWrapper><span><img className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                    {songPlaying ? <IconWrapper onClick={this.props.onPause}>
+                    {false ? <IconWrapper onClick={this.props.onPause}>
                         <CurrentTrackActions>
                             <img className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
                         </CurrentTrackActions>
                     </IconWrapper>
                      : 
-                     <IconWrapper onClick={() => this.props.onPlay(currentTrack)}>
+                     <IconWrapper onClick={this.props.onPlay}>
                         <CurrentTrackActions loading={false}>
                             <div/><div/><div/>
                              <PlayArrowIcon className="play-icon" />
@@ -156,7 +144,4 @@ class TrackPlayerSection extends React.Component {
     }
 }
 
-export default connect(state => ({
-    recentlySongs: (state.songReducer && state.songReducer.recentlySongs) || '',
-    currentlyPlaying: (state.songReducer && state.playerReducer.currentlyPlaying) || '',
-}))(TrackPlayerSection)
+export default TrackPlayerSection

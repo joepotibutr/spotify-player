@@ -114,7 +114,11 @@ class NowPlayingBar extends React.Component {
                             <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
                         </div>
                     </div>
-                    <TrackPlayerSection />
+                    <TrackPlayerSection
+                        onPlay={this.props.onPlay} 
+                        onPause={this.props.onPause} 
+                        onResume={this.props.onResume} 
+                    />
                     <div  style={{ 
                         width: '30%',
                         minWidth: '180px', 
