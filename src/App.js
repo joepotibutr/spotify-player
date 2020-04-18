@@ -7,12 +7,24 @@ import { fetchUserRequest } from './actions/user'
 import SideMenu from './components/SideMenu'
 import UserPlaylists from './components/UserPlaylists'
 import Artwork from './components/Artwork'
-import Header from './components/Header'
 import NowPlayingBar from './components/NowPlayingBar'
 import MainView from './components/MainView'
 import GlobalStyled from './GobalStyled'
+import { play,stop,pause,resume } from './actions/player'
+
 
 class App extends Component {
+
+    constructor(props) {
+      super(props)
+      this.state = {
+          loading: false
+      }
+      this.audio = new Audio()
+      this.loadingTimeout
+
+  }
+
   componentDidMount() {
     let parsed = queryString.parse(window.location.search)
     if(!parsed.access_token){
@@ -28,6 +40,36 @@ class App extends Component {
       this.props.fetchUserRequest(nextProps.token)
     }
   }
+
+  onPlay = (currentTrack) => {
+    this.audio.src = currentTrack.track.preview_url
+    if(!this.state.loading) {
+        this.audio.pause()
+        this.setState({ loading: true })
+       this.loadingTimeout =  window.setTimeout(() => {
+            this.setState({ loading: false })
+            this.props.play(currentTrack)
+            this.audio.play()
+        }, 2000)
+    }
+}
+
+onPause = () => {
+    this.audio.pause()
+    this.props.pause()
+}
+
+onResume = () => {
+
+}
+
+onStop = () => {
+
+}
+
+componentWillUnmount(){
+  window.clearTimeout(this.loadingTimeout)
+}
 
   render(){
     return (
@@ -49,7 +91,7 @@ class App extends Component {
             <section style={{ gridArea: 'nav', width: '230px', background: 'rgb(0,0,0,0.8)' }}>
               <div style={{padding: '24px 0 0 24px'}}>
                 <SideMenu />
-                <UserPlaylists />
+                <UserPlaylists onPlay={this.onPlay}/>
                 <Artwork />
               </div>
             </section>
@@ -57,7 +99,12 @@ class App extends Component {
                 <MainView />
             </section>
             <section style={{ gridArea: 'now-playing',width: '100%',background: 'rgb(18, 18, 18)'}}>
-              <NowPlayingBar />
+              <NowPlayingBar 
+                onPlay={this.onPlay} 
+                onPause={this.onPause} 
+                onResume={this.onResume} 
+                onStop={this.onStop}  
+              />
             </section>
           </div>
         </div>
@@ -70,8 +117,11 @@ class App extends Component {
 export default connect(
   state => ({
     token : state.tokenReducer.token,
+    songPlaying: (state.songReducer && state.playerReducer.songPlaying) || '',
+    currentlyPlaying: (state.songReducer && state.playerReducer.currentlyPlaying) || '',
 }),
 dispatch => bindActionCreators({
+  play,pause,stop,resume,
   setToken,
   fetchUserRequest
 },dispatch))(App)
