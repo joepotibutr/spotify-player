@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { connect } from 'react-redux'
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 
@@ -69,6 +69,7 @@ const CurrentTrackActions = styled.span`
 
 class TrackPlayerSection extends React.Component {
     render() {
+        const { onPlay, onPause, loading, isSongPaused, isSongStopped } = this.props
         return (
             <div  style={{ 
                 width: '40%',
@@ -86,14 +87,14 @@ class TrackPlayerSection extends React.Component {
                     display: 'flex', alignItems:'center'}}>
                     <IconWrapper><span><img className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                    {false ? <IconWrapper onClick={this.props.onPause}>
+                    {(isSongStopped && isSongPaused) ? <IconWrapper onClick={onPause}>
                         <CurrentTrackActions>
                             <img className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
                         </CurrentTrackActions>
                     </IconWrapper>
                      : 
-                     <IconWrapper onClick={this.props.onPlay}>
-                        <CurrentTrackActions loading={this.props.loading ? 1 : 0}>
+                     <IconWrapper onClick={onPlay}>
+                        <CurrentTrackActions loading={loading ? 1 : 0}>
                             <div/><div/><div/>
                              <PlayArrowIcon className="play-icon" />
                         </CurrentTrackActions>
@@ -144,4 +145,7 @@ class TrackPlayerSection extends React.Component {
     }
 }
 
-export default TrackPlayerSection
+export default connect(state => ({
+    currentTrackState: (state.playerReducer && state.playerReducer.currentTrackState) || '',
+}))(TrackPlayerSection)
+
