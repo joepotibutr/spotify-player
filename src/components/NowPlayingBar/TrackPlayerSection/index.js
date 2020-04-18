@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { play,stop,pause,resume } from '../../../actions/player'
 
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -71,40 +70,10 @@ const CurrentTrackActions = styled.span`
 
 
 class TrackPlayerSection extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            loading: false
-        }
-        this.audio = new Audio()
-    }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props.currentlyPlaying && this.props.currentlyPlaying !== nextProps.currentlyPlaying) {
-            this.onPlay(nextProps.currentlyPlaying)
-        }
-    }
-
-    onPlay = (currentTrack) => {
-        this.audio.src = currentTrack.track.preview_url
-        if(!this.state.loading) {
-            this.audio.pause()
-            this.setState({ loading: true })
-            window.setTimeout(() => {
-                this.setState({ loading: false })
-                this.props.play(currentTrack)
-                this.audio.play()
-            }, 2000)
-        }
-    }
-
-    onPause = () => {
-        this.audio.pause()
-        this.props.pause()
-    }
     
     render() {
-        const { play,pause,resume,stop, songPlaying, currentlyPlaying,recentlySongs } = this.props
+        const { songPlaying, currentlyPlaying,recentlySongs } = this.props
 
         const lastSongPlayed = recentlySongs.length && recentlySongs[0]
 
@@ -129,14 +98,14 @@ class TrackPlayerSection extends React.Component {
                     display: 'flex', alignItems:'center'}}>
                     <IconWrapper><span><img className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                    {songPlaying ? <IconWrapper onClick={this.onPause}>
+                    {songPlaying ? <IconWrapper onClick={this.props.onPause}>
                         <CurrentTrackActions>
                             <img className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
                         </CurrentTrackActions>
                     </IconWrapper>
                      : 
-                     <IconWrapper onClick={() => this.onPlay(currentTrack)}>
-                        <CurrentTrackActions loading={this.state.loading}>
+                     <IconWrapper onClick={() => this.props.onPlay(currentTrack)}>
+                        <CurrentTrackActions loading={false}>
                             <div/><div/><div/>
                              <PlayArrowIcon className="play-icon" />
                         </CurrentTrackActions>
@@ -156,7 +125,9 @@ class TrackPlayerSection extends React.Component {
                         letterSpacing: '.015em',
                         minWidth: '40px',
                         textAlign: 'center',
-                    }}>{this.audio.currentTime}</div>
+                    }}>
+                        {/* {this.audio.currentTime} */}
+                    </div>
                     <div style={{
                         height: '12px',
                         width: '100%',
@@ -187,8 +158,5 @@ class TrackPlayerSection extends React.Component {
 
 export default connect(state => ({
     recentlySongs: (state.songReducer && state.songReducer.recentlySongs) || '',
-    songPlaying: (state.songReducer && state.playerReducer.songPlaying) || '',
     currentlyPlaying: (state.songReducer && state.playerReducer.currentlyPlaying) || '',
-}),dispatch => bindActionCreators({
-	play,pause,stop,resume
-}, dispatch))(TrackPlayerSection)
+}))(TrackPlayerSection)
