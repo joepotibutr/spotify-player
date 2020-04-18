@@ -45,7 +45,7 @@ class UserPlaylists extends Component {
         return (
             <UserPlaylistLayout>
                 {playlistMenu.length ? 
-                <ul style={{ overflowY: 'auto', height: 'calc(100vh - 473px)' }}>{playlistMenu.map(playlist => (
+                <ul style={{ overflowY: 'auto', height: 'calc(100vh - 483px)' }}>{playlistMenu.map(playlist => (
                       <PlaylistItem onClick={() => {
                         this.props.fetchPlaylistSongsRequest(
                           playlist.owner.id,

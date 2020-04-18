@@ -19,8 +19,19 @@ const search = require('../../images/search.svg')
 const library = require('../../images/library.svg')
 const plus = require('../../images/plus.svg')
 
+
+const UserPlaylistActionsLayout = styled.div`
+ 	margin: 24px 24px 0 0;
+	 
+	.playlist-header {
+		font-size: 11px;
+    	letter-spacing: 2px;
+	}
+
+`
+
 const SideMenuLayout = styled.div`
-	padding:24px;
+	padding:24px 24px 0 24px;
 
 `
 
@@ -30,6 +41,7 @@ const PlaylistAction = styled.li`
 	opacity:0.5;
 	cursor:pointer;
 	transition:.3s;
+	font-weight: bold;
 
 	&:hover {
 		opacity:1;
@@ -149,43 +161,45 @@ const SideMenu = ({
 						</NavigationLinkItem>  
 					</ul>
 				</div>
-			<div style={{ marginRight: '24px'}}><label>PLAYLISTS</label>
-                <ul style={{ fontWeight: 'bold' }}>
-                  	<PlaylistAction style={{ marginBottom: '10px'}}>
-						<div>
-							<div style={{ 
-								width: '30px', 
-								height: '30px',
-								background: '#ffffff',
-								display:'flex',
-								justifyContent:'center',
-								alignItems:'center'
-								}} >
-								<span style={{ width: '15px', height: '15px' }}>
-									<img style={{ width: '15px', height: '15px' }} src={plus} />
-								</span>
+				<UserPlaylistActionsLayout style={{}}>
+					<label className="playlist-header">PLAYLISTS</label>
+					<ul>
+						<PlaylistAction style={{ marginBottom: '10px'}}>
+							<div>
+								<div style={{ 
+									width: '30px', 
+									height: '30px',
+									background: '#ffffff',
+									display:'flex',
+									justifyContent:'center',
+									alignItems:'center'
+									}} >
+									<span style={{ width: '15px', height: '15px' }}>
+										<img style={{ width: '15px', height: '15px' }} src={plus} />
+									</span>
+								</div>
 							</div>
-						</div>
-						<div style={{ marginLeft: '15px' }}>Create Playlist</div>
-					</PlaylistAction>
-                  	<PlaylistAction>
-						<div>
-							<div style={{ 
-								width: '30px', 
-								height: '30px', 
-								background: 'green',
-								display: 'flex',
-								justifyContent: 'center',
-								alignItems: 'center'
-							}}><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
-						</div>
-						<div onClick={() => {
-							fetchSongs(token)
-							updateHeaderTitle(viewType.LIKED_SONGS)
-							}} style={{ marginLeft: '15px' }}>Liked Songs</div>
-					</PlaylistAction>
-                </ul>
-			</div></div>
+							<div style={{ marginLeft: '15px' }}>Create Playlist</div>
+						</PlaylistAction>
+						<PlaylistAction>
+							<div>
+								<div style={{ 
+									width: '30px', 
+									height: '30px', 
+									background: 'green',
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center'
+								}}><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
+							</div>
+							<div onClick={() => {
+								fetchSongs(token)
+								updateHeaderTitle(viewType.LIKED_SONGS)
+								}} style={{ marginLeft: '15px' }}>Liked Songs</div>
+						</PlaylistAction>
+					</ul>
+				</UserPlaylistActionsLayout>
+			</div>
 		</SideMenuLayout>
     )
 }
