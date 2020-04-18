@@ -62,6 +62,7 @@ class App extends Component {
   }
 
   onResume = () => {
+    this.props.resume()
     this.audio.play()
   }
 
