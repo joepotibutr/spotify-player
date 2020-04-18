@@ -15,10 +15,6 @@ import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 import DevicesIcon from '@material-ui/icons/Devices';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp'
 
-// import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-// import AddIcon from '@material-ui/icons/Add';
-
-
 
 export const IconWrapper = styled.div` 
 width: 32px; 
@@ -30,11 +26,6 @@ align-items: center;
 
 
 class NowPlayingBar extends React.Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.audioRef = React.createRef();
-    //   }
 
     render() {
         const { currentlyPlaying,recentlySongs } = this.props
