@@ -79,6 +79,10 @@ class App extends Component {
   }
 
   onPlay = (currentTrack) => {
+    // 1st time : checked
+    // song ended :
+    // new song : 
+    this.onStop()
     const url = currentTrack ? currentTrack.track.preview_url : 
       this.props.currentlyPlaying.track.preview_url
       
@@ -104,7 +108,7 @@ class App extends Component {
   }
 
   onStop = () => {
-
+    this.props.stop()
   }
 
   componentWillUnmount(){

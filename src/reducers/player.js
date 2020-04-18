@@ -27,7 +27,6 @@ const defaultState = {
     case types.STOP_SONG:
       return {
         ...state,
-        currentlyPlaying: null,
         currentTrackState: types.TRACK_STATE_STOPPED,
         timeElapsed: 0,
       }
