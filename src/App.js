@@ -45,16 +45,15 @@ class App extends Component {
     const url = currentTrack ? currentTrack.track.preview_url : 
       this.props.currentlyPlaying.track.preview_url
       
-    this.audio.src = url
-    if(!this.state.loading) {
-        this.audio.pause()
+      this.audio.src = url
+      if(!this.state.loading) {
         this.setState({ loading: true })
-       this.loadingTimeout =  window.setTimeout(() => {
-            this.setState({ loading: false })
-            this.props.play(currentTrack)
-            this.audio.play()
-        }, 2000)
-    }
+        this.loadingTimeout =  window.setTimeout(() => {
+              this.setState({ loading: false })
+              this.props.play(currentTrack)
+              this.audio.play()
+          }, 2000)
+      }
   }
 
   onPause = () => {
@@ -63,7 +62,7 @@ class App extends Component {
   }
 
   onResume = () => {
-
+    this.audio.play()
   }
 
   onStop = () => {
@@ -106,7 +105,6 @@ class App extends Component {
                 onPlay={this.onPlay} 
                 onPause={this.onPause} 
                 onResume={this.onResume} 
-                onStop={this.onStop}  
               />
             </section>
           </div>
@@ -120,7 +118,6 @@ class App extends Component {
 export default connect(
   state => ({
     token : state.tokenReducer.token,
-    songPlaying: (state.songReducer && state.playerReducer.songPlaying) || '',
     currentlyPlaying: (state.songReducer && state.playerReducer.currentlyPlaying) || '',
 }),
 dispatch => bindActionCreators({
