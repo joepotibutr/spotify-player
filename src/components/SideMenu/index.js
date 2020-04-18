@@ -33,6 +33,16 @@ const UserPlaylistActionsLayout = styled.div`
 const SideMenuLayout = styled.div`
 	padding:24px 24px 0 24px;
 
+	.logo {
+		margin-bottom: 22px;
+
+		img {
+			cursor:pointer;
+			width: 132px; 
+			height: 40px;
+		}
+	}
+
 `
 
 const PlaylistAction = styled.li`
@@ -129,8 +139,8 @@ const SideMenu = ({
 
     return (
 		<SideMenuLayout>
-			<div onClick={() => updateHeaderTitle(viewType.RECENTLY_PLAYED)}>
-				<img style={{ cursor:'pointer', width: '132px', height: '40px' }} src={logo}/>
+			<div className="logo" onClick={() => updateHeaderTitle(viewType.RECENTLY_PLAYED)}>
+				<img src={logo}/>
 			</div>
 			<div>
 				<div>	
