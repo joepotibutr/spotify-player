@@ -5,9 +5,8 @@ const defaultState = {
     currentlyPlaying: null,
     songPlaying: false,
     timeElapsed: 0,
-    songId: 0,
     viewType: viewType.RECENTLY_PLAYED,
-    songPaused: true
+    songPaused: false
   }
   
   export const playerReducer = (state = defaultState, action) => {
@@ -23,7 +22,6 @@ const defaultState = {
         ...state,
         songPlaying: true,
         currentlyPlaying: action.song,
-        songId: action.song.id,
         timeElapsed: 0,
         songPaused: false
       }
@@ -34,7 +32,7 @@ const defaultState = {
         songPlaying: false,
         currentlyPlaying: null,
         timeElapsed: 0,
-        songPaused: true
+        songPaused: false
       }
   
     case types.PAUSE_SONG:
