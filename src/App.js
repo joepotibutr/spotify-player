@@ -42,7 +42,10 @@ class App extends Component {
   }
 
   onPlay = (currentTrack) => {
-    this.audio.src = currentTrack.track.preview_url
+    const url = currentTrack ? currentTrack.track.preview_url : 
+      this.props.currentlyPlaying.track.preview_url
+      
+    this.audio.src = url
     if(!this.state.loading) {
         this.audio.pause()
         this.setState({ loading: true })
@@ -52,24 +55,24 @@ class App extends Component {
             this.audio.play()
         }, 2000)
     }
-}
+  }
 
-onPause = () => {
-    this.audio.pause()
-    this.props.pause()
-}
+  onPause = () => {
+      this.audio.pause()
+      this.props.pause()
+  }
 
-onResume = () => {
+  onResume = () => {
 
-}
+  }
 
-onStop = () => {
+  onStop = () => {
 
-}
+  }
 
-componentWillUnmount(){
-  window.clearTimeout(this.loadingTimeout)
-}
+  componentWillUnmount(){
+    window.clearTimeout(this.loadingTimeout)
+  }
 
   render(){
     return (
