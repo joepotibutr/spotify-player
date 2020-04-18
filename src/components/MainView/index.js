@@ -38,7 +38,7 @@ class MainView extends React.Component {
       case viewType.RECENTLY_PLAYED :
         return <ArtistList />
       default: 
-        return <PlaylistView />
+        return <PlaylistView onPlay={this.props.onPlay}/>
     }
   }
 
