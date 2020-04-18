@@ -2,7 +2,7 @@ import React from 'react'
 
 const DownloadIcon = require('../../images/download.svg')
 
-const Artwork = albumArtwork => (
+const InstallAppLink = () => (
     <div style={{ display: 'flex' }}>
         <div style={{
             display: 'flex',
@@ -19,4 +19,4 @@ const Artwork = albumArtwork => (
     </div>
 )
 
-export default Artwork
+export default InstallAppLink
