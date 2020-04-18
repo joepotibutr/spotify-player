@@ -3,10 +3,10 @@ import { viewType } from '../constants'
 
 const defaultState = {
     currentlyPlaying: null,
-    songPlaying: false,
+    isSongStopped: true,
     timeElapsed: 0,
     viewType: viewType.RECENTLY_PLAYED,
-    songPaused: false
+    isSongPaused: false
   }
   
   export const playerReducer = (state = defaultState, action) => {
@@ -20,33 +20,33 @@ const defaultState = {
     case types.PLAY_SONG:
       return {
         ...state,
-        songPlaying: true,
+        isSongStopped: false,
         currentlyPlaying: action.song,
         timeElapsed: 0,
-        songPaused: false
+        isSongPaused: false
       }
   
     case types.STOP_SONG:
       return {
         ...state,
-        songPlaying: false,
+        isSongStopped: true,
         currentlyPlaying: null,
         timeElapsed: 0,
-        songPaused: false
+        isSongPaused: false
       }
   
     case types.PAUSE_SONG:
       return {
         ...state,
-        songPlaying: false,
-        songPaused: true
+        isSongStopped: false,
+        isSongPaused: true
       }
   
     case types.RESUME_SONG:
       return {
         ...state,
-        songPlaying: true,
-        songPaused: false
+        isSongStopped: false,
+        isSongPaused: false
       }
   
     case types.INCREASE_SONG_TIME:
