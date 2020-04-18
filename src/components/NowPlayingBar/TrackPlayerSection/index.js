@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 
+import { TRACK_STATE_PLAYING , TRACK_STATE_STOPPED , TRACK_STATE_PAUSED } from '../../../actionTypes'
+
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 const ShuffleIcon = require('../../../images/change.svg')
@@ -68,8 +70,36 @@ const CurrentTrackActions = styled.span`
 
 
 class TrackPlayerSection extends React.Component {
+
+    renderPlayerButton = () => {
+        const { currentTrackState, onPlay, onPause, onResume, loading } = this.props
+        switch (currentTrackState) {
+            case TRACK_STATE_PAUSED :
+                return (<IconWrapper onClick={onResume}>
+                    <CurrentTrackActions loading={0}>
+                        <div/><div/><div/>
+                        <PlayArrowIcon className="play-icon" />
+                    </CurrentTrackActions>
+                </IconWrapper>)
+            case TRACK_STATE_PLAYING :
+                return (<IconWrapper onClick={onPause}>
+                    <CurrentTrackActions>
+                        <img className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
+                    </CurrentTrackActions>
+                </IconWrapper>)
+            case TRACK_STATE_STOPPED :
+                return (<IconWrapper onClick={onPlay}>
+                    <CurrentTrackActions loading={loading ? 1 : 0}>
+                        <div/><div/><div/>
+                        <PlayArrowIcon className="play-icon" />
+                    </CurrentTrackActions>
+                </IconWrapper>)
+            default:
+                return null
+        }
+    }
+
     render() {
-        const { onPlay, onPause, loading, isSongPaused, isSongStopped } = this.props
         return (
             <div  style={{ 
                 width: '40%',
@@ -87,18 +117,7 @@ class TrackPlayerSection extends React.Component {
                     display: 'flex', alignItems:'center'}}>
                     <IconWrapper><span><img className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
-                    {(isSongStopped && isSongPaused) ? <IconWrapper onClick={onPause}>
-                        <CurrentTrackActions>
-                            <img className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
-                        </CurrentTrackActions>
-                    </IconWrapper>
-                     : 
-                     <IconWrapper onClick={onPlay}>
-                        <CurrentTrackActions loading={loading ? 1 : 0}>
-                            <div/><div/><div/>
-                             <PlayArrowIcon className="play-icon" />
-                        </CurrentTrackActions>
-                    </IconWrapper>}
+                    {this.renderPlayerButton()}
                     <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
                     <IconWrapper><span><img className="repeat-icon" src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                 </div>
