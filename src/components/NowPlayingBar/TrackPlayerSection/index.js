@@ -93,7 +93,7 @@ class TrackPlayerSection extends React.Component {
                     </IconWrapper>
                      : 
                      <IconWrapper onClick={this.props.onPlay}>
-                        <CurrentTrackActions loading={false}>
+                        <CurrentTrackActions loading={1}>
                             <div/><div/><div/>
                              <PlayArrowIcon className="play-icon" />
                         </CurrentTrackActions>
