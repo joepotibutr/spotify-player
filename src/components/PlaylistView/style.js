@@ -112,10 +112,21 @@ export const PlaylistViewLayout = styled.div`
     grid-template-columns: 30% 70%;
     grid-template-areas: "playlist tracks";
 
+    @media only screen and (max-width: 1240px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 30% 70%;
+        grid-template-areas:    "playlist"
+                                "tracks";
+
+        .grid-area-playlist {
+            position:inherit !important;
+            display:flex;
+        }
+    }
+
     .grid-area-playlist {
         grid-area: playlist;
         position:fixed;
-        max-width: 20%;
 
 
         .playlist-cover-art {
