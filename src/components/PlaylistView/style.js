@@ -110,10 +110,10 @@ export const PlaylistViewLayout = styled.div`
     padding-top:60px;
     display:grid;
     grid-template-columns: 30% 70%;
-    grid-template-areas: "left right";
+    grid-template-areas: "playlist tracks";
 
-    .grid-area-left {
-        grid-area: left;
+    .grid-area-playlist {
+        grid-area: playlist;
         position:fixed;
         max-width: 20%;
 
@@ -152,6 +152,11 @@ export const PlaylistViewLayout = styled.div`
             display:flex;
             justify-content:center;
         }
+    }
+
+    .grid-area-tracks {
+        grid-area: tracks; 
+        overflow: hidden;
     }
 `
 

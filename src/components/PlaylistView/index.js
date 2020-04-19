@@ -30,7 +30,7 @@ class PlaylistView extends React.Component {
            
         return (
             <PlaylistViewLayout>
-                <div className="grid-area-left">
+                <div className="grid-area-playlist">
                         <div className="playlist-cover-art">
                                 <div style={{
                                     width: '100%',
@@ -57,7 +57,7 @@ class PlaylistView extends React.Component {
                             <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                         </div>
                     </div>
-                <div  style={{ gridArea: 'right', overflow:'hidden'}}>
+                <div className="grid-area-tracks">
                     {this.props.songs ? 
                     <ol style={{ padding: 0 }}>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id} onClick={() => this.props.onPlay(song)}>
