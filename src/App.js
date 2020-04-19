@@ -11,10 +11,11 @@ import NowPlayingBar from './components/NowPlayingBar'
 import MainView from './components/MainView'
 import GlobalStyled from './GobalStyled'
 import styled from 'styled-components'
-import { play,stop,pause,resume } from './actions/player'
+import { play,stop ,pause ,resume } from './actions/player'
 
 const MainLayout = styled.div`
   background: #121212;
+  
   .app-grid-layout {
     min-height: 100vh;
     width: 100%;
@@ -81,7 +82,7 @@ class App extends Component {
   onPlay = (currentTrack) => {
     // 1st time : checked
     // song ended :
-    // new song : 
+    // new song : checked
     this.onStop()
     const url = currentTrack ? currentTrack.track.preview_url : 
       this.props.currentlyPlaying.track.preview_url
