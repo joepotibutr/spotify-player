@@ -14,7 +14,7 @@ const UserPlaylistLayout = styled.div`
 
 const PlaylistItem = styled.li`
     background:transparent;
-    padding: 5px 0;
+    padding: 6px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -45,7 +45,7 @@ class UserPlaylists extends Component {
         return (
             <UserPlaylistLayout>
                 {playlistMenu.length ? 
-                <ul style={{ overflowY: 'auto', height: 'calc(100vh - 483px)' }}>{playlistMenu.map(playlist => (
+                <ul style={{ overflowY: 'auto', height: 'calc(100vh - 507px)', margin: '25px 0 10px 0' }}>{playlistMenu.map(playlist => (
                       <PlaylistItem onClick={() => {
                         this.props.fetchPlaylistSongsRequest(
                           playlist.owner.id,
