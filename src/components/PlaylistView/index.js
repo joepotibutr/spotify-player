@@ -32,22 +32,14 @@ class PlaylistView extends React.Component {
             <PlaylistViewLayout>
                 <div className="grid-area-playlist">
                         <div className="playlist-cover-art">
-                                <div style={{
-                                    width: '100%',
-                                    height: '100%'
+                                <div className="cover-image-wrapper" style={{
+                                   
                                     }}>
                                 {isUserLikedSongs ? 
                                 <LikedSongsCoverArt >
                                     <LikeIcon style={{ width: '18px', height: '18px'}}/>
                                 </LikedSongsCoverArt> : 
-                                <img style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    backgroundSize: 'contain',
-                                    backgroundPosition: '50%',
-                                    backgroundColor: '#000',
-                                    backgroundRepeat: 'no-repeat',
-                                }} 
+                                <img className="playlist-cover-image"
                                 src={currentPlaylist.images[0].url}/>}
                             </div>
                         </div>

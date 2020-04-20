@@ -122,10 +122,40 @@ export const PlaylistViewLayout = styled.div`
             position:inherit !important;
             display:flex;
         }
+
+        .cover-image-wrapper {
+            width:157px !important;
+            height:157px !important;
+
+            .playlist-cover-image {
+                width:auto;
+                height:auto;
+            }
+        }
+
+       
     }
+
+    .cover-image-wrapper {
+        width: 100%;
+        height: 100%;
+
+        .playlist-cover-image {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: 50%;
+            background-color: #000;
+            background-repeat: no-repeat;
+        }
+    }
+
+    
 
     .grid-area-playlist {
         grid-area: playlist;
+        padding-bottom: 20px;
+        border-bottom: 1px solid hsla(0,0%,100%,.1);
         position:fixed;
 
 
