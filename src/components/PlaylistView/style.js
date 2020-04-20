@@ -123,7 +123,7 @@ export const PlaylistViewLayout = styled.div`
             display:flex;
 
             .playlist-body {
-                text-align:left;
+                text-align:left !important;
             }
         }
 
