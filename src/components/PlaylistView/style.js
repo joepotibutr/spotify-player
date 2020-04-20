@@ -115,7 +115,7 @@ export const PlaylistViewLayout = styled.div`
 
     @media only screen and (max-width: 1240px) {
         grid-template-columns: 1fr;
-        grid-template-rows: 20% 80%;
+        grid-template-rows: 200px 1fr;
         grid-template-areas:    "playlist"
                                 "tracks";
 
@@ -168,6 +168,7 @@ export const PlaylistViewLayout = styled.div`
             margin: 0 auto 1.5em;
             text-align: center;
             max-width: 400px;
+            display:flex;
 
             .playlist-cover-art {
             width: auto;
@@ -205,7 +206,7 @@ export const PlaylistViewLayout = styled.div`
 
             .playlist-entity {
                 .playlist-title {
-                    font-size: 28px;
+                    font-size: 18px;
                     line-height: 36px;
                     letter-spacing: -.005em;
                     font-weight: 700;
