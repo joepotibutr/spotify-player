@@ -44,8 +44,10 @@ class PlaylistView extends React.Component {
                             </div>
                         </div>
                         <div className="playlist-body">
-                            <div className="playlist-title"><h1>{this.props.headerTitle}</h1></div>
-                            <div className="playlist-owner"><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
+                            <div className="playlist-entity">
+                                <div className="playlist-title"><h1>{this.props.headerTitle}</h1></div>
+                                <div className="playlist-owner"><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
+                            </div>
                             <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                         </div>
                     </header>

@@ -168,32 +168,38 @@ export const PlaylistViewLayout = styled.div`
         .playlist-body {
             text-align:center;
             margin-left:40px;
-        }
 
-        .playlist-title {
-            color:white;
-        }
+            .playlist-entity {
+                .playlist-title {
+                    color:white;
+                }
 
-        .playlist-owner {
-            cursor:pointer;
-            color:rgba(255,255,255,.5);
-            &:hover {
-                text-decoration: underline;
-                color:rgba(255,255,255,.8);
+                .playlist-owner {
+                    cursor:pointer;
+                    color:rgba(255,255,255,.5);
+                    &:hover {
+                        text-decoration: underline;
+                        color:rgba(255,255,255,.8);
+                    }
+                }
+            }
+
+            
+
+
+            .total-songs {
+                font-size: 11px;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+            }
+
+            .playlist-owner,.playlist-title,.total-songs {
+                display:flex;
+                justify-content:center;
             }
         }
 
-
-        .total-songs {
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-        }
-
-        .playlist-owner,.playlist-title,.total-songs {
-            display:flex;
-            justify-content:center;
-        }
+        
     }
 
     .grid-area-tracks {
