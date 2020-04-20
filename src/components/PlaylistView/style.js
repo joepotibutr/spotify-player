@@ -125,6 +125,10 @@ export const PlaylistViewLayout = styled.div`
 
             .playlist-body {
                 text-align:left !important;
+
+                .playlist-actions {
+                    flex-direction:column-reverse !important;
+                }
             }
         }
 
@@ -169,11 +173,12 @@ export const PlaylistViewLayout = styled.div`
             text-align: center;
             max-width: 400px;
             display:flex;
+            flex-direction:column;
 
             .playlist-cover-art {
-            width: auto;
-            min-height: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,.3);
+                width: auto;
+                min-height: auto;
+                box-shadow: 0 0 10px rgba(0,0,0,.3);
         }
 
         .playlist-body {
@@ -183,7 +188,7 @@ export const PlaylistViewLayout = styled.div`
             .playlist-actions {
                 display: flex;
                 align-items: center;
-                margin-top: 32px;
+                flex-direction:column;
 
                 .button-wrapper {
                     .play-button > button {
