@@ -165,7 +165,7 @@ export const PlaylistViewLayout = styled.div`
             box-shadow: 0 0 10px rgba(0,0,0,.3);
         }
 
-        .playlist-detail {
+        .playlist-body {
             text-align:center;
         }
 

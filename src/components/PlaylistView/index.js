@@ -43,7 +43,7 @@ class PlaylistView extends React.Component {
                                 src={currentPlaylist.images[0].url}/>}
                             </div>
                         </div>
-                        <div className="playlist-detail">
+                        <div className="playlist-body">
                             <div className="playlist-title"><h1>{this.props.headerTitle}</h1></div>
                             <div className="playlist-owner"><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
                             <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
