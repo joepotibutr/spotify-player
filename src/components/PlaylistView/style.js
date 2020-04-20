@@ -114,7 +114,7 @@ export const PlaylistViewLayout = styled.div`
 
     @media only screen and (max-width: 1240px) {
         grid-template-columns: 1fr;
-        grid-template-rows: 30% 70%;
+        grid-template-rows: 20% 80%;
         grid-template-areas:    "playlist"
                                 "tracks";
 

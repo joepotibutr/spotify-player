@@ -30,7 +30,7 @@ class PlaylistView extends React.Component {
            
         return (
             <PlaylistViewLayout>
-                <div className="grid-area-playlist">
+                <header className="grid-area-playlist">
                         <div className="playlist-cover-art">
                                 <div className="cover-image-wrapper" style={{
                                    
@@ -48,7 +48,7 @@ class PlaylistView extends React.Component {
                             <div className="playlist-owner"><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
                             <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                         </div>
-                    </div>
+                    </header>
                 <div className="grid-area-tracks">
                     {this.props.songs ? 
                     <ol style={{ padding: 0 }}>{this.props.songs.map(song => (
