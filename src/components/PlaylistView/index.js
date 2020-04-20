@@ -31,10 +31,9 @@ class PlaylistView extends React.Component {
         return (
             <PlaylistViewLayout>
                 <header className="grid-area-playlist">
+                    <div className="current-playlist">
                         <div className="playlist-cover-art">
-                                <div className="cover-image-wrapper" style={{
-                                   
-                                    }}>
+                                <div className="cover-image-wrapper">
                                 {isUserLikedSongs ? 
                                 <LikedSongsCoverArt >
                                     <LikeIcon style={{ width: '18px', height: '18px'}}/>
@@ -50,7 +49,8 @@ class PlaylistView extends React.Component {
                             </div>
                             <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                         </div>
-                    </header>
+                    </div>
+                </header>
                 <div className="grid-area-tracks">
                     {this.props.songs ? 
                     <ol style={{ padding: 0 }}>{this.props.songs.map(song => (

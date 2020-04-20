@@ -111,6 +111,7 @@ export const PlaylistViewLayout = styled.div`
     display:grid;
     grid-template-columns: 30% 70%;
     grid-template-areas: "playlist tracks";
+    max-width: 1955px;
 
     @media only screen and (max-width: 1240px) {
         grid-template-columns: 1fr;
@@ -160,10 +161,15 @@ export const PlaylistViewLayout = styled.div`
         grid-area: playlist;
         padding-bottom: 20px;
         border-bottom: 1px solid hsla(0,0%,100%,.1);
-        position:fixed;
+        position:sticky;
 
 
-        .playlist-cover-art {
+        .current-playlist {
+            margin: 0 auto 1.5em;
+            text-align: center;
+            max-width: 400px;
+
+            .playlist-cover-art {
             width: auto;
             min-height: auto;
             box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -205,6 +211,7 @@ export const PlaylistViewLayout = styled.div`
                 font-weight: bold;
                 letter-spacing: 1.5px;
             }
+        }
         }
 
         
