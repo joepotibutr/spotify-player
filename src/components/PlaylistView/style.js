@@ -167,6 +167,7 @@ export const PlaylistViewLayout = styled.div`
 
         .playlist-body {
             text-align:center;
+            margin-left:40px;
         }
 
         .playlist-title {
