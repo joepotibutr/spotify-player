@@ -180,10 +180,25 @@ export const PlaylistViewLayout = styled.div`
             margin-left:40px;
 
             .playlist-actions {
+                display: flex;
+                align-items: center;
+                margin-top: 32px;
+
                 .button-wrapper {
-                    .play-button {
-                        background: green;
+                    .play-button > button {
+                        transition: all 33ms;
+                        background: #1db954;
                         border: 0;
+                        font-size: 12px;
+                        line-height: 18px;
+                        font-weight: 700;
+                        letter-spacing: 1.76px;
+                        text-transform: uppercase;
+                        border-radius: 500px;
+                        color: white;
+                        padding: 8px 34px;
+                        cursor: pointer;
+                        text-align: center;
                     }
                 }
             }
