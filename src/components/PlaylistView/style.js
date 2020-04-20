@@ -179,6 +179,15 @@ export const PlaylistViewLayout = styled.div`
             text-align:center;
             margin-left:40px;
 
+            .playlist-actions {
+                .button-wrapper {
+                    .play-button {
+                        background: green;
+                        border: 0;
+                    }
+                }
+            }
+
             .playlist-entity {
                 .playlist-title {
                     font-size: 28px;

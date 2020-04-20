@@ -47,7 +47,14 @@ class PlaylistView extends React.Component {
                                 <div className="playlist-title"><h2>{this.props.headerTitle}</h2></div>
                                 <div className="playlist-owner"><p>{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</p></div>
                             </div>
-                            <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
+                            <div className="playlist-actions">
+                                <div className="button-wrapper">
+                                    <div className="play-button">
+                                        <button onClick={() => this.props.onPlay()}>PLAY</button>
+                                    </div>
+                                </div>
+                                <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
+                            </div>
                         </div>
                     </div>
                 </header>
