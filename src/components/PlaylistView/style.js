@@ -121,6 +121,10 @@ export const PlaylistViewLayout = styled.div`
         .grid-area-playlist {
             position:inherit !important;
             display:flex;
+
+            .playlist-body {
+                text-align:left;
+            }
         }
 
         .cover-image-wrapper {
@@ -171,7 +175,16 @@ export const PlaylistViewLayout = styled.div`
 
             .playlist-entity {
                 .playlist-title {
+                    font-size: 28px;
+                    line-height: 36px;
+                    letter-spacing: -.005em;
+                    font-weight: 700;
+                    text-transform: none;
                     color:white;
+                    h2 {
+                        margin:0;
+                        padding:0;
+                    }
                 }
 
                 .playlist-owner {
@@ -191,11 +204,6 @@ export const PlaylistViewLayout = styled.div`
                 font-size: 11px;
                 font-weight: bold;
                 letter-spacing: 1.5px;
-            }
-
-            .playlist-owner,.playlist-title,.total-songs {
-                display:flex;
-                justify-content:center;
             }
         }
 
