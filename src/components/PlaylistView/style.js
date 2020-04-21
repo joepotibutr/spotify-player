@@ -146,6 +146,10 @@ export const PlaylistViewLayout = styled.div`
                 .playlist-actions {
                     order:2 !important;
                     flex-direction:column-reverse !important;
+
+                    .button-wrapper {
+                        flex-direction:row !important;
+                    }
                 }
             }
         }
@@ -209,10 +213,12 @@ export const PlaylistViewLayout = styled.div`
                     align-items: center;
                     flex-direction:column;
                     order:1;
+                    margin: auto 0 0 0;
 
                     .button-wrapper {
                         display: flex;
                         width: 100%;
+                        flex-direction:column;
 }
                         .play-button > button {
                             transition: all 33ms;
