@@ -107,7 +107,7 @@ export const TrackDetailText = styled.span`
 
 
 export const PlaylistViewLayout = styled.div`
-    height: 900px;
+    max-height: 900px;
     padding-top:80px;
     display:grid;
     grid-template-columns: 25% 75%;
@@ -115,6 +115,7 @@ export const PlaylistViewLayout = styled.div`
     max-width: 1955px;
 
     @media only screen and (max-width: 1240px) {
+        max-height: 4000px;
         grid-template-columns: 1fr;
         grid-template-rows: 200px 1fr;
         grid-template-areas:    "playlist"
@@ -128,6 +129,7 @@ export const PlaylistViewLayout = styled.div`
         .grid-area-playlist {
             position:inherit !important;
             display:flex;
+            border-bottom: 1px solid hsla(0,0%,100%,.1);
 
             .current-playlist {
                 max-width: 100% !important;
@@ -186,7 +188,6 @@ export const PlaylistViewLayout = styled.div`
     .grid-area-playlist {
         grid-area: playlist;
         padding-bottom: 20px;
-        border-bottom: 1px solid hsla(0,0%,100%,.1);
         position:sticky;
 
 
@@ -261,9 +262,6 @@ export const PlaylistViewLayout = styled.div`
                         }
                     }
                 }
-
-                
-
 
                 .total-songs {
                     font-size: 11px;
