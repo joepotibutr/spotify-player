@@ -123,6 +123,10 @@ export const PlaylistViewLayout = styled.div`
             position:inherit !important;
             display:flex;
 
+            .current-playlist {
+                flex-direction: row !important;
+            }
+
             .playlist-body {
                 text-align:left !important;
 

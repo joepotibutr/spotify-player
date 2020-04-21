@@ -62,7 +62,7 @@ class PlaylistView extends React.Component {
                 </header>
                 <div className="grid-area-tracks">
                     {this.props.songs ? 
-                    <ol style={{ padding: 0 }}>{this.props.songs.map(song => (
+                    <ol style={{ padding: 0, margin:0  }}>{this.props.songs.map(song => (
                         <PlaylistTrack key={song.track.id} onClick={() => this.props.onPlay(song)}>
                             <div style={{ display: 'flex'}}>
                                 <div  className="track-item-play">
