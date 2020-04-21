@@ -48,12 +48,12 @@ class PlaylistView extends React.Component {
                                 <div ><span>By </span><span className="playlist-owner">{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</span></div>
                             </div>
                             <div className="playlist-actions">
-                                <div>LIKED</div>
-                                <div>.....</div>
                                 <div className="button-wrapper">
                                     <div className="play-button">
                                         <button onClick={() => this.props.onPlay()}>PLAY</button>
                                     </div>
+                                    <div>LIKED</div>
+                                    <div>.....</div>
                                 </div>
                             </div>
                             <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>

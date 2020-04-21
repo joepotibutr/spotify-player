@@ -130,7 +130,8 @@ export const PlaylistViewLayout = styled.div`
             display:flex;
 
             .current-playlist {
-                margin: 0 auto 1.5em 0 !important;
+                max-width: 100% !important;
+                margin: 0 0 1.5em 0 !important;
                 flex-direction: row !important;
             }
 
@@ -139,11 +140,11 @@ export const PlaylistViewLayout = styled.div`
                 margin-left:40px;
 
                 .total-songs {
-                    order:1;
+                    order:1 !important;
                 }
 
                 .playlist-actions {
-                    order:2;
+                    order:2 !important;
                     flex-direction:column-reverse !important;
                 }
             }
