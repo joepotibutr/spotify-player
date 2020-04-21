@@ -211,6 +211,9 @@ export const PlaylistViewLayout = styled.div`
                     order:1;
 
                     .button-wrapper {
+                        display: flex;
+                        width: 100%;
+}
                         .play-button > button {
                             transition: all 33ms;
                             background: #1db954;
