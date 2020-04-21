@@ -120,15 +120,21 @@ export const PlaylistViewLayout = styled.div`
                                 "tracks";
 
         .grid-area-playlist {
+            margin-left:0 !important;
+        }
+
+        .grid-area-playlist {
             position:inherit !important;
             display:flex;
 
             .current-playlist {
+                margin: 0 auto 1.5em 0 !important;
                 flex-direction: row !important;
             }
 
             .playlist-body {
                 text-align:left !important;
+                margin-left:40px;
 
                 .playlist-actions {
                     flex-direction:column-reverse !important;
@@ -187,7 +193,6 @@ export const PlaylistViewLayout = styled.div`
 
             .playlist-body {
                 text-align:center;
-                margin-left:40px;
 
                 .playlist-actions {
                     display: flex;
