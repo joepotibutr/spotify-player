@@ -109,7 +109,7 @@ export const PlaylistViewLayout = styled.div`
     height: 900px;
     padding-top:60px;
     display:grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 25% 75%;
     grid-template-areas: "playlist tracks";
     max-width: 1955px;
 
@@ -179,69 +179,69 @@ export const PlaylistViewLayout = styled.div`
                 width: auto;
                 min-height: auto;
                 box-shadow: 0 0 10px rgba(0,0,0,.3);
-        }
+            }
 
-        .playlist-body {
-            text-align:center;
-            margin-left:40px;
+            .playlist-body {
+                text-align:center;
+                margin-left:40px;
 
-            .playlist-actions {
-                display: flex;
-                align-items: center;
-                flex-direction:column;
+                .playlist-actions {
+                    display: flex;
+                    align-items: center;
+                    flex-direction:column;
 
-                .button-wrapper {
-                    .play-button > button {
-                        transition: all 33ms;
-                        background: #1db954;
-                        border: 0;
-                        font-size: 12px;
-                        line-height: 18px;
+                    .button-wrapper {
+                        .play-button > button {
+                            transition: all 33ms;
+                            background: #1db954;
+                            border: 0;
+                            font-size: 12px;
+                            line-height: 18px;
+                            font-weight: 700;
+                            letter-spacing: 1.76px;
+                            text-transform: uppercase;
+                            border-radius: 500px;
+                            color: white;
+                            padding: 8px 34px;
+                            cursor: pointer;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .playlist-entity {
+                    .playlist-title {
+                        font-size: 18px;
+                        line-height: 36px;
+                        letter-spacing: -.005em;
                         font-weight: 700;
-                        letter-spacing: 1.76px;
-                        text-transform: uppercase;
-                        border-radius: 500px;
-                        color: white;
-                        padding: 8px 34px;
-                        cursor: pointer;
-                        text-align: center;
+                        text-transform: none;
+                        color:white;
+                        h2 {
+                            margin:0;
+                            padding:0;
+                        }
                     }
-                }
-            }
 
-            .playlist-entity {
-                .playlist-title {
-                    font-size: 18px;
-                    line-height: 36px;
-                    letter-spacing: -.005em;
-                    font-weight: 700;
-                    text-transform: none;
-                    color:white;
-                    h2 {
-                        margin:0;
-                        padding:0;
+                    .playlist-owner {
+                        cursor:pointer;
+                        color:rgba(255,255,255,.5);
+                        &:hover {
+                            text-decoration: underline;
+                            color:rgba(255,255,255,.8);
+                        }
                     }
                 }
 
-                .playlist-owner {
-                    cursor:pointer;
-                    color:rgba(255,255,255,.5);
-                    &:hover {
-                        text-decoration: underline;
-                        color:rgba(255,255,255,.8);
-                    }
+                
+
+
+                .total-songs {
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
                 }
             }
-
-            
-
-
-            .total-songs {
-                font-size: 11px;
-                font-weight: bold;
-                letter-spacing: 1.5px;
-            }
-        }
         }
 
         
@@ -250,6 +250,7 @@ export const PlaylistViewLayout = styled.div`
     .grid-area-tracks {
         grid-area: tracks; 
         overflow: hidden;
+        margin-left:20px;
     }
 `
 
