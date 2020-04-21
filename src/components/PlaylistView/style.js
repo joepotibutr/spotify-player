@@ -138,7 +138,12 @@ export const PlaylistViewLayout = styled.div`
                 text-align:left !important;
                 margin-left:40px;
 
+                .total-songs {
+                    order:1;
+                }
+
                 .playlist-actions {
+                    order:2;
                     flex-direction:column-reverse !important;
                 }
             }
@@ -195,11 +200,14 @@ export const PlaylistViewLayout = styled.div`
 
             .playlist-body {
                 text-align:center;
+                display: flex;
+                flex-direction: column;
 
                 .playlist-actions {
                     display: flex;
                     align-items: center;
                     flex-direction:column;
+                    order:1;
 
                     .button-wrapper {
                         .play-button > button {
@@ -251,6 +259,7 @@ export const PlaylistViewLayout = styled.div`
                     font-size: 11px;
                     font-weight: bold;
                     letter-spacing: 1.5px;
+                    order:2;
                 }
             }
         }
