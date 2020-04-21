@@ -55,8 +55,8 @@ class PlaylistView extends React.Component {
                                         <button onClick={() => this.props.onPlay()}>PLAY</button>
                                     </div>
                                 </div>
-                                <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                             </div>
+                            <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                         </div>
                     </div>
                 </header>

@@ -56,6 +56,7 @@ export const PlaylistTrack = styled.li`
         font-size:12px;
         font-family: "Varela Round", sans-serif;
         width:7%;
+        font-weight:bold;
     }
 
     .musical-icon {
@@ -119,8 +120,9 @@ export const PlaylistViewLayout = styled.div`
         grid-template-areas:    "playlist"
                                 "tracks";
 
-        .grid-area-playlist {
+        .grid-area-tracks {
             margin-left:0 !important;
+            margin-top:20px;
         }
 
         .grid-area-playlist {
