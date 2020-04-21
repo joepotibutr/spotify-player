@@ -107,7 +107,7 @@ export const TrackDetailText = styled.span`
 
 export const PlaylistViewLayout = styled.div`
     height: 900px;
-    padding-top:60px;
+    padding-top:80px;
     display:grid;
     grid-template-columns: 25% 75%;
     grid-template-areas: "playlist tracks";
