@@ -115,7 +115,7 @@ export const PlaylistViewLayout = styled.div`
     max-width: 1955px;
 
     @media only screen and (max-width: 1240px) {
-        max-height: 4000px;
+        max-height: 4200px;
         grid-template-columns: 1fr;
         grid-template-rows: 200px 1fr;
         grid-template-areas:    "playlist"
@@ -235,6 +235,11 @@ export const PlaylistViewLayout = styled.div`
                             padding: 8px 34px;
                             cursor: pointer;
                             text-align: center;
+
+                            &:hover {
+                                filter:brightness(1.05);
+                                transform:scale(1.05);
+                            }
                         }
                     }
                 }
