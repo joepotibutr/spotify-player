@@ -11,7 +11,6 @@ import {
     PlaylistTrack, 
     DotIcon, 
     IconWrapper, 
-    TrackDetailText, 
     PlaylistViewLayout, 
     LikedSongsCoverArt
 } from './style'
@@ -21,9 +20,34 @@ const MusicalNoteIcon = require('../../images/musical-note.svg')
 
 
 class PlaylistView extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            prevScrollpos: window.pageYOffset,
+        };
+    }
+
+    
+    onScroll = (e) => {
+        this.setState({
+            prevScrollpos: window.scrollY
+        })
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.onScroll,true);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onScroll);
+    }
+
+    
+    
 
     render() {
-        const { playlists, headerTitle, play } = this.props
+        const { playlists, headerTitle } = this.props
         const isUserLikedSongs = headerTitle === viewType.LIKED_SONGS
         const currentPlaylist =  playlists && playlists.find(playlist => 
             playlist.name === headerTitle)
@@ -45,7 +69,7 @@ class PlaylistView extends React.Component {
                         <div className="playlist-body">
                             <div className="playlist-entity">
                                 <div className="playlist-title"><h2>{this.props.headerTitle}</h2></div>
-                                <div ><span>By </span><span className="playlist-owner">{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</span></div>
+                                <div ><span className="by">By </span><span className="playlist-owner">{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</span></div>
                             </div>
                             <div className="playlist-actions">
                                 <div className="button-wrapper">

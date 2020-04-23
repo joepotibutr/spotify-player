@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import ArtistList from "../ArtistList";
 import PlaylistView from '../PlaylistView'
 import { viewType } from '../../constants'
-import axios from 'axios'
 
 import styled from 'styled-components'
 
@@ -14,6 +13,7 @@ const MainViewLayout = styled.div`
 `
 
 class MainView extends React.Component {
+ 
 
   // async componentWillReceiveProps(nextProps) {
   //   // if (this.props.headerTitle !== nextProps.headerTitle) {
