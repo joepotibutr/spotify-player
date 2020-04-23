@@ -107,6 +107,7 @@ export const TrackDetailText = styled.span`
 
 
 export const PlaylistViewLayout = styled.div`
+    overflow:scroll-y;
     max-height: 900px;
     padding-top:80px;
     display:grid;

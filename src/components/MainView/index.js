@@ -13,7 +13,31 @@ const MainViewLayout = styled.div`
 `
 
 class MainView extends React.Component {
- 
+  constructor(props) {
+    super(props);
+    this.state = {
+        opacity: 0,
+    };
+  } 
+
+
+onScroll = (e) => {
+    if (e.target.scrollTop < 1000) {
+        const opacity = e.target.scrollTop / 10
+        this.setState({
+            opacity
+        })
+    }
+}
+
+componentDidMount() {
+    window.addEventListener('scroll', this.onScroll,true);
+}
+
+componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+}
+  
 
   // async componentWillReceiveProps(nextProps) {
   //   // if (this.props.headerTitle !== nextProps.headerTitle) {
@@ -48,6 +72,7 @@ class MainView extends React.Component {
         <div style={{ zIndex:3, position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '80px'}}>
           <span>{`<`}</span>
           <span>{`>`}</span>
+          {this.state.opacity}
           <button onClick={() => {
             window.location.href = 'https://www.spotify.com/logout/'
             // window.location.href = 'http://localhost:3000'

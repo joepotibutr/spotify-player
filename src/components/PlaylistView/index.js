@@ -20,30 +20,6 @@ const MusicalNoteIcon = require('../../images/musical-note.svg')
 
 
 class PlaylistView extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            prevScrollpos: window.pageYOffset,
-        };
-    }
-
-    
-    onScroll = (e) => {
-        this.setState({
-            prevScrollpos: window.scrollY
-        })
-    }
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.onScroll,true);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.onScroll);
-    }
-
-    
     
 
     render() {
