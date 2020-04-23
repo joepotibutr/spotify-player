@@ -22,8 +22,8 @@ class MainView extends React.Component {
 
 
 onScroll = (e) => {
-    if (e.target.scrollTop < 1000) {
-        const opacity = e.target.scrollTop / 10
+    if (e.target.scrollTop < 400) {
+        const opacity = e.target.scrollTop / 300
         this.setState({
             opacity
         })
@@ -69,7 +69,7 @@ componentWillUnmount() {
  render() {
     return (
       <MainViewLayout>
-        <div style={{ zIndex:3, position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '80px'}}>
+        <div style={{ opacity: this.state.opacity, zIndex:3, position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '80px'}}>
           <span>{`<`}</span>
           <span>{`>`}</span>
           {this.state.opacity}
