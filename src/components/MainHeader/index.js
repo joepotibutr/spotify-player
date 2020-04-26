@@ -5,21 +5,32 @@ import ArrowDropDownIcon from   '@material-ui/icons/ArrowDropDown'
 
 
 const HeaderLayout = styled.header`
+    padding:10px 20px;
+    background:rgb(83,83,83,${props => props.opacity});
     display:flex;
-    opacity: ${props => props.opacity}; 
+    align-items:center;
     z-index:3; 
     position: fixed ; 
-    background: rgb(18, 18, 18);
-    width: 67%;
-    height: 80px;
+    width: 60%;
+    height: 30px;
     justify-content:space-between;
 
     .current-user {
 
-        > img {
-            width: 30px;
-            height: 30px;
-            filter: invert(0.8);
+        .user-icon {
+            border-radius:50%;
+            width:30px;
+            height:30px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            > img {
+                width: 20px;
+                height: 20px;
+                filter: invert(0.8);
+            }
         }
     }
 `
@@ -35,8 +46,9 @@ const MainHeader = ({ opacity }) => {
                 <span>{`>`}</span>
             </div>
             <div className="current-user"style={{ display: 'flex' }}>
-                User
-                <img src={UserIcon} />
+                <div className="user-icon">
+                    <img src={UserIcon} />
+                </div>
                 <span>CurrentUser</span>
                 <div><ArrowDropDownIcon /></div>
             </div>
