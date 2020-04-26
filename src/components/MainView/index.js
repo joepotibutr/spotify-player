@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux'
 import ArtistList from "../ArtistList";
 import PlaylistView from '../PlaylistView'
+import MainHeader from '../MainHeader'
 import { viewType } from '../../constants'
 
 import styled from 'styled-components'
@@ -53,13 +54,7 @@ class MainView extends React.Component {
  render() {
     return (
       <MainViewLayout>
-        <header style={{ opacity: this.state.opacity, zIndex:3, position: 'fixed ', background: 'rgb(18, 18, 18)', width: '100%', height: '80px'}}>
-          <div>
-            <span>{`<`}</span>
-            <span>{`>`}</span>
-          </div>
-          <div>User</div>
-        </header>
+        <MainHeader opacity={this.state.opacity} />
           {this.renderMainView()}
       </MainViewLayout>
     )
