@@ -32,7 +32,18 @@ const CurrentTrackActions = styled.span`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
+    &:hover {
+        filter: brightness(1.05);
+        transform: scale(1.05);
+        
+        svg {
+            filter: brightness(1.05);
+            transform: scale(1.05);
+        }
+    }
+
+
 
     .pause-icon {
         filter:invert(0.8);
