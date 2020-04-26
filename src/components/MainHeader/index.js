@@ -10,8 +10,18 @@ const HeaderLayout = styled.header`
     z-index:3; 
     position: fixed ; 
     background: rgb(18, 18, 18);
-    width: 100%;
+    width: 67%;
     height: 80px;
+    justify-content:space-between;
+
+    .current-user {
+
+        > img {
+            width: 30px;
+            height: 30px;
+            filter: invert(0.8);
+        }
+    }
 `
 
 
@@ -26,7 +36,7 @@ const MainHeader = ({ opacity }) => {
             </div>
             <div className="current-user"style={{ display: 'flex' }}>
                 User
-                <img style={{ width: '30px', height: '30px' }} src={UserIcon} />
+                <img src={UserIcon} />
                 <span>CurrentUser</span>
                 <div><ArrowDropDownIcon /></div>
             </div>
