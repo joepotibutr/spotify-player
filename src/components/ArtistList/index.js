@@ -26,7 +26,7 @@ const TrackItem = styled.li`
         align-items:center;
         width: 50px;
         height: 50px;
-        background:red;
+        background:#1db954;
         display:none;
         border-radius:50%;
         transform: translateX(90px);
