@@ -15,13 +15,28 @@ const BufferLine = styled.div`
     display: flex;
     height: 4px;
     width: 100%;
+    overflow:hidden;
+`
+
+const CurrentProgress = styled.div`
+    background-color: #b3b3b3;
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
+    transform:translateX(-20%);
+
+    &:hover {
+        background-color:#1db954;
+    }
 `
 
 
 const ProgressBar = () => {
     return (
         <ProgressBarOuterLayout>
-            <BufferLine />
+            <BufferLine>
+                <CurrentProgress />
+            </BufferLine>
         </ProgressBarOuterLayout>
     )
 }
