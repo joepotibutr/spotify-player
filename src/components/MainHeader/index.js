@@ -16,6 +16,8 @@ const HeaderLayout = styled.header`
     justify-content:space-between;
 
     .current-user {
+        display:flex;
+        align-items:center;
 
         .user-icon {
             border-radius:50%;
