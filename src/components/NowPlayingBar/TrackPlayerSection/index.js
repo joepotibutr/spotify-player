@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import ProgressBar from '../../ProgressBar'
+
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 
@@ -147,21 +149,7 @@ class TrackPlayerSection extends React.Component {
                     }}>
                         {/* {this.audio.currentTime} */}
                     </div>
-                    <div style={{
-                        height: '12px',
-                        width: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
-                        <div style={{
-                            backgroundColor: '#404040',
-                            borderRadius: '2px',
-                            display: 'flex',
-                            height: '4px',
-                            width: '100%',
-                        }}></div>
-                    </div>
+                    <ProgressBar />
                     <div style={{
                         fontSize: '11px',
                         lineHeight: '16px',
