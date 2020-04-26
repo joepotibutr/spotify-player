@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 
 import TrackPlayerSection from './TrackPlayerSection'
+import ProgressBar from '../ProgressBar'
 
 import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 
@@ -134,21 +135,7 @@ class NowPlayingBar extends React.Component {
                                         width: '18px',
                                         height: '18px'
                                     }} /></IconWrapper>
-                                    
-                                    <div style={{
-                                    height: '12px',
-                                    position: 'relative',
-                                    width: '100%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                }}>
-                                    <div style={{
-                                        backgroundColor: '#404040',
-                                        borderRadius: '2px',
-                                        display: 'flex',
-                                        height: '4px',
-                                        width: '100%',
-                                    }}></div></div>
+                                    <ProgressBar />
                                 </div>
                             </div>
                     </div>
