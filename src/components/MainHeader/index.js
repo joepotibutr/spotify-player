@@ -4,6 +4,34 @@ import styled from 'styled-components'
 import ArrowDropDownIcon from   '@material-ui/icons/ArrowDropDown'
 
 
+const PageHistoryButton = styled.div`
+    cursor: ${props => props.disabled ? 'not-allowed' : 'pointer' };
+    opacity:${props => props.disabled ? 0.5 : 1};
+    width: 30px;
+    height: 30px;
+    display: flex;
+    background: rgb(0,0,0,0.8);
+    border-radius: 50%;
+    margin: 0 20px;
+    justify-content: center;
+    align-items: center;
+
+    .right {
+        transform: rotate(-45deg) translate(-2px,-2px) skew(5deg,5deg);
+    }
+
+    .left {
+        transform: rotate(135deg) translate(-2px,-2px) skew(5deg,5deg);
+    }
+    .arrow {
+        border: solid rgb(255,255,255);
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 7px;
+    }
+
+`
+
 const HeaderLayout = styled.header`
     padding:10px 20px;
     background:rgb(23,23,23,${props => props.opacity > 1 ? 1 : props.opacity});
@@ -28,30 +56,7 @@ const HeaderLayout = styled.header`
     .view-state-actions {
         display:flex;
 
-        .arrow-btn {
-            width: 30px;
-            height: 30px;
-            display: flex;
-            background: rgb(0,0,0,0.8);
-            border-radius: 50%;
-            margin: 0 20px;
-            justify-content: center;
-            align-items: center;
-
-            .right {
-                transform: rotate(-45deg) translate(-2px,-2px) skew(5deg,5deg);
-            }
-
-            .left {
-                transform: rotate(135deg) translate(-2px,-2px) skew(5deg,5deg);
-            }
-            .arrow {
-                border: solid rgb(255,255,255);
-                border-width: 0 1px 1px 0;
-                display: inline-block;
-                padding: 7px;
-            }
-        }
+        
     }
 
     .current-user {
@@ -96,11 +101,12 @@ const HeaderLayout = styled.header`
 const UserIcon = require('../../images/user.svg')
 
 const MainHeader = ({ opacity }) => {
+
     return (
         <HeaderLayout opacity={opacity}>
             <div className="view-state-actions">
-                <div className="arrow-btn"><i class="arrow left" /></div>
-                <div className="arrow-btn"><i class="arrow right" /></div>
+                <PageHistoryButton disabled={1} alt="Go back"><i className="arrow left" /></PageHistoryButton>
+                <PageHistoryButton disabled={1} alt="Go forward"><i className="arrow right" /></PageHistoryButton>
             </div>
             <div className="current-user"style={{ display: 'flex' }}>
                 <div className="user-icon">
