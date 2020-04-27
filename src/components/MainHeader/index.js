@@ -33,13 +33,13 @@ const PageHistoryButton = styled.div`
 `
 
 const HeaderLayout = styled.header`
-    padding:10px 20px;
+    padding:10px 32px;
     background:rgb(23,23,23,${props => props.opacity > 1 ? 1 : props.opacity});
     display:flex;
     align-items:center;
     z-index:3; 
     position: fixed ; 
-    width: calc(100% - 270px);
+    width: calc(100% - 309px);
     height: 30px;
     justify-content:space-between;
 
@@ -60,7 +60,7 @@ const HeaderLayout = styled.header`
     }
 
     .current-user {
-        padding:4px;
+        padding:2px;
         border-bottom-left-radius: 25% 100%;
         border-bottom-right-radius: 25% 100%;
         border-top-left-radius: 25% 100%;
