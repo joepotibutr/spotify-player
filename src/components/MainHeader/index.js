@@ -25,6 +25,33 @@ const HeaderLayout = styled.header`
         }
     }
 
+    .view-state-actions {
+        .arrow-btn {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            background: green;
+            border-radius: 50%;
+            margin: 0 20px;
+            justify-content: center;
+            align-items: center;
+
+            .right {
+                transform: rotate(-45deg);
+            }
+
+            .left {
+                transform: rotate(135deg);
+            }
+            .arrow {
+                border: solid rgb(255,255,255);
+                border-width: 0 1px 1px 0;
+                display: inline-block;
+                padding: 7px;
+            }
+        }
+    }
+
     .current-user {
         padding:4px;
         border-bottom-left-radius: 25% 100%;
@@ -69,9 +96,9 @@ const UserIcon = require('../../images/user.svg')
 const MainHeader = ({ opacity }) => {
     return (
         <HeaderLayout opacity={opacity}>
-            <div>
-                <span>{`<`}</span>
-                <span>{`>`}</span>
+            <div className="view-state-actions">
+                <div className="arrow-btn"><i class="arrow right" /></div>
+                <div className="arrow-btn"><i class="arrow left" /></div>
             </div>
             <div className="current-user"style={{ display: 'flex' }}>
                 <div className="user-icon">
