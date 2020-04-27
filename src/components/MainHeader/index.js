@@ -24,6 +24,15 @@ const HeaderLayout = styled.header`
         background: rgb(0,0,0);
         display:flex;
         align-items:center;
+        cursor:pointer;
+
+        
+        .username {
+                text-transform: lowercase;
+                color: rgb(255,255,255);
+                font-weight: 700;
+                padding:0 5px;
+            }
 
         .user-icon {
             border-radius:50%;
@@ -33,6 +42,7 @@ const HeaderLayout = styled.header`
             display: flex;
             justify-content: center;
             align-items: center;
+
 
             > img {
                 width: 16px;
@@ -57,7 +67,7 @@ const MainHeader = ({ opacity }) => {
                 <div className="user-icon">
                     <img src={UserIcon} />
                 </div>
-                <span>CurrentUser</span>
+                <span className="username">CurrentUser</span>
                 <div><ArrowDropDownIcon /></div>
             </div>
         </HeaderLayout>
