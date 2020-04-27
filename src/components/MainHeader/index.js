@@ -26,22 +26,24 @@ const HeaderLayout = styled.header`
     }
 
     .view-state-actions {
+        display:flex;
+
         .arrow-btn {
             width: 30px;
             height: 30px;
             display: flex;
-            background: green;
+            background: rgb(0,0,0,0.8);
             border-radius: 50%;
             margin: 0 20px;
             justify-content: center;
             align-items: center;
 
             .right {
-                transform: rotate(-45deg);
+                transform: rotate(-45deg) translate(-2px,-2px) skew(5deg,5deg);
             }
 
             .left {
-                transform: rotate(135deg);
+                transform: rotate(135deg) translate(-2px,-2px) skew(5deg,5deg);
             }
             .arrow {
                 border: solid rgb(255,255,255);
@@ -97,8 +99,8 @@ const MainHeader = ({ opacity }) => {
     return (
         <HeaderLayout opacity={opacity}>
             <div className="view-state-actions">
-                <div className="arrow-btn"><i class="arrow right" /></div>
                 <div className="arrow-btn"><i class="arrow left" /></div>
+                <div className="arrow-btn"><i class="arrow right" /></div>
             </div>
             <div className="current-user"style={{ display: 'flex' }}>
                 <div className="user-icon">
