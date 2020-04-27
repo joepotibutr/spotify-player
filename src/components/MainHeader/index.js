@@ -29,8 +29,8 @@ const HeaderLayout = styled.header`
             align-items: center;
 
             > img {
-                width: 20px;
-                height: 20px;
+                width: 16px;
+                height: 16px;
                 filter: invert(0.8);
             }
         }
