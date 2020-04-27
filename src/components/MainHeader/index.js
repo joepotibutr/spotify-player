@@ -29,7 +29,7 @@ const HeaderLayout = styled.header`
             border-radius:50%;
             width:30px;
             height:30px;
-            background-color: red;
+            background-color: #282828;
             display: flex;
             justify-content: center;
             align-items: center;
