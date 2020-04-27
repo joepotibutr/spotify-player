@@ -109,11 +109,12 @@ export const TrackDetailText = styled.span`
 export const PlaylistViewLayout = styled.div`
     overflow:scroll-y;
     max-height: 900px;
-    padding-top:80px;
     display:grid;
     grid-template-columns: 25% 75%;
     grid-template-areas: "playlist tracks";
     max-width: 1955px;
+    padding: 0 32px;
+    margin-top: 80px;
 
     @media only screen and (max-width: 1240px) {
         max-height: 4200px;
