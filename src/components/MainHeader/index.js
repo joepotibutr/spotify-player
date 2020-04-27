@@ -12,7 +12,7 @@ const PageHistoryButton = styled.div`
     display: flex;
     background: rgb(0,0,0,0.8);
     border-radius: 50%;
-    margin: 0 20px;
+    margin-right: 20px;
     justify-content: center;
     align-items: center;
 
@@ -33,13 +33,13 @@ const PageHistoryButton = styled.div`
 `
 
 const HeaderLayout = styled.header`
-    padding:10px 32px;
+    padding:20px 32px;
     background:rgb(23,23,23,${props => props.opacity > 1 ? 1 : props.opacity});
     display:flex;
     align-items:center;
     z-index:3; 
     position: fixed ; 
-    width: calc(100% - 309px);
+    width: calc(100% - 294px);
     height: 30px;
     justify-content:space-between;
 
