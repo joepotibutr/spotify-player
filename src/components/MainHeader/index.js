@@ -16,6 +16,12 @@ const HeaderLayout = styled.header`
     justify-content:space-between;
 
     .current-user {
+        padding:4px;
+        border-bottom-left-radius: 25% 100%;
+        border-bottom-right-radius: 25% 100%;
+        border-top-left-radius: 25% 100%;
+        border-top-right-radius: 25% 100%;
+        background: rgb(0,0,0);
         display:flex;
         align-items:center;
 
