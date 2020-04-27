@@ -6,12 +6,12 @@ import ArrowDropDownIcon from   '@material-ui/icons/ArrowDropDown'
 
 const HeaderLayout = styled.header`
     padding:10px 20px;
-    background:rgb(83,83,83,${props => props.opacity});
+    background:rgb(23,23,23,${props => props.opacity > 1 ? 1 : props.opacity});
     display:flex;
     align-items:center;
     z-index:3; 
     position: fixed ; 
-    width: 60%;
+    width: calc(100% - 270px);
     height: 30px;
     justify-content:space-between;
 
