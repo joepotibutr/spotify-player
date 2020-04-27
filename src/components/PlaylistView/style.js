@@ -222,7 +222,7 @@ export const PlaylistViewLayout = styled.div`
                         display: flex;
                         width: 100%;
                         flex-direction:column;
-}
+                        
                         .play-button > button {
                             transition: all 33ms;
                             background: #1db954;

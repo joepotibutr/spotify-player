@@ -8,7 +8,6 @@ import { viewType } from '../../constants'
 import styled from 'styled-components'
 
 const MainViewLayout = styled.div`
-  padding: 0 32px;
   height: calc(100vh - 90px);
   overflow-y: scroll;
 `
