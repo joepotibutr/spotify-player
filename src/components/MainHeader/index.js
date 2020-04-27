@@ -15,6 +15,16 @@ const HeaderLayout = styled.header`
     height: 30px;
     justify-content:space-between;
 
+    @media only screen and (max-width: 1240px) {
+        .current-user {
+            border-radius: 50% !important;
+
+            .username,.arrow-dropdown {
+                display:none;
+            }
+        }
+    }
+
     .current-user {
         padding:4px;
         border-bottom-left-radius: 25% 100%;
@@ -68,7 +78,7 @@ const MainHeader = ({ opacity }) => {
                     <img src={UserIcon} />
                 </div>
                 <span className="username">CurrentUser</span>
-                <div><ArrowDropDownIcon /></div>
+                <div className="arrow-dropdown"><ArrowDropDownIcon /></div>
             </div>
         </HeaderLayout>
     )
