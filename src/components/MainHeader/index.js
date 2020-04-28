@@ -33,7 +33,7 @@ const PageHistoryButton = styled.div`
 `
 
 const HeaderLayout = styled.header`
-    padding:20px 32px;
+    padding:16px 32px;
     background:rgb(23,23,23,${props => props.opacity > 1 ? 1 : props.opacity});
     display:flex;
     align-items:center;
