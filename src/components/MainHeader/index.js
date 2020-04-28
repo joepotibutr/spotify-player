@@ -7,12 +7,12 @@ import ArrowDropDownIcon from   '@material-ui/icons/ArrowDropDown'
 const PageHistoryButton = styled.div`
     cursor: ${props => props.disabled ? 'not-allowed' : 'pointer' };
     opacity:${props => props.disabled ? 0.5 : 1};
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     display: flex;
     background: rgb(0,0,0,0.8);
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 16px;
     justify-content: center;
     align-items: center;
 
@@ -27,7 +27,7 @@ const PageHistoryButton = styled.div`
         border: solid rgb(255,255,255);
         border-width: 0 1px 1px 0;
         display: inline-block;
-        padding: 7px;
+        padding: 6px;
     }
 
 `
