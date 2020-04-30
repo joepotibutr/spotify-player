@@ -5,5 +5,6 @@ export const viewType = {
     SEARCH: 'Search',
     PLAYLISTS: 'Playlists',
     ARTISTS: 'Artists',
-    LIKED_SONGS: 'Liked Songs'
+    LIKED_SONGS: 'Liked Songs',
+    USER_LIBRARY: 'User Library'
 }

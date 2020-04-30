@@ -171,7 +171,7 @@ const SideMenu = ({
 						</NavigationLinkItem>  
 					</ul>
 				</div>
-				<UserPlaylistActionsLayout style={{}}>
+				<UserPlaylistActionsLayout >
 					<label className="playlist-header">PLAYLISTS</label>
 					<ul>
 						<PlaylistAction style={{ marginBottom: '10px'}}>

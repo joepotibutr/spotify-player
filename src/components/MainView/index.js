@@ -46,8 +46,10 @@ class MainView extends React.Component {
     switch (this.props.headerTitle) {
       case viewType.RECENTLY_PLAYED :
         return <TracklistRecommended />
+
       case viewType.USER_LIBRARY :
         return <UserLibrary />
+        
       default: 
         return <PlaylistView onPlay={this.props.onPlay}/>
     }
