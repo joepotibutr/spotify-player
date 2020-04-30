@@ -3,7 +3,7 @@ import { viewType, libraryView } from '../constants'
 
 const defaultState = {
     title: viewType.USER_LIBRARY,
-    library: libraryView.PLAYLIST
+    library: libraryView.PLAYLISTS
   }
   
   export const uiReducer = (state = defaultState, action) => {
