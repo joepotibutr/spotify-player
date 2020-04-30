@@ -36,11 +36,11 @@ const CurrentTrackActions = styled.span`
     align-items: center;
 
     &:hover {
-        filter: brightness(1.05);
+        filter: brightness(2);
         transform: scale(1.05);
         
         svg {
-            filter: brightness(1.05);
+            filter: brightness(2);
             transform: scale(1.05);
         }
     }
