@@ -1,10 +1,11 @@
 import React from 'react'
+import { UserLibraryLayout } from './style'
 
 class UserLibrary extends React.Component {
 
     render() {
         return (
-            <div>User Library</div>
+            <UserLibraryLayout>User Library</UserLibraryLayout>
         )
     }
 }
