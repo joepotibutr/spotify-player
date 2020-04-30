@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
-import ArtistList from "../ArtistList";
+import TracklistRecommended from "../TracklistRecommended";
 import PlaylistView from '../PlaylistView'
 import MainHeader from '../MainHeader'
 import { viewType } from '../../constants'
@@ -44,7 +44,7 @@ class MainView extends React.Component {
   renderMainView = () => {
     switch (this.props.headerTitle) {
       case viewType.RECENTLY_PLAYED :
-        return <ArtistList />
+        return <TracklistRecommended />
       default: 
         return <PlaylistView onPlay={this.props.onPlay}/>
     }

@@ -39,7 +39,7 @@ const TrackItem = styled.li`
 `
 
 
-class ArtistList extends React.Component {
+class TracklistRecommended extends React.Component {
     async componentWillReceiveProps(nextProps) {
         if (
             nextProps.token !== "" &&
@@ -143,4 +143,4 @@ export default connect(state => ({
     fetchRecentlySongsFailure: state.songReducer.fetchRecentlySongsFailure,
     fetchRecentlySongsRequest: state.songReducer.fetchRecentlySongsRequest,
     viewType: state.uiReducer.title,
-}),dispatch => bindActionCreators({ fetchRecentlyPlayedSongs, fetchArtist, fetchSongs, fetchRecentlyArtist }, dispatch))(ArtistList)
+}),dispatch => bindActionCreators({ fetchRecentlyPlayedSongs, fetchArtist, fetchSongs, fetchRecentlyArtist }, dispatch))(TracklistRecommended)
