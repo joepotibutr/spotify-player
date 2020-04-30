@@ -1,5 +1,5 @@
 import * as types from '../actionTypes'
-import { viewType } from '../constants'
+import { viewType, libraryView } from '../constants'
 
 const defaultState = {
     title: viewType.USER_LIBRARY,
