@@ -143,4 +143,11 @@ export default connect(state => ({
     fetchRecentlySongsFailure: state.songReducer.fetchRecentlySongsFailure,
     fetchRecentlySongsRequest: state.songReducer.fetchRecentlySongsRequest,
     viewType: state.uiReducer.title,
-}),dispatch => bindActionCreators({ fetchRecentlyPlayedSongs, fetchArtist, fetchSongs, fetchRecentlyArtist }, dispatch))(TracklistRecommended)
+}),
+    dispatch => bindActionCreators({ 
+        fetchRecentlyPlayedSongs, 
+        fetchArtist, 
+        fetchSongs, 
+        fetchRecentlyArtist,
+        fetchFeaturedRequest
+}, dispatch))(TracklistRecommended)
