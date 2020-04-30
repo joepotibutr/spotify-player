@@ -2,7 +2,8 @@ import * as types from '../actionTypes'
 import { viewType } from '../constants'
 
 const defaultState = {
-    title: viewType.USER_LIBRARY
+    title: viewType.USER_LIBRARY,
+    library: libraryView.PLAYLIST
   }
   
   export const uiReducer = (state = defaultState, action) => {
@@ -12,6 +13,12 @@ const defaultState = {
       return {
         ...state,
         title: action.title
+      }
+
+    case types.UPDATE_LIBRARY_VIEW:
+      return {
+        ...state,
+        library: action.title
       }
   
     default:
