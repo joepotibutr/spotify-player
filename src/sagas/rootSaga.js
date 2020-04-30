@@ -6,7 +6,7 @@ import {
     fetchCategoriesSaga,
     fetchFeaturedSaga,
     fetchNewReleasesSaga
- } from './browseSaga'
+ } from './userRecommendSaga'
 import { fetchPlaylistMenuSaga , fetchPlaylistSongsSaga } from './playlistsSaga'
 import { 
     fetchSongsSaga,

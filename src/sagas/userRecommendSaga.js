@@ -6,7 +6,7 @@ import {
     fetchNewReleasesFailure,
     fetchFeaturedSuccess,
     fetchFeaturedFailure
-} from '../actions/browse'
+} from '../actions/user-recommend'
 import api from '../api'
 
 export function * fetchCategoriesSaga(action) {
