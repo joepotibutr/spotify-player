@@ -1,13 +1,13 @@
 import * as types from '../actionTypes'
 
-export const browseReducer = (state = {}, action) => {
+export const userRecommendReducer = (state = {}, action) => {
     switch (action.type) {
     case types.FETCH_CATEGORIES_REQUEST : return { ...state }
     case types.FETCH_CATEGORIES_SUCCESS :
       return {
         ...state,
         view: action.categories.items,
-        fetchCategoriesError: false
+        fetchCategoriesFailure: false
       }
   
     case types.FETCH_CATEGORIES_FAILURE:
@@ -26,7 +26,7 @@ export const browseReducer = (state = {}, action) => {
     case types.FETCH_NEW_RELEASES_FAILURE :
       return {
         ...state,
-        fetchNewReleasesError: true
+        fetchNewReleasesFailure: true
       }
     case types.FETCH_FEATURED_REQUEST : return {...state}
     case types.FETCH_FEATURED_SUCCESS :
@@ -47,4 +47,4 @@ export const browseReducer = (state = {}, action) => {
     }
   }
   
-  export default browseReducer
+  export default userRecommendReducer
