@@ -149,5 +149,5 @@ export default connect(state => ({
         fetchArtist, 
         fetchSongs, 
         fetchRecentlyArtist,
-        fetchFeaturedRequest
+        // fetchFeaturedRequest
 }, dispatch))(TracklistRecommended)
