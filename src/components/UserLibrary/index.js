@@ -15,24 +15,16 @@ class UserLibrary extends React.Component {
 
 
     renderViewType = () => {
-        console.log('props',this.props)
 
         switch(this.props.library) {
             case libraryView.PLAYLISTS :
-                console.log('fire')
-                // this.renderCollectionItem(this.props.playlists)
-               return this.props.playlists && this.props.playlists.map((i,o) =>{
-                    console.log(i)
-                    return (<h1>Hey</h1>)
-                })
-            break;
+               return this.renderCollectionItem(this.props.playlists)
             default :
                return null
         }
     }
 
     renderCollectionItem = (items) => {
-        console.log('items',items)
         return items && items.map((item, i) => 
                 <li key={i}>
                     <div style={{
