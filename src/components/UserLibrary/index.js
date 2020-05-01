@@ -33,7 +33,9 @@ class UserLibrary extends React.Component {
                     <div style={{
                         marginBottom: '16px'
                     }}>
-                       {item.images.length ?  <img className="collection-cover" src={item.images[0].url}/> : <img className="empty-playlist" src={MusicNoteIcon} />}
+                       {item.images.length ?  <img className="collection-cover" src={item.images[0].url}/> : 
+                        <div className="empty-playlist"><img className="empty-icon" src={MusicNoteIcon} /></div> 
+                    }
                     </div>
                     <div>
                         {/* <div className="play-btn"><PlayArrowIcon /></div> */}

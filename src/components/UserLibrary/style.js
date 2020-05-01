@@ -19,12 +19,24 @@ export const CollectionItem = styled.li`
     background: #282828;
     border-radius: 8px;
     padding: 20px 20px 16px;
+
     .collection-cover {
         width: 100%;
         height: auto;
-        border-radius:50%;
-        box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2)
+        box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2);
     }
+
+    .empty-playlist {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2);
+        background: #383838;
+
+        .empty-icon {
+            filter:invert(0.7);
+        }
+    }
+
     .play-btn {
         position:absolute;
         justify-content:center;
