@@ -5,6 +5,8 @@ import { libraryView } from '../../constants'
 // import { fetchArtist } from '../../actions/artist'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
+import { CollectionItem } from './style'
+
 class UserLibrary extends React.Component {
     constructor(props) {
         super(props)
@@ -26,7 +28,7 @@ class UserLibrary extends React.Component {
 
     renderCollectionItem = (items) => {
         return items && items.map((item, i) => 
-                <li key={i}>
+                <CollectionItem key={i}>
                     <div style={{
                         marginBottom: '16px'
                     }}>
@@ -48,18 +50,15 @@ class UserLibrary extends React.Component {
                         </div>
                     </div>
                    
-                </li>)
+                </CollectionItem>)
     }
 
     render() {
         return (
         <UserLibraryLayout>
             <h3>{this.props.library}</h3>
-            <ul style={{
-                    display: 'grid',
-                    gridGap: '16px',
-                    gridTemplateColumns: 'repeat(auto-fill,minmax(164px,1fr))'
-                }}>{this.renderViewType()}
+            <ul className="collection-layout">
+                {this.renderViewType()}
             </ul>
         </UserLibraryLayout>
         )

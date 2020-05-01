@@ -5,6 +5,12 @@ export const UserLibraryLayout = styled.div`
 height: 900px;
 margin-top: 90px;
 padding: 0 32px;
+
+.collection-layout {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill,minmax(164px,1fr));
+}
 `
 
 export const CollectionItem = styled.li`
