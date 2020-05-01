@@ -31,13 +31,13 @@ class UserLibrary extends React.Component {
         return items && items.map((item, i) => {
             const collectionDetail = item.description || `By ${item.owner.display_name}`
             return <CollectionItem key={i}>
-                        <div className="collection-cover-art">
+                        <div className="cover-art">
                             {item.images.length ?  <img className="item-cover" src={item.images[0].url}/> : 
                             <div className="empty-playlist">
                                 <img className="empty-icon" src={MusicNoteIcon} />
                             </div>}
                         </div>
-                        <div className="collection-item-detail">
+                        <div className="item-detail">
                             {/* <div className="play-btn"><PlayArrowIcon /></div> */}
                             <div className="item-title">
                                 <h4>{item.name}</h4>

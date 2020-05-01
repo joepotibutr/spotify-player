@@ -20,7 +20,7 @@ export const CollectionItem = styled.li`
     border-radius: 8px;
     padding: 20px 20px 16px;
 
-    .collcetion-item-detail {
+    .item-detail {
         .item-title {
             font-size: 14px;
             line-height: 20px;
@@ -33,7 +33,7 @@ export const CollectionItem = styled.li`
         }
     }
 
-    .collection-cover-art {
+    .cover-art {
         margin-bottom:16px;
     }
 
