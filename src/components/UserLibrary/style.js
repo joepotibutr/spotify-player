@@ -64,19 +64,22 @@ export const CollectionItem = styled.li`
     }
 
     .play-btn {
+        opacity:0;
+        display:flex;
         position:absolute;
         justify-content:center;
         align-items:center;
-        width: 50px;
-        height: 50px;
+        width: 43px;
+        height: 43px;
         background:#1db954;
         display:none;
         border-radius:50%;
-        transform: translateX(90px);
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+        transform: translate(140px,15px);
     }
     &:hover {
         .play-btn {
-            display:flex;
+            opacity:1;
         }
     }
 `
