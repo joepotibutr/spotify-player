@@ -42,7 +42,7 @@ class UserLibrary extends React.Component {
                             <div className="item-title">
                                 <h4>{item.name}</h4>
                             </div>
-                            <div>
+                            <div className="item-description">
                                 <span>{collectionDetail}</span>
                             </div>
                         </div>

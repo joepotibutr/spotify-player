@@ -21,6 +21,10 @@ export const CollectionItem = styled.li`
     padding: 20px 20px 16px;
 
     .item-detail {
+        .item-description {
+            height:40px;
+        }
+
         .item-title {
             font-size: 14px;
             line-height: 20px;
@@ -54,8 +58,8 @@ export const CollectionItem = styled.li`
 
         .empty-icon {
             filter:invert(0.7);
-            width: 50px;
-            height: 50px;
+            width: 90px;
+            height: 90px;
         }
     }
 
