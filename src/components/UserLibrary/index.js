@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { UserLibraryLayout } from './style'
 import { libraryView } from '../../constants'
 // import { fetchArtist } from '../../actions/artist'
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+// import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 import { CollectionItem } from './style'
 
