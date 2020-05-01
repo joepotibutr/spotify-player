@@ -20,7 +20,24 @@ export const CollectionItem = styled.li`
     border-radius: 8px;
     padding: 20px 20px 16px;
 
-    .collection-cover {
+    .collcetion-item-detail {
+        .item-title {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 700;
+            letter-spacing: .24px;
+            color: #fff;
+            h4 {
+                margin:0;
+            }
+        }
+    }
+
+    .collection-cover-art {
+        margin-bottom:16px;
+    }
+
+    .item-cover {
         width: 100%;
         height: auto;
         box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2);
