@@ -14,6 +14,7 @@ padding: 0 32px;
 `
 
 export const CollectionItem = styled.li`
+    position:relative;
     overflow:hidden;
     cursor:pointer;
     background: #282828;
@@ -72,7 +73,6 @@ export const CollectionItem = styled.li`
         width: 43px;
         height: 43px;
         background:#1db954;
-        display:none;
         border-radius:50%;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
         transform: translate(140px,15px);
