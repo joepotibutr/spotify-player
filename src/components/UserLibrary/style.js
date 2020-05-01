@@ -27,13 +27,18 @@ export const CollectionItem = styled.li`
     }
 
     .empty-playlist {
-        width: 100%;
-        height: auto;
         box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2);
         background: #383838;
+        width: 186.5px;
+        height: 186.5px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
 
         .empty-icon {
             filter:invert(0.7);
+            width: 50px;
+            height: 50px;
         }
     }
 
