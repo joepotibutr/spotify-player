@@ -7,6 +7,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 import { CollectionItem } from './style'
 
+const MusicNoteIcon = require('../../images/note.svg')
 class UserLibrary extends React.Component {
     constructor(props) {
         super(props)
@@ -32,10 +33,10 @@ class UserLibrary extends React.Component {
                     <div style={{
                         marginBottom: '16px'
                     }}>
-                       {item.images.length ?  <img  src={item.images[0].url}/> : 'blank'}
+                       {item.images.length ?  <img className="collection-cover" src={item.images[0].url}/> : <img className="empty-playlist" src={MusicNoteIcon} />}
                     </div>
                     <div>
-                        <div className="play-btn"><PlayArrowIcon /></div>
+                        {/* <div className="play-btn"><PlayArrowIcon /></div> */}
                         <div>
                             <h4 style={{
                                 fontSize: '14px',

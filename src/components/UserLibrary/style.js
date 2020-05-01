@@ -19,7 +19,7 @@ export const CollectionItem = styled.li`
     background: #282828;
     border-radius: 8px;
     padding: 20px 20px 16px;
-    img {
+    .collection-cover {
         width: 100%;
         height: auto;
         border-radius:50%;
