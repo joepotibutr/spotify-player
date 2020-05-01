@@ -28,32 +28,33 @@ class UserLibrary extends React.Component {
     }
 
     renderCollectionItem = (items) => {
-        return items && items.map((item, i) => 
-                <CollectionItem key={i}>
-                    <div style={{
-                        marginBottom: '16px'
-                    }}>
-                       {item.images.length ?  <img className="collection-cover" src={item.images[0].url}/> : 
-                        <div className="empty-playlist"><img className="empty-icon" src={MusicNoteIcon} /></div> 
-                    }
+        return items && items.map((item, i) => {
+            const collectionDetail = item.description || `By ${item.owner.display_name}`
+            return <CollectionItem key={i}>
+                <div style={{
+                    marginBottom: '16px'
+                }}>
+                    {item.images.length ?  <img className="collection-cover" src={item.images[0].url}/> : 
+                    <div className="empty-playlist"><img className="empty-icon" src={MusicNoteIcon} /></div> 
+                }
+                </div>
+                <div>
+                    {/* <div className="play-btn"><PlayArrowIcon /></div> */}
+                    <div>
+                        <h4 style={{
+                            fontSize: '14px',
+                            lineHeight: '20px',
+                            fontWeight: 700,
+                            letterSpacing: '.24px',
+                            color: '#fff'
+                        }}>{item.name}</h4>
                     </div>
                     <div>
-                        {/* <div className="play-btn"><PlayArrowIcon /></div> */}
-                        <div>
-                            <h4 style={{
-                                fontSize: '14px',
-                                lineHeight: '20px',
-                                fontWeight: 700,
-                                letterSpacing: '.24px',
-                                color: '#fff'
-                            }}>{item.name}</h4>
-                        </div>
-                        <div>
-                            <span>{item.type.charAt(0).toUpperCase() + item.type.slice(1)}</span>
-                        </div>
+                        <span>{collectionDetail}</span>
                     </div>
-                   
-                </CollectionItem>)
+                </div>
+            </CollectionItem>
+                })
     }
 
     render() {
