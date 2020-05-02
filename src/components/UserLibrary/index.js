@@ -23,7 +23,12 @@ class UserLibrary extends React.Component {
             case libraryView.PLAYLISTS :
                return (
                <React.Fragment>
-                   <LikedTrackPlaylist />
+                    <LikedTrackPlaylist >  
+                        <div>
+                            <ul></ul>
+                        </div>
+                        <h4>Liked Songs</h4>
+                    </LikedTrackPlaylist>
                     {this.renderCollectionItem(this.props.playlists)}
                 </React.Fragment>)
             default :
