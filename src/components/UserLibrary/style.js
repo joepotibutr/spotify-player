@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 
 
+export const LikedTrackPlaylist = styled.li`
+    grid-column:1/3;
+    height:300px;
+    background: #282828;
+    border-radius: 8px;
+`
+
 export const UserLibraryLayout = styled.div`
     height: 900px;
     margin-top: 90px;
@@ -28,10 +35,12 @@ export const CollectionItem = styled.li`
 
     .item-detail {
         .item-description {
+            font-size:12px;
             height:40px;
         }
 
         .item-title {
+            font-family:sans-serif;
             font-size: 14px;
             line-height: 20px;
             font-weight: 700;

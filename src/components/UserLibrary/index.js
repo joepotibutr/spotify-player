@@ -5,7 +5,7 @@ import { libraryView } from '../../constants'
 // import { fetchArtist } from '../../actions/artist'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
-import { CollectionItem } from './style'
+import { CollectionItem,LikedTrackPlaylist } from './style'
 
 const MusicNoteIcon = require('../../images/note.svg')
 class UserLibrary extends React.Component {
@@ -21,7 +21,11 @@ class UserLibrary extends React.Component {
 
         switch(this.props.library) {
             case libraryView.PLAYLISTS :
-               return this.renderCollectionItem(this.props.playlists)
+               return (
+               <React.Fragment>
+                   <LikedTrackPlaylist />
+                    {this.renderCollectionItem(this.props.playlists)}
+                </React.Fragment>)
             default :
                return null
         }
@@ -30,6 +34,7 @@ class UserLibrary extends React.Component {
     renderCollectionItem = (items) => {
         return items && items.map((item, i) => {
             const collectionDetail = item.description || `By ${item.owner.display_name}`
+            
             return <CollectionItem key={i}>
                         <div className="cover-art">
                             {item.images.length ?  <img className="item-cover" src={item.images[0].url}/> : 
