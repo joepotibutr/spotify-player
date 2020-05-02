@@ -198,14 +198,14 @@ const SideMenu = ({
 									<img style={{ width: '15px', height: '15px' }} src={plus} />
 								</span>
 							</div>
-							<div style={{ marginLeft: '15px' }}>Create Playlist</div>
+							<div style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
 						</PlaylistAction>
 						<PlaylistAction>
 								<div className="liked-songs"><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
 							<div onClick={() => {
 								fetchSongs(token)
 								updateHeaderTitle(viewType.LIKED_SONGS)
-								}} style={{ marginLeft: '15px' }}>Liked Songs</div>
+								}} style={{ marginLeft: '15px', color:'white' }}>Liked Songs</div>
 						</PlaylistAction>
 					</ul>
 				</UserPlaylistActionsLayout>

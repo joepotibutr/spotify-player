@@ -53,7 +53,7 @@ class UserLibrary extends React.Component {
     render() {
         return (
         <UserLibraryLayout>
-            <h3>{this.props.library}</h3>
+            <h1>{this.props.library}</h1>
             <ul className="collection-layout">
                 {this.renderViewType()}
             </ul>
