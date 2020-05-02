@@ -12,7 +12,7 @@ import { PageHistoryButton,HeaderLayout } from './style'
 
 const UserIcon = require('../../images/user.svg')
 
-const MainHeader = ({ opacity, currentView }) => {
+const MainHeader = ({ opacity, currentView, library }) => {
     return (
         <HeaderLayout opacity={opacity}>
             <div className="view-state-actions">
@@ -22,7 +22,7 @@ const MainHeader = ({ opacity, currentView }) => {
             {currentView === viewType.USER_LIBRARY && (
                 <div className="library-nav">
                     {Object.values(libraryView).map(view => (
-                        <LibraryNavigation view={view} />
+                        <LibraryNavigation key={view.trim()} active={view === library} view={view} />
                     ))}
                 </div>
             )}
@@ -38,5 +38,6 @@ const MainHeader = ({ opacity, currentView }) => {
 }
 
 export default connect(state => ({
-    currentView: state.uiReducer.title
+    currentView: state.uiReducer.title,
+    library: state.uiReducer.library
 }))(MainHeader)
