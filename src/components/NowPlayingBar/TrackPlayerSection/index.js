@@ -138,7 +138,6 @@ class TrackPlayerSection extends React.Component {
                 <div style={{ display: 'flex',width: '100%',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    fontFamily:  `'Varela Round', sans-serif `,
                 }}>
                     <div style={{
                         fontSize: '11px',

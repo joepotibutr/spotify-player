@@ -12,6 +12,7 @@ body {
     font-weight: var(--glue-font-weight-normal);
     color: #b3b3b3;
     text-transform: none;
+    font-family: "Varela Round", sans-serif;
 }
 
 ::-webkit-scrollbar {

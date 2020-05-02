@@ -13,7 +13,6 @@ const LibraryNavStyleWrapper = styled.div`
         background:transparent;
         color: #fff;
         font-weight: bold;
-        font-family: "Varela Round", sans-serif;
     }
 
 `

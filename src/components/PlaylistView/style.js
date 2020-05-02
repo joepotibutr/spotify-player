@@ -54,7 +54,6 @@ export const PlaylistTrack = styled.li`
 
     .track-item-duration {
         font-size:12px;
-        font-family: "Varela Round", sans-serif;
         width:7%;
         font-weight:bold;
     }
