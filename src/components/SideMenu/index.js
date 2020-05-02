@@ -53,6 +53,24 @@ const PlaylistAction = styled.li`
 	transition:.3s;
 	font-weight: bold;
 
+	.craete-playlist {
+		width: 32px; 
+		height: 32px;
+		background: #ffffff;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
+
+	.liked-songs {
+		width: 32px;
+		height: 32px;
+		background: linear-gradient(158deg, rgba(0,0,0,1) 0%, rgba(29,9,121,1) 0%, rgba(255,255,255,1) 100%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
 	&:hover {
 		opacity:1;
 	}
@@ -175,33 +193,17 @@ const SideMenu = ({
 					<label className="playlist-header">PLAYLISTS</label>
 					<ul>
 						<PlaylistAction style={{ marginBottom: '10px'}}>
-							<div>
-								<div style={{ 
-									width: '32px', 
-									height: '32px',
-									background: '#ffffff',
-									display:'flex',
-									justifyContent:'center',
-									alignItems:'center'
+								<div className="create-playlist" style={{ 
+								
 									}} >
 									<span style={{ width: '15px', height: '15px' }}>
 										<img style={{ width: '15px', height: '15px' }} src={plus} />
 									</span>
 								</div>
-							</div>
 							<div style={{ marginLeft: '15px' }}>Create Playlist</div>
 						</PlaylistAction>
 						<PlaylistAction>
-							<div>
-								<div style={{ 
-									width: '32px', 
-									height: '32px', 
-									background: 'linear-gradient(158deg, rgba(0,0,0,1) 0%, rgba(29,9,121,1) 0%, rgba(255,255,255,1) 100%)',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center'
-								}}><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
-							</div>
+								<div className="liked-songs"><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
 							<div onClick={() => {
 								fetchSongs(token)
 								updateHeaderTitle(viewType.LIKED_SONGS)
