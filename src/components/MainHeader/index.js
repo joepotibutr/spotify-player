@@ -110,7 +110,11 @@ const MainHeader = ({ opacity, currentView }) => {
                 <PageHistoryButton disabled={1} alt="Go forward"><i className="arrow right" /></PageHistoryButton>
             </div>
             {currentView === viewType.USER_LIBRARY && (
-                <div><h2>TEST</h2></div>
+                <div className="library-nav">
+                    {Object.values(libraryView).map(view => (
+                        <div>{view}</div>
+                    ))}
+                </div>
             )}
             <div className="current-user"style={{ display: 'flex' }}>
                 <div className="user-icon">

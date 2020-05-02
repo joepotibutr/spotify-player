@@ -10,8 +10,10 @@ export const viewType = {
 }
 
 export const libraryView = {
-    ALBUMS: 'Albums',
     PLAYLISTS: 'Playlists',
+    PODCASTS: 'Podcasts',
+
     ARTISTS: 'Artists',
-    PODCASTS: 'Podcasts'
+    ALBUMS: 'Albums',
+
 }

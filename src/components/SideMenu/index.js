@@ -53,7 +53,7 @@ const PlaylistAction = styled.li`
 	transition:.3s;
 	font-weight: bold;
 
-	.craete-playlist {
+	.create-playlist {
 		width: 32px; 
 		height: 32px;
 		background: #ffffff;
@@ -193,13 +193,11 @@ const SideMenu = ({
 					<label className="playlist-header">PLAYLISTS</label>
 					<ul>
 						<PlaylistAction style={{ marginBottom: '10px'}}>
-								<div className="create-playlist" style={{ 
-								
-									}} >
-									<span style={{ width: '15px', height: '15px' }}>
-										<img style={{ width: '15px', height: '15px' }} src={plus} />
-									</span>
-								</div>
+							<div className="create-playlist" >
+								<span style={{ width: '15px', height: '15px' }}>
+									<img style={{ width: '15px', height: '15px' }} src={plus} />
+								</span>
+							</div>
 							<div style={{ marginLeft: '15px' }}>Create Playlist</div>
 						</PlaylistAction>
 						<PlaylistAction>
