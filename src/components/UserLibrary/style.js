@@ -3,9 +3,10 @@ import styled from 'styled-components'
 
 export const LikedTrackPlaylist = styled.li`
     grid-column:1/3;
-    height:300px;
-    background: #282828;
+    height:200px;
+    background: linear-gradient(158deg, rgba(70,12,245,1) 0%, rgba(142,141,230,1) 100%);
     border-radius: 8px;
+    cursor:pointer;
 `
 
 export const UserLibraryLayout = styled.div`
