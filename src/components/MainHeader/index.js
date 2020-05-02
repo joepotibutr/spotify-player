@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 import ArrowDropDownIcon from   '@material-ui/icons/ArrowDropDown'
+import LibraryNavigation from './LibraryNavigation'
 import { viewType, libraryView } from '../../constants'
 
 
@@ -97,7 +98,14 @@ const HeaderLayout = styled.header`
             }
         }
     }
+
+    .library-nav {
+        display:flex;
+    }
 `
+
+
+
 
 
 const UserIcon = require('../../images/user.svg')
@@ -112,7 +120,7 @@ const MainHeader = ({ opacity, currentView }) => {
             {currentView === viewType.USER_LIBRARY && (
                 <div className="library-nav">
                     {Object.values(libraryView).map(view => (
-                        <div>{view}</div>
+                        <LibraryNavigation view={view} />
                     ))}
                 </div>
             )}
