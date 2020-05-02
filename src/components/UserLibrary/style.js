@@ -13,6 +13,8 @@ export const UserLibraryLayout = styled.div`
     }
     h1 {
         color:#fff;
+        font-size:1.8em;
+        font-family: sans-serif;
     }
 `
 
