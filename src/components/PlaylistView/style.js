@@ -114,6 +114,7 @@ export const PlaylistViewLayout = styled.div`
     max-width: 1955px;
     padding: 0 32px;
     margin-top: 80px;
+    font-family:sans-serif;
 
     @media only screen and (max-width: 1240px) {
         max-height: 4200px;

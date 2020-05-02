@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { UserLibraryLayout } from './style'
 import { libraryView } from '../../constants'
-// import { fetchArtist } from '../../actions/artist'
+import { fetchSongs } from '../../actions/song'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 import { CollectionItem,LikedTrackPlaylist } from './style'
@@ -15,7 +15,12 @@ class UserLibrary extends React.Component {
         }
     }
 
-
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.token) {
+            console.log(nextProps)
+            this.props.fetchSongs(nextProps.token)
+        }
+    }
 
     renderViewType = () => {
 
@@ -23,11 +28,13 @@ class UserLibrary extends React.Component {
             case libraryView.PLAYLISTS :
                return (
                <React.Fragment>
-                    <LikedTrackPlaylist >  
+                    <LikedTrackPlaylist>
                         <div>
-                            <ul></ul>
-                        </div>
-                        <h4>Liked Songs</h4>
+                            <div>
+                                <ul></ul>
+                            </div>
+                            <h1>Liked Songs</h1>
+                        </div> 
                     </LikedTrackPlaylist>
                     {this.renderCollectionItem(this.props.playlists)}
                 </React.Fragment>)
@@ -73,6 +80,9 @@ class UserLibrary extends React.Component {
 }
 
 export default connect(state => ({
+    token: state.tokenReducer.token,
     playlists: state.playlistReducer.playlists,
     library: state.uiReducer.library 
-}))(UserLibrary)
+}), (dispatch) => ({
+    fetchSongs: (accessToken) => dispatch(fetchSongs(accessToken))
+}) )(UserLibrary)
