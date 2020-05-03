@@ -28,7 +28,7 @@ const MainHeader = ({ opacity, currentView, library }) => {
             )}
             <div className="current-user"style={{ display: 'flex' }}>
                 <div className="user-icon">
-                    <img src={UserIcon} />
+                    <img alt="user" src={UserIcon} />
                 </div>
                 <span className="username">CurrentUser</span>
                 <div className="arrow-dropdown"><ArrowDropDownIcon /></div>

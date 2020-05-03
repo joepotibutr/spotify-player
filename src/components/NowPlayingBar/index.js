@@ -55,7 +55,7 @@ class NowPlayingBar extends React.Component {
                                     minWidth:' 56px',
                                     minHeight:' 56px',
                                     boxShadow: '0 0 10px rgba(0,0,0,.3)'
-                                }}><img style={{ width: '56px', height: '56px'}} src={currentTrack.track.album.images[2].url} /></div>
+                                }}><img alt="album-cover" style={{ width: '56px', height: '56px'}} src={currentTrack.track.album.images[2].url} /></div>
                                 <div style={{ 
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',

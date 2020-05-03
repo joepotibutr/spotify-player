@@ -102,18 +102,18 @@ const NavigationLinkItem = styled.li`
 
 const SideMenu = ({
 	token,
-	artistIds,
-	fetchAlbum,
-	fetchArtist,
-	fetchRecentlyPlayedSongs,
+	// artistIds,
+	// fetchAlbum,
+	// fetchArtist,
+	// fetchRecentlyPlayedSongs,
 	fetchSongs,
 	updateHeaderTitle
 }) => {
 
-	const handleClick = (name)  => {
-		updateHeaderTitle(name)
-		// updateViewType(name)
-	}
+	// const handleClick = (name)  => {
+	// 	updateHeaderTitle(name)
+	// 	// updateViewType(name)
+	// }
 
 	// const handleBrowseClick = ()  => {
 	// 	// updateHeaderTitle('Browse')
@@ -121,44 +121,44 @@ const SideMenu = ({
 	// 	// fetchFeatured(token)
     // }
     
-    const renderSideMenu = () => {
-		const menu = [
-			{
-				name: viewType.RECENTLY_PLAYED,
-				action: fetchRecentlyPlayedSongs
-			},
-			{
-				name:viewType.SONGS,
-				action: fetchSongs
-			},
-			{
-				name: viewType.ALBUMS,
-				action: fetchAlbum
-			},
-			{
-				name: viewType.ARTISTS,
-				action: fetchArtist,
-				getArtists: true
-			}
-		]
+    // const renderSideMenu = () => {
+	// 	const menu = [
+	// 		{
+	// 			name: viewType.RECENTLY_PLAYED,
+	// 			action: fetchRecentlyPlayedSongs
+	// 		},
+	// 		{
+	// 			name:viewType.SONGS,
+	// 			action: fetchSongs
+	// 		},
+	// 		{
+	// 			name: viewType.ALBUMS,
+	// 			action: fetchAlbum
+	// 		},
+	// 		{
+	// 			name: viewType.ARTISTS,
+	// 			action: fetchArtist,
+	// 			getArtists: true
+	// 		}
+	// 	]
 
-		return menu.map(item => {
-			return (
-				<li key={ item.name }
-					onClick={() => {
-						item.getArtists ? item.action(token, artistIds) : item.action(token)
-						handleClick(item.name) }
-					}>
-					<span>{ item.name } </span>
-				</li>
-			)
-		})
-	}
+	// 	return menu.map(item => {
+	// 		return (
+	// 			<li key={ item.name }
+	// 				onClick={() => {
+	// 					item.getArtists ? item.action(token, artistIds) : item.action(token)
+	// 					handleClick(item.name) }
+	// 				}>
+	// 				<span>{ item.name } </span>
+	// 			</li>
+	// 		)
+	// 	})
+	// }
 
     return (
 		<SideMenuLayout>
 			<div className="logo" onClick={() => updateHeaderTitle(viewType.RECENTLY_PLAYED)}>
-				<img src={logo}/>
+				<img alt="logo" src={logo}/>
 			</div>
 			<div>
 				<div>	
@@ -166,7 +166,7 @@ const SideMenu = ({
 						<NavigationLinkItem>
 							<div>
 								<IconWrapper>
-									<img src={home}/>
+									<img alt="home" src={home}/>
 								</IconWrapper>
 							</div>
 							<div style={{ marginLeft: '7px'}}>Home</div>
@@ -174,7 +174,7 @@ const SideMenu = ({
 						<NavigationLinkItem>
 							<div>
 								<IconWrapper>
-									<img src={search}/>
+									<img alt="search" src={search}/>
 								</IconWrapper>
 							</div>
 							<div  style={{ marginLeft: '7px'}}>Search</div>
@@ -182,7 +182,7 @@ const SideMenu = ({
 						<NavigationLinkItem >
 							<div>
 								<IconWrapper>
-									<img src={library}/>
+									<img alt="library" src={library}/>
 								</IconWrapper>
 							</div>
 							<div  style={{ marginLeft: '7px'}}>Your Library</div>
@@ -195,7 +195,7 @@ const SideMenu = ({
 						<PlaylistAction style={{ marginBottom: '10px'}}>
 							<div className="create-playlist" >
 								<span style={{ width: '15px', height: '15px' }}>
-									<img style={{ width: '15px', height: '15px' }} src={plus} />
+									<img alt="add" style={{ width: '15px', height: '15px' }} src={plus} />
 								</span>
 							</div>
 							<div style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>

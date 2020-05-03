@@ -30,7 +30,7 @@ class TrackPlayerSection extends React.Component {
             case TRACK_STATE_PLAYING :
                 return (<IconWrapper onClick={onPause}>
                     <CurrentTrackActions>
-                        <img className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
+                        <img alt="pause" className="pause-icon" src={PauseIcon} style={{ width: '1em', }} />
                     </CurrentTrackActions>
                 </IconWrapper>)
             case TRACK_STATE_STOPPED :
@@ -54,11 +54,11 @@ class TrackPlayerSection extends React.Component {
                     justifyContent: 'space-between',
                     flexDlow: 'row nowrap',
                     display: 'flex', alignItems:'center'}}>
-                    <IconWrapper><span><img className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
+                    <IconWrapper><span><img alt="shuffle" className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
                     <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
                     {this.renderPlayerButton()}
                     <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
-                    <IconWrapper><span><img className="repeat-icon" src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
+                    <IconWrapper><span><img alt="repeat" className="repeat-icon" src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
                 </div>
 
                 <div style={{ display: 'flex',width: '100%',

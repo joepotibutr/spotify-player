@@ -39,7 +39,7 @@ class PlaylistView extends React.Component {
                                 <LikedSongsCoverArt >
                                     <LikeIcon style={{ width: '18px', height: '18px'}}/>
                                 </LikedSongsCoverArt> : 
-                                <img className="playlist-cover-image"
+                                <img alt="playlist-cover" className="playlist-cover-image"
                                 src={currentPlaylist.images[0].url}/>}
                             </div>
                         </div>
@@ -69,6 +69,7 @@ class PlaylistView extends React.Component {
                                 <div  className="track-item-play">
                                    <IconWrapper>
                                         <img
+                                        alt="musical"
                                         className="musical-icon"
                                         src={MusicalNoteIcon} />
                                         <PlayArrowIcon className="play-icon" />

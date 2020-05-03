@@ -29,7 +29,7 @@ const InstallAppLinkLayout = styled.div`
 const InstallAppLink = () => (
     <InstallAppLinkLayout>
         <div className="install-button">
-            <img src={DownloadIcon} />
+            <img alt="download" src={DownloadIcon} />
         </div>
        <p><strong>Install App</strong></p>
     </InstallAppLinkLayout>

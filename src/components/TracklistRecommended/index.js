@@ -81,7 +81,7 @@ class TracklistRecommended extends React.Component {
                     <div style={{
                         marginBottom: '16px'
                     }}>
-                        <img  src={artist.images[2].url}/>
+                        <img alt="artist-image" src={artist.images[2].url}/>
                     </div>
                     <div>
                         <div className="play-btn"><PlayArrowIcon /></div>

@@ -57,9 +57,9 @@ class UserLibrary extends React.Component {
             
             return <CollectionItem key={i}>
                         <div className="cover-art">
-                            {item.images.length ?  <img className="item-cover" src={item.images[0].url}/> : 
+                            {item.images.length ?  <img alt="cover" className="item-cover" src={item.images[0].url}/> : 
                             <div className="empty-playlist">
-                                <img className="empty-icon" src={MusicNoteIcon} />
+                                <img alt="empty-playlist" className="empty-icon" src={MusicNoteIcon} />
                             </div>}
                         </div>
                         <div className="item-detail">
