@@ -30,7 +30,15 @@ class UserLibrary extends React.Component {
                     <LikedTrackPlaylist>
                         <div>
                             <div>
-                                <ul></ul>
+                                <ul>
+                                {songs && songs.map(song => (
+                                    <li>
+                                        <span>{song.track.artists[0].name}</span>
+                                        <span>{song.track.name}</span>
+
+                                    </li>
+                                ))}
+                                </ul>
                             </div>
                             <h1>Liked Songs</h1>
                             <div>{songs && songs.length} liked songs</div>
