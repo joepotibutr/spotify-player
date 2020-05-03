@@ -15,7 +15,7 @@ class UserLibrary extends React.Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_ComponentWillReceivePropsceiveProps(nextProps) {
         if (nextProps.token && !nextProps.songs.length) {
             this.props.fetchSongs(nextProps.token)
         }
@@ -32,7 +32,7 @@ class UserLibrary extends React.Component {
                             <div>
                                 <ul>
                                 {songs && songs.map(song => (
-                                    <li>
+                                    <li key={song.track.id}>
                                         <span>{song.track.artists[0].name}</span>
                                         <span>{song.track.name}</span>
 

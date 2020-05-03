@@ -73,7 +73,7 @@ class App extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps){
+  UNSAFE_ComponentWillReceivePropsceiveProps(nextProps){
     if(nextProps.token){
       this.props.fetchUserRequest(nextProps.token)
     }
