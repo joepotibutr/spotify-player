@@ -35,7 +35,7 @@ class MainView extends React.Component {
       window.addEventListener('scroll', this.onScroll,true);
   }
 
-  componentWillUnmount() {
+  UNSAFE_componentWillUnmount() {
       window.removeEventListener('scroll', this.onScroll);
   }
 

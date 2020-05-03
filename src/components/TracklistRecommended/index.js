@@ -40,7 +40,7 @@ const TrackItem = styled.li`
 
 
 class TracklistRecommended extends React.Component {
-    async UNSAFE_ComponentWillReceivePropsceiveProps(nextProps) {
+    async UNSAFE_componentWillReceiveProps(nextProps) {
         if (
             nextProps.token !== "" &&
             nextProps.viewType === viewType.RECENTLY_PLAYED

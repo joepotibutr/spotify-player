@@ -73,7 +73,7 @@ class App extends Component {
     }
   }
 
-  UNSAFE_ComponentWillReceivePropsceiveProps(nextProps){
+  UNSAFE_componentWillReceiveProps(nextProps){
     if(nextProps.token){
       this.props.fetchUserRequest(nextProps.token)
     }
@@ -112,7 +112,7 @@ class App extends Component {
     this.props.stop()
   }
 
-  componentWillUnmount(){
+  UNSAFE_componentWillUnmount(){
     window.clearTimeout(this.loadingTimeout)
   }
 

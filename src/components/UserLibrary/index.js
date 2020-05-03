@@ -15,7 +15,7 @@ class UserLibrary extends React.Component {
         }
     }
 
-    UNSAFE_ComponentWillReceivePropsceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.token && !nextProps.songs.length) {
             this.props.fetchSongs(nextProps.token)
         }

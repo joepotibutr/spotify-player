@@ -33,7 +33,7 @@ const PlaylistItem = styled.li`
 `
 
 class UserPlaylists extends Component {
-    UNSAFE_ComponentWillReceivePropsceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.userId !== "" && nextProps.token !== "" && !nextProps.playlistMenu.length) {
           this.props.fetchPlaylistMenuRequest(nextProps.token, nextProps.userId);
         }

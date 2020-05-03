@@ -30,7 +30,7 @@ align-items: center;
 
 class NowPlayingBar extends React.Component {
 
-    UNSAFE_ComponentWillReceivePropsceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.token && !nextProps.recentlySongs.length) {
             this.props.fetchRecentlyPlayedSongs(nextProps.token)
         }
