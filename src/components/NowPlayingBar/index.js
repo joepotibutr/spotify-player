@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 
+import { fetchRecentlyPlayedSongs } from '../../actions/song'
+
 import TrackPlayerSection from './TrackPlayerSection'
 import ProgressBar from '../ProgressBar'
 
@@ -27,6 +29,12 @@ align-items: center;
 
 
 class NowPlayingBar extends React.Component {
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.token && !nextProps.recentlySongs.length) {
+            this.props.fetchRecentlyPlayedSongs(nextProps.token)
+        }
+    }
 
     render() {
         const { currentlyPlaying,recentlySongs } = this.props
@@ -146,6 +154,9 @@ class NowPlayingBar extends React.Component {
 }
 
 export default connect(state => ({
+    token: state.tokenReducer.token,
     recentlySongs: (state.songReducer && state.songReducer.recentlySongs) || '',
-    currentlyPlaying: (state.songReducer && state.playerReducer.currentlyPlaying) || '',
+    currentlyPlaying: (state.playerReducer && state.playerReducer.currentlyPlaying) || '',
+}), dispatch => ({
+    fetchRecentlyPlayedSongs: (accessToken) => dispatch(fetchRecentlyPlayedSongs(accessToken))
 }))(NowPlayingBar)
