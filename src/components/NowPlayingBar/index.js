@@ -12,7 +12,7 @@ import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 import LikeIcon from '@material-ui/icons/Favorite';
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
-
+import { NowPlayingWrapper } from './style'
 
 import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 import DevicesIcon from '@material-ui/icons/Devices';
@@ -45,7 +45,7 @@ class NowPlayingBar extends React.Component {
 
 
         return (
-            <footer style={{ height: '86px',backgroundColor: '#282828' }}>
+            <NowPlayingWrapper>
                 <div style={{ padding: '0 16px', display: 'flex', height: '100%', alignItems:'center'}}>
                     <div style={{ width: '30%', minWidth: '180px', display: 'flex', alignItems:'center'}}>
                         <div style={{ overflow: 'hidden' }}>
@@ -148,7 +148,7 @@ class NowPlayingBar extends React.Component {
                             </div>
                     </div>
                 </div>
-            </footer>
+            </NowPlayingWrapper>
         )
     }
 }
