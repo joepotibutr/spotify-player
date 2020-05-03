@@ -89,9 +89,9 @@ class PlaylistView extends React.Component {
                                             <LinkedText>
                                                 <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
                                             </LinkedText>}
-                                        </Outer>
-                                        <div style={{ margin: '0 8px 0 5px',display: 'flex',alignItems: 'center' }}><DotIcon /></div>
-                                        <Outer>
+                                            </Outer>
+                                                <DotIcon />
+                                            <Outer>
                                             <LinkedText>
                                                 <span>{song.track.album.name}</span>
                                             </LinkedText>
