@@ -16,14 +16,13 @@ class UserLibrary extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.token) {
-            console.log(nextProps)
+        if (nextProps.token && !nextProps.songs.length) {
             this.props.fetchSongs(nextProps.token)
         }
     }
 
     renderViewType = () => {
-
+        const { songs } = this.props
         switch(this.props.library) {
             case libraryView.PLAYLISTS :
                return (
@@ -34,6 +33,7 @@ class UserLibrary extends React.Component {
                                 <ul></ul>
                             </div>
                             <h1>Liked Songs</h1>
+                            <div>{songs && songs.length} liked songs</div>
                         </div> 
                     </LikedTrackPlaylist>
                     {this.renderCollectionItem(this.props.playlists)}
@@ -80,6 +80,7 @@ class UserLibrary extends React.Component {
 }
 
 export default connect(state => ({
+    songs: state.songReducer.songs,
     token: state.tokenReducer.token,
     playlists: state.playlistReducer.playlists,
     library: state.uiReducer.library 
