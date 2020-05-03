@@ -9,11 +9,12 @@ import {
     Outer, 
     LinkedText, 
     PlaylistTrack, 
-    DotIcon, 
     IconWrapper, 
     PlaylistViewLayout, 
     LikedSongsCoverArt
 } from './style'
+
+import { DotIcon } from '../shared'
 
 
 const MusicalNoteIcon = require('../../images/musical-note.svg')
