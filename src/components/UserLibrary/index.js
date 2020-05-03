@@ -80,7 +80,7 @@ class UserLibrary extends React.Component {
 }
 
 export default connect(state => ({
-    songs: state.songReducer.songs,
+    songs: (state.songReducer && state.songReducer.songs) || '',
     token: state.tokenReducer.token,
     playlists: state.playlistReducer.playlists,
     library: state.uiReducer.library 
