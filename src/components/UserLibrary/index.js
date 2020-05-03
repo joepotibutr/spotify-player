@@ -7,6 +7,8 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 import { CollectionItem,LikedTrackPlaylist } from './style'
 
+import { DotIcon } from '../shared'
+
 const MusicNoteIcon = require('../../images/note.svg')
 class UserLibrary extends React.Component {
     constructor(props) {
@@ -30,15 +32,15 @@ class UserLibrary extends React.Component {
                     <LikedTrackPlaylist>
                         <div>
                             <div>
-                                <ul>
+                                <p className="sample-liked-songs">
                                 {songs && songs.map(song => (
-                                    <li key={song.track.id}>
-                                        <span>{song.track.artists[0].name}</span>
-                                        <span>{song.track.name}</span>
-
-                                    </li>
+                                        <span key={song.track.id}>
+                                            {song.track.artists[0].name}
+                                            {song.track.name}
+                                            <DotIcon />
+                                        </span>
                                 ))}
-                                </ul>
+                                </p>
                             </div>
                             <h1>Liked Songs</h1>
                             <div>{songs && songs.length} liked songs</div>

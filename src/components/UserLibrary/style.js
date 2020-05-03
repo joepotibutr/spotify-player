@@ -8,6 +8,14 @@ export const LikedTrackPlaylist = styled.li`
     background: linear-gradient(158deg, rgba(70,12,245,1) 0%, rgba(142,141,230,1) 100%);
     border-radius: 8px;
     cursor:pointer;
+
+    .sample-liked-songs {
+        width:100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    }
 `
 
 export const UserLibraryLayout = styled.div`
