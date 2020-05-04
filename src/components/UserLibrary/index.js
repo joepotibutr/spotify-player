@@ -35,8 +35,8 @@ class UserLibrary extends React.Component {
                                 <p className="sample-liked-songs">
                                 {songs && songs.map(song => (
                                         <span key={song.track.id}>
-                                            {song.track.artists[0].name}
-                                            {song.track.name}
+                                            <span style={{ color: 'white', marginRight: '5px'}}>{song.track.artists[0].name}</span>
+                                            <span>{song.track.name}</span>
                                             <DotIcon />
                                         </span>
                                 ))}
