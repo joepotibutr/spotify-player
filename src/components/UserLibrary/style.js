@@ -22,6 +22,8 @@ export const UserLibraryLayout = styled.div`
     height: 900px;
     margin-top: 90px;
     padding: 0 32px;
+    font-weight: bold;
+    font-family: sans-serif;
 
     .collection-layout {
         display: grid;
