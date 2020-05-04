@@ -43,7 +43,7 @@ class UserLibrary extends React.Component {
                                 </p>
                             </div>
                             <h1>Liked Songs</h1>
-                            <div>{songs && songs.length} liked songs</div>
+                            <h3>{songs && songs.length} liked songs</h3>
                         </div> 
                     </LikedTrackPlaylist>
                     {this.renderCollectionItem(this.props.playlists)}
