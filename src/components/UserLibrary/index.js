@@ -30,20 +30,22 @@ class UserLibrary extends React.Component {
                return (
                <React.Fragment>
                     <LikedTrackPlaylist>
-                        <div>
+                        <div className="liked-track-wrapper" style={{ flexDirection:'column', display: 'flex',height: '100%', justifyContent:'space-between'}}>
                             <div>
                                 <p className="sample-liked-songs">
                                 {songs && songs.map(song => (
-                                        <span key={song.track.id}>
+                                        <React.Fragment key={song.track.id}>
                                             <span style={{ color: 'white', marginRight: '5px'}}>{song.track.artists[0].name}</span>
                                             <span>{song.track.name}</span>
                                             <DotIcon />
-                                        </span>
+                                        </React.Fragment>
                                 ))}
                                 </p>
                             </div>
-                            <h1>Liked Songs</h1>
-                            <h3>{songs && songs.length} liked songs</h3>
+                            <div>
+                                <h1>Liked Songs</h1>
+                                <h3>{songs && songs.length} liked songs</h3>
+                            </div>
                         </div> 
                     </LikedTrackPlaylist>
                     {this.renderCollectionItem(this.props.playlists)}
