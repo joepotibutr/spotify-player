@@ -84,6 +84,8 @@ export const CollectionItem = styled.li`
     .empty-playlist {
         box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2);
         background: #383838;
+        width:100%;
+        height:150px;
         max-width: 186.5px;
         max-height: 186.5px;
         display:flex;
@@ -98,6 +100,7 @@ export const CollectionItem = styled.li`
     }
 
     .play-btn {
+        right:16px;
         opacity:0;
         display:flex;
         position:absolute;
@@ -108,7 +111,6 @@ export const CollectionItem = styled.li`
         background:#1db954;
         border-radius:50%;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
-        transform: translate(140px,15px);
     }
     &:hover {
         .play-btn {
