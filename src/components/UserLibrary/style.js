@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 export const LikedTrackPlaylist = styled.li`
-    padding: 30px 20px;
+    padding: 35px 20px 20px 20px;
     grid-column:1/3;
     height:auto;
     background: linear-gradient(158deg, rgba(70,12,245,1) 0%, rgba(142,141,230,1) 100%);
@@ -15,6 +15,8 @@ export const LikedTrackPlaylist = styled.li`
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        font-size:15px;
+        line-height: 21px;
     }
 `
 
@@ -22,13 +24,14 @@ export const UserLibraryLayout = styled.div`
     height: 900px;
     margin-top: 90px;
     padding: 0 32px;
-    font-weight: bold;
     font-family: sans-serif;
-    letter-spacing: 0.35px;
+    letter-spacing: 0.30px;
 
     .collection-layout {
+        margin-top:35px;
         display: grid;
         grid-gap: 16px;
+        grid-template-rows: repeat(auto-fill,minmax(250px,164px));
         grid-template-columns: repeat(auto-fill,minmax(164px,1fr));
     }
     h1 {
