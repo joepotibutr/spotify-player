@@ -11,18 +11,23 @@ export const LikedTrackPlaylist = styled.li`
     cursor:pointer;
 
     .play-btn {
-            right:16px;
-            bottom:13px;
+            right:30px;
+            bottom:45px;
             opacity:0;
             display:flex;
             position:absolute;
             justify-content:center;
             align-items:center;
-            width: 43px;
-            height: 43px;
+            width: 50px;
+            height: 50px;
             background:#1db954;
             border-radius:50%;
             box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+
+            > svg {
+                width: 1.5em;
+                height: 1.5em;
+            }
         }
         &:hover {
             .play-btn {
