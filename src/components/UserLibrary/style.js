@@ -101,6 +101,7 @@ export const CollectionItem = styled.li`
 
     .play-btn {
         right:16px;
+        bottom:13px;
         opacity:0;
         display:flex;
         position:absolute;
