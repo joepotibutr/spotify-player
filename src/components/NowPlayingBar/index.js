@@ -12,7 +12,7 @@ import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 import LikeIcon from '@material-ui/icons/Favorite';
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
-import { NowPlayingWrapper } from './style'
+import { NowPlayingWrapper, CurrentTrackSection } from './style'
 
 import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 import DevicesIcon from '@material-ui/icons/Devices';
@@ -46,8 +46,8 @@ class NowPlayingBar extends React.Component {
 
         return (
             <NowPlayingWrapper>
-                <div style={{ padding: '0 16px', display: 'flex', height: '100%', alignItems:'center'}}>
-                    <div style={{ fontFamily: 'sans-serif', width: '30%', minWidth: '180px', display: 'flex', alignItems:'center'}}>
+                <div className="current-track-action-bar">
+                    <CurrentTrackSection>
                         <div style={{ overflow: 'hidden' }}>
                         {currentTrack ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
@@ -113,7 +113,7 @@ class NowPlayingBar extends React.Component {
                             <div><span><LikeIcon style={{ width: '15px '}} /></span></div>
                             <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
                         </div>
-                    </div>
+                    </CurrentTrackSection>
                     <TrackPlayerSection
                         onPlay={() => this.props.onPlay(currentTrack)} 
                         onPause={this.props.onPause} 

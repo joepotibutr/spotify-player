@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-export const TrackPlayerWrapper = styled.div` 
+export const TrackPlayerWrapper = styled.section` 
     width: 40%;
     flex-direction: column;
     display: flex;
