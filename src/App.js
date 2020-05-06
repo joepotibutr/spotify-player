@@ -55,7 +55,8 @@ class App extends Component {
     constructor(props) {
       super(props)
       this.state = {
-          loading: false
+          loading: false,
+          authFailed: false
       }
       this.audio = new Audio()
       this.loadingTimeout
@@ -64,11 +65,16 @@ class App extends Component {
 
   componentDidMount() {
     let parsed = queryString.parse(window.location.search)
-    if(!parsed.access_token){
-      window.location.href = 'http://localhost:8888/login'
-    }
-    else {
-      this.props.setToken(parsed.access_token)
+    if (process.env.AUTH_API_URI) {
+      if(!parsed.access_token){
+        window.location.href = `${process.env.AUTH_API_URI}/login`
+      } else {
+        this.props.setToken(parsed.access_token)
+      }
+    } else {
+        this.setState({
+          authFailed: true
+        })
     }
   }
 
