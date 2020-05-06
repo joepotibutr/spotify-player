@@ -30,11 +30,10 @@ const MainLayout = styled.div`
 
 
     .nav {
+      font-family:sans-serif;
       grid-area: nav;
       width: 230px;
       background: rgb(0,0,0,0.8);
-
-      
     }
 
     .main-view {

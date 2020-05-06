@@ -47,7 +47,7 @@ class NowPlayingBar extends React.Component {
         return (
             <NowPlayingWrapper>
                 <div style={{ padding: '0 16px', display: 'flex', height: '100%', alignItems:'center'}}>
-                    <div style={{ width: '30%', minWidth: '180px', display: 'flex', alignItems:'center'}}>
+                    <div style={{ fontFamily: 'sans-serif', width: '30%', minWidth: '180px', display: 'flex', alignItems:'center'}}>
                         <div style={{ overflow: 'hidden' }}>
                         {currentTrack ?
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
