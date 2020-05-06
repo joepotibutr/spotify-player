@@ -51,7 +51,7 @@ export const LikedTrackPlaylist = styled.li`
 
 export const UserLibraryLayout = styled.div`
     height: 900px;
-    margin-top: 90px;
+    margin-top: 95px;
     padding: 0 32px;
     font-family: sans-serif;
     letter-spacing: 0.30px;

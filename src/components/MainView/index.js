@@ -9,7 +9,7 @@ import { viewType } from '../../constants'
 import styled from 'styled-components'
 
 const MainViewLayout = styled.div`
-  height: calc(100vh - 90px);
+  height: calc(100vh - 88px);
   overflow-y: scroll;
 `
 
