@@ -65,17 +65,11 @@ class App extends Component {
 
   componentDidMount() {
     let parsed = queryString.parse(window.location.search)
-    if (process.env.AUTH_API_URI) {
       if(!parsed.access_token){
-        window.location.href = `${process.env.AUTH_API_URI}/login`
+        window.location.href = `${process.env.REACT_APP_AUTH_API_URI}/login`
       } else {
         this.props.setToken(parsed.access_token)
       }
-    } else {
-        this.setState({
-          authFailed: true
-        })
-    }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps){
