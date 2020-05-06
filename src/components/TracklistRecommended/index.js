@@ -106,7 +106,7 @@ class TracklistRecommended extends React.Component {
 
     render() {
         return (
-            <div style={{ height: '900px',marginTop: '90px',padding: '0 32px'}}>
+            <div style={{ height: '900px',marginTop: '95px',padding: '0 32px'}}>
                 <div style={{ margin: '24px 0', display: 'flex',justifyContent: 'space-between' }}>
                     <h1 style={{ color: '#fff', fontSize: '26px', margin: 0 }}>Recently played </h1><span>SEE ALL</span>
                 </div>
