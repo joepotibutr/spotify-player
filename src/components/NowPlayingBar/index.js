@@ -12,7 +12,7 @@ import PictureInPictureAltIcon from '@material-ui/icons/PictureInPictureAlt';
 import LikeIcon from '@material-ui/icons/Favorite';
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
-import { NowPlayingWrapper, CurrentTrackSection } from './style'
+import { NowPlayingWrapper, CurrentTrackSection, EllipsisText } from './style'
 
 import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 import DevicesIcon from '@material-ui/icons/Devices';
@@ -58,38 +58,15 @@ class NowPlayingBar extends React.Component {
                                         src={currentTrack.track.album.images[2].url} 
                                     />
                                 </div>
-                                <div style={{ 
-                                        whiteSpace: 'nowrap',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis',
-                                        margin:'0 14px'
-                                    }}>
-                                    <div style={{
-                                        whiteSpace: 'nowrap',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis',
-                                        fontWeight: '400',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        letterSpacing: '.015em',
-                                        color: '#fff',
-                                        textAlign: 'left',
-                                    }}>
+                                <div className="ellipsis-text-wrapper">
+                                    <EllipsisText color="white">
                                         <span>
                                             <a>
                                                 {currentTrack.track.name}
                                             </a>
                                         </span>
-                                    </div>
-                                    <div  style={{
-                                        whiteSpace: 'nowrap',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis',
-                                        fontSize: '12px',
-                                        lineHeight: '16px',
-                                        letterSpacing: '.015em',
-                                        textAlign: 'left',
-                                    }}>
+                                    </EllipsisText>
+                                    <EllipsisText>
                                         <span>
                                             <a>
                                                 {currentTrack.track.artists.length > 1 ? 
@@ -100,7 +77,7 @@ class NowPlayingBar extends React.Component {
                                                 currentTrack.track.artists[0].name}
                                             </a>
                                         </span>
-                                    </div>
+                                    </EllipsisText>
                                 </div>
                             </div>
                         : null}

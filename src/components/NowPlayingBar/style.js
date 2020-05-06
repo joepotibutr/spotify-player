@@ -39,6 +39,27 @@ export const CurrentTrackSection = styled.section`
                     height: 56px;
                 }
             }
+
+            .ellipsis-text-wrapper {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin:0 14px;
+            }
         }
     }
+ `
+
+ export const EllipsisText = styled.div`
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: .015em;
+        text-align: left;
+
+         ${props => `color:${props.color}`};
+ 
  `
