@@ -36,17 +36,24 @@ export const LikedTrackPlaylist = styled.li`
             }
         }
 
-    .sample-liked-songs {
-        width:100%;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        font-size:15px;
-        line-height: 21px;
+        .liked-track-wrapper {  
+            flex-direction:column; 
+            display: flex;
+            height: 100%; 
+            justify-content:space-between;
 
-        
-    }
+            .liked-track-text-list {
+                .sample-liked-songs {
+                    width:100%;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    font-size:15px;
+                    line-height: 21px;
+                }
+            }
+        }
 `
 
 export const UserLibraryLayout = styled.div`
