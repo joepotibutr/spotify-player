@@ -48,50 +48,52 @@ class NowPlayingBar extends React.Component {
             <NowPlayingWrapper>
                 <div className="current-track-action-bar">
                     <CurrentTrackSection>
-                        <div className="current-track-wrapper">
                         {currentTrack ?
-                            <div className="current-track-cover-art">
-                                <div className="cover-art-wrapper" >
-                                    <img 
-                                        alt="album-cover" 
-                                        className="track-cover-art"  
-                                        src={currentTrack.track.album.images[2].url} 
-                                    />
-                                </div>
-                                <div className="ellipsis-text-wrapper">
-                                    <EllipsisText color="white">
-                                        <span>
-                                            <a>
-                                                {currentTrack.track.name}
-                                            </a>
-                                        </span>
-                                    </EllipsisText>
-                                    <EllipsisText>
-                                        <span>
-                                            <a>
-                                                {currentTrack.track.artists.length > 1 ? 
-                                                currentTrack.track.artists.map((artist, idx) => currentTrack.track.artists.length - 1 === idx ? (
-                                                    `${artist.name} `
-                                                ) : `${artist.name}, `)
-                                                :
-                                                currentTrack.track.artists[0].name}
-                                            </a>
-                                        </span>
-                                    </EllipsisText>
+                        <React.Fragment>
+                            <div className="current-track-wrapper">
+                                <div className="current-track-cover-art">
+                                    <div className="cover-art-wrapper" >
+                                        <img 
+                                            alt="album-cover" 
+                                            className="track-cover-art"  
+                                            src={currentTrack.track.album.images[2].url} 
+                                        />
+                                    </div>
+                                    <div className="ellipsis-text-wrapper">
+                                        <EllipsisText color="white">
+                                            <span>
+                                                <a>
+                                                    {currentTrack.track.name}
+                                                </a>
+                                            </span>
+                                        </EllipsisText>
+                                        <EllipsisText>
+                                            <span>
+                                                <a>
+                                                    {currentTrack.track.artists.length > 1 ? 
+                                                    currentTrack.track.artists.map((artist, idx) => currentTrack.track.artists.length - 1 === idx ? (
+                                                        `${artist.name} `
+                                                    ) : `${artist.name}, `)
+                                                    :
+                                                    currentTrack.track.artists[0].name}
+                                                </a>
+                                            </span>
+                                        </EllipsisText>
+                                    </div>
                                 </div>
                             </div>
+                            <div style={{ 
+                                display: 'flex', 
+                                alignItems: 'center',
+                                justifyContent:'center',
+                                width: '32px',
+                                height: '30px'
+                            }}>
+                                <div><span><LikeIcon style={{ width: '15px '}} /></span></div>
+                                <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
+                            </div>
+                        </React.Fragment>
                         : null}
-                        </div>
-                        <div style={{ 
-                            display: 'flex', 
-                            alignItems: 'center',
-                            justifyContent:'center',
-                            width: '32px',
-                            height: '30px'
-                        }}>
-                            <div><span><LikeIcon style={{ width: '15px '}} /></span></div>
-                            <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
-                        </div>
                     </CurrentTrackSection>
                     <TrackPlayerSection
                         onPlay={() => this.props.onPlay(currentTrack)} 
