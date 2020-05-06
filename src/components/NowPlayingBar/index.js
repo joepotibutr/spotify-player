@@ -48,14 +48,16 @@ class NowPlayingBar extends React.Component {
             <NowPlayingWrapper>
                 <div className="current-track-action-bar">
                     <CurrentTrackSection>
-                        <div style={{ overflow: 'hidden' }}>
+                        <div className="current-track-wrapper">
                         {currentTrack ?
-                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%' }}>
-                                <div style={{
-                                    minWidth:' 56px',
-                                    minHeight:' 56px',
-                                    boxShadow: '0 0 10px rgba(0,0,0,.3)'
-                                }}><img alt="album-cover" style={{ width: '56px', height: '56px'}} src={currentTrack.track.album.images[2].url} /></div>
+                            <div className="current-track-cover-art">
+                                <div className="cover-art-wrapper" >
+                                    <img 
+                                        alt="album-cover" 
+                                        className="track-cover-art"  
+                                        src={currentTrack.track.album.images[2].url} 
+                                    />
+                                </div>
                                 <div style={{ 
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
