@@ -51,7 +51,7 @@ export const LikedTrackPlaylist = styled.li`
                     -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
                     font-size:16.5px;
-                    line-height: 21px;
+                    line-height: 23px;
                 }
             }
         }
@@ -75,9 +75,11 @@ export const UserLibraryLayout = styled.div`
         color:#fff;
         font-size:1.8em;
         font-family: sans-serif;
+        margin: 0 0 12px 0;
     }
     h3 {
         color: #fff;
+        margin: 0;
     }
 `
 
