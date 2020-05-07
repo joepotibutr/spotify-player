@@ -5,9 +5,8 @@ import { libraryView } from '../../constants'
 import { fetchSongs } from '../../actions/song'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
-import { CollectionItem,LikedTrackPlaylist } from './style'
-
-import { DotIcon } from '../shared'
+import { CollectionItem } from './style'
+import UserLikedSongs from './UserLikedSongs'
 
 const MusicNoteIcon = require('../../images/note.svg')
 class UserLibrary extends React.Component {
@@ -29,26 +28,7 @@ class UserLibrary extends React.Component {
             case libraryView.PLAYLISTS :
                return (
                <React.Fragment>
-                    <LikedTrackPlaylist>
-                        <div className="liked-track-wrapper">
-                            <div className="liked-track-text-list">
-                                <p className="sample-liked-songs">
-                                {songs && songs.map(song => (
-                                        <React.Fragment key={song.track.id}>
-                                            <span style={{ color: 'white', marginRight: '5px'}}>{song.track.artists[0].name}</span>
-                                            <span>{song.track.name}</span>
-                                            <DotIcon />
-                                        </React.Fragment>
-                                ))}
-                                </p>
-                            </div>
-                            <div className="featured-playlist">
-                                <h1>Liked Songs</h1>
-                                <h3>{songs && songs.length} liked songs</h3>
-                            </div>
-                        </div>
-                        <div className="play-btn"><PlayArrowIcon /></div>
-                    </LikedTrackPlaylist>
+                    <UserLikedSongs songs={songs}/>
                     {this.renderCollectionItem(this.props.playlists)}
                 </React.Fragment>)
             default :
