@@ -50,7 +50,7 @@ export const LikedTrackPlaylist = styled.li`
                     display: -webkit-box;
                     -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
-                    font-size:15px;
+                    font-size:16.5px;
                     line-height: 21px;
                 }
             }
@@ -62,7 +62,7 @@ export const UserLibraryLayout = styled.div`
     margin-top: 95px;
     padding: 0 32px;
     font-family: sans-serif;
-    letter-spacing: 0.30px;
+    letter-spacing: 0.1px;
 
     .collection-layout {
         margin-top:35px;
