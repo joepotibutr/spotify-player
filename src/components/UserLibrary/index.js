@@ -18,6 +18,10 @@ class UserLibrary extends React.Component {
         }
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.token && !nextProps.songs.length) {
             this.props.fetchSongs(nextProps.token)

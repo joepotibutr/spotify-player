@@ -33,11 +33,15 @@ const PlaylistItem = styled.li`
 `
 
 class UserPlaylists extends Component {
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        if (nextProps.userId !== "" && nextProps.token !== "" && !nextProps.playlistMenu.length) {
-          this.props.fetchPlaylistMenuRequest(nextProps.token, nextProps.userId);
-        }
+  UNSAFE_componentWillReceiveProps(nextProps) {
+      if (nextProps.userId !== "" && nextProps.token !== "" && !nextProps.playlistMenu.length) {
+        this.props.fetchPlaylistMenuRequest(nextProps.token, nextProps.userId);
       }
+    }
+
+    componentDidMount() {
+      window.scrollTo(0, 0)
+    }
 
     
     render() {

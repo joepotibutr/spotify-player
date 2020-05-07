@@ -157,7 +157,7 @@ const SideMenu = ({
 
     return (
 		<SideMenuLayout>
-			<div className="logo" onClick={() => updateHeaderTitle(viewType.RECENTLY_PLAYED)}>
+			<div className="logo" onClick={() => updateHeaderTitle(viewType.USER_LIBRARY)}>
 				<img alt="logo" src={logo}/>
 			</div>
 			<div>
