@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 export const UserLibraryLayout = styled.div`
-    height: 900px;
+    height: auto;
     margin-top: 95px;
     padding: 0 32px;
     font-family: sans-serif;

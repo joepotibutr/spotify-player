@@ -100,7 +100,7 @@ export const TrackDetailText = styled.span`
 
 
 export const PlaylistViewLayout = styled.div`
-    overflow:scroll-y;
+    overflow:auto;
     max-height: 900px;
     display:grid;
     grid-template-columns: 25% 75%;
@@ -278,7 +278,7 @@ export const PlaylistViewLayout = styled.div`
 
     .grid-area-tracks {
         grid-area: tracks; 
-        overflow: hidden;
+        overflow: auto;
         margin-left:20px;
     }
 `

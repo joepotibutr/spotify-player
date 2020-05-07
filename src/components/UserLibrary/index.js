@@ -15,11 +15,14 @@ class UserLibrary extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            
         }
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0)
+        if (this.props.token) {
+            this.props.fetchSongs(this.props.token)
+        }
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -91,7 +94,8 @@ export default connect(state => ({
     songs: (state.songReducer && state.songReducer.songs) || '',
     token: state.tokenReducer.token,
     playlists: state.playlistReducer.playlists,
-    library: state.uiReducer.library 
+    library: state.uiReducer.library,
+    title: state.uiReducer.title
 }), (dispatch) => ({
     updateHeaderTitle: (title) => dispatch(updateHeaderTitle(title)),
     fetchSongs: (accessToken) => dispatch(fetchSongs(accessToken)),
