@@ -44,6 +44,7 @@ export const LikedTrackPlaylist = styled.li`
 
             .liked-track-text-list {
                 .sample-liked-songs {
+                    margin: 40px 0;
                     width:100%;
                     overflow: hidden;
                     display: -webkit-box;
