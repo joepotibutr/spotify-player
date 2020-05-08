@@ -60,6 +60,6 @@ export const CurrentTrackSection = styled.section`
         letter-spacing: .015em;
         text-align: left;
 
-         ${props => `color:${props.color}`};
+         ${props => `color:${props.color || '#b3b3b3'}`};
  
  `
