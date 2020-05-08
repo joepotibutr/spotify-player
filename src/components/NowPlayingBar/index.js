@@ -86,11 +86,19 @@ class NowPlayingBar extends React.Component {
                                 display: 'flex', 
                                 alignItems: 'center',
                                 justifyContent:'center',
-                                width: '32px',
+                                width: '80px',
                                 height: '30px'
                             }}>
-                                <div><span><LikeIcon style={{ width: '15px '}} /></span></div>
-                                <div><span><PictureInPictureAltIcon style={{ width: '15px '}} /></span></div>
+                                <div style={{ display: 'flex', justifyContent: 'center', width: '32px' }}>
+                                    <span>
+                                        <LikeIcon style={{ width: '17px '}} />
+                                    </span>
+                                </div>
+                                <div style={{ display: 'flex', justifyContent: 'center', width: '32px' }}>
+                                    <span>
+                                        <PictureInPictureAltIcon style={{ width: '17px '}} />
+                                    </span>
+                                </div>
                             </div>
                         </React.Fragment>
                         : null}
