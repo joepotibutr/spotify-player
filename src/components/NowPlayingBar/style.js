@@ -55,7 +55,7 @@ export const CurrentTrackSection = styled.section`
         overflow: hidden;
         text-overflow: ellipsis;
         font-weight: 400;
-        font-size: 14px;
+        font-size: ${props => props.size || 14}px;
         line-height: 20px;
         letter-spacing: .015em;
         text-align: left;
