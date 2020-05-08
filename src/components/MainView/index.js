@@ -24,9 +24,9 @@ class MainView extends React.Component {
     } 
 
 
-  onScroll = (e) => {
-      if (e.target.scrollTop < 400) {
-          const opacity = e.target.scrollTop / 300
+  onScroll = () => {
+      if (this.mainLayoutRef.current.scrollTop < 400) {
+          const opacity = this.mainLayoutRef.current.scrollTop / 300
           this.setState({
               opacity
           })
