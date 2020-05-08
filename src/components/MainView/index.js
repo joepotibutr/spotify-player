@@ -19,6 +19,8 @@ class MainView extends React.Component {
       this.state = {
           opacity: 0,
       };
+
+      this.mainLayoutRef = React.createRef()
     } 
 
 
@@ -33,6 +35,14 @@ class MainView extends React.Component {
 
   componentDidMount() {
       window.addEventListener('scroll', this.onScroll,true);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.headerTitle !== this.props.headerTitle) {
+      if (this.mainLayoutRef) {
+        this.mainLayoutRef.current.scrollTop = 0
+      }
+    }
   }
 
   UNSAFE_componentWillUnmount() {
@@ -57,7 +67,7 @@ class MainView extends React.Component {
 
  render() {
     return (
-      <MainViewLayout>
+      <MainViewLayout ref={this.mainLayoutRef}>
         <MainHeader opacity={this.state.opacity} />
           {this.renderMainView()}
       </MainViewLayout>
