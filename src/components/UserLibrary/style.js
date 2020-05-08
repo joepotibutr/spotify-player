@@ -37,6 +37,10 @@ export const CollectionItem = styled.li`
 
     .item-detail {
         .item-description {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
             font-size:12px;
             height:40px;
         }
