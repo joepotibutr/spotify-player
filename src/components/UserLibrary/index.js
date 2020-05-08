@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { UserLibraryLayout } from './style'
-import { libraryView } from '../../constants'
+import { libraryView, viewType } from '../../constants'
 import { fetchSongs } from '../../actions/song'
 import { updateHeaderTitle } from '../../actions/ui'
 import { fetchPlaylistSongsRequest } from '../../actions/playlist';
@@ -40,13 +40,17 @@ class UserLibrary extends React.Component {
             this.props.updateHeaderTitle(playlist.name);
     }
 
+    gotoLikedTrackPlaylist = () => {
+        this.props.updateHeaderTitle(viewType.LIKED_SONGS);
+    }
+
     renderViewType = () => {
         const { songs } = this.props
         switch(this.props.library) {
             case libraryView.PLAYLISTS :
                return (
                <React.Fragment>
-                    <UserLikedSongs songs={songs}/>
+                    <UserLikedSongs gotoLikedTrackPlaylist={this.gotoLikedTrackPlaylist} songs={songs}/>
                     {this.renderCollectionItem(this.props.playlists)}
                 </React.Fragment>)
             default :

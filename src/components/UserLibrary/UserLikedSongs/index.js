@@ -64,9 +64,9 @@ export const LikedTrackPlaylist = styled.li`
 
 class UserLikedSongs extends React.Component {
     render() {
-        const { songs } = this.props
+        const { songs, gotoLikedTrackPlaylist } = this.props
         return (
-            <LikedTrackPlaylist>
+            <LikedTrackPlaylist onClick={gotoLikedTrackPlaylist}>
                 <div className="liked-track-wrapper">
                     <div className="liked-track-text-list">
                         <p className="sample-liked-songs">
