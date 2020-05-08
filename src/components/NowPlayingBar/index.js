@@ -67,7 +67,7 @@ class NowPlayingBar extends React.Component {
                                                 </a>
                                             </span>
                                         </EllipsisText>
-                                        <EllipsisText>
+                                        <EllipsisText size={12}>
                                             <span>
                                                 <a>
                                                     {currentTrack.track.artists.length > 1 ? 
