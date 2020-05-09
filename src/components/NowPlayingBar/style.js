@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 export const NowPlayingWrapper = styled.footer` 
-    height: 86px;
+    height: 91px;
     background-color: #282828;
 
     .current-track-action-bar {
