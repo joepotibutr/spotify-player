@@ -19,10 +19,10 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
         grid-area: playlist;
         padding-bottom: 20px;
         position:sticky;
+        align-items: flex-end;
 
 
         .current-playlist {
-            margin: 0 auto 1.5em;
             text-align: center;
             max-width: 400px;
             display:flex;
@@ -114,7 +114,6 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
 
             .current-playlist {
                 max-width: 100% !important;
-                margin: 0 0 1.5em 0 !important;
                 flex-direction: row !important;
             }
 
