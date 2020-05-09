@@ -157,14 +157,3 @@ export const PlaylistViewLayout = styled.div`
     }
 `
 
-export const LikedSongsCoverArt = styled.div`
-    background:green;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    &:after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-    }
-`

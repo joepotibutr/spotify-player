@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { viewType } from '../../constants'
 import { play } from '../../actions/player'
-import LikeIcon from '@material-ui/icons/Favorite';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { bindActionCreators } from 'redux'
 import { 
@@ -11,7 +10,6 @@ import {
     PlaylistTrack, 
     IconWrapper, 
     PlaylistViewLayout, 
-    LikedSongsCoverArt
 } from './style'
 
 import CurrentPlaylistHeader from './CurrentPlaylistHeader'

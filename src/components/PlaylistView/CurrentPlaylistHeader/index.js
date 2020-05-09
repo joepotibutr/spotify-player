@@ -1,7 +1,21 @@
 import React from 'react'
+import LikeIcon from '@material-ui/icons/Favorite';
 import styled from 'styled-components'
 
-export const CurrentPlaylistHeader = styled.header`
+
+export const LikedSongsCoverArt = styled.div`
+    background:green;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+`
+
+export const CurrentPlaylistHeaderWrapper = styled.header`
         grid-area: playlist;
         padding-bottom: 20px;
         position:sticky;
@@ -127,7 +141,7 @@ export const CurrentPlaylistHeader = styled.header`
 
 const CurrentPlaylistHeader = ({ isUserLikedSongs, currentPlaylist }) => {
     return (
-            <CurrentPlaylistHeader>
+            <CurrentPlaylistHeaderWrapper>
                 <div className="current-playlist">
                     <div className="playlist-cover-art">
                             <div className="cover-image-wrapper">
@@ -156,7 +170,7 @@ const CurrentPlaylistHeader = ({ isUserLikedSongs, currentPlaylist }) => {
                         <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
                     </div>
                 </div>
-            </CurrentPlaylistHeader>
+            </CurrentPlaylistHeaderWrapper>
     )
 }
 
