@@ -113,7 +113,7 @@ export const PlaylistViewLayout = styled.div`
     @media only screen and (max-width: 1240px) {
         max-height: 4200px;
         grid-template-columns: 1fr;
-        grid-template-rows: 200px 1fr;
+        grid-template-rows: 260px 1fr;
         grid-template-areas:    "playlist"
                                 "tracks";
 

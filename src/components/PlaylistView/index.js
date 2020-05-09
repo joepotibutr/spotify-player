@@ -32,7 +32,6 @@ class PlaylistView extends React.Component {
         return (
             <PlaylistViewLayout>
                 <CurrentPlaylistHeader
-                    totalSongs={this.props.songs.length}
                     onPlay={this.props.onPlay}
                     isUserLikedSongs={isUserLikedSongs} 
                     currentPlaylist={currentPlaylist}

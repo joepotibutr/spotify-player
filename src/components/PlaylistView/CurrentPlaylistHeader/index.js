@@ -144,7 +144,6 @@ const CurrentPlaylistHeader = ({
     currentPlaylist, 
     headerTitle, 
     onPlay, 
-    totalSongs 
 }) => {
     return (
             <CurrentPlaylistHeaderWrapper>
@@ -169,11 +168,9 @@ const CurrentPlaylistHeader = ({
                                 <div className="play-button">
                                     <button onClick={() => onPlay()}>PLAY</button>
                                 </div>
-                                <div>LIKED</div>
                                 <div>.....</div>
                             </div>
                         </div>
-                        <div className="total-songs"><p>{totalSongs} SONGS</p></div>
                     </div>
                 </div>
             </CurrentPlaylistHeaderWrapper>
