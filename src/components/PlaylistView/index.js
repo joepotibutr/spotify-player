@@ -31,7 +31,13 @@ class PlaylistView extends React.Component {
            
         return (
             <PlaylistViewLayout>
-                <CurrentPlaylistHeader isUserLikedSongs={isUserLikedSongs} currentPlaylist={currentPlaylist}/>
+                <CurrentPlaylistHeader
+                    totalSongs={this.props.songs.length}
+                    onPlay={this.props.onPlay}
+                    isUserLikedSongs={isUserLikedSongs} 
+                    currentPlaylist={currentPlaylist}
+                    headerTitle={headerTitle}
+                />
                 <div className="grid-area-tracks">
                     {this.props.songs ? 
                     <ol style={{ padding: 0, margin:0  }}>{this.props.songs.map(song => (

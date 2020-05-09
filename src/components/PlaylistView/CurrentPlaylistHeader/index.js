@@ -139,7 +139,13 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
 
 `
 
-const CurrentPlaylistHeader = ({ isUserLikedSongs, currentPlaylist }) => {
+const CurrentPlaylistHeader = ({ 
+    isUserLikedSongs, 
+    currentPlaylist, 
+    headerTitle, 
+    onPlay, 
+    totalSongs 
+}) => {
     return (
             <CurrentPlaylistHeaderWrapper>
                 <div className="current-playlist">
@@ -155,19 +161,19 @@ const CurrentPlaylistHeader = ({ isUserLikedSongs, currentPlaylist }) => {
                     </div>
                     <div className="playlist-body">
                         <div className="playlist-entity">
-                            <div className="playlist-title"><h2>{this.props.headerTitle}</h2></div>
+                            <div className="playlist-title"><h2>{headerTitle}</h2></div>
                             <div ><span className="by">By </span><span className="playlist-owner">{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</span></div>
                         </div>
                         <div className="playlist-actions">
                             <div className="button-wrapper">
                                 <div className="play-button">
-                                    <button onClick={() => this.props.onPlay()}>PLAY</button>
+                                    <button onClick={() => onPlay()}>PLAY</button>
                                 </div>
                                 <div>LIKED</div>
                                 <div>.....</div>
                             </div>
                         </div>
-                        <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
+                        <div className="total-songs"><p>{totalSongs} SONGS</p></div>
                     </div>
                 </div>
             </CurrentPlaylistHeaderWrapper>
