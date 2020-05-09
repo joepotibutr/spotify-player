@@ -48,7 +48,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                         text-transform: none;
                         color:white;
                         h2 {
-                            font-size:50px;
+                            font-size:4vw;
                         }
                     }
 
