@@ -16,15 +16,16 @@ export const LikedSongsCoverArt = styled.div`
 export const CurrentPlaylistHeaderWrapper = styled.header`
         grid-area: playlist;
         padding-bottom: 20px;
+        padding-left:32px;
         position:sticky;
         align-items: flex-end;
 
 
         .current-playlist {
             text-align: center;
-            max-width: 400px;
+            width: 100%;
             display:flex;
-            flex-direction:column;
+            align-items: flex-end;
 
             .playlist-cover-art {
                 width: auto;
@@ -41,15 +42,13 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
 
                 .playlist-entity {
                     .playlist-title {
-                        font-size: 18px;
                         line-height: 36px;
                         letter-spacing: -.005em;
                         font-weight: 700;
                         text-transform: none;
                         color:white;
                         h2 {
-                            margin:0;
-                            padding:0;
+                            font-size:50px;
                         }
                     }
 
@@ -78,7 +77,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
 
             .playlist-body {
                 text-align:left !important;
-                margin-left:40px;
+                margin-left:20px;
             }
         }
 

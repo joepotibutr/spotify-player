@@ -106,10 +106,9 @@ export const PlaylistViewLayout = styled.div`
     grid-template-columns: 25% 75%;
     grid-template-areas: "playlist tracks";
     max-width: 1955px;
-    padding: 0 32px;
     margin-top: 80px;
     font-family:sans-serif;
-    
+
     .playlist-actions {
                     display: flex;
                     align-items: center;
@@ -186,6 +185,7 @@ export const PlaylistViewLayout = styled.div`
 
     
     .grid-area-tracks {
+        padding: 0 32px;
         grid-area: tracks; 
         overflow: auto;
         margin-left:20px;
