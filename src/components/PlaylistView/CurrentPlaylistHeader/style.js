@@ -49,6 +49,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                         color:white;
                         h2 {
                             font-size:4vw;
+                            margin: 15px 0;
                         }
                     }
 

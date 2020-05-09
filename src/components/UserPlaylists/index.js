@@ -49,8 +49,8 @@ class UserPlaylists extends Component {
                 {playlistMenu.length ? 
                 <ul style={{ 
                   overflowY: 'auto', 
-                  height: 'calc(100vh - 507px)', 
-                  margin: '20px 0 10px 0',
+                  height: 'calc(100vh - 516px)', 
+                  margin: '10px 0',
                 
                 }}>{playlistMenu.map(playlist => (
                       <PlaylistItem onClick={() => {
