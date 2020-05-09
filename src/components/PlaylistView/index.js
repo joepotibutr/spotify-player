@@ -14,6 +14,8 @@ import {
     LikedSongsCoverArt
 } from './style'
 
+import CurrentPlaylistHeader from './CurrentPlaylistHeader'
+
 import { DotIcon } from '../shared'
 
 
@@ -31,36 +33,7 @@ class PlaylistView extends React.Component {
            
         return (
             <PlaylistViewLayout>
-                <header className="grid-area-playlist">
-                    <div className="current-playlist">
-                        <div className="playlist-cover-art">
-                                <div className="cover-image-wrapper">
-                                {isUserLikedSongs ? 
-                                <LikedSongsCoverArt >
-                                    <LikeIcon style={{ width: '18px', height: '18px'}}/>
-                                </LikedSongsCoverArt> : 
-                                <img alt="playlist-cover" className="playlist-cover-image"
-                                src={currentPlaylist.images[0].url}/>}
-                            </div>
-                        </div>
-                        <div className="playlist-body">
-                            <div className="playlist-entity">
-                                <div className="playlist-title"><h2>{this.props.headerTitle}</h2></div>
-                                <div ><span className="by">By </span><span className="playlist-owner">{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</span></div>
-                            </div>
-                            <div className="playlist-actions">
-                                <div className="button-wrapper">
-                                    <div className="play-button">
-                                        <button onClick={() => this.props.onPlay()}>PLAY</button>
-                                    </div>
-                                    <div>LIKED</div>
-                                    <div>.....</div>
-                                </div>
-                            </div>
-                            <div className="total-songs"><p>{this.props.songs.length} SONGS</p></div>
-                        </div>
-                    </div>
-                </header>
+                <CurrentPlaylistHeader isUserLikedSongs={isUserLikedSongs} currentPlaylist={currentPlaylist}/>
                 <div className="grid-area-tracks">
                     {this.props.songs ? 
                     <ol style={{ padding: 0, margin:0  }}>{this.props.songs.map(song => (
