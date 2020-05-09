@@ -44,7 +44,7 @@ export const CurrentTrackSection = styled.section`
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                margin:0 14px;
+                margin:0 0 0 14px;
             }
         }
     }

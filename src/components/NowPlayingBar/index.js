@@ -86,7 +86,7 @@ class NowPlayingBar extends React.Component {
                                 display: 'flex', 
                                 alignItems: 'center',
                                 justifyContent:'center',
-                                width: '80px',
+                                maxWidth: '80px',
                                 height: '30px'
                             }}>
                                 <div style={{ display: 'flex', justifyContent: 'center', width: '32px' }}>
