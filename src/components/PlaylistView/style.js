@@ -123,8 +123,8 @@ export const PlaylistViewLayout = styled.div`
         }
 
         .cover-image-wrapper {
-            width:157px !important;
-            height:157px !important;
+            width:200px !important;
+            height:200px !important;
 
             .playlist-cover-image {
                 width:auto;

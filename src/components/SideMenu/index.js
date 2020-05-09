@@ -191,7 +191,10 @@ const SideMenu = ({
 				</div>
 				<UserPlaylistActionsLayout >
 					<label className="playlist-header">PLAYLISTS</label>
-					<ul>
+					<ul style={{
+						  borderBottom: '1px solid rgb(255,255,255,.1)',
+						  paddingBottom: '13px'
+					}}>
 						<PlaylistAction style={{ marginBottom: '10px'}}>
 							<div className="create-playlist" >
 								<span style={{ width: '15px', height: '15px' }}>
