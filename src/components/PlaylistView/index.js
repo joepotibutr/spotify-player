@@ -32,11 +32,18 @@ class PlaylistView extends React.Component {
         return (
             <PlaylistViewLayout>
                 <CurrentPlaylistHeader
-                    onPlay={this.props.onPlay}
                     isUserLikedSongs={isUserLikedSongs} 
                     currentPlaylist={currentPlaylist}
                     headerTitle={headerTitle}
                 />
+                 <div className="playlist-actions">
+                    <div className="button-wrapper">
+                        <div className="play-button">
+                            <button onClick={() => this.props.onPlay()}>PLAY</button>
+                        </div>
+                        <div>.....</div>
+                    </div>
+                </div>
                 <div className="grid-area-tracks">
                     {this.props.songs ? 
                     <ol style={{ padding: 0, margin:0  }}>{this.props.songs.map(song => (
