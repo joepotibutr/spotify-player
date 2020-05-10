@@ -24,11 +24,6 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
         align-items: flex-end;
 
 
-        .current-playlist {
-            max-width: 100% !important;
-            flex-direction: row !important;
-        }
-
         .playlist-body {
             text-align:left !important;
             margin-left:20px;
@@ -36,6 +31,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
 
 
         .current-playlist {
+            height: 240px;
             text-align: center;
             width: 100%;
             display:flex;

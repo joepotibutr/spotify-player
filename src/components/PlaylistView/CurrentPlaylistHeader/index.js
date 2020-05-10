@@ -14,7 +14,7 @@ const CurrentPlaylistHeader = ({
                             <div className="cover-image-wrapper">
                             {isUserLikedSongs ? 
                             <LikedSongsCoverArt >
-                                <LikeIcon style={{ width: '7vw', height: '7vh'}}/>
+                                <LikeIcon style={{ maxWidth: '80px', filter:'brightness(2)', width: '7vw', height: 'auto'}}/>
                             </LikedSongsCoverArt> : 
                             <img alt="playlist-cover" className="playlist-cover-image"
                             src={currentPlaylist.images[0].url}/>}

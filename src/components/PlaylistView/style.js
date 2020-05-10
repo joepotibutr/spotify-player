@@ -156,6 +156,7 @@ export const PlaylistViewLayout = styled.div`
         display: flex;
         align-items: flex-end;
         width: 15vw;
+        max-width:230px;
         height: auto;
 
         .playlist-cover-image {
