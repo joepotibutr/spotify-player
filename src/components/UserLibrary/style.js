@@ -13,8 +13,7 @@ export const UserLibraryLayout = styled.div`
         margin-top:35px;
         display: grid;
         grid-gap: 16px;
-        grid-template-rows: repeat(auto-fit,minmax(min(10rem,270px),1fr));
-        grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+        grid-template-columns: repeat(auto-fill,minmax(164px,1fr));
     }
 
     h1 {

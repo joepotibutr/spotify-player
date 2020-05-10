@@ -9,7 +9,6 @@ import { viewType } from '../../constants'
 import styled from 'styled-components'
 
 const MainViewLayout = styled.div`
-  overflow-y: scroll;
   overflow-x: hidden;
 `
 
