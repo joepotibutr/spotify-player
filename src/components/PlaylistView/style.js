@@ -103,7 +103,8 @@ export const PlaylistViewLayout = styled.div`
     overflow:auto;
     display:grid;
     max-width: 1955px;
-    margin-top: 80px;
+    padding-top: 80px;
+    background: green;
 
     .playlist-actions {
         display: flex;
