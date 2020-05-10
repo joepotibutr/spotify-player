@@ -3,7 +3,7 @@ import React from 'react'
 
 const DotIconWrapper = styled.span`
     transform:translateY(-3px);
-    margin: 0 8px 0 5px;
+    margin: 0 5px;
     display: inline-flex;
     align-items: center;
 

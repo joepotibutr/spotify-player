@@ -5,10 +5,10 @@ const DownloadIcon = require('../../images/download.svg')
 
 const InstallAppLinkLayout = styled.div`
     display:flex;
-    padding-left:24px;
+    padding-left:30px;
 
     p {
-        margin: 15px 0;
+        margin: 10px 0;
     }
 
     .install-button {
