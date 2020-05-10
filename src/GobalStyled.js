@@ -13,10 +13,10 @@ body {
     font-weight: var(--glue-font-weight-normal);
     color: #b3b3b3;
     text-transform: none;
-    font-family: 'OurFont';
+    font-family: sans-serif;
 
     @font-face {
-      font-family: 'OurFont';
+      font-family: 'Prox';
       src: url(${prox}) format('woff');
       font-style: normal;
     }

@@ -60,11 +60,12 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                         color:white;
                         -webkit-text-stroke-width: 3px;
                         letter-spacing: -1px;
-                        
+
                         h2 {
                             @media only screen and (max-width: 1240px) {
                                 font-size: 42px;
                             }
+                            font-family: 'Prox';
                             font-size:6vw;
                             margin: 0.4em 0;
                         }
