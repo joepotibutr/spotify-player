@@ -153,18 +153,10 @@ export const PlaylistViewLayout = styled.div`
     }
 
     .cover-image-wrapper {
-        width:200px !important;
-        height:200px !important;
-
-        .playlist-cover-image {
-            width:auto;
-            height:auto;
-        }
-    }
-
-    .cover-image-wrapper {
-        width: 100%;
-        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        width: 15vw;
+        height: auto;
 
         .playlist-cover-image {
             width: 100%;
@@ -174,9 +166,9 @@ export const PlaylistViewLayout = styled.div`
             background-color: #000;
             background-repeat: no-repeat;
         }
+
     }
 
-    
     .grid-area-tracks {
         padding: 0 32px;
         grid-area: tracks; 

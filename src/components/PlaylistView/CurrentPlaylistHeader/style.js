@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 
 export const LikedSongsCoverArt = styled.div`
+    width: 15vw;
+    height: auto;
     background:green;
     display:flex;
     justify-content:center;
