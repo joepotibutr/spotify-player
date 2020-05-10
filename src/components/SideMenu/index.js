@@ -48,7 +48,7 @@ const SideMenuLayout = styled.div`
 const PlaylistAction = styled.li`
 	display: flex;
 	align-items: center;
-	opacity:0.5;
+	opacity:0.7;
 	cursor:pointer;
 	transition:.3s;
 	font-weight: bold;

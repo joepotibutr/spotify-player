@@ -18,13 +18,17 @@ export const UserLibraryLayout = styled.div`
 
     h1 {
         color:#fff;
-        font-size:1.8em;
+        font-size:1.9em;
         font-family: sans-serif;
-        margin: 0 0 12px 0;
+        margin: 0 0 20px 0;
     }
     h3 {
         color: #fff;
         margin: 0;
+        font-weight:100;
+        line-height:10px;
+        letter-spacing: 0.5px;
+        font-size: 1.2em;
     }
 `
 
@@ -73,7 +77,7 @@ export const CollectionItem = styled.li`
         box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2);
         background: #383838;
         width:100%;
-        height:150px;
+        height:160px;
         max-width: 186.5px;
         max-height: 186.5px;
         display:flex;
@@ -81,9 +85,10 @@ export const CollectionItem = styled.li`
         align-items:center;
 
         .empty-icon {
+            transform: translateX(-5px);
             filter:invert(0.7);
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
         }
     }
 
