@@ -14,7 +14,6 @@ export const NowPlayingWrapper = styled.footer`
 `
 
 export const CurrentTrackSection = styled.section`
-    font-family: sans-serif;
     width: 30%;
     min-width: 180px;
     display: flex;

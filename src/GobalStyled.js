@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import prox from './fonts/prox.woff';
 
 export default createGlobalStyle`
 ul {
@@ -12,7 +13,13 @@ body {
     font-weight: var(--glue-font-weight-normal);
     color: #b3b3b3;
     text-transform: none;
-    font-family: "Varela Round", sans-serif;
+    font-family: 'OurFont';
+
+    @font-face {
+      font-family: 'OurFont';
+      src: url(${prox}) format('woff');
+      font-style: normal;
+    }
 }
 
 ::-webkit-scrollbar {

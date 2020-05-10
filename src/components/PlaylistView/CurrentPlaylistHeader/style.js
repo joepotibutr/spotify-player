@@ -62,7 +62,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                             @media only screen and (max-width: 1240px) {
                                 font-size: 42px;
                             }
-                            font-size:4vw;
+                            font-size:6vw;
                             margin: 0.4em 0;
                         }
                     }

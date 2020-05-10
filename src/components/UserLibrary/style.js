@@ -6,7 +6,6 @@ export const UserLibraryLayout = styled.div`
     min-width: 455px;
     margin-top: 95px;
     padding: 0 32px;
-    font-family: sans-serif;
     letter-spacing: 0.1px;
 
     .collection-layout {
@@ -19,7 +18,6 @@ export const UserLibraryLayout = styled.div`
     h1 {
         color:#fff;
         font-size:1.9em;
-        font-family: sans-serif;
         margin: 0 0 20px 0;
     }
     h3 {
@@ -51,7 +49,6 @@ export const CollectionItem = styled.li`
         }
 
         .item-title {
-            font-family:sans-serif;
             font-size: 14px;
             line-height: 20px;
             font-weight: 700;

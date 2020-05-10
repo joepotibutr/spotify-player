@@ -104,7 +104,6 @@ export const PlaylistViewLayout = styled.div`
     display:grid;
     max-width: 1955px;
     margin-top: 80px;
-    font-family:sans-serif;
 
     .playlist-actions {
         display: flex;
