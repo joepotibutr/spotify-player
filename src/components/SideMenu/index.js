@@ -48,7 +48,7 @@ const SideMenuLayout = styled.div`
 const PlaylistAction = styled.li`
 	display: flex;
 	align-items: center;
-	opacity:0.7;
+	opacity: ${props => props.active ? 1 : 0.7};
 	cursor:pointer;
 	transition:.3s;
 	font-weight: bold;
@@ -106,6 +106,7 @@ const SideMenu = ({
 	// fetchAlbum,
 	// fetchArtist,
 	// fetchRecentlyPlayedSongs,
+	title,
 	fetchSongs,
 	updateHeaderTitle
 }) => {
@@ -203,7 +204,7 @@ const SideMenu = ({
 							</div>
 							<div style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
 						</PlaylistAction>
-						<PlaylistAction>
+						<PlaylistAction active={title === viewType.LIKED_SONGS ? 1 : 0}>
 							<div className="liked-songs"><LikeIcon style={{ filter: 'brightness(2)', width: '18px', height: '18px'}}/></div>
 							<div onClick={() => {
 								fetchSongs(token)
