@@ -46,6 +46,7 @@ export const LikedTrackPlaylist = styled.li`
             justify-content:space-between;
 
             .liked-track-text-list {
+   
                 .sample-liked-songs {
                     margin: 40px 0;
                     width:100%;
@@ -55,6 +56,12 @@ export const LikedTrackPlaylist = styled.li`
                     -webkit-box-orient: vertical;
                     font-size:16.5px;
                     line-height: 23px;
+                }
+
+                @media only screen and (max-width: 830px) {
+                    .sample-liked-songs {
+                        margin: 0;
+                    }
                 }
             }
         }
