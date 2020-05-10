@@ -17,8 +17,20 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
         grid-area: playlist;
         padding-bottom: 20px;
         padding-left:32px;
-        position:sticky;
+        display:flex;
+        border-bottom: 1px solid hsla(0,0%,100%,.1);
         align-items: flex-end;
+
+
+        .current-playlist {
+            max-width: 100% !important;
+            flex-direction: row !important;
+        }
+
+        .playlist-body {
+            text-align:left !important;
+            margin-left:20px;
+        }
 
 
         .current-playlist {
@@ -66,20 +78,6 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
             }
         }
 
-    @media only screen and (max-width: 1240px) {
-            position:inherit !important;
-            display:flex;
-            border-bottom: 1px solid hsla(0,0%,100%,.1);
-
-            .current-playlist {
-                max-width: 100% !important;
-                flex-direction: row !important;
-            }
-
-            .playlist-body {
-                text-align:left !important;
-                margin-left:20px;
-            }
-        }
+            
 
 `
