@@ -65,7 +65,7 @@ const PlaylistAction = styled.li`
 	.liked-songs {
 		width: 32px;
 		height: 32px;
-		background: linear-gradient(158deg, rgba(0,0,0,1) 0%, rgba(29,9,121,1) 0%, rgba(255,255,255,1) 100%);
+		background: linear-gradient(158deg, rgba(70,12,245,1) 0%, rgba(142,141,230,1) 100%);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -204,7 +204,7 @@ const SideMenu = ({
 							<div style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
 						</PlaylistAction>
 						<PlaylistAction>
-								<div className="liked-songs"><LikeIcon style={{ width: '18px', height: '18px'}}/></div>
+							<div className="liked-songs"><LikeIcon style={{ filter: 'brightness(2)', width: '18px', height: '18px'}}/></div>
 							<div onClick={() => {
 								fetchSongs(token)
 								updateHeaderTitle(viewType.LIKED_SONGS)

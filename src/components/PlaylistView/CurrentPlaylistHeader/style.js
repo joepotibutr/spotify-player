@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const LikedSongsCoverArt = styled.div`
     width: 15vw;
     height: auto;
-    background:green;
+    background: linear-gradient(158deg, rgba(70,12,245,1) 0%, rgba(142,141,230,1) 100%);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -63,7 +63,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                         color:white;
                         h2 {
                             font-size:4vw;
-                            margin: 15px 0;
+                            margin: 0.4em 0;
                         }
                     }
 
