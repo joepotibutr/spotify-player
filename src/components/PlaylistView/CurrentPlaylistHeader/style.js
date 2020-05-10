@@ -58,6 +58,9 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                         font-weight: 700;
                         text-transform: none;
                         color:white;
+                        -webkit-text-stroke-width: 3px;
+                        letter-spacing: -1px;
+                        
                         h2 {
                             @media only screen and (max-width: 1240px) {
                                 font-size: 42px;
