@@ -38,6 +38,7 @@ const MainLayout = styled.div`
     }
 
     .main-view {
+      margin-bottom: 2px;
       width: 100%;
       grid-area: main-view;
       overflow-y: scroll;
