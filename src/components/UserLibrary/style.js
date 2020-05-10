@@ -3,18 +3,21 @@ import styled from 'styled-components'
 
 export const UserLibraryLayout = styled.div`
     height: auto;
+    min-width: 469px;
     margin-top: 95px;
     padding: 0 32px;
     font-family: sans-serif;
+    min-width: 1500px;
     letter-spacing: 0.1px;
 
     .collection-layout {
         margin-top:35px;
         display: grid;
         grid-gap: 16px;
-        grid-template-rows: repeat(auto-fill,minmax(270px,164px));
-        grid-template-columns: repeat(auto-fill,minmax(164px,1fr));
+        grid-template-rows: repeat(auto-fill,minmax(min(10rem,270px),1fr));
+        grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
     }
+
     h1 {
         color:#fff;
         font-size:1.8em;
