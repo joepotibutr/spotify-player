@@ -10,7 +10,7 @@ export const UserLibraryLayout = styled.div`
     letter-spacing: 0.1px;
 
     .collection-layout {
-        margin-top:35px;
+        margin:35px 0;
         display: grid;
         grid-gap: 16px;
         grid-template-columns: repeat(auto-fill,minmax(164px,1fr));
