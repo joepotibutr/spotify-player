@@ -6,7 +6,7 @@ import  {DotIcon } from '../../shared'
 
 export const LikedTrackPlaylist = styled.li`
     position:relative;
-    padding: 35px 20px 20px 20px;
+    padding: 20px;
     grid-column:1/3;
     height:auto;
     background: linear-gradient(158deg, rgba(70,12,245,1) 0%, rgba(142,141,230,1) 100%);
@@ -46,7 +46,8 @@ export const LikedTrackPlaylist = styled.li`
             justify-content:space-between;
 
             .liked-track-text-list {
-   
+                margin-bottom:12px;
+                
                 .sample-liked-songs {
                     margin: 40px 0;
                     width:100%;
