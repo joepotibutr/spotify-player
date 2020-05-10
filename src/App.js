@@ -17,6 +17,7 @@ const MainLayout = styled.div`
   background: #121212;
   
   .app-grid-layout {
+    overflow:hidden;
     min-height: 100vh;
     width: 100%;
     height: 100vh;
@@ -39,6 +40,8 @@ const MainLayout = styled.div`
     .main-view {
       width: 100%;
       grid-area: main-view;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
     
     .now-playing {

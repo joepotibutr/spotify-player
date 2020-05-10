@@ -9,8 +9,8 @@ import { viewType } from '../../constants'
 import styled from 'styled-components'
 
 const MainViewLayout = styled.div`
-  height: calc(100vh - 93px);
   overflow-y: scroll;
+  overflow-x: hidden;
 `
 
 class MainView extends React.Component {
