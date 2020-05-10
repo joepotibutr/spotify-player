@@ -142,6 +142,7 @@ export const PlaylistViewLayout = styled.div`
     }
 
     max-height: 4200px;
+    min-width: 1500px;
     grid-template-columns: 1fr;
     grid-template-rows: 260px 1fr;
     grid-template-areas:    "playlist"
@@ -153,6 +154,7 @@ export const PlaylistViewLayout = styled.div`
     }
 
     .cover-image-wrapper {
+        min-width:190px;
         display: flex;
         align-items: flex-end;
         width: 15vw;

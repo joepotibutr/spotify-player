@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 
 export const LikedSongsCoverArt = styled.div`
+    min-width:190px;
     width: 15vw;
     height: auto;
     background: linear-gradient(158deg, rgba(70,12,245,1) 0%, rgba(142,141,230,1) 100%);
@@ -58,6 +59,9 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                         text-transform: none;
                         color:white;
                         h2 {
+                            @media only screen and (max-width: 1240px) {
+                                font-size: 42px;
+                            }
                             font-size:4vw;
                             margin: 0.4em 0;
                         }
