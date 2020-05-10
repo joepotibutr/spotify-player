@@ -157,7 +157,7 @@ export const PlaylistViewLayout = styled.div`
         min-width:190px;
         display: flex;
         align-items: flex-end;
-        width: 15vw;
+        width: 17vw;
         max-width:230px;
         height: auto;
 
