@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const TrackPlayerWrapper = styled.section` 
     width: 40%;
+    min-width: 386px;
     flex-direction: column;
     display: flex;
     justify-content: center;
