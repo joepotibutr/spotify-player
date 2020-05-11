@@ -17,7 +17,7 @@ export const LikedSongsCoverArt = styled.div`
 `
 
 export const CurrentPlaylistHeaderWrapper = styled.header`
-        background: linear-gradient(180deg, rgba(18,18,18,0) 0%, rgba(18,18,18,0.1) 100%);
+        background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.4) 100%);
         grid-area: playlist;
         padding-bottom: 20px;
         padding-left:32px;
