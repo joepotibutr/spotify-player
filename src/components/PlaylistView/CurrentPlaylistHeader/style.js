@@ -41,7 +41,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
             .playlist-cover-art {
                 width: auto;
                 min-height: auto;
-                box-shadow: 0 0 10px rgba(0,0,0,.3);
+                box-shadow: 0 4px 60px rgba(0,0,0,.5);
             }
 
             .playlist-body {
