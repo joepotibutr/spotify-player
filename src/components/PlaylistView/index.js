@@ -33,15 +33,16 @@ class PlaylistView extends React.Component {
                                 currentPlaylist={currentPlaylist}
                                 headerTitle={headerTitle}
                             />
-                            <div className="playlist-actions"> 
-                                <div className="button-wrapper">
-                                    <div className="play-button">
-                                        <button onClick={() => this.props.onPlay()}>PLAY</button>
-                                    </div>
-                                    <div>.....</div>
-                                </div>
-                            </div>
+
                             <div className="grid-area-tracks">
+                                <div className="playlist-actions"> 
+                                    <div className="button-wrapper">
+                                        <div className="play-button">
+                                            <button onClick={() => this.props.onPlay()}>PLAY</button>
+                                        </div>
+                                        <div>.....</div>
+                                    </div>
+                                </div>
                                 {this.props.songs && 
                                     <PlaylistTracklist 
                                         onPlay={this.props.onPlay} 
