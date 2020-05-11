@@ -4,7 +4,6 @@ export const PlaylistViewLayout = styled.div`
     overflow:auto;
     display:grid;
     max-width: 1955px;
-    padding-top: 80px;
     background: ${props => props.backgroundColor};
 
     .playlist-actions {
@@ -45,7 +44,7 @@ export const PlaylistViewLayout = styled.div`
     max-height: 4200px;
     min-width: 1500px;
     grid-template-columns: 1fr;
-    grid-template-rows: 260px 1fr;
+    grid-template-rows: 340px 1fr;
     grid-template-areas:    "playlist"
                             "tracks";
 
