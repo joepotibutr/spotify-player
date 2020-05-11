@@ -24,7 +24,7 @@ const CurrentPlaylistHeader = ({
                         <div className="playlist-entity">
                             <div>{(currentPlaylist && currentPlaylist.type) || 'playlist'}</div>
                             <div className="playlist-title"><h2>{headerTitle}</h2></div>
-                            <div><span className="playlist-owner">{isUserLikedSongs ? 'test' : currentPlaylist.owner.display_name}</span></div>
+                            <div><span className="playlist-owner">{isUserLikedSongs ? 'ist' : currentPlaylist.owner.display_name}</span></div>
                         </div>
                     </div>
                 </div>

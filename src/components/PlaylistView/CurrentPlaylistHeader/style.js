@@ -73,7 +73,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
 
                     .playlist-owner {
                         cursor:pointer;
-                        color:rgba(255,255,255,.5);
+                        color:rgba(255,255,255);
                         &:hover {
                             text-decoration: underline;
                             color:rgba(255,255,255,.8);

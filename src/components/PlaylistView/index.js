@@ -3,13 +3,7 @@ import { connect } from 'react-redux'
 import { viewType } from '../../constants'
 import { play } from '../../actions/player'
 import { bindActionCreators } from 'redux'
-import { 
-    Outer, 
-    LinkedText, 
-    PlaylistTrack, 
-    IconWrapper, 
-    PlaylistViewLayout, 
-} from './style'
+import { PlaylistViewLayout } from './style'
 
 import CurrentPlaylistHeader from './CurrentPlaylistHeader'
 import PlaylistTracklist from './PlaylistTracklist'
