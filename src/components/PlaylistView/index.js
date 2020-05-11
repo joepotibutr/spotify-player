@@ -22,6 +22,50 @@ const MusicalNoteIcon = require('../../images/musical-note.svg')
 
 class PlaylistView extends React.Component {
     
+    renderTracklist = () => {
+        return this.props.songs ? 
+            <ol style={{ padding: 0, margin:0  }}>{this.props.songs.map(song => (
+                <PlaylistTrack key={song.track.id} onClick={() => this.props.onPlay(song)}>
+                    <div style={{ display: 'flex'}}>
+                        <div  className="track-item-play">
+                           <IconWrapper>
+                                <img
+                                alt="musical"
+                                className="musical-icon"
+                                src={MusicalNoteIcon} />
+                                <PlayArrowIcon className="play-icon" />
+                           </IconWrapper>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', width: '75%'}}>
+                            <LinkedText> <h4 style={{ margin: '0 0 5px 0',color: 'white' }}> {song.track.name} </h4></LinkedText>
+                                <div style={{ display: 'flex'}}>
+                                    <Outer style={{ marginRight:'5px' }}>
+                                    {song.track.artists.length > 1 ?
+                                        <LinkedText>
+                                            <span>{song.track.artists.map((artist, idx) => song.track.artists.length - 1 === idx ? (
+                                                            `${artist.name} `
+                                                        ) : `${artist.name}, `)}
+                                            </span>
+                                        </LinkedText> : 
+                                    <LinkedText>
+                                        <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
+                                    </LinkedText>}
+                                    </Outer>
+                                        <DotIcon />
+                                    <Outer>
+                                    <LinkedText>
+                                        <span>{song.track.album.name}</span>
+                                    </LinkedText>
+                                </Outer>
+                            </div>
+                        </div>
+                        <div className="track-item-options" ></div>
+                        <div className="track-item-duration">3.33</div>
+                    </div>
+                </PlaylistTrack>
+            ))}</ol> : 
+            null
+    }
 
     render() {
         const { playlists, headerTitle } = this.props
@@ -36,7 +80,7 @@ class PlaylistView extends React.Component {
                     currentPlaylist={currentPlaylist}
                     headerTitle={headerTitle}
                 />
-                 <div className="playlist-actions">
+                 <div className="playlist-actions"> 
                     <div className="button-wrapper">
                         <div className="play-button">
                             <button onClick={() => this.props.onPlay()}>PLAY</button>
@@ -45,48 +89,7 @@ class PlaylistView extends React.Component {
                     </div>
                 </div>
                 <div className="grid-area-tracks">
-                    {this.props.songs ? 
-                    <ol style={{ padding: 0, margin:0  }}>{this.props.songs.map(song => (
-                        <PlaylistTrack key={song.track.id} onClick={() => this.props.onPlay(song)}>
-                            <div style={{ display: 'flex'}}>
-                                <div  className="track-item-play">
-                                   <IconWrapper>
-                                        <img
-                                        alt="musical"
-                                        className="musical-icon"
-                                        src={MusicalNoteIcon} />
-                                        <PlayArrowIcon className="play-icon" />
-                                   </IconWrapper>
-                                </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', width: '75%'}}>
-                                    <LinkedText> <h4 style={{ margin: '0 0 5px 0',color: 'white' }}> {song.track.name} </h4></LinkedText>
-                                        <div style={{ display: 'flex'}}>
-                                            <Outer style={{ marginRight:'5px' }}>
-                                            {song.track.artists.length > 1 ?
-                                                <LinkedText>
-                                                    <span>{song.track.artists.map((artist, idx) => song.track.artists.length - 1 === idx ? (
-                                                                    `${artist.name} `
-                                                                ) : `${artist.name}, `)}
-                                                    </span>
-                                                </LinkedText> : 
-                                            <LinkedText>
-                                                <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
-                                            </LinkedText>}
-                                            </Outer>
-                                                <DotIcon />
-                                            <Outer>
-                                            <LinkedText>
-                                                <span>{song.track.album.name}</span>
-                                            </LinkedText>
-                                        </Outer>
-                                    </div>
-                                </div>
-                                <div className="track-item-options" ></div>
-                                <div className="track-item-duration">3.33</div>
-                            </div>
-                        </PlaylistTrack>
-                    ))}</ol> : 
-                    null}
+                    {this.renderTracklist()}
                 </div>
             </PlaylistViewLayout>
         )
