@@ -14,8 +14,11 @@ export const PlaylistViewLayout = styled.div`
                             "tracks";
 
     .grid-area-tracks {
-        margin-left:0 !important;
-        margin-top:20px;
+        padding: 20px 32px;
+        grid-area: tracks; 
+        overflow: auto;
+        margin-left:20px;
+        background:linear-gradient(180deg,rgba(0,0,0,.5) 0%, rgba(18,18,18,1) 5%);
 
         .playlist-actions {
             display: flex;
@@ -70,13 +73,6 @@ export const PlaylistViewLayout = styled.div`
             background-repeat: no-repeat;
         }
 
-    }
-
-    .grid-area-tracks {
-        padding: 0 32px;
-        grid-area: tracks; 
-        overflow: auto;
-        margin-left:20px;
     }
 `
 
