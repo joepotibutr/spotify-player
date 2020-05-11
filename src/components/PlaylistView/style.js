@@ -5,7 +5,7 @@ export const PlaylistViewLayout = styled.div`
     display:grid;
     max-width: 1955px;
     padding-top: 80px;
-    background: green;
+    background: ${props => props.backgroundColor};
 
     .playlist-actions {
         display: flex;
