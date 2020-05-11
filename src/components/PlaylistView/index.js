@@ -24,7 +24,7 @@ class PlaylistView extends React.Component {
                 {({data, loading }) => {
                     return loading ? <h2>LOADING</h2> :
                         (<PlaylistViewLayout 
-                            backgroundColor={isUserLikedSongs ? '#431eb3' : 
+                            backgroundColor={isUserLikedSongs ? '#3c3565' : 
                             currentPlaylist.images.length > 1 ? 
                             'darkgray' : data.vibrant}
                             >

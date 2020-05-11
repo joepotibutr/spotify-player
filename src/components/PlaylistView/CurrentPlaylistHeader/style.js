@@ -22,7 +22,6 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
         padding-bottom: 20px;
         padding-left:32px;
         display:flex;
-        border-bottom: 1px solid hsla(0,0%,100%,.1);
         align-items: flex-end;
 
 

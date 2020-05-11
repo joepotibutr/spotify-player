@@ -17,8 +17,7 @@ export const PlaylistViewLayout = styled.div`
         padding: 20px 32px;
         grid-area: tracks; 
         overflow: auto;
-        margin-left:20px;
-        background:linear-gradient(180deg,rgba(0,0,0,.5) 0%, rgba(18,18,18,1) 5%);
+        background:linear-gradient(180deg,rgba(0,0,0,.5) 0%, rgba(18,18,18,1) 8%);
 
         .playlist-actions {
             display: flex;
