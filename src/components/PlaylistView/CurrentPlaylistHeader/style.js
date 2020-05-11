@@ -5,7 +5,7 @@ export const LikedSongsCoverArt = styled.div`
     min-width:190px;
     width: 17vw;
     height: auto;
-    background: linear-gradient(158deg, rgba(70,12,245,1) 0%, rgba(142,141,230,1) 100%);
+    background: linear-gradient(158deg, #431eb3, #b4acd4 100%);
     display:flex;
     justify-content:center;
     align-items:center;
