@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { viewType } from '../../constants'
 import { play } from '../../actions/player'
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { bindActionCreators } from 'redux'
 import { 
     Outer, 
@@ -13,59 +12,11 @@ import {
 } from './style'
 
 import CurrentPlaylistHeader from './CurrentPlaylistHeader'
+import PlaylistTracklist from './PlaylistTracklist'
 
-import { DotIcon } from '../shared'
-
-
-const MusicalNoteIcon = require('../../images/musical-note.svg')
 
 
 class PlaylistView extends React.Component {
-    
-    renderTracklist = () => {
-        return this.props.songs ? 
-            <ol style={{ padding: 0, margin:0  }}>{this.props.songs.map(song => (
-                <PlaylistTrack key={song.track.id} onClick={() => this.props.onPlay(song)}>
-                    <div style={{ display: 'flex'}}>
-                        <div  className="track-item-play">
-                           <IconWrapper>
-                                <img
-                                alt="musical"
-                                className="musical-icon"
-                                src={MusicalNoteIcon} />
-                                <PlayArrowIcon className="play-icon" />
-                           </IconWrapper>
-                        </div>
-                        <div style={{ display: 'flex', flexDirection: 'column', width: '75%'}}>
-                            <LinkedText> <h4 style={{ margin: '0 0 5px 0',color: 'white' }}> {song.track.name} </h4></LinkedText>
-                                <div style={{ display: 'flex'}}>
-                                    <Outer style={{ marginRight:'5px' }}>
-                                    {song.track.artists.length > 1 ?
-                                        <LinkedText>
-                                            <span>{song.track.artists.map((artist, idx) => song.track.artists.length - 1 === idx ? (
-                                                            `${artist.name} `
-                                                        ) : `${artist.name}, `)}
-                                            </span>
-                                        </LinkedText> : 
-                                    <LinkedText>
-                                        <span key={song.track.artists[0].id}>{song.track.artists[0].name}</span>
-                                    </LinkedText>}
-                                    </Outer>
-                                        <DotIcon />
-                                    <Outer>
-                                    <LinkedText>
-                                        <span>{song.track.album.name}</span>
-                                    </LinkedText>
-                                </Outer>
-                            </div>
-                        </div>
-                        <div className="track-item-options" ></div>
-                        <div className="track-item-duration">3.33</div>
-                    </div>
-                </PlaylistTrack>
-            ))}</ol> : 
-            null
-    }
 
     render() {
         const { playlists, headerTitle } = this.props
@@ -89,7 +40,11 @@ class PlaylistView extends React.Component {
                     </div>
                 </div>
                 <div className="grid-area-tracks">
-                    {this.renderTracklist()}
+                    {this.props.songs && 
+                        <PlaylistTracklist 
+                            onPlay={this.props.onPlay} 
+                            songs={this.props.songs}
+                        />}
                 </div>
             </PlaylistViewLayout>
         )
