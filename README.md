@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## React Redux Spotify
 
-This project was built to clone spotify website to practicing skills about web development.
+Live https://spotify-react-redux-saga.netlify.app
 
 ## Technologies
 
@@ -11,3 +11,9 @@ This project was built to clone spotify website to practicing skills about web d
 - styled-components
 - Node.js
 - Spotify Web API
+
+
+## Notes
+
+This project was built to clone spotify website to practicing skills about web development.
+
