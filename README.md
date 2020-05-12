@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## React Redux Spotify
 
-Live https://spotify-react-redux-saga.netlify.app
+Live [here](https://spotify-react-redux-saga.netlify.app) 
 
 ## Technologies
 
