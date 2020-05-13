@@ -18,14 +18,15 @@ const MainHeader = ({ opacity, currentView, library }) => {
             <div className="view-state-actions">
                 <PageHistoryButton disabled={1} alt="Go back"><i className="arrow left" /></PageHistoryButton>
                 <PageHistoryButton disabled={1} alt="Go forward"><i className="arrow right" /></PageHistoryButton>
+                {currentView === viewType.USER_LIBRARY && (
+                    <div className="library-nav">
+                        {Object.values(libraryView).map(view => (
+                            <LibraryNavigation key={view.trim()} active={view === library} view={view} />
+                        ))}
+                    </div>
+                    )}
             </div>
-            {currentView === viewType.USER_LIBRARY && (
-                <div className="library-nav">
-                    {Object.values(libraryView).map(view => (
-                        <LibraryNavigation key={view.trim()} active={view === library} view={view} />
-                    ))}
-                </div>
-            )}
+            
             <div className="current-user"style={{ display: 'flex' }}>
                 <div className="user-icon">
                     <img alt="user" src={UserIcon} />
