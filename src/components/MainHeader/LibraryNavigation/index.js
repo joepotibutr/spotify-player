@@ -7,6 +7,7 @@ const LibraryNavStyleWrapper = styled.div`
     background: ${props => props.active ? '#282828' : 'transparent'};
     border-radius: 4px;
     cursor:pointer;
+    margin-right:8px;
     
     .nav-button {
         outline:0;
