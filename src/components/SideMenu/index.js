@@ -22,6 +22,7 @@ const plus = require('../../images/plus.svg')
 
 const UserPlaylistActionsLayout = styled.div`
  	margin: 26px 24px 0 0;
+	padding-left: 24px;	
 	 
 	.playlist-header {
 		font-size: 11px;
@@ -31,9 +32,10 @@ const UserPlaylistActionsLayout = styled.div`
 `
 
 const SideMenuLayout = styled.div`
-	padding:24px 24px 0 24px;
 
 	.logo {
+		padding:24px 0 0 24px;
+
 		margin-bottom: 22px;
 
 		img {
@@ -77,12 +79,16 @@ const PlaylistAction = styled.li`
 `
 
 const NavigationLinkItem = styled.li`
- display: flex;
- align-items: center;
- color: rgb(255,255,255,0.5);
- margin-bottom:10px; 
- cursor:pointer;
- transition:.2s;
+	display: flex;
+	align-items: center;
+	color: ${props => props.active ? 'rgb(255,255,255,1)' : 'rgb(255,255,255,0.5)'} ;
+	margin-bottom:10px; 
+	cursor:pointer;
+	transition:.2s;
+	padding: 5px;
+    background: ${props => props.active ? '#282828' : 'transparent'};
+    margin: 0 10px 0 10px;
+    border-radius: 4px;
 
  img {
 	width: 18px;
@@ -180,7 +186,7 @@ const SideMenu = ({
 							</div>
 							<div  style={{ marginLeft: '7px'}}>Search</div>
 						</NavigationLinkItem>
-						<NavigationLinkItem >
+						<NavigationLinkItem active={1}>
 							<div>
 								<IconWrapper>
 									<img alt="library" src={library}/>
