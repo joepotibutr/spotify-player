@@ -24,17 +24,17 @@ export const libraryView = {
 }
 
 
-export const Navigation = {
-    library: {
+export const Navigation = [
+     {
         title: 'User Library',
         icon: library
     },
-    home: {
+     {
         title: 'Home',
         icon: home
     },
-    search:  {
+    {
         title: 'Search',
         icon: search
     }
-}
+]
