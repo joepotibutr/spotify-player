@@ -26,15 +26,15 @@ export const libraryView = {
 
 export const Navigation = [
      {
-        title: 'User Library',
-        icon: library
-    },
-     {
         title: 'Home',
         icon: home
     },
     {
         title: 'Search',
         icon: search
-    }
+    },
+    {
+        title: 'User Library',
+        icon: library
+    },
 ]
