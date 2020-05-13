@@ -6,7 +6,7 @@ import { fetchRecentlyPlayedSongs } from '../../actions/song'
 import { fetchSongs } from '../../actions/song'
 import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from 'redux'
-import { viewType } from '../../constants'
+import { viewType, Navigation } from '../../constants'
 import styled from 'styled-components'
 
 import {IconWrapper} from '../NowPlayingBar'
@@ -14,9 +14,7 @@ import {IconWrapper} from '../NowPlayingBar'
 import LikeIcon from '@material-ui/icons/Favorite';
 
 const logo = require('../../images/Spotify_Logo_RGB_White.png')
-const home = require('../../images/home.svg')
-const search = require('../../images/search.svg')
-const library = require('../../images/library.svg')
+
 const plus = require('../../images/plus.svg')
 
 
@@ -105,122 +103,63 @@ const NavigationLinkItem = styled.li`
 	}
 `
 
+class SideMenu extends React.Component {
 
-const SideMenu = ({
-	token,
-	// artistIds,
-	// fetchAlbum,
-	// fetchArtist,
-	// fetchRecentlyPlayedSongs,
-	title,
-	fetchSongs,
-	updateHeaderTitle
-}) => {
 
-	// const handleClick = (name)  => {
-	// 	updateHeaderTitle(name)
-	// 	// updateViewType(name)
-	// }
-
-	// const handleBrowseClick = ()  => {
-	// 	// updateHeaderTitle('Browse')
-	// 	// updateViewType('Featured')
-	// 	// fetchFeatured(token)
-    // }
-    
-    // const renderSideMenu = () => {
-	// 	const menu = [
-	// 		{
-	// 			name: viewType.RECENTLY_PLAYED,
-	// 			action: fetchRecentlyPlayedSongs
-	// 		},
-	// 		{
-	// 			name:viewType.SONGS,
-	// 			action: fetchSongs
-	// 		},
-	// 		{
-	// 			name: viewType.ALBUMS,
-	// 			action: fetchAlbum
-	// 		},
-	// 		{
-	// 			name: viewType.ARTISTS,
-	// 			action: fetchArtist,
-	// 			getArtists: true
-	// 		}
-	// 	]
-
-	// 	return menu.map(item => {
-	// 		return (
-	// 			<li key={ item.name }
-	// 				onClick={() => {
-	// 					item.getArtists ? item.action(token, artistIds) : item.action(token)
-	// 					handleClick(item.name) }
-	// 				}>
-	// 				<span>{ item.name } </span>
-	// 			</li>
-	// 		)
-	// 	})
-	// }
-
-    return (
-		<SideMenuLayout>
-			<div className="logo" onClick={() => updateHeaderTitle(viewType.USER_LIBRARY)}>
-				<img alt="logo" src={logo}/>
-			</div>
-			<div>
-				<div>	
-					<ul style={{ color: 'white', fontWeight: 'bold'}}>
-						<NavigationLinkItem>
-							<div>
-								<IconWrapper>
-									<img alt="home" src={home}/>
-								</IconWrapper>
-							</div>
-							<div style={{ marginLeft: '7px'}}>Home</div>
-						</NavigationLinkItem>
-						<NavigationLinkItem>
-							<div>
-								<IconWrapper>
-									<img alt="search" src={search}/>
-								</IconWrapper>
-							</div>
-							<div  style={{ marginLeft: '7px'}}>Search</div>
-						</NavigationLinkItem>
-						<NavigationLinkItem active={1}>
-							<div>
-								<IconWrapper>
-									<img alt="library" src={library}/>
-								</IconWrapper>
-							</div>
-							<div  style={{ marginLeft: '7px'}}>Your Library</div>
-						</NavigationLinkItem>  
-					</ul>
+	
+	renderNavigation = () => {
+		return Navigation.map(item => (
+			<NavigationLinkItem>
+				<div>
+					<IconWrapper>
+						<img alt={item.icon} src={item.icon}/>
+					</IconWrapper>
 				</div>
-				<UserPlaylistActionsLayout >
-					<label className="playlist-header">PLAYLISTS</label>
-					<ul style={{
-						  marginBottom: '13px'
-					}}>
-						<PlaylistAction style={{ marginBottom: '10px'}}>
-							<div className="create-playlist" >
-								<span style={{ width: '15px', height: '15px' }}>
-									<img alt="add" style={{ width: '15px', height: '15px' }} src={plus} />
-								</span>
-							</div>
-							<div style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
-						</PlaylistAction>
-						<PlaylistAction active={title === viewType.LIKED_SONGS ? 1 : 0}>
-							<div className="liked-songs"><LikeIcon style={{ filter: 'brightness(2)', width: '18px', height: '18px'}}/></div>
-							<div onClick={() => {
-								fetchSongs(token)
-								updateHeaderTitle(viewType.LIKED_SONGS)
-								}} style={{ marginLeft: '15px', color:'white' }}>Liked Songs</div>
-						</PlaylistAction>
-					</ul>
-				</UserPlaylistActionsLayout>
-			</div>
-		</SideMenuLayout>
-    )
+				<div style={{ marginLeft: '7px'}}>{item.title}</div>
+			</NavigationLinkItem>
+		))
+	}
+
+
+	render() {
+		const { title, token } = this.props
+		return (
+			<SideMenuLayout>
+				<div className="logo" onClick={() => updateHeaderTitle(viewType.USER_LIBRARY)}>
+					<img alt="logo" src={logo}/>
+				</div>
+				<div>
+					<div>	
+						<ul style={{ color: 'white', fontWeight: 'bold'}}>
+							{this.renderNavigation()}						
+						</ul>
+					</div>
+					<UserPlaylistActionsLayout >
+						<label className="playlist-header">PLAYLISTS</label>
+						<ul style={{
+							marginBottom: '13px'
+						}}>
+							<PlaylistAction style={{ marginBottom: '10px'}}>
+								<div className="create-playlist" >
+									<span style={{ width: '15px', height: '15px' }}>
+										<img alt="add" style={{ width: '15px', height: '15px' }} src={plus} />
+									</span>
+								</div>
+								<div style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
+							</PlaylistAction>
+							<PlaylistAction active={title === viewType.LIKED_SONGS ? 1 : 0}>
+								<div className="liked-songs"><LikeIcon style={{ filter: 'brightness(2)', width: '18px', height: '18px'}}/></div>
+								<div onClick={() => {
+									fetchSongs(token)
+									updateHeaderTitle(viewType.LIKED_SONGS)
+									}} style={{ marginLeft: '15px', color:'white' }}>Liked Songs</div>
+							</PlaylistAction>
+						</ul>
+					</UserPlaylistActionsLayout>
+				</div>
+			</SideMenuLayout>
+		)
+	}
 }
 
 export default connect(state => ({
