@@ -21,8 +21,9 @@ const plus = require('../../images/plus.svg')
 
 
 const UserPlaylistActionsLayout = styled.div`
- 	margin: 26px 24px 0 0;
-	padding-left: 24px;	
+ 	margin: 20px 24px 0 24px;
+	border-bottom: 1px solid rgb(255,255,255,.1);
+
 	 
 	.playlist-header {
 		font-size: 11px;
@@ -198,8 +199,7 @@ const SideMenu = ({
 				<UserPlaylistActionsLayout >
 					<label className="playlist-header">PLAYLISTS</label>
 					<ul style={{
-						  borderBottom: '1px solid rgb(255,255,255,.1)',
-						  paddingBottom: '13px'
+						  marginBottom: '13px'
 					}}>
 						<PlaylistAction style={{ marginBottom: '10px'}}>
 							<div className="create-playlist" >
