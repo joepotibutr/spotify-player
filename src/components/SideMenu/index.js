@@ -35,8 +35,7 @@ const SideMenuLayout = styled.div`
 
 	.logo {
 		padding:24px 0 0 24px;
-
-		margin-bottom: 22px;
+		margin-bottom: 20px;
 
 		img {
 			cursor:pointer;
@@ -85,15 +84,15 @@ const NavigationLinkItem = styled.li`
 	margin-bottom:10px; 
 	cursor:pointer;
 	transition:.2s;
-	padding: 5px;
+	padding: 5px 5px 5px 17px;
     background: ${props => props.active ? '#282828' : 'transparent'};
-    margin: 0 10px 0 10px;
+    margin: 0 8px 0 8px;
     border-radius: 4px;
 
  img {
 	width: 18px;
 	height: 18px;
-	filter: invert(0.5);
+	filter: ${props => props.active ? 'invert(1)' : 'invert(0.5)'};
 	transition:.2s;
 }
 
