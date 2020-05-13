@@ -1,3 +1,7 @@
+const home = require('./images/home.svg')
+const search = require('./images/search.svg')
+const library = require('./images/library.svg')
+
 export const viewType = {
     ALBUMS: 'Albums',
     SONGS: 'Songs',
@@ -17,4 +21,20 @@ export const libraryView = {
     ARTISTS: 'Artists',
     ALBUMS: 'Albums',
 
+}
+
+
+export const Navigation = {
+    library: {
+        title: 'User Library',
+        icon: library
+    },
+    home: {
+        title: 'Home',
+        icon: home
+    },
+    search:  {
+        title: 'Search',
+        icon: search
+    }
 }
