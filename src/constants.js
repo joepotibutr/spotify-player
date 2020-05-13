@@ -6,7 +6,8 @@ export const viewType = {
     PLAYLISTS: 'Playlists',
     ARTISTS: 'Artists',
     LIKED_SONGS: 'Liked Songs',
-    USER_LIBRARY: 'User Library'
+    USER_LIBRARY: 'User Library',
+    HOME: 'Home'
 }
 
 export const libraryView = {
