@@ -54,6 +54,10 @@ export const HeaderLayout = styled.header`
         display:flex;
 
         
+        .library-nav {
+            display:flex;
+            margin-left:25px;
+        }
     }
 
     .current-user {
@@ -93,7 +97,4 @@ export const HeaderLayout = styled.header`
         }
     }
 
-    .library-nav {
-        display:flex;
-    }
 `
