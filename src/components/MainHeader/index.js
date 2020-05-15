@@ -12,7 +12,7 @@ import { PageHistoryButton,HeaderLayout } from './style'
 
 const UserIcon = require('../../images/user.svg')
 
-const MainHeader = ({ opacity, currentView, library }) => {
+const MainHeader = ({ opacity, currentView, library, user }) => {
     return (
         <HeaderLayout opacity={opacity}>
             <div className="view-state-actions">
@@ -31,7 +31,7 @@ const MainHeader = ({ opacity, currentView, library }) => {
                 <div className="user-icon">
                     <img alt="user" src={UserIcon} />
                 </div>
-                <span className="username">CurrentUser</span>
+                <span className="username">{user}</span>
                 <div className="arrow-dropdown"><ArrowDropDownIcon /></div>
             </div>
         </HeaderLayout>
@@ -40,5 +40,6 @@ const MainHeader = ({ opacity, currentView, library }) => {
 
 export default connect(state => ({
     currentView: state.uiReducer.title,
-    library: state.uiReducer.library
+    library: state.uiReducer.library,
+    user: (state.userReducer.user && state.userReducer.user.display_name) || ''
 }))(MainHeader)

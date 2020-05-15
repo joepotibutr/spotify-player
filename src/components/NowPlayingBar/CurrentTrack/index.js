@@ -7,7 +7,8 @@ class CurrentTrack extends React.Component {
     render() {
         const { currentTrack } = this.props
 
-        return (<CurrentTrackSection>
+        return (
+        <CurrentTrackSection>
             {currentTrack ?
             <React.Fragment>
                 <div className="current-track-wrapper">
