@@ -10,5 +10,12 @@ export const NowPlayingWrapper = styled.footer`
         display: flex;
         height: 100%;
         align-items:center;
+
+        .volume-control-bar {
+            width: 30%;
+            min-width: 180px;
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 `
