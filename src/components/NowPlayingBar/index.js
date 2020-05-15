@@ -57,10 +57,7 @@ class NowPlayingBar extends React.Component {
                                         width: '18px',
                                         height: '18px'
                                     }}/></IconWrapper>
-                                <div className="volume-bar" style={{ 
-                                    display: 'flex', width: '136px',display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',}}>
+                                <div className="volume-bar">
                                     <IconWrapper><VolumeUpIcon  style={{
                                         width: '18px',
                                         height: '18px'

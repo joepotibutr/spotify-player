@@ -23,6 +23,14 @@ export const NowPlayingWrapper = styled.footer`
                 justify-content:flex-end;
                 flex-direction:row;
                 align-items:center;
+
+                .volume-bar {
+                    display: flex; 
+                    width: 136px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
 
         }
