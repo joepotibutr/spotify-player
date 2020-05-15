@@ -16,6 +16,15 @@ export const NowPlayingWrapper = styled.footer`
             min-width: 180px;
             display: flex;
             justify-content: flex-end;
+
+            .control-bar-container {
+                width:180px ;
+                display:flex; 
+                justify-content:flex-end;
+                flex-direction:row;
+                align-items:center;
+            }
+
         }
     }
 `

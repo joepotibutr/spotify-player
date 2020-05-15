@@ -50,22 +50,14 @@ class NowPlayingBar extends React.Component {
                         onResume={this.props.onResume} 
                         loading={this.props.loading}
                     />
-                    <div  style={{ 
-                        width: '30%',
-                        minWidth: '180px', 
-                        display: 'flex', 
-                        justifyContent: 'flex-end',
-                        }}>
-                            <div style={{ width: '180px' ,display: 'flex', 
-                        justifyContent: 'flex-end',
-                        flexDirection: 'row',
-                        alignItems: 'center'}}>
+                    <div className="volumn-control-bar">
+                            <div className="control-bar-container">
                                 <IconWrapper><PlaylistPlayIcon /></IconWrapper>
                                 <IconWrapper><DevicesIcon  style={{
                                         width: '18px',
                                         height: '18px'
                                     }}/></IconWrapper>
-                                <div style={{ 
+                                <div className="volume-bar" style={{ 
                                     display: 'flex', width: '136px',display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',}}>
