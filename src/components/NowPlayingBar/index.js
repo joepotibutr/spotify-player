@@ -51,20 +51,26 @@ class NowPlayingBar extends React.Component {
                         loading={this.props.loading}
                     />
                     <div className="volumn-control-bar">
-                            <div className="control-bar-container">
-                                <IconWrapper><PlaylistPlayIcon /></IconWrapper>
-                                <IconWrapper><DevicesIcon  style={{
-                                        width: '18px',
-                                        height: '18px'
-                                    }}/></IconWrapper>
-                                <div className="volume-bar">
-                                    <IconWrapper><VolumeUpIcon  style={{
-                                        width: '18px',
-                                        height: '18px'
-                                    }} /></IconWrapper>
-                                    <ProgressBar />
-                                </div>
+                        <div className="control-bar-container">
+                            <IconWrapper>
+                                <PlaylistPlayIcon />
+                            </IconWrapper>
+                            <IconWrapper>
+                                <DevicesIcon className="icon"  style={{
+                                    width: '18px',
+                                    height: '18px'
+                                }}/>
+                            </IconWrapper>
+                            <div className="volume-bar">
+                                <IconWrapper>
+                                    <VolumeUpIcon className="icon"  style={{
+                                    width: '18px',
+                                    height: '18px'
+                                }} />
+                                </IconWrapper>
+                                <ProgressBar />
                             </div>
+                        </div>
                     </div>
                 </div>
             </NowPlayingWrapper>
