@@ -34,9 +34,7 @@ class NowPlayingBar extends React.Component {
 
     render() {
         const { currentlyPlaying,recentlySongs } = this.props
-
         const lastSongPlayed = recentlySongs.length && recentlySongs[0]
-
         const currentTrack = currentlyPlaying ? currentlyPlaying : lastSongPlayed
 
 

@@ -15,19 +15,15 @@ import {
 } from './style'
 
 import {IconWrapper} from '../NowPlayingBar'
-
 import LikeIcon from '@material-ui/icons/Favorite';
 
 const logo = require('../../images/Spotify_Logo_RGB_White.png')
-
 const plus = require('../../images/plus.svg')
 
 
 
 
 class SideMenu extends React.Component {
-
-
 	
 	renderNavigation = () => {
 		return Navigation.map(item => (
