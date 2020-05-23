@@ -48,7 +48,7 @@ class NowPlayingBar extends React.Component {
                         onResume={this.props.onResume} 
                         loading={this.props.loading}
                     />
-                    <div className="volumn-control-bar">
+                    <div className="volume-control-bar">
                         <div className="control-bar-container">
                             <IconWrapper>
                                 <PlaylistPlayIcon />
