@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ***
 
 Live [here](https://spotify-react-redux-saga.netlify.app).
+Only available for desktop screen size
 
 ## Technologies
 ***
