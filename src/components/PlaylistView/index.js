@@ -18,7 +18,8 @@ class PlaylistView extends React.Component {
         const currentPlaylist =  playlists && playlists.find(playlist => 
             playlist.name === headerTitle)
          
-        const playlistImageUrl = isUserLikedSongs ? ''  : currentPlaylist.images[0].url
+        const playlistImageUrl = isUserLikedSongs ? ''  : 
+            currentPlaylist.images.length ? currentPlaylist.images[0].url : ''
         return (
             <Palette src={playlistImageUrl}>
                 {({data, loading }) => {
@@ -45,10 +46,10 @@ class PlaylistView extends React.Component {
                                     </div>
                                 </div>
                                 {this.props.songs && 
-                                    <PlaylistTracklist 
-                                        onPlay={this.props.onPlay} 
-                                        songs={this.props.songs}
-                                    />}
+                                <PlaylistTracklist 
+                                    onPlay={this.props.onPlay} 
+                                    songs={this.props.songs}
+                                />}
                             </div>
                         </PlaylistViewLayout>)}
                 }
