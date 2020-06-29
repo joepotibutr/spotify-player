@@ -50,6 +50,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        background: linear-gradient(180deg, rgba(40,40,40,0) 0%, rgba(40,40,40,1) 100%);
 
                         .note-icon {
                             width: 80px;
