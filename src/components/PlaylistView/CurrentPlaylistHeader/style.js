@@ -42,6 +42,22 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                 width: auto;
                 min-height: auto;
                 box-shadow: 0 4px 60px rgba(0,0,0,.5);
+
+                .cover-image-wrapper {
+                    .empty-playlist {
+                        width: 230px;
+                        height: 230px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .note-icon {
+                            width: 80px;
+                            height: 80px;
+                            filter: invert(0.4);
+                        }
+                    }
+                }
             }
 
             .playlist-body {
