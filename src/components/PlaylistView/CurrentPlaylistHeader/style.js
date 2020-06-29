@@ -69,6 +69,12 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                
 
                 .playlist-entity {
+
+                    .playlist-type {
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+
                     .playlist-title {
                         line-height: 36px;
                         letter-spacing: -.005em;
@@ -89,6 +95,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                     }
 
                     .playlist-owner {
+                        font-weight:bold;
                         cursor:pointer;
                         color:rgba(255,255,255);
                         &:hover {
