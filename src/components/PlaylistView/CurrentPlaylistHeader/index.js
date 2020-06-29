@@ -2,11 +2,14 @@ import React from 'react'
 import LikeIcon from '@material-ui/icons/Favorite';
 import { LikedSongsCoverArt, CurrentPlaylistHeaderWrapper } from './style'
 
+const MusicNoteIcon = require('../../../images/note.svg')
+
 const CurrentPlaylistHeader = ({ 
     isUserLikedSongs, 
     currentPlaylist, 
     headerTitle, 
 }) => {
+
     return (
             <CurrentPlaylistHeaderWrapper>
                 <div className="current-playlist">
@@ -15,9 +18,12 @@ const CurrentPlaylistHeader = ({
                             {isUserLikedSongs ? 
                             <LikedSongsCoverArt >
                                 <LikeIcon style={{ minWidth: '70px', maxWidth: '80px', filter:'brightness(2)', width: '7vw', height: 'auto'}}/>
-                            </LikedSongsCoverArt> : 
+                            </LikedSongsCoverArt> :  currentPlaylist.images.length ?
                             <img alt="playlist-cover" className="playlist-cover-image"
-                            src={currentPlaylist.images[0].url}/>}
+                            src={currentPlaylist.images[0].url}/> :
+                            <div className="empty-playlist">
+                                <img className="note-icon" alt="music-note-icon" src={MusicNoteIcon} />
+                            </div>}
                         </div>
                     </div>
                     <div className="playlist-body">
