@@ -4,7 +4,7 @@ import { viewType } from '../../constants'
 import { play } from '../../actions/player'
 import { bindActionCreators } from 'redux'
 import { PlaylistViewLayout } from './style'
-
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import CurrentPlaylistHeader from './CurrentPlaylistHeader'
 import PlaylistTracklist from './PlaylistTracklist'
 import { Palette } from 'react-palette';
@@ -39,10 +39,10 @@ class PlaylistView extends React.Component {
                             <div className="grid-area-tracks">
                                 <div className="playlist-actions"> 
                                     <div className="button-wrapper">
-                                        <div className="play-button">
-                                            <button onClick={() => this.props.onPlay()}>PLAY</button>
+                                        <div className="play-btn" onClick={() => this.props.onPlay()}>
+                                            <PlayArrowIcon />
                                         </div>
-                                        <div>.....</div>
+                                        <div className="three-dots">.....</div>
                                     </div>
                                 </div>
                                 {this.props.songs && 
