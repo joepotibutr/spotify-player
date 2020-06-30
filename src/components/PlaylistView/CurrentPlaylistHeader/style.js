@@ -19,7 +19,7 @@ export const LikedSongsCoverArt = styled.div`
 export const CurrentPlaylistHeaderWrapper = styled.header`
         background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.4) 100%);
         grid-area: playlist;
-        padding-bottom: 20px;
+        padding-bottom: 25px;
         padding-left:32px;
         display:flex;
         align-items: flex-end;
@@ -89,7 +89,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                                 font-size: 42px;
                             }
                             font-family: 'Prox';
-                            font-size:6vw;
+                            font-size:7vw;
                             margin: 0.4em 0;
                         }
                     }

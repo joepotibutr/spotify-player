@@ -33,8 +33,17 @@ export const PlaylistViewLayout = styled.div`
                 .three-dots {
                     display:flex;
                     align-items: center;
+                    margin-left:40px;
+                    cursor: pointer;
+
+                    &:hover {
+                        .dot {
+                            background-color:#ffffff;
+                        }
+                    }
 
                     .dot {
+                        margin-right:6px;
                         height: 5px;
                         width: 5px;
                         background-color: #bbb;
@@ -47,8 +56,8 @@ export const PlaylistViewLayout = styled.div`
                     display:flex;
                     justify-content:center;
                     align-items:center;
-                    width: 50px;
-                    height: 50px;
+                    width: 55px;
+                    height: 55px;
                     background:#1db954;
                     border-radius:50%;
                     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
