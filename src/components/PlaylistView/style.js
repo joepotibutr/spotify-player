@@ -31,11 +31,7 @@ export const PlaylistViewLayout = styled.div`
                 width: 100%;
                 
                 .play-btn {
-                    right:30px;
-                    bottom:45px;
-                    opacity:0;
                     display:flex;
-                    position:absolute;
                     justify-content:center;
                     align-items:center;
                     width: 50px;
