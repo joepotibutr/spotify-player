@@ -54,9 +54,16 @@ class PlaylistView extends React.Component {
                                     onPlay={this.props.onPlay} 
                                     songs={this.props.songs}
                                 />:
-                                <div>
-                                    It's a bit empty here...
-                                    Let's find some songs for your playlist
+                                <div className="empty-playlist">
+                                    <div>
+                                        <span className="big-circle">
+                                            <span className="small-circle" />
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h3>It's a bit empty here...</h3>
+                                        <p>Let's find some songs for your playlist</p>
+                                    </div>
                                 </div>}
                             </div>
                         </PlaylistViewLayout>)}
