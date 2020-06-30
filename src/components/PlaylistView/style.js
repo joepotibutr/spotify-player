@@ -7,7 +7,7 @@ export const PlaylistViewLayout = styled.div`
     background: linear-gradient(0deg, ${props => props.mute} 0%, ${props => props.vibrant} 100%);
 
     max-height: 4200px;
-    min-width: 1500px;
+    /* min-width: 1500px; */
     grid-template-columns: 1fr;
     grid-template-rows: 340px 1fr;
     grid-template-areas:    "playlist"
@@ -75,24 +75,30 @@ export const PlaylistViewLayout = styled.div`
         }
 
         .empty-playlist {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height: 300px;
+            flex-direction: column;
+
             .cd-circle {
                 .big-circle {
-                    width: 50px;
-                    height: 50px;
+                    width: 60px;
+                    height: 60px;
                     background: transparent;
                     border-radius: 50%;
                     display:flex;
                     justify-content:center;
                     align-items:center;
-                    border: 2px solid;
+                    border: 3px solid;
 
                     .small-circle {
-                        width: 20px;
-                        height: 20px;
+                        width: 15px;
+                        height: 15px;
                         background: transparent;
                         border-radius: 50%;
                         display: inline-block;
-                        border: 2px solid;
+                        border: 3px solid;
                     }
                 }
             }
