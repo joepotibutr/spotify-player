@@ -34,7 +34,6 @@ export const PlaylistViewLayout = styled.div`
                     display:flex;
                     align-items: center;
                     margin-left:40px;
-                    cursor: pointer;
 
                     &:hover {
                         .dot {
@@ -66,6 +65,10 @@ export const PlaylistViewLayout = styled.div`
                         filter: brightness(1.5);
                         width: 1.5em;
                         height: 1.5em;
+                    }
+
+                    &:hover {
+                        transform:scale(1.1);
                     }
                 }
             }

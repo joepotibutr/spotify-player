@@ -27,7 +27,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
 
         .playlist-body {
             text-align:left !important;
-            margin-left:20px;
+            margin-left:25px;
         }
 
 
@@ -73,6 +73,8 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                     .playlist-type {
                         font-weight:bold;
                         text-transform:uppercase;
+                        font-size: 11px;
+                        color: #f8f8f8;
                     }
 
                     .playlist-title {

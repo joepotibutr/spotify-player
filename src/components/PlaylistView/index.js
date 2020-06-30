@@ -49,11 +49,15 @@ class PlaylistView extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                {this.props.songs && 
+                                {this.props.songs.length ? 
                                 <PlaylistTracklist 
                                     onPlay={this.props.onPlay} 
                                     songs={this.props.songs}
-                                />}
+                                />:
+                                <div>
+                                    It's a bit empty here...
+                                    Let's find some songs for your playlist
+                                </div>}
                             </div>
                         </PlaylistViewLayout>)}
                 }
