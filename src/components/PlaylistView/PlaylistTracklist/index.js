@@ -7,7 +7,7 @@ const MusicalNoteIcon = require('../../../images/musical-note.svg')
 
 
 const PlaylistTracklist = ({ songs, onPlay }) => {
-    return <ol style={{ padding: 0, margin:0  }}>{songs.map(song => (
+    return <ol style={{ padding: 0, marginTop:'30px'  }}>{songs.map(song => (
         <PlaylistTrack key={song.track.id} onClick={() => onPlay(song)}>
             <div style={{ display: 'flex'}}>
                 <div  className="track-item-play">
