@@ -73,6 +73,30 @@ export const PlaylistViewLayout = styled.div`
                 }
             }
         }
+
+        .empty-playlist {
+            .cd-circle {
+                .big-circle {
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    border-radius: 50%;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    border: 2px solid;
+
+                    .small-circle {
+                        width: 20px;
+                        height: 20px;
+                        background: transparent;
+                        border-radius: 50%;
+                        display: inline-block;
+                        border: 2px solid;
+                    }
+                }
+            }
+        }
     }
 
     .cover-image-wrapper {

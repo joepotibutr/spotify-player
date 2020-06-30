@@ -55,7 +55,7 @@ class PlaylistView extends React.Component {
                                     songs={this.props.songs}
                                 />:
                                 <div className="empty-playlist">
-                                    <div>
+                                    <div className="cd-circle">
                                         <span className="big-circle">
                                             <span className="small-circle" />
                                         </span>
