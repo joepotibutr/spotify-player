@@ -42,7 +42,11 @@ class PlaylistView extends React.Component {
                                         <div className="play-btn" onClick={() => this.props.onPlay()}>
                                             <PlayArrowIcon />
                                         </div>
-                                        <div className="three-dots">.....</div>
+                                        <div className="three-dots">
+                                            <span className="dot" />
+                                            <span className="dot" />
+                                            <span className="dot" />
+                                        </div>
                                     </div>
                                 </div>
                                 {this.props.songs && 

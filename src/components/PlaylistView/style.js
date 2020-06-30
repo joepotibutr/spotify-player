@@ -29,6 +29,19 @@ export const PlaylistViewLayout = styled.div`
             .button-wrapper {
                 display: flex;
                 width: 100%;
+
+                .three-dots {
+                    display:flex;
+                    align-items: center;
+
+                    .dot {
+                        height: 5px;
+                        width: 5px;
+                        background-color: #bbb;
+                        border-radius: 50%;
+                        display: inline-block;
+                    }
+                }
                 
                 .play-btn {
                     display:flex;
