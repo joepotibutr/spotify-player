@@ -23,7 +23,18 @@ function CreatePlaylist({ onClose, isOpen }) {
 
     return ReactDOM.createPortal(
         <CreatePlaylistWrapper isOpen={open}>
-            Create Playlist
+            <div>
+                <span>X</span>
+            </div>
+            <h1>Create new playlist</h1>
+            <div>
+                <h4>Playlist Name</h4>
+                <input placeholder="New Playlist" type="text" />
+            </div>
+            <div>
+                <button>CANCEL</button>
+                <button>CREATE</button>
+            </div>
         </CreatePlaylistWrapper>
     ,modalRoot)
 }
