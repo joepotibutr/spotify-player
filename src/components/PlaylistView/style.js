@@ -81,6 +81,11 @@ export const PlaylistViewLayout = styled.div`
             height: 300px;
             flex-direction: column;
 
+            .empty-msg {
+                text-align:center;
+                color: #f3f3f3;
+            }
+
             .cd-circle {
                 .big-circle {
                     width: 60px;
