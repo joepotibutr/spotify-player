@@ -4,7 +4,7 @@ import { CreatePlaylistWrapper } from './styled'
 
 const modalRoot = document.getElementById("modal-root")
 
-function CreatePlaylist({ onClose }) {
+function CreatePlaylist({ onClose, isOpen }) {
     const [open,handleToggle] = React.useState(false)
 
     React.useEffect(() => {

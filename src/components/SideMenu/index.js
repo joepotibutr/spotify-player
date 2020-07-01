@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import CreatePlaylist from '../CreatePlaylist'
 import { fetchAlbum } from '../../actions/album'
 import { fetchArtist } from '../../actions/artist'
 import { fetchRecentlyPlayedSongs } from '../../actions/song'
@@ -24,6 +25,9 @@ const plus = require('../../images/plus.svg')
 
 
 const SideMenu = ({ title, token, updateHeaderTitle }) => {
+
+	const [isModalOpen, openModal] = React.useState(false)
+
 	
 	function renderNavigation() {
 		return Navigation.map(item => (
@@ -65,7 +69,7 @@ const SideMenu = ({ title, token, updateHeaderTitle }) => {
 										<img alt="add" style={{ width: '15px', height: '15px' }} src={plus} />
 									</span>
 								</div>
-								<div style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
+								<div onClick={() => openModal(true)} style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
 							</PlaylistAction>
 							<PlaylistAction onClick={() => {
 									fetchSongs(token)
@@ -77,6 +81,7 @@ const SideMenu = ({ title, token, updateHeaderTitle }) => {
 						</ul>
 					</UserPlaylistActionsLayout>
 				</div>
+				{isModalOpen && <CreatePlaylist isOpen={isModalOpen}/>}
 			</SideMenuLayout>
 		)
 }
