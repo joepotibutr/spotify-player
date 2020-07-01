@@ -42,8 +42,11 @@ const MainHeader = ({ opacity, currentView, library, user }) => {
                 <div className="arrow-dropdown"><ArrowDropDownIcon /></div>
                 {isMenuOpen && 
                 <div className="toggle-menu">
-                    <ul>
-                        <li><h1>Log out</h1></li>
+                    <ul style={{
+                        background: 'rgb(40,40,40)',
+                        borderRadius: '4px'
+                    }}>
+                        <li onClick={() => window.location.href = "https://accounts.spotify.com/en/logout"}><h4 style={{ padding: '15px' }}>Log out</h4></li>
                     </ul>
                 </div>}
             </div>
