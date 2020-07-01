@@ -39,7 +39,7 @@ class PlaylistView extends React.Component {
                             <div className="grid-area-tracks">
                                 <div className="playlist-actions"> 
                                     <div className="button-wrapper">
-                                        <div className="play-btn" onClick={() => this.props.onPlay()}>
+                                        <div className="play-btn" onClick={() => this.props.songs.length && this.props.onPlay()}>
                                             <PlayArrowIcon />
                                         </div>
                                         <div className="three-dots">
@@ -60,8 +60,8 @@ class PlaylistView extends React.Component {
                                             <span className="small-circle" />
                                         </span>
                                     </div>
-                                    <div>
-                                        <h3>It's a bit empty here...</h3>
+                                    <div className="empty-msg">
+                                        <h1>It's a bit empty here...</h1>
                                         <p>Let's find some songs for your playlist</p>
                                     </div>
                                 </div>}
