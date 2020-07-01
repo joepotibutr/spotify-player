@@ -27,7 +27,11 @@ class SideMenu extends React.Component {
 	
 	renderNavigation = () => {
 		return Navigation.map(item => (
-			<NavigationLinkItem active={this.props.title === item.title}>
+			<NavigationLinkItem
+				onClick={() => item.title === viewType.USER_LIBRARY && 
+					this.props.updateHeaderTitle(item.title)}
+				active={this.props.title === item.title}
+			>
 				<div>
 					<IconWrapper>
 						<img alt={item.icon} src={item.icon}/>
