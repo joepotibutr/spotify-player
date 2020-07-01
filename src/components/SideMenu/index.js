@@ -23,14 +23,14 @@ const plus = require('../../images/plus.svg')
 
 
 
-class SideMenu extends React.Component {
+const SideMenu = ({ title, token, updateHeaderTitle }) => {
 	
-	renderNavigation = () => {
+	function renderNavigation() {
 		return Navigation.map(item => (
 			<NavigationLinkItem
 				onClick={() => item.title === viewType.USER_LIBRARY && 
-					this.props.updateHeaderTitle(item.title)}
-				active={this.props.title === item.title}
+					updateHeaderTitle(item.title)}
+				active={title === item.title}
 			>
 				<div>
 					<IconWrapper>
@@ -43,8 +43,6 @@ class SideMenu extends React.Component {
 	}
 
 
-	render() {
-		const { title, token, updateHeaderTitle } = this.props
 		return (
 			<SideMenuLayout>
 				<div className="logo" onClick={() => updateHeaderTitle(viewType.USER_LIBRARY)}>
@@ -53,7 +51,7 @@ class SideMenu extends React.Component {
 				<div>
 					<div>	
 						<ul style={{ color: 'white', fontWeight: 'bold'}}>
-							{this.renderNavigation()}						
+							{renderNavigation()}						
 						</ul>
 					</div>
 					<UserPlaylistActionsLayout >
@@ -81,7 +79,6 @@ class SideMenu extends React.Component {
 				</div>
 			</SideMenuLayout>
 		)
-	}
 }
 
 export default connect(state => ({
