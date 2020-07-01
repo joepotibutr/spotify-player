@@ -8,6 +8,7 @@ const CurrentPlaylistHeader = ({
     isUserLikedSongs, 
     currentPlaylist, 
     headerTitle, 
+    user
 }) => {
 
     return (
@@ -30,7 +31,7 @@ const CurrentPlaylistHeader = ({
                         <div className="playlist-entity">
                             <div className="playlist-type">{(currentPlaylist && currentPlaylist.type) || 'playlist'}</div>
                             <div className="playlist-title"><h2>{headerTitle}</h2></div>
-                            <div><span className="playlist-owner">{isUserLikedSongs ? 'ist' : currentPlaylist.owner.display_name}</span></div>
+                            <div><span className="playlist-owner">{isUserLikedSongs ? user : currentPlaylist.owner.display_name}</span></div>
                         </div>
                     </div>
                 </div>

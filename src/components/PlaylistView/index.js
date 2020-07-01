@@ -13,7 +13,7 @@ import { Palette } from 'react-palette';
 class PlaylistView extends React.Component {
 
     render() {
-        const { playlists, headerTitle } = this.props
+        const { playlists, headerTitle, user } = this.props
         const isUserLikedSongs = headerTitle === viewType.LIKED_SONGS
         const currentPlaylist =  playlists && playlists.find(playlist => 
             playlist.name === headerTitle)
@@ -34,6 +34,7 @@ class PlaylistView extends React.Component {
                                 isUserLikedSongs={isUserLikedSongs} 
                                 currentPlaylist={currentPlaylist}
                                 headerTitle={headerTitle}
+                                user={user}
                             />
 
                             <div className="grid-area-tracks">
@@ -81,6 +82,7 @@ export default connect(state => ({
     headerTitle: state.uiReducer.title,
     songs: state.songReducer.songs ? state.songReducer.songs : '',
     playlists: state.playlistReducer.playlists,
+    user: (state.userReducer.user && state.userReducer.user.display_name) || ''
 }),dispatch => bindActionCreators({
 	play,
 }, dispatch))(PlaylistView)
