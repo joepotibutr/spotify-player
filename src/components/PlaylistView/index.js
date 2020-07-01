@@ -39,7 +39,7 @@ class PlaylistView extends React.Component {
                             <div className="grid-area-tracks">
                                 <div className="playlist-actions"> 
                                     <div className="button-wrapper">
-                                        <div className="play-btn" onClick={() => this.props.songs.length && this.props.onPlay()}>
+                                        <div className="play-btn" onClick={() => this.props.songs.length && this.props.onPlay(this.props.songs[0])}>
                                             <PlayArrowIcon />
                                         </div>
                                         <div className="three-dots">
