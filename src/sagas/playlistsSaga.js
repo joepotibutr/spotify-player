@@ -3,10 +3,26 @@ import {
     fetchPlaylistMenuSuccess,
     fetchPlaylistMenuFailure,
     fetchPlaylistSongsSuccess,
-    fetchPlaylistSongsFailure
+    fetchPlaylistSongsFailure,
+    createPlaylistSuccess,
+    createPlaylistFailure
 } from '../actions/playlist'
 import api from '../api'
 import uniqBy from 'lodash/uniqBy'
+
+export function * createPlaylist(action) {
+    try {
+        const { accessToken, userId } = action
+        const res = yield call(api.playlist.createPlaylist,accessToken, userId)
+        yield put(createPlaylistSuccess(res))
+    } catch(err) {
+        const { response } = err
+        if (response.statusText === "Unauthorized") {
+            window.location.href = './'
+        }
+        yield put(createPlaylistFailure(err))
+    }
+}
 
 
 export function * fetchPlaylistMenuSaga(action) {
