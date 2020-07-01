@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import ArrowDropDownIcon from   '@material-ui/icons/ArrowDropDown'
 import LibraryNavigation from './LibraryNavigation'
 import { viewType, libraryView } from '../../constants'
-
+import useOutsideClick from '../OutsideClick'
 import { PageHistoryButton,HeaderLayout } from './style'
 
 
@@ -13,6 +13,13 @@ import { PageHistoryButton,HeaderLayout } from './style'
 const UserIcon = require('../../images/user.svg')
 
 const MainHeader = ({ opacity, currentView, library, user }) => {
+    const [isMenuOpen,openMenu] = React.useState(false)
+    const ref = React.useRef()
+
+    useOutsideClick(ref, () => {
+        openMenu(false)
+    })
+
     return (
         <HeaderLayout opacity={opacity}>
             <div className="view-state-actions">
@@ -27,12 +34,18 @@ const MainHeader = ({ opacity, currentView, library, user }) => {
                     )}
             </div>
             
-            <div className="current-user"style={{ display: 'flex' }}>
+            <div  ref={ref} onClick={() => openMenu(true)} className="current-user"style={{ display: 'flex' }}>
                 <div className="user-icon">
                     <img alt="user" src={UserIcon} />
                 </div>
                 <span className="username">{user}</span>
                 <div className="arrow-dropdown"><ArrowDropDownIcon /></div>
+                {isMenuOpen && 
+                <div className="toggle-menu">
+                    <ul>
+                        <li><h1>Log out</h1></li>
+                    </ul>
+                </div>}
             </div>
         </HeaderLayout>
     )
