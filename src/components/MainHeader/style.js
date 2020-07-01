@@ -62,14 +62,22 @@ export const HeaderLayout = styled.header`
 
     .current-user {
         padding:2px;
+        position:relative;
         border-bottom-left-radius: 25% 100%;
         border-bottom-right-radius: 25% 100%;
         border-top-left-radius: 25% 100%;
         border-top-right-radius: 25% 100%;
-        background: rgb(0,0,0);
+        background: rgb(40,40,40,0.5);
         display:flex;
         align-items:center;
         cursor:pointer;
+
+        .toggle-menu {
+            position:absolute;
+            top:36px;
+            left:8px;
+            width: 100px;
+        }
 
         
         .username {
@@ -83,7 +91,7 @@ export const HeaderLayout = styled.header`
             border-radius:50%;
             width:30px;
             height:30px;
-            background-color: #282828;
+            background-color: #333333;
             display: flex;
             justify-content: center;
             align-items: center;
