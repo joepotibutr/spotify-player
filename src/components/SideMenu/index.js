@@ -69,7 +69,11 @@ const SideMenu = ({ title, token, updateHeaderTitle }) => {
 										<img alt="add" style={{ width: '15px', height: '15px' }} src={plus} />
 									</span>
 								</div>
-								<div onClick={() => openModal(true)} style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
+								<div 
+									onClick={() => openModal(true)} 
+									style={{ marginLeft: '15px', color:'white' }}>
+									Create Playlist
+								</div>
 							</PlaylistAction>
 							<PlaylistAction onClick={() => {
 									fetchSongs(token)
