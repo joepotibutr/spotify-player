@@ -66,6 +66,15 @@ export default {
                 headers : { 'Authorization': 'Bearer ' + accessToken }
             })
             return data.items
+        },
+        createPlaylist: async (accessToken, userId) => {
+            const { data } = await axios.post(`https://api.spotify.com/v1/users/${userId}/playlists`,{
+                headers : { 'Authorization': 'Bearer ' + accessToken },
+                data: {
+                    name: 'Haha'
+                }
+            })
+            return data
         }
     },
     user : {
