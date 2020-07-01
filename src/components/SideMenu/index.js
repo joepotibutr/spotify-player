@@ -44,7 +44,7 @@ class SideMenu extends React.Component {
 
 
 	render() {
-		const { title, token } = this.props
+		const { title, token, updateHeaderTitle } = this.props
 		return (
 			<SideMenuLayout>
 				<div className="logo" onClick={() => updateHeaderTitle(viewType.USER_LIBRARY)}>
@@ -69,12 +69,12 @@ class SideMenu extends React.Component {
 								</div>
 								<div style={{ marginLeft: '15px', color:'white' }}>Create Playlist</div>
 							</PlaylistAction>
-							<PlaylistAction active={title === viewType.LIKED_SONGS ? 1 : 0}>
-								<div className="liked-songs"><LikeIcon style={{ filter: 'brightness(2)', width: '18px', height: '18px'}}/></div>
-								<div onClick={() => {
+							<PlaylistAction onClick={() => {
 									fetchSongs(token)
 									updateHeaderTitle(viewType.LIKED_SONGS)
-									}} style={{ marginLeft: '15px', color:'white' }}>Liked Songs</div>
+									}}  active={title === viewType.LIKED_SONGS ? 1 : 0}>
+								<div className="liked-songs"><LikeIcon style={{ filter: 'brightness(2)', width: '18px', height: '18px'}}/></div>
+								<div style={{ marginLeft: '15px', color:'white' }}>Liked Songs</div>
 							</PlaylistAction>
 						</ul>
 					</UserPlaylistActionsLayout>
