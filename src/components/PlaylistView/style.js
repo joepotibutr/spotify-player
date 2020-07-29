@@ -6,7 +6,7 @@ export const PlaylistViewLayout = styled.div`
     max-width: 1955px;
     background: linear-gradient(0deg, ${props => props.mute} 0%, ${props => props.vibrant} 100%);
 
-    max-height: 4200px;
+    /* max-height: 4200px; */
     /* min-width: 1500px; */
     grid-template-columns: 1fr;
     grid-template-rows: 340px 1fr;
