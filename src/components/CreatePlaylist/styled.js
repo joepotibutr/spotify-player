@@ -19,10 +19,16 @@ export const CreatePlaylistWrapper = styled.div`
 
     .create-playlist-input {
         width: 100%;
-        background: rebeccapurple;
+        background: #282828;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
+
+        input {
+            font-size: 40px;
+            background: transparent;
+            border: 0;
+        }
     }
 `
