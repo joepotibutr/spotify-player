@@ -16,14 +16,44 @@ export const CreatePlaylistWrapper = styled.div`
     background: rgba(0, 0, 0, 0.7);
     color: rgb(255,255,255,1);
 
+    .create-playlist-title {
+        font-size: 3.5em;
+        letter-spacing: -2px;
+        font-weight:bold;
+    }
+
+    .create-playlist-actions {
+        margin-top: 40px;
+
+        .btn {
+            letter-spacing: 1px;
+            font-weight: bolder;
+            padding: 10px;
+            border:none;
+            margin: 0 10px;
+            border-radius: 16px;
+            width: 130px;
+            color: rgb(255,255,255,1);
+
+        }
+
+        .create {
+            background-color:#1db954;
+        }
+        .cancel {
+            border: 1px solid rgb(255,255,255,1);
+            background-color: rgb(0,0,0,0.2);
+        }
+    }
+
 
     .create-playlist-input {
-        width: 100%;
+        width: calc(100% - 80px);
+        padding: 40px;
         background: #282828;
         display: flex;
+        flex-direction:column;
         justify-content: center;
-        flex-direction: column;
-        align-items: center;
 
         input {
             font-size: 40px;
