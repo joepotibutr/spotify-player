@@ -85,7 +85,7 @@ const SideMenu = ({ title, token, updateHeaderTitle }) => {
 						</ul>
 					</UserPlaylistActionsLayout>
 				</div>
-				{isModalOpen && <CreatePlaylist isOpen={isModalOpen}/>}
+				{isModalOpen && <CreatePlaylist onClose={openModal} isOpen={isModalOpen}/>}
 			</SideMenuLayout>
 		)
 }
