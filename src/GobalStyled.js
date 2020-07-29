@@ -6,6 +6,7 @@ ul {
     list-style-type: none;
     padding: 0;
 }
+textarea, select, input, button { outline: none; }
 body {
     font-size: 14px;
     line-height: 20px;
