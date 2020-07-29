@@ -26,14 +26,14 @@ function CreatePlaylist({ onClose, isOpen }) {
             <div>
                 <span onClick={() => onClose(false)}>X</span>
             </div>
-            <h1>Create new playlist</h1>
+            <h1 className="create-playlist-title">Create new playlist</h1>
             <div className="create-playlist-input">
                 <h4>Playlist Name</h4>
                 <input placeholder="New Playlist" type="text" />
             </div>
-            <div>
-                <button onClick={() => onClose(false)}>CANCEL</button>
-                <button>CREATE</button>
+            <div className="create-playlist-actions">
+                <button className="cancel btn" onClick={() => onClose(false)}>CANCEL</button>
+                <button className="create btn" >CREATE</button>
             </div>
         </CreatePlaylistWrapper>
     ,modalRoot)
