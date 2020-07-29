@@ -24,7 +24,7 @@ function CreatePlaylist({ onClose, isOpen }) {
     return ReactDOM.createPortal(
         <CreatePlaylistWrapper isOpen={open}>
             <div>
-                <span onClick={onClose}>X</span>
+                <span onClick={() => onClose(false)}>X</span>
             </div>
             <h1>Create new playlist</h1>
             <div className="create-playlist-input">
@@ -32,7 +32,7 @@ function CreatePlaylist({ onClose, isOpen }) {
                 <input placeholder="New Playlist" type="text" />
             </div>
             <div>
-                <button onClick={onClose}>CANCEL</button>
+                <button onClick={() => onClose(false)}>CANCEL</button>
                 <button>CREATE</button>
             </div>
         </CreatePlaylistWrapper>
