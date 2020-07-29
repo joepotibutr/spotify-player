@@ -5,7 +5,7 @@ import { CreatePlaylistWrapper } from './styled'
 const modalRoot = document.getElementById("modal-root")
 
 function CreatePlaylist({ onClose, isOpen }) {
-    const [open,handleToggle] = React.useState(false)
+    const [open, handleToggle] = React.useState(false)
 
     React.useEffect(() => {
         window.addEventListener('keydown', onEscKeyDown)
@@ -24,15 +24,15 @@ function CreatePlaylist({ onClose, isOpen }) {
     return ReactDOM.createPortal(
         <CreatePlaylistWrapper isOpen={open}>
             <div>
-                <span>X</span>
+                <span onClick={onClose}>X</span>
             </div>
             <h1>Create new playlist</h1>
-            <div>
+            <div className="create-playlist-input">
                 <h4>Playlist Name</h4>
                 <input placeholder="New Playlist" type="text" />
             </div>
             <div>
-                <button>CANCEL</button>
+                <button onClick={onClose}>CANCEL</button>
                 <button>CREATE</button>
             </div>
         </CreatePlaylistWrapper>
