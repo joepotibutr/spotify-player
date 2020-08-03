@@ -45,43 +45,36 @@ class TrackPlayerSection extends React.Component {
         }
     }
 
+
     render() {
+        
+        const min = Math.floor((this.props.trackDuration / 1000 / 60) << 0)
+        const sec = Math.floor((this.props.trackDuration / 1000) % 60)
+
         return (
             <TrackPlayerWrapper>
-                <div style={{ 
-                    marginBottom: '12px',
-                    width: '224px',
-                    justifyContent: 'space-between',
-                    flexDlow: 'row nowrap',
-                    display: 'flex', alignItems:'center'}}>
-                    <IconWrapper><span><img alt="shuffle" className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} /></span></IconWrapper>
-                    <IconWrapper><span><SkipPreviousIcon /></span></IconWrapper>
+                <div className="track-options">
+                    <IconWrapper><span>
+                        <img alt="shuffle" className="shuffle-icon" src={ShuffleIcon} style={{ width: '1em', }} />
+                    </span></IconWrapper>
+                    <IconWrapper>
+                        <span><SkipPreviousIcon /></span>
+                    </IconWrapper>
                     {this.renderPlayerButton()}
-                    <IconWrapper><span><SkipNextIcon /></span></IconWrapper>
-                    <IconWrapper><span><img alt="repeat" className="repeat-icon" src={RepeatIcon} style={{ width: '1em'}} /></span></IconWrapper>
+                    <IconWrapper>
+                        <span><SkipNextIcon /></span>
+                    </IconWrapper>
+                    <IconWrapper><span>
+                        <img alt="repeat" className="repeat-icon" src={RepeatIcon} style={{ width: '1em'}} /></span>
+                    </IconWrapper>
                 </div>
 
-                <div style={{ display: 'flex',width: '100%',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}>
-                    <div style={{
-                        fontSize: '11px',
-                        lineHeight: '16px',
-                        letterSpacing: '.015em',
-                        minWidth: '40px',
-                        textAlign: 'center',
-                    }}>
+                <div className="track-progress-bar">
+                    <div clasName="track-time-left">
                         {/* {this.audio.currentTime} */}
                     </div>
                     <ProgressBar />
-                    <div style={{
-                        fontSize: '11px',
-                        lineHeight: '16px',
-                        letterSpacing: '.015em',
-                        minWidth: '40px',
-                        textAlign: 'center',
-                    }}>0:34</div>
+                    <div className="track-progress-time">{min}:{sec < 10 ? "0" + sec : sec}</div>
                 </div>
             </TrackPlayerWrapper>
         )
