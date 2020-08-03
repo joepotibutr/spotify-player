@@ -43,19 +43,13 @@ class CurrentTrack extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div style={{ 
-                    display: 'flex', 
-                    alignItems: 'center',
-                    justifyContent:'center',
-                    maxWidth: '80px',
-                    height: '30px'
-                }}>
-                    <div style={{ display: 'flex', justifyContent: 'center', width: '32px' }}>
+                <div className="current-track-actions">
+                    <div className="like-track-icon">
                         <span>
                             <LikeIcon style={{ width: '17px '}} />
                         </span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'center', width: '32px' }}>
+                    <div className="screen-icon">
                         <span>
                             <PictureInPictureAltIcon style={{ width: '17px '}} />
                         </span>

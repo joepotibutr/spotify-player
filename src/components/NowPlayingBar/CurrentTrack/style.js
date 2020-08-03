@@ -47,5 +47,25 @@ export const CurrentTrackSection = styled.section`
                 margin:0 0 0 14px;
             }
         }
+
+        .current-track-actions {
+            display: flex; 
+            align-items: center;
+            justify-content:center;
+            max-width: 80px;
+            height: 30px;
+
+            .like-track-icon {
+                display: flex;
+                justify-content: center;
+                width: 32px;
+            }
+
+            .screen-icon {
+                display: flex;
+                justify-content: center; 
+                width: 32px;
+            }
+        }
     }
  `
