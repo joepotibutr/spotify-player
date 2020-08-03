@@ -10,6 +10,39 @@ export const TrackPlayerWrapper = styled.section`
     align-items: center;
     max-width: 722px;
 
+
+
+    .track-options {
+        margin-bottom: 12px;
+        width: 224px;
+        justify-content: space-between;
+        display: flex; 
+        align-items:center;
+    }
+
+    .track-progress-bar {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .track-time-left {
+            font-size: 11px;
+            line-height: 16px;
+            letter-spacing: .015em;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .track-progress-time {
+            font-size: 11px;
+            line-height: 16px;
+            letter-spacing: .015em;
+            min-width: 40px;
+            text-align: center;
+        }
+    }
+
 `
 
 export const IconWrapper = styled.div` 
