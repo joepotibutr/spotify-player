@@ -34,15 +34,15 @@ class NowPlayingBar extends React.Component {
 
     render() {
         const { currentlyPlaying,recentlySongs } = this.props
-        const lastSongPlayed = recentlySongs.length && recentlySongs[0]
+        const lastSongPlayed = recentlySongs.length ? recentlySongs[0] : null
         const currentTrack = currentlyPlaying ? currentlyPlaying : lastSongPlayed
-
-
+        
         return (
             <NowPlayingWrapper>
                 <div className="current-track-action-bar">
                     <CurrentTrack currentTrack={currentTrack} />
                     <TrackPlayerSection
+                        trackDuration={currentTrack ? currentTrack.track.duration_ms : 0}
                         onPlay={() => this.props.onPlay(currentTrack)} 
                         onPause={this.props.onPause} 
                         onResume={this.props.onResume} 
