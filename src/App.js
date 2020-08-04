@@ -73,6 +73,7 @@ class App extends Component {
       } else {
         this.props.setToken(parsed.access_token)
       }
+      this.audio.addEventListener("ended",this.onStop)
   }
 
   UNSAFE_componentWillReceiveProps(nextProps){
@@ -81,12 +82,16 @@ class App extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.audio.removeEventListener("ended",this.onStop)
+  }
+
   onPlay = (currentTrack) => {
     // 1st time : checked
     // song ended :
     // new song : checked
     this.onStop()
-    if (currentTrack.track.preview_url || this.props.currentlyPlaying) {
+    if ((currentTrack && currentTrack.track && currentTrack.track.preview_url) || this.props.currentlyPlaying) {
       const url = currentTrack ? currentTrack.track.preview_url : 
       this.props.currentlyPlaying.track.preview_url
       
