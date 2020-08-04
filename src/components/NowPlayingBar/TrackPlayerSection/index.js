@@ -47,9 +47,7 @@ class TrackPlayerSection extends React.Component {
 
 
     render() {
-        
-        const min = Math.floor((this.props.trackDuration / 1000 / 60) << 0)
-        const sec = Math.floor((this.props.trackDuration / 1000) % 60)
+        const { duration, timeLeft } = this.props
 
         return (
             <TrackPlayerWrapper>
@@ -71,10 +69,12 @@ class TrackPlayerSection extends React.Component {
 
                 <div className="track-progress-bar">
                     <div clasName="track-time-left">
-                        {/* {this.audio.currentTime} */}
+                        00:{duration < 10 ? "0" + duration : duration}
                     </div>
                     <ProgressBar />
-                    <div className="track-progress-time">{min}:{sec < 10 ? "0" + sec : sec}</div>
+                    <div className="track-progress-time">
+                        00:{timeLeft < 10 ? "0" + timeLeft : timeLeft}
+                    </div>
                 </div>
             </TrackPlayerWrapper>
         )

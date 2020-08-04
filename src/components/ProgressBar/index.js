@@ -23,7 +23,7 @@ const CurrentProgress = styled.div`
     border-radius: 2px;
     height: 4px;
     width: 100%;
-    transform:translateX(-20%);
+    transform:translateX(-${props => props.currentTime * 100 / 30}%);
 
     &:hover {
         background-color:#1db954;
@@ -32,6 +32,9 @@ const CurrentProgress = styled.div`
 
 
 const ProgressBar = () => {
+    const trackTimeRef = React.useRef(null)
+    // const [currentTime, setCurrentTime] = React.useState(0)
+
     return (
         <ProgressBarOuterLayout>
             <BufferLine>

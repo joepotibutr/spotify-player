@@ -86,7 +86,8 @@ class App extends Component {
     // song ended :
     // new song : checked
     this.onStop()
-    const url = currentTrack ? currentTrack.track.preview_url : 
+    if (currentTrack.track.preview_url || this.props.currentlyPlaying) {
+      const url = currentTrack ? currentTrack.track.preview_url : 
       this.props.currentlyPlaying.track.preview_url
       
       this.audio.src = url
@@ -98,6 +99,7 @@ class App extends Component {
               this.audio.play()
           }, 2000)
       }
+    }
   }
 
   onPause = () => {
