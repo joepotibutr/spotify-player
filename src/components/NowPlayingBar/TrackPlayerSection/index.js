@@ -71,7 +71,7 @@ class TrackPlayerSection extends React.Component {
                     <div className="track-time-left">
                         00:{duration < 10 ? "0" + duration : duration}
                     </div>
-                    <ProgressBar />
+                    <ProgressBar timeLeft={timeLeft}/>
                     <div className="track-progress-time">
                         00:{timeLeft < 10 ? "0" + timeLeft : timeLeft}
                     </div>
