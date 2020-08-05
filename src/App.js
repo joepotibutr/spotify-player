@@ -55,6 +55,9 @@ const MainLayout = styled.div`
  `
 class App extends Component {
 
+    loadingTimeout = null
+
+
     constructor(props) {
       super(props)
       this.state = {
@@ -62,7 +65,6 @@ class App extends Component {
           authFailed: false
       }
       this.audio = new Audio()
-      this.loadingTimeout
 
   }
 

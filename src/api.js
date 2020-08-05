@@ -85,7 +85,7 @@ export default {
             return data
         },
         addSongToLibrary : async (accessToken,id) => {
-            const { data } = await axios.put(`https://api.spotify.com/v1/me/tracks?ids=${id}`,{
+            await axios.put(`https://api.spotify.com/v1/me/tracks?ids=${id}`,{
                 headers : { 'Authorization': 'Bearer ' + accessToken }
             })
         }
