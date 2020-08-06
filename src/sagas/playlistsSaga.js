@@ -7,16 +7,16 @@ import {
     createPlaylistSuccess,
     createPlaylistFailure
 } from '../actions/playlist'
+import { updateHeaderTitle } from '../actions/ui'
 import api from '../api'
 import uniqBy from 'lodash/uniqBy'
 
 export function * createPlaylistSaga(action) {
     try {
         const { accessToken, userId } = action
-        console.log('accessToken',accessToken)
-        console.log('userId',userId)
-        const res = yield call(api.playlist.createPlaylist,accessToken, userId)
+        const res = yield call(api.playlist.createPlaylist,accessToken, userId, {name: 'wowo'})
         yield put(createPlaylistSuccess(res))
+        yield put(updateHeaderTitle(res.name))
     } catch(err) {
         const { response } = err
         if (response.statusText === "Unauthorized") {
