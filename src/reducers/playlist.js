@@ -17,6 +17,27 @@ export const playlistReducer = (state = {}, action) => {
         fetchPlaylistRequest: false,
         ...state
       }
+
+    case types.CREATE_PLAYLIST_REQUEST:
+      return {
+        createPlaylistRequest: true,
+        ...state
+      }
+  
+    case types.CREATE_PLAYLIST_SUCCESS:
+      return {
+        createdPlaylist: action.playlist,
+        createPlaylistFailure: false,
+        createPlaylistRequest: false,
+        ...state
+      }
+
+    case types.CREATE_PLAYLIST_FAILURE:
+      return {
+        createPlaylistFailure: true,
+        createPlaylistRequest: false,
+        ...state
+      }
   
     case types.ADD_PLAYLIST_ITEM:
       return {
