@@ -32,6 +32,7 @@ const SideMenu = ({ title, token, updateHeaderTitle }) => {
 	function renderNavigation() {
 		return Navigation.map(item => (
 			<NavigationLinkItem
+				key={item.title}
 				onClick={() => item.title === viewType.USER_LIBRARY && 
 					updateHeaderTitle(item.title)}
 				active={title === item.title}
