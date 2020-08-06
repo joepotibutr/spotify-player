@@ -55,10 +55,19 @@ export const CreatePlaylistWrapper = styled.div`
         flex-direction:column;
         justify-content: center;
 
-        input {
-            font-size: 40px;
-            background: transparent;
-            border: 0;
+        .input-box {
+            min-width: 700px;
+            margin: 0 auto;
+
+            input {
+                ::-webkit-input-placeholder {
+                    font-weight: bold;
+                }
+                font-size: 40px;
+                background: transparent;
+                border: 0;
+                width: 100%;
+            }
         }
     }
 `
