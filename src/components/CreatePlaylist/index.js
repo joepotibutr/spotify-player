@@ -28,8 +28,10 @@ function CreatePlaylist({ onClose, isOpen }) {
             </div>
             <h1 className="create-playlist-title">Create new playlist</h1>
             <div className="create-playlist-input">
-                <h4>Playlist Name</h4>
-                <input placeholder="New Playlist" type="text" />
+                <div className="input-box">
+                    <h4>Playlist Name</h4>
+                    <input placeholder="New Playlist" type="text" />
+                </div>
             </div>
             <div className="create-playlist-actions">
                 <button className="cancel btn" onClick={() => onClose(false)}>CANCEL</button>
