@@ -60,7 +60,7 @@ class UserPlaylists extends Component {
                           this.props.token
                         )
                         this.props.updateHeaderTitle(playlist.name);
-                      }} className="playlist-item" key={playlist.uri}>{playlist.name}</PlaylistItem>
+                      }} className="playlist-item" key={playlist.id}>{playlist.name}</PlaylistItem>
                     ))}
                   </ul> : null}
             </UserPlaylistLayout>
