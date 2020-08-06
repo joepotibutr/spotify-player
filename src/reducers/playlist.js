@@ -5,38 +5,38 @@ export const playlistReducer = (state = {}, action) => {
   
     case types.FETCH_PLAYLIST_MENU_REQUEST:
       return {
+        ...state,
         fetchPlaylistRequest: true,
-        ...state
       }
   
     case types.FETCH_PLAYLIST_MENU_SUCCESS:
       return {
+        ...state,
         playlistMenu: action.playlists,
         playlists: action.playlists,
         fetchPlaylistFailure: false,
         fetchPlaylistRequest: false,
-        ...state
       }
 
     case types.CREATE_PLAYLIST_REQUEST:
       return {
+        ...state,
         createPlaylistRequest: true,
-        ...state
       }
   
     case types.CREATE_PLAYLIST_SUCCESS:
       return {
+        ...state,
         createdPlaylist: action.playlist,
         createPlaylistFailure: false,
         createPlaylistRequest: false,
-        ...state
       }
 
     case types.CREATE_PLAYLIST_FAILURE:
       return {
+        ...state,
         createPlaylistFailure: true,
         createPlaylistRequest: false,
-        ...state
       }
   
     case types.ADD_PLAYLIST_ITEM:
@@ -50,9 +50,9 @@ export const playlistReducer = (state = {}, action) => {
   
     case types.FETCH_PLAYLIST_MENU_FAILURE:
       return {
+        ...state,
         fetchPlaylistFailure: true,
         fetchPlaylistRequest: false,
-        ...state
       }
   
     default:
