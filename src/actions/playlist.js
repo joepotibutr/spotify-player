@@ -15,11 +15,14 @@ export const addPlaylistItem = playlist => {
 } 
 
 
+export const createPlaylistRequest = () => {
+    return { type: types.CREATE_PLAYLIST_REQUEST}
+}
 export const createPlaylistSuccess = () => {
-    return { type : types.FETCH_PLAYLIST_MENU_SUCCESS }
+    return { type : types.CREATE_PLAYLIST_SUCCESS }
 }  
 export const createPlaylistFailure = () => {
-    return { type : types.FETCH_PLAYLIST_MENU_FAILURE }
+    return { type : types.CREATE_PLAYLIST_FAILURE }
 }  
 
 
