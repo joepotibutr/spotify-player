@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { CreatePlaylistWrapper } from './styled'
 import { createPlaylistRequest } from '../../actions/playlist'
-import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux'
 
@@ -16,6 +15,7 @@ function CreatePlaylist({
     userId, 
 }) {
     const [open, handleToggle] = React.useState(false)
+    const inputRef = React.useRef(null)
 
     React.useEffect(() => {
         window.addEventListener('keydown', onEscKeyDown)
@@ -32,7 +32,9 @@ function CreatePlaylist({
     }
 
     function onCreatePlaylist() {
-        createPlaylistRequest(token, userId)
+        createPlaylistRequest(token, userId, {
+            name: inputRef && inputRef.current.value || 'New Playlist'
+        })
         onClose(false)
     }
 
@@ -45,7 +47,7 @@ function CreatePlaylist({
             <div className="create-playlist-input">
                 <div className="input-box">
                     <h4>Playlist Name</h4>
-                    <input placeholder="New Playlist" type="text" />
+                    <input ref={inputRef} placeholder="New Playlist" type="text" />
                 </div>
             </div>
             <div className="create-playlist-actions">
