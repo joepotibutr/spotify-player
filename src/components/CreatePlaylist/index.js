@@ -2,12 +2,19 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { CreatePlaylistWrapper } from './styled'
 import { createPlaylistRequest } from '../../actions/playlist'
+import { updateHeaderTitle } from '../../actions/ui'
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux'
 
 const modalRoot = document.getElementById("modal-root")
 
-function CreatePlaylist({ onClose, isOpen, createPlaylistRequest, token, userId }) {
+function CreatePlaylist({ 
+    onClose, 
+    isOpen, 
+    createPlaylistRequest, 
+    token, 
+    userId, 
+}) {
     const [open, handleToggle] = React.useState(false)
 
     React.useEffect(() => {
@@ -24,6 +31,11 @@ function CreatePlaylist({ onClose, isOpen, createPlaylistRequest, token, userId 
         }
     }
 
+    function onCreatePlaylist() {
+        createPlaylistRequest(token, userId)
+        onClose(false)
+    }
+
     return ReactDOM.createPortal(
         <CreatePlaylistWrapper isOpen={open}>
             <div>
@@ -38,9 +50,7 @@ function CreatePlaylist({ onClose, isOpen, createPlaylistRequest, token, userId 
             </div>
             <div className="create-playlist-actions">
                 <button className="cancel btn" onClick={() => onClose(false)}>CANCEL</button>
-                <button className="create btn" onClick={() => 
-                    createPlaylistRequest(token, userId)
-                }>CREATE</button>
+                <button className="create btn" onClick={onCreatePlaylist}>CREATE</button>
             </div>
         </CreatePlaylistWrapper>
     ,modalRoot)
