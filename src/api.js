@@ -67,12 +67,9 @@ export default {
             })
             return data.items
         },
-        createPlaylist: async (accessToken, userId) => {
-            const { data } = await axios.post(`https://api.spotify.com/v1/users/${userId}/playlists`,{
+        createPlaylist: async (accessToken, userId, data) => {
+            const { data } = await axios.post(`https://api.spotify.com/v1/users/${userId}/playlists`, data , {
                 headers : { 'Authorization': 'Bearer ' + accessToken },
-                data: {
-                    name: 'Haha'
-                }
             })
             return data
         }

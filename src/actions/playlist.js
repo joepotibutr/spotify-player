@@ -15,8 +15,8 @@ export const addPlaylistItem = playlist => {
 } 
 
 
-export const createPlaylistRequest = () => {
-    return { type: types.CREATE_PLAYLIST_REQUEST}
+export const createPlaylistRequest = (accessToken, userId) => {
+    return { type: types.CREATE_PLAYLIST_REQUEST, accessToken, userId}
 }
 export const createPlaylistSuccess = () => {
     return { type : types.CREATE_PLAYLIST_SUCCESS }

@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 
 const modalRoot = document.getElementById("modal-root")
 
-function CreatePlaylist({ onClose, isOpen }) {
+function CreatePlaylist({ onClose, isOpen, createPlaylistRequest, token, userId }) {
     const [open, handleToggle] = React.useState(false)
 
     React.useEffect(() => {
@@ -38,18 +38,18 @@ function CreatePlaylist({ onClose, isOpen }) {
             </div>
             <div className="create-playlist-actions">
                 <button className="cancel btn" onClick={() => onClose(false)}>CANCEL</button>
-                <button className="create btn" >CREATE</button>
+                <button className="create btn" onClick={() => 
+                    createPlaylistRequest(token, userId)
+                }>CREATE</button>
             </div>
         </CreatePlaylistWrapper>
     ,modalRoot)
 }
 
-export default connect(state => {
-    return {
+export default connect(state => ({
         userId: state.userReducer.user ? state.userReducer.user.id : '',
         token: state.tokenReducer.token ? state.tokenReducer.token : '',
-    }
-} , dispatch => 
+}) , dispatch => 
     bindActionCreators({
       createPlaylistRequest,
     }, dispatch)

@@ -13,6 +13,8 @@ import uniqBy from 'lodash/uniqBy'
 export function * createPlaylistSaga(action) {
     try {
         const { accessToken, userId } = action
+        console.log('accessToken',accessToken)
+        console.log('userId',userId)
         const res = yield call(api.playlist.createPlaylist,accessToken, userId)
         yield put(createPlaylistSuccess(res))
     } catch(err) {
