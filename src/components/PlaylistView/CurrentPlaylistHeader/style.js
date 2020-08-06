@@ -83,7 +83,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                         font-weight: 700;
                         text-transform: none;
                         color:white;
-                        -webkit-text-stroke-width: 3px;
+                        -webkit-text-stroke-width: 2px;
                         letter-spacing: -1px;
 
                         h2 {
@@ -91,7 +91,7 @@ export const CurrentPlaylistHeaderWrapper = styled.header`
                                 font-size: 42px;
                             }
                             font-family: 'Prox';
-                            font-size:7vw;
+                            font-size:5vw;
                             margin: 0.4em 0;
                         }
                     }
