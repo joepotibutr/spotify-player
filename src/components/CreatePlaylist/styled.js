@@ -34,6 +34,10 @@ export const CreatePlaylistWrapper = styled.div`
             border-radius: 16px;
             width: 130px;
             color: rgb(255,255,255,1);
+            cursor: pointer;
+            &:hover {
+                transform:scale(1.1);
+            }
 
         }
 
@@ -60,6 +64,8 @@ export const CreatePlaylistWrapper = styled.div`
             margin: 0 auto;
 
             input {
+                font-weight: bold;
+                color: rgb(255,255,255);
                 ::-webkit-input-placeholder {
                     font-weight: bold;
                 }
