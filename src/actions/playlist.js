@@ -18,11 +18,11 @@ export const addPlaylistItem = playlist => {
 export const createPlaylistRequest = (accessToken, userId) => {
     return { type: types.CREATE_PLAYLIST_REQUEST, accessToken, userId}
 }
-export const createPlaylistSuccess = () => {
-    return { type : types.CREATE_PLAYLIST_SUCCESS }
+export const createPlaylistSuccess = (playlist) => {
+    return { type : types.CREATE_PLAYLIST_SUCCESS, playlist }
 }  
-export const createPlaylistFailure = () => {
-    return { type : types.CREATE_PLAYLIST_FAILURE }
+export const createPlaylistFailure = (err) => {
+    return { type : types.CREATE_PLAYLIST_FAILURE, err }
 }  
 
 
