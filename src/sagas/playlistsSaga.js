@@ -1,4 +1,4 @@
-import { put , call } from 'redux-saga/effects'
+import { put , call, all } from 'redux-saga/effects'
 import { 
     fetchPlaylistMenuSuccess,
     fetchPlaylistMenuFailure,
@@ -13,10 +13,12 @@ import uniqBy from 'lodash/uniqBy'
 
 export function * createPlaylistSaga(action) {
     try {
-        const { accessToken, userId } = action
-        const res = yield call(api.playlist.createPlaylist,accessToken, userId, {name: 'wowo'})
-        yield put(createPlaylistSuccess(res))
-        yield put(updateHeaderTitle(res.name))
+        const { accessToken, userId, data } = action
+        const createdPlaylist = yield call(api.playlist.createPlaylist,accessToken, userId, data)
+        const allPlaylists = yield call(api.playlist.fetchPlaylistMenu,accessToken,userId)
+        yield put(createPlaylistSuccess(createdPlaylist))
+        yield put(fetchPlaylistMenuSuccess(allPlaylists))
+        yield put(updateHeaderTitle(createdPlaylist.name))
     } catch(err) {
         const { response } = err
         if (response.statusText === "Unauthorized") {
