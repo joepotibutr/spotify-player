@@ -15,8 +15,8 @@ export const addPlaylistItem = playlist => {
 } 
 
 
-export const createPlaylistRequest = (accessToken, userId) => {
-    return { type: types.CREATE_PLAYLIST_REQUEST, accessToken, userId}
+export const createPlaylistRequest = (accessToken, userId, data) => {
+    return { type: types.CREATE_PLAYLIST_REQUEST, accessToken, userId, data}
 }
 export const createPlaylistSuccess = (playlist) => {
     return { type : types.CREATE_PLAYLIST_SUCCESS, playlist }
@@ -30,8 +30,8 @@ export const createPlaylistFailure = (err) => {
 export const fetchPlaylistSongsRequest = (userId,playlistId,accessToken) => {
     return { type : types.FETCH_PLAYLIST_SONGS_REQUEST ,userId, playlistId, accessToken}
 }  
-export const fetchPlaylistSongsFailure = () => {
-    return { type : types.FETCH_PLAYLIST_SONGS_FAILURE }
+export const fetchPlaylistSongsFailure = (err) => {
+    return { type : types.FETCH_PLAYLIST_SONGS_FAILURE, err }
 }  
 export const fetchPlaylistSongsSuccess = songs => {
     return { type : types.FETCH_PLAYLIST_SONGS_SUCCESS , songs }
