@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { CreatePlaylistWrapper } from './styled'
+import { createPlaylistRequest } from '../../actions/playlist'
+import { bindActionCreators } from "redux";
+import { connect } from 'react-redux'
 
 const modalRoot = document.getElementById("modal-root")
 
@@ -41,4 +44,13 @@ function CreatePlaylist({ onClose, isOpen }) {
     ,modalRoot)
 }
 
-export default CreatePlaylist
+export default connect(state => {
+    return {
+        userId: state.userReducer.user ? state.userReducer.user.id : '',
+        token: state.tokenReducer.token ? state.tokenReducer.token : '',
+    }
+} , dispatch => 
+    bindActionCreators({
+      createPlaylistRequest,
+    }, dispatch)
+)(CreatePlaylist)

@@ -10,7 +10,7 @@ import {
 import api from '../api'
 import uniqBy from 'lodash/uniqBy'
 
-export function * createPlaylist(action) {
+export function * createPlaylistSaga(action) {
     try {
         const { accessToken, userId } = action
         const res = yield call(api.playlist.createPlaylist,accessToken, userId)

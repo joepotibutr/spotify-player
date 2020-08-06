@@ -7,7 +7,7 @@ import {
     fetchFeaturedSaga,
     fetchNewReleasesSaga
  } from './userRecommendSaga'
-import { fetchPlaylistMenuSaga , fetchPlaylistSongsSaga } from './playlistsSaga'
+import { createPlaylistSaga, fetchPlaylistMenuSaga , fetchPlaylistSongsSaga } from './playlistsSaga'
 import { 
     fetchSongsSaga,
     searchSongsSaga,
@@ -34,6 +34,7 @@ function *rootSaga() {
     yield takeLatest(types.FETCH_NEW_RELEASES_REQUEST,fetchNewReleasesSaga)
     yield takeLatest(types.FETCH_USER_REQUEST,fetchUserSaga)
     yield takeLatest(types.ADD_SONG_TO_LIBRARY_REQUEST,addSongToLibrarySaga)
+    yield takeLatest(types.CREATE_PLAYLIST_REQUEST, createPlaylistSaga)
 }
 
 
