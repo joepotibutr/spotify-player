@@ -33,7 +33,7 @@ function CreatePlaylist({
 
     function onCreatePlaylist() {
         createPlaylistRequest(token, userId, {
-            name: inputRef && inputRef.current.value || 'New Playlist'
+            name: (inputRef && inputRef.current.value) || 'New Playlist'
         })
         onClose(false)
     }

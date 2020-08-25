@@ -103,7 +103,7 @@ class NowPlayingBar extends React.Component {
                         onPlay={() => this.onPlayerPlay(currentTrack)} 
                         onPause={this.onPlayerPause} 
                         onResume={this.onPlayerResume} 
-                        loading={this.props.loading}
+                        // loading={this.props.}
                     />
                     <div className="volume-control-bar">
                         <div className="control-bar-container">

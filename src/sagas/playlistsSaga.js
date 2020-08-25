@@ -1,4 +1,4 @@
-import { put , call, all } from 'redux-saga/effects'
+import { put , call } from 'redux-saga/effects'
 import { 
     fetchPlaylistMenuSuccess,
     fetchPlaylistMenuFailure,
