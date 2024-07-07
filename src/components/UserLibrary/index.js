@@ -64,7 +64,7 @@ class UserLibrary extends React.Component {
             
             return <CollectionItem onClick={() => this.handlePlaylistClick(item)} key={i}>
                         <div className="cover-art">
-                            {item.images?.length ?  <img alt="cover" className="item-cover" src={item.images[0].url}/> : 
+                            {item.images && item.images.length ?  <img alt="cover" className="item-cover" src={item.images[0].url}/> : 
                             <div className="empty-playlist">
                                 <img alt="empty-playlist" className="empty-icon" src={MusicNoteIcon} />
                             </div>}
